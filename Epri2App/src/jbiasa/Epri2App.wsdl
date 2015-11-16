@@ -29,7 +29,7 @@
     </binding>
     <service name="Epri2AppService1">
         <port name="casaPort1" binding="tns:casaBinding1">
-            <soap:address location="http://10.3.253.10:8080/epriConnect/MaintOrderServiceCreate"/>
+            <soap:address location="http://localhost:8080/epriConnect/request/MaintOrderServiceCreate"/>
         </port>
     </service>
 </definitions>

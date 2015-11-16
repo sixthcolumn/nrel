@@ -1,28 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="MaintenanceOrders_Port" targetNamespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns1="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns2="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <wsdl:types>
-<xs:schema elementFormDefault="qualified" targetNamespace="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" version="1.0" xmlns:ns1="http://iec.ch/TC57/2011/schema/message" xmlns:ns2="http://iec.ch/TC57/2015/MaintenanceOrders#" xmlns:tns="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:import namespace="http://iec.ch/TC57/2011/schema/message"/>
-<xs:import namespace="http://iec.ch/TC57/2015/MaintenanceOrders#"/>
-<xs:element name="CancelMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
-<xs:element name="CanceledMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
-<xs:element name="ChangeMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
-<xs:element name="ChangedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
-<xs:element name="CloseMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
-<xs:element name="ClosedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
-<xs:element name="CreateMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
-<xs:element name="CreatedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
-<xs:element name="DeleteMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
-<xs:element name="DeletedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
-<xs:element name="MaintenanceOrdersFaultMessage" type="tns:MaintenanceOrdersFaultMessageType"/>
-<xs:element name="MaintenanceOrdersResponseMessage" type="tns:MaintenanceOrdersResponseMessageType"/>
-<xs:complexType name="MaintenanceOrdersRequestMessageType">
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" xmlns:ns1="http://iec.ch/TC57/2011/schema/message" xmlns:ns2="http://iec.ch/TC57/2015/MaintenanceOrders#" xmlns:tns="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://iec.ch/TC57/2011/schema/message"/>
+  <xs:import namespace="http://iec.ch/TC57/2015/MaintenanceOrders#"/>
+  <xs:element name="CancelMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
+  <xs:element name="CanceledMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
+  <xs:element name="ChangeMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
+  <xs:element name="ChangedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
+  <xs:element name="CloseMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
+  <xs:element name="ClosedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
+  <xs:element name="CreateMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
+  <xs:element name="CreatedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
+  <xs:element name="DeleteMaintenanceOrders" type="tns:MaintenanceOrdersRequestMessageType"/>
+  <xs:element name="DeletedMaintenanceOrders" type="tns:MaintenanceOrdersEventMessageType"/>
+  <xs:element name="MaintenanceOrdersFaultMessage" type="tns:MaintenanceOrdersFaultMessageType"/>
+  <xs:element name="MaintenanceOrdersResponseMessage" type="tns:MaintenanceOrdersResponseMessageType"/>
+  <xs:complexType name="MaintenanceOrdersRequestMessageType">
     <xs:sequence>
       <xs:element name="Header" type="ns1:HeaderType"/>
       <xs:element minOccurs="0" name="Request" type="ns1:RequestType"/>
       <xs:element minOccurs="0" name="Payload" type="tns:MaintenanceOrdersPayloadType"/>
     </xs:sequence>
   </xs:complexType>
-<xs:complexType name="MaintenanceOrdersPayloadType">
+  <xs:complexType name="MaintenanceOrdersPayloadType">
     <xs:sequence>
       <xs:element ref="ns2:MaintenanceOrders"/>
       <xs:element minOccurs="0" name="OperationSet" type="ns1:OperationSet"/>
@@ -30,19 +30,19 @@
       <xs:element minOccurs="0" name="Format" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
-<xs:complexType name="MaintenanceOrdersResponseMessageType">
+  <xs:complexType name="MaintenanceOrdersResponseMessageType">
     <xs:sequence>
       <xs:element name="Header" type="ns1:HeaderType"/>
       <xs:element name="Reply" type="ns1:ReplyType"/>
       <xs:element minOccurs="0" name="Payload" type="tns:MaintenanceOrdersPayloadType"/>
     </xs:sequence>
   </xs:complexType>
-<xs:complexType name="MaintenanceOrdersFaultMessageType">
+  <xs:complexType name="MaintenanceOrdersFaultMessageType">
     <xs:sequence>
       <xs:element name="Reply" type="ns1:ReplyType"/>
     </xs:sequence>
   </xs:complexType>
-<xs:complexType name="MaintenanceOrdersEventMessageType">
+  <xs:complexType name="MaintenanceOrdersEventMessageType">
     <xs:sequence>
       <xs:element name="Header" type="ns1:HeaderType"/>
       <xs:element minOccurs="0" name="Payload" type="tns:MaintenanceOrdersPayloadType"/>
@@ -682,6 +682,11 @@
       <xs:any namespace="##other" processContents="skip"/>
     </xs:sequence>
   </xs:complexType>
+<xs:complexType name="FaultMessageType">
+    <xs:sequence>
+      <xs:element name="Reply" type="tns:ReplyType"/>
+    </xs:sequence>
+  </xs:complexType>
 <xs:complexType name="ResponseMessageType">
     <xs:sequence>
       <xs:element name="Header" type="tns:HeaderType"/>
@@ -689,21 +694,16 @@
       <xs:element minOccurs="0" name="Payload" type="tns:PayloadType"/>
     </xs:sequence>
   </xs:complexType>
-<xs:complexType name="FaultMessageType">
+<xs:complexType name="RequestMessageType">
     <xs:sequence>
-      <xs:element name="Reply" type="tns:ReplyType"/>
+      <xs:element name="Header" type="tns:HeaderType"/>
+      <xs:element minOccurs="0" name="Request" type="tns:RequestType"/>
+      <xs:element minOccurs="0" name="Payload" type="tns:PayloadType"/>
     </xs:sequence>
   </xs:complexType>
 <xs:complexType name="EventMessageType">
     <xs:sequence>
       <xs:element name="Header" type="tns:HeaderType"/>
-      <xs:element minOccurs="0" name="Payload" type="tns:PayloadType"/>
-    </xs:sequence>
-  </xs:complexType>
-<xs:complexType name="RequestMessageType">
-    <xs:sequence>
-      <xs:element name="Header" type="tns:HeaderType"/>
-      <xs:element minOccurs="0" name="Request" type="tns:RequestType"/>
       <xs:element minOccurs="0" name="Payload" type="tns:PayloadType"/>
     </xs:sequence>
   </xs:complexType>
