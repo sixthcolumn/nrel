@@ -1,0 +1,21 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://iec.ch/TC57/2015/GetMaintenanceOrdersMessage" xmlns:mes="http://iec.ch/TC57/2011/schema/message" xmlns:get1="http://iec.ch/TC57/2015/GetMaintenanceOrders#">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:GetMaintenanceOrdersRequestMessage>
+         <get:Header>
+          <mes:Verb>get</mes:Verb>
+                <mes:Noun>MaintenanceOrders</mes:Noun>
+                <mes:Timestamp>2001-12-17T09:30:47Z</mes:Timestamp>
+                <mes:MessageID>407903a3-4725-465f-a56b-45cf1cde5ede</mes:MessageID>
+                <mes:CorrelationID>9f31c6d4-dc31-4cdb-b689-d91aa5d4aef2</mes:CorrelationID>
+         </get:Header>
+         <get:Request>
+            <get1:GetMaintenanceOrders>
+               <get1:MaintenanceOrder>
+                  <get1:mRID>7af904cd-c090-4d17-9a87-186b14b869e7</get1:mRID> 
+               </get1:MaintenanceOrder>
+            </get1:GetMaintenanceOrders>            
+         </get:Request>
+      </get:GetMaintenanceOrdersRequestMessage>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/Users/BenGoodwin/git/nrel/Epri2App/test/results/TestCase1/Actual_20151115120740_F.xml</file>
-            <file>file:/Users/BenGoodwin/git/nrel/Epri2App/src/conf/Epri2App.casa</file>
-            <file>file:/Users/BenGoodwin/git/nrel/Epri2App/test/TestCase1/Input.xml</file>
-            <file>file:/Users/BenGoodwin/git/nrel/Epri2App/src/jbiasa/Epri2App.wsdl</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SendMaintenanceOrder"
+	targetNamespace="http://iec.ch/TC57/2011/SendMaintenanceOrder"
+	xmlns:tns="http://iec.ch/TC57/2011/SendMaintenanceOrder"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:infoMessage="http://iec.ch/TC57/2011/MaintenanceOrderMessage">
+	<wsdl:types>
+		<xs:schema
+			targetNamespace="http://iec.ch/TC57/2011/SendMaintenanceOrder"
+			elementFormDefault="qualified">
+			<xs:import namespace="http://iec.ch/TC57/2011/MaintenanceOrderMessage"
+				schemaLocation="xsd/MaintenanceOrderMessage.xsd" />
+		</xs:schema>
+	</wsdl:types>
+	<xs:schema targetNamespace="http://iec.ch/TC57/2011/ExecuteEndDeviceControlsMessage"
+		elementFormDefault="qualified">
+		<xs:import namespace="http://iec.ch/TC57/2011/EndDeviceControlsMessage"
+			schemaLocation="xsd/EndDeviceControlsMessage.xsd" />
+	</xs:schema>
+	<!-- Message Definitions -->
+	<wsdl:message name="CreateMaintenanceOrderRequestMessage">
+		<wsdl:part name="CreateMaintenanceOrderRequestMessage"
+			element="infoMessage:CreateMaintenanceOrder" />
+	</wsdl:message>
+	<wsdl:message name="ChangeMaintenanceOrderRequestMessage">
+		<wsdl:part name="ChangeMaintenanceOrderRequestMessage"
+			element="infoMessage:ChangeMaintenanceOrder" />
+	</wsdl:message>
+	<wsdl:message name="CloseMaintenanceOrderRequestMessage">
+		<wsdl:part name="CloseMaintenanceOrderRequestMessage"
+			element="infoMessage:CloseMaintenanceOrder" />
+	</wsdl:message>
+	<wsdl:message name="CancelMaintenanceOrderRequestMessage">
+		<wsdl:part name="CancelMaintenanceOrderRequestMessage"
+			element="infoMessage:CancelMaintenanceOrder" />
+	</wsdl:message>
+	<wsdl:message name="DeleteMaintenanceOrderRequestMessage">
+		<wsdl:part name="DeleteMaintenanceOrderRequestMessage"
+			element="infoMessage:DeleteMaintenanceOrder" />
+	</wsdl:message>
+	<wsdl:message name="ResponseMessage">
+		<wsdl:part name="ResponseMessage"
+			element="infoMessage:MaintenanceOrderResponseMessage" />
+	</wsdl:message>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="FaultMessage"
+			element="infoMessage:MaintenanceOrderFaultMessage" />
+	</wsdl:message>
+	<!-- Port Definitions -->
+	<wsdl:portType name="MaintenanceOrder_Port">
+		<wsdl:operation name="CreateMaintenanceOrder">
+			<wsdl:input name="CreateMaintenanceOrderRequest"
+				message="tns:CreateMaintenanceOrderRequestMessage" />
+			<wsdl:output name="CreateMaintenanceOrderResponse"
+				message="tns:ResponseMessage" />
+			<wsdl:fault name="CreateMaintenanceOrderFault"
+				message="tns:FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMaintenanceOrder">
+			<wsdl:input name="ChangeMaintenanceOrderRequest"
+				message="tns:ChangeMaintenanceOrderRequestMessage" />
+			<wsdl:output name="ChangeMaintenanceOrderResponse"
+				message="tns:ResponseMessage" />
+			<wsdl:fault name="ChangeMaintenanceOrderFault"
+				message="tns:FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CancelMaintenanceOrder">
+			<wsdl:input name="CancelMaintenanceOrderRequest"
+				message="tns:CancelMaintenanceOrderRequestMessage" />
+			<wsdl:output name="CancelMaintenanceOrderResponse"
+				message="tns:ResponseMessage" />
+			<wsdl:fault name="CancelMaintenanceOrderFault"
+				message="tns:FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CloseMaintenanceOrder">
+			<wsdl:input name="CloseMaintenanceOrderRequest"
+				message="tns:CloseMaintenanceOrderRequestMessage" />
+			<wsdl:output name="CloseMaintenanceOrderResponse"
+				message="tns:ResponseMessage" />
+			<wsdl:fault name="CloseMaintenanceOrderFault"
+				message="tns:FaultMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMaintenanceOrder">
+			<wsdl:input name="DeleteMaintenanceOrderRequest"
+				message="tns:DeleteMaintenanceOrderRequestMessage" />
+			<wsdl:output name="DeleteMaintenanceOrderResponse"
+				message="tns:ResponseMessage" />
+			<wsdl:fault name="DeleteMaintenanceOrderFault"
+				message="tns:FaultMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MaintenanceOrder_Binding"
+		type="tns:MaintenanceOrder_Port">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="CreateMaintenanceOrder">
+			<soap:operation
+				soapAction="http://iec.ch/TC57/2011/MaintenanceOrder/CreateMaintenanceOrder"
+				style="document" />
+			<wsdl:input name="CreateMaintenanceOrderRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="CreateMaintenanceOrderResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CreateMaintenanceOrderFault">
+				<soap:fault name="CreateMaintenanceOrderFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="ChangeMaintenanceOrder">
+			<soap:operation
+				soapAction="http://iec.ch/TC57/2011/MaintenanceOrder/ChangeMaintenanceOrder"
+				style="document" />
+			<wsdl:input name="ChangeMaintenanceOrderRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="ChangeMaintenanceOrderResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ChangeMaintenanceOrderFault">
+				<soap:fault name="ChangeMaintenanceOrderFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CancelMaintenanceOrder">
+			<soap:operation
+				soapAction="http://iec.ch/TC57/2011/MaintenanceOrder/CancelMaintenanceOrder"
+				style="document" />
+			<wsdl:input name="CancelMaintenanceOrderRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="CancelMaintenanceOrderResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CancelMaintenanceOrderFault">
+				<soap:fault name="CancelMaintenanceOrderFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CloseMaintenanceOrder">
+			<soap:operation
+				soapAction="http://iec.ch/TC57/2011/MaintenanceOrder/CloseMaintenanceOrder"
+				style="document" />
+			<wsdl:input name="CloseMaintenanceOrderRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="CloseMaintenanceOrderResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="CloseMaintenanceOrderFault">
+				<soap:fault name="CloseMaintenanceOrderFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMaintenanceOrder">
+			<soap:operation
+				soapAction="http://iec.ch/TC57/2011/MaintenanceOrder/DeleteMaintenanceOrder"
+				style="document" />
+			<wsdl:input name="DeleteMaintenanceOrderRequest">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="DeleteMaintenanceOrderResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeleteMaintenanceOrderFault">
+				<soap:fault name="DeleteMaintenanceOrderFault"
+					use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SendMaintenanceOrder">
+		<wsdl:port name="MaintenanceOrder_Port" binding="tns:MaintenanceOrder_Binding">
+			<soap:address
+				location="http://iec.ch/TC57/2011/SendMaintenanceOrder" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
