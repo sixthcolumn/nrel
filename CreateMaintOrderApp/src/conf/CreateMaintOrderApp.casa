@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/MaintOrder/src/LogOutboundMessage" xmlns:ns2="http://j2ee.netbeans.org/wsdl/MaintOrder/src/LogReplies" xmlns:ns3="http://ws.server.sixthc.com/" xmlns:ns4="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns5="CreateMaintOrderApp" xmlns:ns6="http://enterprise.netbeans.org/bpel/MaintOrder/maintOrder" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="LogOutboundMessage_OutboundPort" interface-name="ns1:FileOutboundPortType" name="endpoint1" service-name="ns1:FileOutboundService"/>
+        <endpoint endpoint-name="LogReplies_OutboundPort" interface-name="ns2:FileOutboundPortType" name="endpoint2" service-name="ns2:FileOutboundService"/>
+        <endpoint endpoint-name="ExecuteMaintOrderCreatePort" interface-name="ns4:MaintenanceOrders_Port" name="endpoint3" service-name="ns3:ExecuteMaintOrderCreateService"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns4:MaintenanceOrders_Port" name="endpoint4" service-name="ns5:CreateMaintOrderAppService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns4:MaintenanceOrders_Port" name="endpoint5" service-name="ns5:CreateMaintOrderAppService2"/>
+        <endpoint display-name="Create" endpoint-name="MaintenanceOrders_PortRole_myRole" file-path="createMaintOrder.bpel" interface-name="ns4:MaintenanceOrders_Port" name="endpoint6" process-name="maintOrder" service-name="ns6:Create"/>
+        <endpoint display-name="R1" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns4:MaintenanceOrders_Port" name="endpoint7" process-name="maintOrder" service-name="ns6:R1"/>
+        <endpoint display-name="R2" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns4:MaintenanceOrders_Port" name="endpoint8" process-name="maintOrder" service-name="ns6:R2"/>
+        <endpoint display-name="Log1" name="endpoint9" file-path="createMaintOrder.bpel" endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns1:FileOutboundPortType" process-name="maintOrder" service-name="ns6:Log1"/>
+        <endpoint display-name="Log2" name="endpoint10" file-path="createMaintOrder.bpel" endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns2:FileOutboundPortType" process-name="maintOrder" service-name="ns6:Log2"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="CreateMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CreateMaintOrderApp-CreateMaintOrder" unit-name="CreateMaintOrder" unknown="false" x="136" y="97">
+            <provides endpoint="endpoint6"/>
+            <consumes endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+            <consumes endpoint="endpoint9"/>
+            <consumes endpoint="endpoint10"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="CreateMaintOrderApp-sun-file-binding" unit-name="sun-file-binding">
+            <ports>
+                <port x="67" y="322">
+                    <link xlink:href="../jbiasa/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogOutboundMessage_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port x="67" y="245">
+                    <link xlink:href="../jbiasa/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogReplies_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CreateMaintOrderApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="140">
+                    <link xlink:href="../jbiasa/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl#xpointer(/definitions/service[@name='ExecuteMaintOrderCreateService']/port[@name='ExecuteMaintOrderCreatePort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="432" bindingType="soap">
+                    <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port bindingType="soap" x="67" y="513">
+                    <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint9" provider="endpoint1" state="unchanged"/>
+        <connection consumer="endpoint10" provider="endpoint2" state="unchanged"/>
+        <connection consumer="endpoint3" provider="endpoint6" state="unchanged"/>
+        <connection consumer="endpoint7" provider="endpoint4" state="new"/>
+        <connection consumer="endpoint8" provider="endpoint5" state="new"/>
+        <connection state="deleted" consumer="endpoint7" provider="endpoint6"/>
+        <connection state="deleted" consumer="endpoint8" provider="endpoint6"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl#xpointer(/definitions/portType[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl#xpointer(/definitions/portType[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrderApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl#xpointer(/definitions/binding[@name='ExecuteMaintOrderCreateServiceSoapBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl#xpointer(/definitions/binding[@name='ExecuteMaintOrderCreateServiceSoapBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl#xpointer(/definitions/service[@name='ExecuteMaintOrderCreateService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl#xpointer(/definitions/service[@name='ExecuteMaintOrderCreateService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogOutboundMessage.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogReplyMessages.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMaintOrderApp.wsdl#xpointer(/definitions/service[@name='CreateMaintOrderAppService2'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

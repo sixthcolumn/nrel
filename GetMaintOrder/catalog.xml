@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceGet?wsdl" uri="src/localhost_8080/epriConnect/MaintOrderServiceGet.wsdl"/>
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceGet?wsdl=GetMaintenanceOrders_Port.wsdl" uri="src/localhost_8080/epriConnect/MaintOrderServiceGet.wsdl_GetMaintenanceOrders_Port.wsdl"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/GetMaintenanceOrders.wsdl" uri="src/GetMaintenanceOrders.wsdl"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/xsd/GetMaintenanceOrdersMessage.xsd" uri="src/xsd/GetMaintenanceOrdersMessage.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/xsd/MaintenanceOrdersMessage.xsd" uri="src/xsd/MaintenanceOrdersMessage.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/xsd/MaintenanceOrders.xsd" uri="src/xsd/MaintenanceOrders.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimGet/xsd/GetMaintenanceOrders.xsd" uri="src/xsd/GetMaintenanceOrders.xsd"/>
 </catalog>
