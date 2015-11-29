@@ -26,10 +26,10 @@
 		<wsdl:operation name="GetMaintenanceOrders">
 			<soap:operation soapAction="http://iec.ch/TC57/2015/GetMaintenanceOrders/GetMaintenanceOrders" style="document"/>
 			<wsdl:input name="GetMaintenanceOrdersRequest">
-				<soap:body use="literal"/>
+				<soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/WS-I_R2717/src/WS-I_R2717violation"/>
 			</wsdl:input>
 			<wsdl:output name="GetMaintenanceOrdersResponse">
-				<soap:body use="literal"/>
+				<soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/WS-I_R2717/src/WS-I_R2717violation"/>
 			</wsdl:output>
 			<wsdl:fault name="GetMaintenanceOrdersFault">
 				<soap:fault name="GetMaintenanceOrdersFault" use="literal"/>
