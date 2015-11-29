@@ -47,16 +47,8 @@
                 <to variable="R2In"/>
             </copy>
             <copy>
-                <from>$CreateIn.parameters/ns2:Header</from>
-                <to>$CreateLog.part1/ns2:Header</to>
-            </copy>
-            <copy>
-                <from>$CreateIn.parameters/ns2:Request</from>
-                <to>$CreateLog.part1/ns2:Request</to>
-            </copy>
-            <copy>
-                <from>$CreateIn.parameters/ns2:Payload</from>
-                <to>$CreateLog.part1/ns2:Payload</to>
+                <from variable="CreateIn" part="parameters"/>
+                <to variable="CreateLog" part="part1"/>
             </copy>
         </assign>
         <invoke name="InvokeR1" partnerLink="R1" operation="CreateMaintenanceOrders" xmlns:ns1="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" portType="ns1:MaintenanceOrders_Port" inputVariable="R1In" outputVariable="R1Response"/>
@@ -67,28 +59,12 @@
                 <to variable="CreateResponse"/>
             </copy>
             <copy>
-                <from>$R2Response.parameters/ns2:Header</from>
-                <to>$R2Log.part1/ns2:Header</to>
+                <from variable="R2Response" part="parameters"/>
+                <to variable="R2Log" part="part1"/>
             </copy>
             <copy>
-                <from>$R2Response.parameters/ns2:Reply</from>
-                <to>$R2Log.part1/ns2:Reply</to>
-            </copy>
-            <copy>
-                <from>$R2Response.parameters/ns2:Payload</from>
-                <to>$R2Log.part1/ns2:Payload</to>
-            </copy>
-            <copy>
-                <from>$R1Response.parameters/ns2:Header</from>
-                <to>$R1Log.part1/ns2:Header</to>
-            </copy>
-            <copy>
-                <from>$R1Response.parameters/ns2:Reply</from>
-                <to>$R1Log.part1/ns2:Reply</to>
-            </copy>
-            <copy>
-                <from>$R1Response.parameters/ns2:Payload</from>
-                <to>$R1Log.part1/ns2:Payload</to>
+                <from variable="R1Response" part="parameters"/>
+                <to variable="R1Log" part="part1"/>
             </copy>
         </assign>
         <invoke name="R1LogMsg" partnerLink="Log1" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/MaintOrder/src/LogOutboundMessage" portType="tns:FileOutboundPortType" inputVariable="CreateLog"/>

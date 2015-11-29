@@ -10,8 +10,8 @@
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              targetNamespace="NRELApp"
              xmlns:tns="NRELApp" xmlns:ns="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders">
-    <import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrders" location="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl"/>
-    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl"/>
+    <import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrders" location="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl"/>
+    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiasa/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:GetMaintenanceOrders_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

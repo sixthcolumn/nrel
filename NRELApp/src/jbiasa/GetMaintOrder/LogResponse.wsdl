@@ -9,7 +9,7 @@
         </xsd:schema>
     </types>
     <message name="WriteInputMessage">
-        <part name="part1" type="ns:GetMaintenanceOrdersResponseMessageType"/>
+        <part name="part1" element="ns:GetMaintenanceOrdersResponseMessage"/>
     </message>    
     <portType name="FileOutboundPortType">
         <operation name="write">
@@ -21,13 +21,13 @@
         <operation name="write">
             <file:operation verb="write"/>
             <input name="input1">
-                <file:message fileName="getLogresponse.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+                <file:message fileName="GetMaintOrderResponseLog.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
             </input>
         </operation>
     </binding>
     <service name="FileOutboundService">
         <port name="LogResponse_OutboundPort" binding="tns:FileOutboundBinding">
-            <file:address fileDirectory="Default System Temp Dir"/>
+            <file:address fileDirectory="/tmp"/>
         </port>
     </service>
     <plnk:partnerLinkType name="LogResponse">

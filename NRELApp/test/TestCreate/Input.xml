@@ -5,1179 +5,707 @@
             <main:Header>
                 <mes:Verb>Create</mes:Verb>
                 <mes:Noun>Workorder</mes:Noun>
-                <!--Optional:-->
                 <mes:Revision>0.1</mes:Revision>
-                <!--Optional:-->
                 <mes:ReplayDetection>
                     <mes:Nonce>1234</mes:Nonce>
                     <mes:Created>2015-06-12T12:00:00.00-05:00</mes:Created>
                 </mes:ReplayDetection>
-                <!--Optional:-->
                 <mes:Context>Not Set</mes:Context>
-                <!--Optional:-->
                 <mes:Timestamp>2015-06-12T12:00:00.00-05:00</mes:Timestamp>
-                <!--Optional:-->
                 <mes:Source>epri</mes:Source>
-                <!--Optional:-->
                 <mes:AsyncReplyFlag>false</mes:AsyncReplyFlag>
-                <!--Optional:-->
                 <mes:ReplyAddress>http://epri.com/CIM</mes:ReplyAddress>
-                <!--Optional:-->
                 <mes:AckRequired>false</mes:AckRequired>
-                <!--Optional:-->
                 <mes:User>
                     <mes:UserID>epriTest</mes:UserID>
                     <mes:Organization>epri</mes:Organization>
                 </mes:User>
-                <!--Optional:-->
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>
-                <!--Optional:-->
                 <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>
-                <!--Optional:-->
                 <mes:Comment>epri persistence test</mes:Comment>
-                <!--Zero or more repetitions:-->
                 <mes:Property>
                     <mes:Name>workorder</mes:Name>
-                    <!--Optional:-->
                     <mes:Value>0.1</mes:Value>
                 </mes:Property>
-                <!--You may enter ANY elements at this point-->
             </main:Header>
-            <!--Optional:-->
             <main:Request>
-                <!--Optional:-->
                 <mes:StartTime>2015-06-12T12:00:00.00-05:00</mes:StartTime>
-                <!--Optional:-->
                 <mes:EndTime>2015-06-15T12:00:00.00-05:00</mes:EndTime>
-                <!--Zero or more repetitions:-->
                 <mes:Option>
                     <mes:name>loca</mes:name>
-                    <!--Optional:-->
                     <mes:value>111</mes:value>
                 </mes:Option>
-                <!--Zero or more repetitions:-->
                 <mes:ID>5056f7ac-120c-11e5-9493-1697f925ec7b</mes:ID>
-                <!--You may enter ANY elements at this point-->
             </main:Request>
-            <!--Optional:-->
             <main:Payload>
                 <main1:MaintenanceOrders>
-                    <!--1 or more repetitions:-->
                     <main1:MaintenanceOrder>
-                     <!--   <main1:mRID>1111-1111</main1:mRID> -->
                         <main1:Names>
                             <main1:name>MO-1</main1:name>
-                            <!--Optional:-->
                             <main1:NameType>
-                                <!--Optional:-->
                                 <main1:description>Maintenance Order Number</main1:description>
                                 <main1:name>Utility XYZ</main1:name>
                             </main1:NameType>
                         </main1:Names>
-                        <!--1 or more repetitions:-->
-                        <!--1 or more repetitions:-->
                         <main1:Work>
-                            <!--Optional:-->
-                            <!--Optional:-->
                             <main1:kind>construction</main1:kind>
-                            <!--Optional:-->
                             <main1:lastModifiedDateTime>2015-06-12T12:00:00.00-05:00</main1:lastModifiedDateTime>
-                            <!--Optional:-->
                             <main1:requestDateTime>2015-06-12T12:00:00.00-05:00</main1:requestDateTime>
-                            <!--Optional:-->
                             <main1:statusKind>approved</main1:statusKind>
-                            <!--1 or more repetitions:-->
                             <main1:Names>
                                 <main1:name>UEL</main1:name>
-                                <!--Optional:-->
                                 <main1:NameType>
-                                    <!--Optional:-->
                                     <main1:description>ghl</main1:description>
                                     <main1:name>ghl</main1:name>
-                                    <!--Optional:-->
                                     <main1:NameTypeAuthority>
-                                        <!--Optional:-->
                                         <main1:description>epri auth</main1:description>
                                         <main1:name>epri</main1:name>
                                     </main1:NameTypeAuthority>
                                 </main1:NameType>
                             </main1:Names>
                             <main1:priority>
-                                <!--Optional:-->
                                 <main1:justification>na</main1:justification>
                                 <main1:rank>1</main1:rank>
-                                <!--Optional:-->
                                 <main1:type>business</main1:type>
                             </main1:priority>
-                            <!--Optional:-->
                             <main1:TimeSchedules>
                                 <main1:kind>estimate</main1:kind>
                                 <main1:scheduleInterval>
-                                    <!--Optional:-->
                                     <main1:end>2015-06-12T15:00:00.00-05:00</main1:end>
-                                    <!--Optional:-->
                                     <main1:start>2015-06-12T12:00:00.00-05:00</main1:start>
                                 </main1:scheduleInterval>
                             </main1:TimeSchedules>
                             <main1:WorkLocation>
-                                <!--Optional:-->
                                 <main1:mRID>1619d134-aabb-49f7-ba29-2720d047ffc0</main1:mRID>
-                                <!--Optional:-->
                                 <main1:direction>North</main1:direction>
-                                <!--Optional:-->
                                 <main1:CoordinateSystem>
                                     <main1:crsUrn>urn:ogc:def:uom:EPSG::EUL</main1:crsUrn>
                                 </main1:CoordinateSystem>
-                                <!--Zero or more repetitions:-->
                                 <main1:Hazards>
-                                    <!--Optional:-->
                                     <main1:type>weather</main1:type>
                                 </main1:Hazards>
                                 <main1:Hazards>
-                                    <!--Optional:-->
                                     <main1:type>terrain</main1:type>
                                 </main1:Hazards>
-                                <!--Optional:-->
                                 <main1:mainAddress>
                                     <main1:streetDetail>
                                         <main1:addressGeneral>100 Emerald street suite 101</main1:addressGeneral>
-                                        <!--Optional:-->
                                         <main1:buildingName>EagleNest</main1:buildingName>
-                                        <!--Optional:-->
                                         <main1:code>cd1</main1:code>
-                                        <!--Optional:-->
                                         <main1:name>EagleNest</main1:name>
-                                        <!--Optional:-->
                                         <main1:number>101</main1:number>
-                                        <!--Optional:-->
                                         <main1:prefix>North</main1:prefix>
-                                        <!--Optional:-->
                                         <main1:suffix>West</main1:suffix>
-                                        <!--Optional:-->
                                         <main1:suiteNumber>101</main1:suiteNumber>
-                                        <!--Optional:-->
                                         <main1:type>Res</main1:type>
-                                        <!--Optional:-->
                                         <main1:withinTownLimits>true</main1:withinTownLimits>
                                     </main1:streetDetail>
                                     <main1:townDetail>
-                                        <!--Optional:-->
                                         <main1:code>cd</main1:code>
-                                        <!--Optional:-->
                                         <main1:country>US</main1:country>
                                         <main1:name>USA</main1:name>
-                                        <!--Optional:-->
                                         <main1:section>A</main1:section>
-                                        <!--Optional:-->
                                         <main1:stateOrProvince>NC</main1:stateOrProvince>
                                     </main1:townDetail>
                                 </main1:mainAddress>
-                                <!--Zero or more repetitions:-->
                                 <main1:PositionPoints>
-                                    <!--Optional:-->
                                     <main1:sequenceNumber>123</main1:sequenceNumber>
-                                    <!--Optional:-->
                                     <main1:xPosition>709</main1:xPosition>
-                                    <!--Optional:-->
                                     <main1:yPosition>443</main1:yPosition>
-                                    <!--Optional:-->
                                     <main1:zPosition>102</main1:zPosition>
                                 </main1:PositionPoints>
                                 <main1:PositionPoints>
-                                    <!--Optional:-->
                                     <main1:sequenceNumber>101</main1:sequenceNumber>
-                                    <!--Optional:-->
                                     <main1:xPosition>102</main1:xPosition>
-                                    <!--Optional:-->
                                     <main1:yPosition>103</main1:yPosition>
-                                    <!--Optional:-->
                                     <main1:zPosition>104</main1:zPosition>
                                 </main1:PositionPoints>
-                                <!--Optional:-->
                             </main1:WorkLocation>
                             <main1:WorkTasks>
                                 <main1:statusKind>approved</main1:statusKind>
                                 <main1:subject>subject work order</main1:subject>
                                 <main1:taskKind>exchange</main1:taskKind>
                                 <main1:Assets>
-                                    <!--Optional:-->
                                     <main1:mRID>9900</main1:mRID>
                                     <main1:critical>true</main1:critical>
                                     <main1:utcNumber>1211</main1:utcNumber>
-                                    <!--Optional:-->
                                     <main1:Location>
-                                        <!--Optional:-->
                                         <main1:mRID>888</main1:mRID>
-                                        <!--Optional:-->
                                         <main1:direction>North</main1:direction>
-                                        <!--Optional:-->
                                         <main1:CoordinateSystem>
                                             <main1:crsUrn>sys1</main1:crsUrn>
                                         </main1:CoordinateSystem>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:type>actual</main1:type>
                                         </main1:Hazards>
-                                        <!--Optional:-->
                                         <main1:mainAddress>
                                             <main1:streetDetail>
                                                 <main1:addressGeneral>100 Main Street</main1:addressGeneral>
-                                                <!--Optional:-->
                                                 <main1:buildingName>Main Building</main1:buildingName>
-                                                <!--Optional:-->
                                                 <main1:code>27513</main1:code>
-                                                <!--Optional:-->
                                                 <main1:name>Main</main1:name>
-                                                <!--Optional:-->
                                                 <main1:number>371</main1:number>
-                                                <!--Optional:-->
                                                 <main1:prefix>Nth</main1:prefix>
-                                                <!--Optional:-->
                                                 <main1:suffix>East</main1:suffix>
-                                                <!--Optional:-->
                                                 <main1:suiteNumber>102</main1:suiteNumber>
-                                                <!--Optional:-->
                                                 <main1:type>residence</main1:type>
-                                                <!--Optional:-->
                                                 <main1:withinTownLimits>true</main1:withinTownLimits>
                                             </main1:streetDetail>
                                             <main1:townDetail>
-                                                <!--Optional:-->
                                                 <main1:code>wk</main1:code>
-                                                <!--Optional:-->
                                                 <main1:country>US</main1:country>
                                                 <main1:name>Wake</main1:name>
-                                                <!--Optional:-->
                                                 <main1:section>123</main1:section>
-                                                <!--Optional:-->
                                                 <main1:stateOrProvince>NorthEast</main1:stateOrProvince>
                                             </main1:townDetail>
                                         </main1:mainAddress>
-                                        <!--Zero or more repetitions:-->
                                         <main1:PositionPoints>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>1</main1:sequenceNumber>
-                                            <!--Optional:-->
                                             <main1:xPosition>123</main1:xPosition>
-                                            <!--Optional:-->
                                             <main1:yPosition>456</main1:yPosition>
-                                            <!--Optional:-->
                                             <main1:zPosition>7899</main1:zPosition>
                                         </main1:PositionPoints>
-                                        <!--Optional:-->
                                     </main1:Location>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>nm1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt1</main1:description>
                                             <main1:name>nt1</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Procedures>
                                         <main1:instruction>look up</main1:instruction>
-                                        <!--Optional:-->
                                         <main1:kind>diagnosis</main1:kind>
-                                        <!--Optional:-->
                                         <main1:sequenceNumber>12</main1:sequenceNumber>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Measurements>
-                                            <!--Optional:-->
                                             <main1:measurementType>ft</main1:measurementType>
-                                            <!--Optional:-->
                                             <main1:phases>AB</main1:phases>
-                                            <!--Optional:-->
                                             <main1:unitMultiplier>1.2</main1:unitMultiplier>
-                                            <!--Optional:-->
                                             <main1:unitSymbol>o</main1:unitSymbol>
                                         </main1:Measurements>
                                     </main1:Procedures>
                                 </main1:Assets>
                                 <main1:Crews>
-                                    <!--Optional:-->
                                     <main1:mRID>9955</main1:mRID>
-                                    <!--Zero or more repetitions:-->
                                     <main1:CrewMembers>
                                         <main1:Person>
-                                            <!--Optional:-->
                                             <main1:firstName>Bob</main1:firstName>
                                             <main1:lastName>Gordon</main1:lastName>
                                         </main1:Person>
                                     </main1:CrewMembers>
                                     <main1:CrewMembers>
                                         <main1:Person>
-                                            <!--Optional:-->
                                             <main1:firstName>Janus</main1:firstName>
                                             <main1:lastName>Roberts</main1:lastName>
                                         </main1:Person>
                                     </main1:CrewMembers>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>name1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt1 desc</main1:description>
                                             <main1:name>nt name</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:WorkAssets>
-                                        <!--Optional:-->
                                         <main1:mRID>9944</main1:mRID>
                                         <main1:critical>false</main1:critical>
                                         <main1:utcNumber>12</main1:utcNumber>
-                                        <!--Optional:-->
                                         <main1:Location>
-                                            <!--Optional:-->
                                             <main1:mRID>889</main1:mRID>
-                                            <!--Optional:-->
                                             <main1:direction>North</main1:direction>
-                                            <!--Optional:-->
                                             <main1:CoordinateSystem>
                                                 <main1:crsUrn>csn</main1:crsUrn>
                                             </main1:CoordinateSystem>
-                                            <!--Zero or more repetitions:-->
                                             <main1:Hazards>
-                                                <!--Optional:-->
                                                 <main1:type>crit</main1:type>
                                             </main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:mainAddress>
                                                 <main1:streetDetail>
                                                     <main1:addressGeneral>101 north st</main1:addressGeneral>
-                                                    <!--Optional:-->
                                                     <main1:buildingName>bld</main1:buildingName>
-                                                    <!--Optional:-->
                                                     <main1:code>123</main1:code>
-                                                    <!--Optional:-->
                                                     <main1:name>eagle</main1:name>
-                                                    <!--Optional:-->
                                                     <main1:number>123</main1:number>
-                                                    <!--Optional:-->
                                                     <main1:prefix>Mr</main1:prefix>
-                                                    <!--Optional:-->
                                                     <main1:suffix>Jr</main1:suffix>
-                                                    <!--Optional:-->
                                                     <main1:suiteNumber>102</main1:suiteNumber>
-                                                    <!--Optional:-->
                                                     <main1:type>residence</main1:type>
-                                                    <!--Optional:-->
                                                     <main1:withinTownLimits>true</main1:withinTownLimits>
                                                 </main1:streetDetail>
                                                 <main1:townDetail>
-                                                    <!--Optional:-->
                                                     <main1:code>twn</main1:code>
-                                                    <!--Optional:-->
                                                     <main1:country>US</main1:country>
                                                     <main1:name>Wake</main1:name>
-                                                    <!--Optional:-->
                                                     <main1:section>123</main1:section>
-                                                    <!--Optional:-->
                                                     <main1:stateOrProvince>CA</main1:stateOrProvince>
                                                 </main1:townDetail>
                                             </main1:mainAddress>
-                                            <!--Zero or more repetitions:-->
                                             <main1:PositionPoints>
-                                                <!--Optional:-->
                                                 <main1:sequenceNumber>7</main1:sequenceNumber>
-                                                <!--Optional:-->
                                                 <main1:xPosition>123</main1:xPosition>
-                                                <!--Optional:-->
                                                 <main1:yPosition>567</main1:yPosition>
-                                                <!--Optional:-->
                                                 <main1:zPosition>333</main1:zPosition>
                                             </main1:PositionPoints>
-                                            <!--Optional:-->
                                         </main1:Location>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Names>
                                             <main1:name>na1</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameType>
-                                                <!--Optional:-->
                                                 <main1:description>nt desc</main1:description>
                                                 <main1:name>nt name</main1:name>
-                                                <!--Optional:-->
                                                 <main1:NameTypeAuthority>
-                                                    <!--Optional:-->
                                                     <main1:description>nta desc</main1:description>
                                                     <main1:name>ta name</main1:name>
                                                 </main1:NameTypeAuthority>
                                             </main1:NameType>
                                         </main1:Names>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Procedures>
                                             <main1:instruction>look up</main1:instruction>
-                                            <!--Optional:-->
                                             <main1:kind>diagnosis</main1:kind>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>3</main1:sequenceNumber>
-                                            <!--Zero or more repetitions:-->
                                             <main1:Measurements>
-                                                <!--Optional:-->
                                                 <main1:measurementType>ft</main1:measurementType>
-                                                <!--Optional:-->
                                                 <main1:phases>AB</main1:phases>
-                                                <!--Optional:-->
                                                 <main1:unitMultiplier>1.1</main1:unitMultiplier>
-                                                <!--Optional:-->
                                                 <main1:unitSymbol>SS</main1:unitSymbol>
                                             </main1:Measurements>
                                         </main1:Procedures>
                                     </main1:WorkAssets>
                                 </main1:Crews>
-                                <!--Zero or more repetitions:-->
                                 <main1:MaterialItems>
-                                    <!-- TODO : doesn't persist, error BJG
-                                    <main1:Names>
-                                        <main1:name>mati1</main1:name>
-                                        
-                                        <main1:NameType>
-                                            
-                                            <main1:description>mati nt 1</main1:description>
-                                            <main1:name>mati n 1</main1:name>
-                                            
-                                            <main1:NameTypeAuthority>
-                                                
-                                                <main1:description>mat 1 nta</main1:description>
-                                                <main1:name>mat1 nta nanme</main1:name>
-                                            </main1:NameTypeAuthority>
-                                        </main1:NameType>
-                                    </main1:Names>
-                                    -->
                                     <main1:quantity>
-                                        <!--Optional:-->
                                         <main1:multiplier>1.1</main1:multiplier>
-                                        <!--Optional:-->
                                         <main1:unit>ft</main1:unit>
                                         <main1:value>23</main1:value>
                                     </main1:quantity>
                                 </main1:MaterialItems>
-                                <!--Zero or more repetitions:-->
                                 <main1:Names>
                                     <main1:name>mat1 n</main1:name>
-                                    <!--Optional:-->
                                     <main1:NameType>
-                                        <!--Optional:-->
                                         <main1:description>mat1 n desc</main1:description>
                                         <main1:name>mat 1 n desc n</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameTypeAuthority>
-                                            <!--Optional:-->
                                             <main1:description>mat 1 nta desc</main1:description>
                                             <main1:name>mat 1 nta name</main1:name>
                                         </main1:NameTypeAuthority>
                                     </main1:NameType>
                                 </main1:Names>
-                                <!--Optional:-->
                                 <main1:OldAsset>
-                                    <!--Optional:-->
                                     <main1:mRID>9988</main1:mRID>
                                     <main1:critical>true</main1:critical>
                                     <main1:utcNumber>123</main1:utcNumber>
-                                    <!--Optional:-->
                                     <main1:Location>
-                                        <!--Optional:-->
                                         <main1:mRID>223</main1:mRID>
-                                        <!--Optional:-->
                                         <main1:direction>East</main1:direction>
-                                        <!--Optional:-->
                                         <main1:CoordinateSystem>
                                             <main1:crsUrn>urn</main1:crsUrn>
                                         </main1:CoordinateSystem>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:type>critical</main1:type>
                                         </main1:Hazards>
-                                        <!--Optional:-->
                                         <main1:mainAddress>
                                             <main1:streetDetail>
                                                 <main1:addressGeneral>200 North Street</main1:addressGeneral>
-                                                <!--Optional:-->
                                                 <main1:buildingName>Sparrow</main1:buildingName>
-                                                <!--Optional:-->
                                                 <main1:code>123</main1:code>
-                                                <!--Optional:-->
                                                 <main1:name>build1</main1:name>
-                                                <!--Optional:-->
                                                 <main1:number>203</main1:number>
-                                                <!--Optional:-->
                                                 <main1:prefix>Mr.</main1:prefix>
-                                                <!--Optional:-->
                                                 <main1:suffix>Jr</main1:suffix>
-                                                <!--Optional:-->
                                                 <main1:suiteNumber>209a</main1:suiteNumber>
-                                                <!--Optional:-->
                                                 <main1:type>business</main1:type>
-                                                <!--Optional:-->
                                                 <main1:withinTownLimits>true</main1:withinTownLimits>
                                             </main1:streetDetail>
                                             <main1:townDetail>
-                                                <!--Optional:-->
                                                 <main1:code>123</main1:code>
-                                                <!--Optional:-->
                                                 <main1:country>?</main1:country>
                                                 <main1:name>tdname</main1:name>
-                                                <!--Optional:-->
                                                 <main1:section>123</main1:section>
-                                                <!--Optional:-->
                                                 <main1:stateOrProvince>?</main1:stateOrProvince>
                                             </main1:townDetail>
                                         </main1:mainAddress>
-                                        <!--Zero or more repetitions:-->
                                         <main1:PositionPoints>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>3</main1:sequenceNumber>
-                                            <!--Optional:-->
                                             <main1:xPosition>908</main1:xPosition>
-                                            <!--Optional:-->
                                             <main1:yPosition>382</main1:yPosition>
-                                            <!--Optional:-->
                                             <main1:zPosition>333</main1:zPosition>
                                         </main1:PositionPoints>
-                                        <!--Optional:-->
                                     </main1:Location>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>n1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt desc</main1:description>
                                             <main1:name>nt name</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Procedures>
                                         <main1:instruction>duck!</main1:instruction>
-                                        <!--Optional:-->
                                         <main1:kind>diagnosis</main1:kind>
-                                        <!--Optional:-->
                                         <main1:sequenceNumber>1</main1:sequenceNumber>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Measurements>
-                                            <!--Optional:-->
                                             <main1:measurementType>Mt</main1:measurementType>
-                                            <!--Optional:-->
                                             <main1:phases>BC</main1:phases>
-                                            <!--Optional:-->
                                             <main1:unitMultiplier>1.2</main1:unitMultiplier>
-                                            <!--Optional:-->
                                             <main1:unitSymbol>UN</main1:unitSymbol>
                                         </main1:Measurements>
                                     </main1:Procedures>
                                 </main1:OldAsset>
-                                <!--Optional:-->
                                 <main1:TimeSchedules>
                                     <main1:kind>earliest</main1:kind>
                                     <main1:scheduleInterval>
-                                        <!--Optional:-->
                                         <main1:end>2011-03-03T12:07:56.590-05:15</main1:end>
-                                        <!--Optional:-->
                                         <main1:start>2011-03-03T12:07:56.590-05:16</main1:start>
                                     </main1:scheduleInterval>
                                 </main1:TimeSchedules>
                             </main1:WorkTasks>
-<!--
-                            <main1:Attachments>
-                                <main1:Attachment>
-                                    <main1:Comment>test attachment 1</main1:Comment>
-                                    <main1:Description>it is a rabbit</main1:Description>
-                                    <main1:Url>http://sciencenordic.com/sites/default/files/imagecache/620x/rabbit_0.jpg</main1:Url>
-                                </main1:Attachment>
-                                <main1:Attachment>
-                                    <main1:Comment>test attachment 2</main1:Comment>
-                                    <main1:Description>it is a dog</main1:Description>
-                                    <main1:Url>http://www.dogguide.net/blog/wp-content/uploads/2008/10/2597866140_ab1cc67da0.jpg</main1:Url>
-                                </main1:Attachment>
-                            </main1:Attachments> -->
                         </main1:Work>
                     </main1:MaintenanceOrder>
-                <main1:MaintenanceOrder>
+                    <main1:MaintenanceOrder>
                         <main1:Names>
                             <main1:name>MO-2</main1:name>
-                            <!--Optional:-->
                             <main1:NameType>
-                                <!--Optional:-->
                                 <main1:description>Maintenance Order Number</main1:description>
                                 <main1:name>Utility XYZ</main1:name>
                             </main1:NameType>
                         </main1:Names>
-                        <!--1 or more repetitions:-->
-                        <!--1 or more repetitions:-->
                         <main1:Work>
-                            <!--Optional:-->
-                            <!--Optional:-->
                             <main1:kind>construction</main1:kind>
-                            <!--Optional:-->
                             <main1:lastModifiedDateTime>2015-06-12T12:00:00.00-05:00</main1:lastModifiedDateTime>
-                            <!--Optional:-->
                             <main1:requestDateTime>2015-06-12T12:00:00.00-05:00</main1:requestDateTime>
-                            <!--Optional:-->
                             <main1:statusKind>approved</main1:statusKind>
-                            <!--1 or more repetitions:-->
                             <main1:Names>
                                 <main1:name>UEL</main1:name>
-                                <!--Optional:-->
                                 <main1:NameType>
-                                    <!--Optional:-->
                                     <main1:description>ghl</main1:description>
                                     <main1:name>ghl</main1:name>
-                                    <!--Optional:-->
                                     <main1:NameTypeAuthority>
-                                        <!--Optional:-->
                                         <main1:description>epri auth</main1:description>
                                         <main1:name>epri</main1:name>
                                     </main1:NameTypeAuthority>
                                 </main1:NameType>
                             </main1:Names>
                             <main1:priority>
-                                <!--Optional:-->
                                 <main1:justification>na</main1:justification>
                                 <main1:rank>1</main1:rank>
-                                <!--Optional:-->
                                 <main1:type>business</main1:type>
                             </main1:priority>
-                            <!--Optional:-->
                             <main1:TimeSchedules>
                                 <main1:kind>estimate</main1:kind>
                                 <main1:scheduleInterval>
-                                    <!--Optional:-->
                                     <main1:end>2015-06-12T15:00:00.00-05:00</main1:end>
-                                    <!--Optional:-->
                                     <main1:start>2015-06-12T12:00:00.00-05:00</main1:start>
                                 </main1:scheduleInterval>
                             </main1:TimeSchedules>
                             <main1:WorkLocation>
-                                <!--Optional:-->
                                 <main1:mRID>1619d134-aabb-49f7-ba29-2720d047ffc0</main1:mRID>
-                                <!--Optional:-->
                                 <main1:direction>North</main1:direction>
-                                <!--Optional:-->
                                 <main1:CoordinateSystem>
                                     <main1:crsUrn>urn:ogc:def:uom:EPSG::EUL</main1:crsUrn>
                                 </main1:CoordinateSystem>
-                                <!--Zero or more repetitions:-->
                                 <main1:Hazards>
-                                    <!--Optional:-->
                                     <main1:type>weather</main1:type>
                                 </main1:Hazards>
                                 <main1:Hazards>
-                                    <!--Optional:-->
                                     <main1:type>terrain</main1:type>
                                 </main1:Hazards>
-                                <!--Optional:-->
                                 <main1:mainAddress>
                                     <main1:streetDetail>
                                         <main1:addressGeneral>100 Emerald street suite 101</main1:addressGeneral>
-                                        <!--Optional:-->
                                         <main1:buildingName>EagleNest</main1:buildingName>
-                                        <!--Optional:-->
                                         <main1:code>cd1</main1:code>
-                                        <!--Optional:-->
                                         <main1:name>EagleNest</main1:name>
-                                        <!--Optional:-->
                                         <main1:number>101</main1:number>
-                                        <!--Optional:-->
                                         <main1:prefix>North</main1:prefix>
-                                        <!--Optional:-->
                                         <main1:suffix>West</main1:suffix>
-                                        <!--Optional:-->
                                         <main1:suiteNumber>101</main1:suiteNumber>
-                                        <!--Optional:-->
                                         <main1:type>Res</main1:type>
-                                        <!--Optional:-->
                                         <main1:withinTownLimits>true</main1:withinTownLimits>
                                     </main1:streetDetail>
                                     <main1:townDetail>
-                                        <!--Optional:-->
                                         <main1:code>cd</main1:code>
-                                        <!--Optional:-->
                                         <main1:country>US</main1:country>
                                         <main1:name>USA</main1:name>
-                                        <!--Optional:-->
                                         <main1:section>A</main1:section>
-                                        <!--Optional:-->
                                         <main1:stateOrProvince>NC</main1:stateOrProvince>
                                     </main1:townDetail>
                                 </main1:mainAddress>
-                                <!--Zero or more repetitions:-->
                                 <main1:PositionPoints>
-                                    <!--Optional:-->
                                     <main1:sequenceNumber>123</main1:sequenceNumber>
-                                    <!--Optional:-->
                                     <main1:xPosition>709</main1:xPosition>
-                                    <!--Optional:-->
                                     <main1:yPosition>443</main1:yPosition>
-                                    <!--Optional:-->
                                     <main1:zPosition>102</main1:zPosition>
                                 </main1:PositionPoints>
                                 <main1:PositionPoints>
-                                    <!--Optional:-->
                                     <main1:sequenceNumber>101</main1:sequenceNumber>
-                                    <!--Optional:-->
                                     <main1:xPosition>102</main1:xPosition>
-                                    <!--Optional:-->
                                     <main1:yPosition>103</main1:yPosition>
-                                    <!--Optional:-->
                                     <main1:zPosition>104</main1:zPosition>
                                 </main1:PositionPoints>
-                                <!--Optional:-->
                             </main1:WorkLocation>
                             <main1:WorkTasks>
-                                <!--Optional:-->
                                 <main1:mRID>4455</main1:mRID>
-                                <!--Optional:-->
                                 <main1:crewETA>2011-03-03T12:07:56.590-05:10</main1:crewETA>
-                                <!--Optional:-->
                                 <main1:instruction>test 1 instruction</main1:instruction>
-                                <!--Optional:-->
                                 <main1:statusKind>approved</main1:statusKind>
-                                <!--Optional:-->
                                 <main1:subject>subject work order</main1:subject>
                                 <main1:taskKind>exchange</main1:taskKind>
                                 <main1:Assets>
-                                    <!--Optional:-->
                                     <main1:mRID>9900</main1:mRID>
                                     <main1:critical>true</main1:critical>
                                     <main1:utcNumber>1211</main1:utcNumber>
-                                    <!--Optional:-->
                                     <main1:Location>
-                                        <!--Optional:-->
                                         <main1:mRID>888</main1:mRID>
-                                        <!--Optional:-->
                                         <main1:direction>North</main1:direction>
-                                        <!--Optional:-->
                                         <main1:CoordinateSystem>
                                             <main1:crsUrn>sys1</main1:crsUrn>
                                         </main1:CoordinateSystem>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:type>actual</main1:type>
                                         </main1:Hazards>
-                                        <!--Optional:-->
                                         <main1:mainAddress>
                                             <main1:streetDetail>
                                                 <main1:addressGeneral>100 Main Street</main1:addressGeneral>
-                                                <!--Optional:-->
                                                 <main1:buildingName>Main Building</main1:buildingName>
-                                                <!--Optional:-->
                                                 <main1:code>27513</main1:code>
-                                                <!--Optional:-->
                                                 <main1:name>Main</main1:name>
-                                                <!--Optional:-->
                                                 <main1:number>371</main1:number>
-                                                <!--Optional:-->
                                                 <main1:prefix>Nth</main1:prefix>
-                                                <!--Optional:-->
                                                 <main1:suffix>East</main1:suffix>
-                                                <!--Optional:-->
                                                 <main1:suiteNumber>102</main1:suiteNumber>
-                                                <!--Optional:-->
                                                 <main1:type>residence</main1:type>
-                                                <!--Optional:-->
                                                 <main1:withinTownLimits>true</main1:withinTownLimits>
                                             </main1:streetDetail>
                                             <main1:townDetail>
-                                                <!--Optional:-->
                                                 <main1:code>wk</main1:code>
-                                                <!--Optional:-->
                                                 <main1:country>US</main1:country>
                                                 <main1:name>Wake</main1:name>
-                                                <!--Optional:-->
                                                 <main1:section>123</main1:section>
-                                                <!--Optional:-->
                                                 <main1:stateOrProvince>NorthEast</main1:stateOrProvince>
                                             </main1:townDetail>
                                         </main1:mainAddress>
-                                        <!--Zero or more repetitions:-->
                                         <main1:PositionPoints>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>1</main1:sequenceNumber>
-                                            <!--Optional:-->
                                             <main1:xPosition>123</main1:xPosition>
-                                            <!--Optional:-->
                                             <main1:yPosition>456</main1:yPosition>
-                                            <!--Optional:-->
                                             <main1:zPosition>7899</main1:zPosition>
                                         </main1:PositionPoints>
-                                        <!--Optional:-->
                                     </main1:Location>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>nm1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt1</main1:description>
                                             <main1:name>nt1</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Procedures>
                                         <main1:instruction>look up</main1:instruction>
-                                        <!--Optional:-->
                                         <main1:kind>diagnosis</main1:kind>
-                                        <!--Optional:-->
                                         <main1:sequenceNumber>12</main1:sequenceNumber>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Measurements>
-                                            <!--Optional:-->
                                             <main1:measurementType>ft</main1:measurementType>
-                                            <!--Optional:-->
                                             <main1:phases>AB</main1:phases>
-                                            <!--Optional:-->
                                             <main1:unitMultiplier>1.2</main1:unitMultiplier>
-                                            <!--Optional:-->
                                             <main1:unitSymbol>o</main1:unitSymbol>
                                         </main1:Measurements>
                                     </main1:Procedures>
                                 </main1:Assets>
                                 <main1:Crews>
-                                    <!--Optional:-->
                                     <main1:mRID>9955</main1:mRID>
-                                    <!--Zero or more repetitions:-->
                                     <main1:CrewMembers>
                                         <main1:Person>
-                                            <!--Optional:-->
                                             <main1:firstName>Bob</main1:firstName>
                                             <main1:lastName>Gordon</main1:lastName>
                                         </main1:Person>
                                     </main1:CrewMembers>
                                     <main1:CrewMembers>
                                         <main1:Person>
-                                            <!--Optional:-->
                                             <main1:firstName>Janus</main1:firstName>
                                             <main1:lastName>Roberts</main1:lastName>
                                         </main1:Person>
                                     </main1:CrewMembers>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>name1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt1 desc</main1:description>
                                             <main1:name>nt name</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:WorkAssets>
-                                        <!--Optional:-->
                                         <main1:mRID>9944</main1:mRID>
                                         <main1:critical>false</main1:critical>
                                         <main1:utcNumber>12</main1:utcNumber>
-                                        <!--Optional:-->
                                         <main1:Location>
-                                            <!--Optional:-->
                                             <main1:mRID>889</main1:mRID>
-                                            <!--Optional:-->
                                             <main1:direction>North</main1:direction>
-                                            <!--Optional:-->
                                             <main1:CoordinateSystem>
                                                 <main1:crsUrn>csn</main1:crsUrn>
                                             </main1:CoordinateSystem>
-                                            <!--Zero or more repetitions:-->
                                             <main1:Hazards>
-                                                <!--Optional:-->
                                                 <main1:type>crit</main1:type>
                                             </main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:mainAddress>
                                                 <main1:streetDetail>
                                                     <main1:addressGeneral>101 north st</main1:addressGeneral>
-                                                    <!--Optional:-->
                                                     <main1:buildingName>bld</main1:buildingName>
-                                                    <!--Optional:-->
                                                     <main1:code>123</main1:code>
-                                                    <!--Optional:-->
                                                     <main1:name>eagle</main1:name>
-                                                    <!--Optional:-->
                                                     <main1:number>123</main1:number>
-                                                    <!--Optional:-->
                                                     <main1:prefix>Mr</main1:prefix>
-                                                    <!--Optional:-->
                                                     <main1:suffix>Jr</main1:suffix>
-                                                    <!--Optional:-->
                                                     <main1:suiteNumber>102</main1:suiteNumber>
-                                                    <!--Optional:-->
                                                     <main1:type>residence</main1:type>
-                                                    <!--Optional:-->
                                                     <main1:withinTownLimits>true</main1:withinTownLimits>
                                                 </main1:streetDetail>
                                                 <main1:townDetail>
-                                                    <!--Optional:-->
                                                     <main1:code>twn</main1:code>
-                                                    <!--Optional:-->
                                                     <main1:country>US</main1:country>
                                                     <main1:name>Wake</main1:name>
-                                                    <!--Optional:-->
                                                     <main1:section>123</main1:section>
-                                                    <!--Optional:-->
                                                     <main1:stateOrProvince>CA</main1:stateOrProvince>
                                                 </main1:townDetail>
                                             </main1:mainAddress>
-                                            <!--Zero or more repetitions:-->
                                             <main1:PositionPoints>
-                                                <!--Optional:-->
                                                 <main1:sequenceNumber>7</main1:sequenceNumber>
-                                                <!--Optional:-->
                                                 <main1:xPosition>123</main1:xPosition>
-                                                <!--Optional:-->
                                                 <main1:yPosition>567</main1:yPosition>
-                                                <!--Optional:-->
                                                 <main1:zPosition>333</main1:zPosition>
                                             </main1:PositionPoints>
-                                            <!--Optional:-->
                                         </main1:Location>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Names>
                                             <main1:name>na1</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameType>
-                                                <!--Optional:-->
                                                 <main1:description>nt desc</main1:description>
                                                 <main1:name>nt name</main1:name>
-                                                <!--Optional:-->
                                                 <main1:NameTypeAuthority>
-                                                    <!--Optional:-->
                                                     <main1:description>nta desc</main1:description>
                                                     <main1:name>ta name</main1:name>
                                                 </main1:NameTypeAuthority>
                                             </main1:NameType>
                                         </main1:Names>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Procedures>
                                             <main1:instruction>look up</main1:instruction>
-                                            <!--Optional:-->
                                             <main1:kind>diagnosis</main1:kind>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>3</main1:sequenceNumber>
-                                            <!--Zero or more repetitions:-->
                                             <main1:Measurements>
-                                                <!--Optional:-->
                                                 <main1:measurementType>ft</main1:measurementType>
-                                                <!--Optional:-->
                                                 <main1:phases>AB</main1:phases>
-                                                <!--Optional:-->
                                                 <main1:unitMultiplier>1.1</main1:unitMultiplier>
-                                                <!--Optional:-->
                                                 <main1:unitSymbol>SS</main1:unitSymbol>
                                             </main1:Measurements>
                                         </main1:Procedures>
                                     </main1:WorkAssets>
                                 </main1:Crews>
-                                <!--Zero or more repetitions:-->
                                 <main1:MaterialItems>
-                                    <!-- TODO : doesn't persist, error BJG
-                                    <main1:Names>
-                                        <main1:name>mati1</main1:name>
-                                        
-                                        <main1:NameType>
-                                            
-                                            <main1:description>mati nt 1</main1:description>
-                                            <main1:name>mati n 1</main1:name>
-                                            
-                                            <main1:NameTypeAuthority>
-                                                
-                                                <main1:description>mat 1 nta</main1:description>
-                                                <main1:name>mat1 nta nanme</main1:name>
-                                            </main1:NameTypeAuthority>
-                                        </main1:NameType>
-                                    </main1:Names>
-                                    -->
                                     <main1:quantity>
-                                        <!--Optional:-->
                                         <main1:multiplier>1.1</main1:multiplier>
-                                        <!--Optional:-->
                                         <main1:unit>ft</main1:unit>
                                         <main1:value>23</main1:value>
                                     </main1:quantity>
                                 </main1:MaterialItems>
-                                <!--Zero or more repetitions:-->
                                 <main1:Names>
                                     <main1:name>mat1 n</main1:name>
-                                    <!--Optional:-->
                                     <main1:NameType>
-                                        <!--Optional:-->
                                         <main1:description>mat1 n desc</main1:description>
                                         <main1:name>mat 1 n desc n</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameTypeAuthority>
-                                            <!--Optional:-->
                                             <main1:description>mat 1 nta desc</main1:description>
                                             <main1:name>mat 1 nta name</main1:name>
                                         </main1:NameTypeAuthority>
                                     </main1:NameType>
                                 </main1:Names>
-                                <!--Optional:-->
                                 <main1:OldAsset>
-                                    <!--Optional:-->
                                     <main1:mRID>9988</main1:mRID>
                                     <main1:critical>true</main1:critical>
                                     <main1:utcNumber>123</main1:utcNumber>
-                                    <!--Optional:-->
                                     <main1:Location>
-                                        <!--Optional:-->
                                         <main1:mRID>223</main1:mRID>
-                                        <!--Optional:-->
                                         <main1:direction>East</main1:direction>
-                                        <!--Optional:-->
                                         <main1:CoordinateSystem>
                                             <main1:crsUrn>urn</main1:crsUrn>
                                         </main1:CoordinateSystem>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Hazards>
-                                            <!--Optional:-->
                                             <main1:type>critical</main1:type>
                                         </main1:Hazards>
-                                        <!--Optional:-->
                                         <main1:mainAddress>
                                             <main1:streetDetail>
                                                 <main1:addressGeneral>200 North Street</main1:addressGeneral>
-                                                <!--Optional:-->
                                                 <main1:buildingName>Sparrow</main1:buildingName>
-                                                <!--Optional:-->
                                                 <main1:code>123</main1:code>
-                                                <!--Optional:-->
                                                 <main1:name>build1</main1:name>
-                                                <!--Optional:-->
                                                 <main1:number>203</main1:number>
-                                                <!--Optional:-->
                                                 <main1:prefix>Mr.</main1:prefix>
-                                                <!--Optional:-->
                                                 <main1:suffix>Jr</main1:suffix>
-                                                <!--Optional:-->
                                                 <main1:suiteNumber>209a</main1:suiteNumber>
-                                                <!--Optional:-->
                                                 <main1:type>business</main1:type>
-                                                <!--Optional:-->
                                                 <main1:withinTownLimits>true</main1:withinTownLimits>
                                             </main1:streetDetail>
                                             <main1:townDetail>
-                                                <!--Optional:-->
                                                 <main1:code>123</main1:code>
-                                                <!--Optional:-->
                                                 <main1:country>?</main1:country>
                                                 <main1:name>tdname</main1:name>
-                                                <!--Optional:-->
                                                 <main1:section>123</main1:section>
-                                                <!--Optional:-->
                                                 <main1:stateOrProvince>?</main1:stateOrProvince>
                                             </main1:townDetail>
                                         </main1:mainAddress>
-                                        <!--Zero or more repetitions:-->
                                         <main1:PositionPoints>
-                                            <!--Optional:-->
                                             <main1:sequenceNumber>3</main1:sequenceNumber>
-                                            <!--Optional:-->
                                             <main1:xPosition>908</main1:xPosition>
-                                            <!--Optional:-->
                                             <main1:yPosition>382</main1:yPosition>
-                                            <!--Optional:-->
                                             <main1:zPosition>333</main1:zPosition>
                                         </main1:PositionPoints>
-                                        <!--Optional:-->
                                     </main1:Location>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Names>
                                         <main1:name>n1</main1:name>
-                                        <!--Optional:-->
                                         <main1:NameType>
-                                            <!--Optional:-->
                                             <main1:description>nt desc</main1:description>
                                             <main1:name>nt name</main1:name>
-                                            <!--Optional:-->
                                             <main1:NameTypeAuthority>
-                                                <!--Optional:-->
                                                 <main1:description>nta desc</main1:description>
                                                 <main1:name>nta name</main1:name>
                                             </main1:NameTypeAuthority>
                                         </main1:NameType>
                                     </main1:Names>
-                                    <!--Zero or more repetitions:-->
                                     <main1:Procedures>
                                         <main1:instruction>duck!</main1:instruction>
-                                        <!--Optional:-->
                                         <main1:kind>diagnosis</main1:kind>
-                                        <!--Optional:-->
                                         <main1:sequenceNumber>1</main1:sequenceNumber>
-                                        <!--Zero or more repetitions:-->
                                         <main1:Measurements>
-                                            <!--Optional:-->
                                             <main1:measurementType>Mt</main1:measurementType>
-                                            <!--Optional:-->
                                             <main1:phases>BC</main1:phases>
-                                            <!--Optional:-->
                                             <main1:unitMultiplier>1.2</main1:unitMultiplier>
-                                            <!--Optional:-->
                                             <main1:unitSymbol>UN</main1:unitSymbol>
                                         </main1:Measurements>
                                     </main1:Procedures>
                                 </main1:OldAsset>
-                                <!--Optional:-->
                                 <main1:TimeSchedules>
                                     <main1:kind>earliest</main1:kind>
                                     <main1:scheduleInterval>
-                                        <!--Optional:-->
                                         <main1:end>2011-03-03T12:07:56.590-05:15</main1:end>
-                                        <!--Optional:-->
                                         <main1:start>2011-03-03T12:07:56.590-05:16</main1:start>
                                     </main1:scheduleInterval>
                                 </main1:TimeSchedules>
                             </main1:WorkTasks>
-<!--
-                            <main1:Attachments>
-                                <main1:Attachment>
-                                    <main1:Comment>test attachment 1</main1:Comment>
-                                    <main1:Description>it is a rabbit</main1:Description>
-                                    <main1:Url>http://sciencenordic.com/sites/default/files/imagecache/620x/rabbit_0.jpg</main1:Url>
-                                </main1:Attachment>
-                                <main1:Attachment>
-                                    <main1:Comment>test attachment 2</main1:Comment>
-                                    <main1:Description>it is a dog</main1:Description>
-                                    <main1:Url>http://www.dogguide.net/blog/wp-content/uploads/2008/10/2597866140_ab1cc67da0.jpg</main1:Url>
-                                </main1:Attachment>
-                            </main1:Attachments> -->
                         </main1:Work>
-                    </main1:MaintenanceOrder>                  
+                    </main1:MaintenanceOrder>
                 </main1:MaintenanceOrders>
             </main:Payload>
         </main:CreateMaintenanceOrders>
