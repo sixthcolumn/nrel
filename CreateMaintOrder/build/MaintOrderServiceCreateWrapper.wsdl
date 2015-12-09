@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MaintOrderServiceCreateWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/MaintOrderServiceCreateWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/MaintOrderServiceCreateWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders">
+    <import location="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl=MaintenanceOrders_Port.wsdl" namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders"/>
+    <import location="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl" namespace="http://ws.server.sixthc.com/"/>
+    <plnk:partnerLinkType name="MaintenanceOrders_PortLinkType">
+        <plnk:role name="MaintenanceOrders_PortRole" portType="ns:MaintenanceOrders_Port"/>
+    </plnk:partnerLinkType>
+</definitions>

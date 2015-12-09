@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/MaintOrder/maintOrder" xmlns:ns10="NRELApp" xmlns:ns11="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns2="http://j2ee.netbeans.org/wsdl/MaintOrder/src/LogOutboundMessage" xmlns:ns3="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:ns4="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns5="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" xmlns:ns6="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/Log3" xmlns:ns7="http://j2ee.netbeans.org/wsdl/MaintOrder/src/LogReplies" xmlns:ns8="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns9="http://ws.server.sixthc.com/" version="1.0">
+    <services binding-component="true">
+        <provides endpoint-name="LogOutboundMessage_OutboundPort" interface-name="ns2:FileOutboundPortType" service-name="ns2:FileOutboundService"/>
+        <provides endpoint-name="LogRequest_OutboundPort" interface-name="ns4:FileOutboundPortType" service-name="ns4:FileOutboundService"/>
+        <provides endpoint-name="LogResponse_OutboundPort" interface-name="ns5:FileOutboundPortType" service-name="ns5:FileOutboundService"/>
+        <provides endpoint-name="Log3_OutboundPort" interface-name="ns6:FileOutboundPortType" service-name="ns6:FileOutboundService"/>
+        <provides endpoint-name="LogReplies_OutboundPort" interface-name="ns7:FileOutboundPortType" service-name="ns7:FileOutboundService"/>
+    </services>
+</jbi>

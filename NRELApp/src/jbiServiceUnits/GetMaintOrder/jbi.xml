@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:ns1="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns2="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns3="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" xmlns:ns4="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/Log3" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+    <services binding-component="false">
+        <provides endpoint-name="GetMaintenanceOrders_PortRole_myRole" interface-name="ns1:GetMaintenanceOrders_Port" service-name="ns0:Service">
+            <ns5:display-name>Service</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </provides>
+        <consumes endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" interface-name="ns1:GetMaintenanceOrders_Port" service-name="ns0:R1">
+            <ns5:display-name>R1</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" interface-name="ns1:GetMaintenanceOrders_Port" service-name="ns0:R2">
+            <ns5:display-name>R2</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns2:FileOutboundPortType" service-name="ns0:LogRequest">
+            <ns5:display-name>LogRequest</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns3:FileOutboundPortType" service-name="ns0:LogResponse">
+            <ns5:display-name>LogResponse</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </consumes>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns4:FileOutboundPortType" service-name="ns0:Log3">
+            <ns5:display-name>Log3</ns5:display-name>
+            <ns5:process-name>getMaintOrder</ns5:process-name>
+            <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
+        </consumes>
+    </services>
+</jbi>
