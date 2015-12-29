@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl" uri="src/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl"/>
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl=MaintenanceOrders_Port.wsdl" uri="src/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimCreate/ExecuteMaintenanceOrders.wsdl" uri="src/ExecuteMaintenanceOrders.wsdl"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd" uri="src/xsd/MaintenanceOrdersMessage.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimCreate/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrders.xsd" uri="src/xsd/MaintenanceOrders.xsd"/>
 </catalog>

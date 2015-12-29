@@ -8,22 +8,22 @@
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-             targetNamespace="NRELApp"
-             xmlns:tns="NRELApp" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/CreateMaintOrder/localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl"/>
+             targetNamespace="NRELAppCreate"
+             xmlns:tns="NRELAppCreate" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/CreateMaintOrder/ExecuteMaintenanceOrders.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:MaintenanceOrders_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="CreateMaintenanceOrders">
             <soap:operation/>
-            <input name="CreateMaintenanceOrders">
+            <input name="CreateMaintenanceOrdersRequest">
                 <soap:body use="literal"/>
             </input>
             <output name="CreateMaintenanceOrdersResponse">
                 <soap:body use="literal"/>
             </output>
-            <fault name="FaultMessage">
-                <soap:fault name="FaultMessage" use="literal"/>
+            <fault name="CreateMaintenanceOrdersFault">
+                <soap:fault name="CreateMaintenanceOrdersFault" use="literal"/>
             </fault>
         </operation>
     </binding>
@@ -31,23 +31,23 @@
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="CreateMaintenanceOrders">
             <soap:operation/>
-            <input name="CreateMaintenanceOrders">
+            <input name="CreateMaintenanceOrdersRequest">
                 <soap:body use="literal"/>
             </input>
             <output name="CreateMaintenanceOrdersResponse">
                 <soap:body use="literal"/>
             </output>
-            <fault name="FaultMessage">
-                <soap:fault name="FaultMessage" use="literal"/>
+            <fault name="CreateMaintenanceOrdersFault">
+                <soap:fault name="CreateMaintenanceOrdersFault" use="literal"/>
             </fault>
         </operation>
     </binding>
-    <service name="NRELAppService1">
+    <service name="NRELAppCreateService1">
         <port name="casaPort1" binding="tns:casaBinding1">
             <soap:address location="${NREL_CREATE_R1}"/>
         </port>
     </service>
-    <service name="NRELAppService2">
+    <service name="NRELAppCreateService2">
         <port name="casaPort2" binding="tns:casaBinding2">
             <soap:address location="${NREL_CREATE_R2}"/>
         </port>
