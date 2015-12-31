@@ -21,13 +21,13 @@
             <ns5:process-name>getMaintOrder</ns5:process-name>
             <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
         </consumes>
-        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns3:FileOutboundPortType" service-name="ns0:LogResponse">
-            <ns5:display-name>LogResponse</ns5:display-name>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns3:FileOutboundPortType" service-name="ns0:LogR1">
+            <ns5:display-name>LogR1</ns5:display-name>
             <ns5:process-name>getMaintOrder</ns5:process-name>
             <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
         </consumes>
-        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns4:FileOutboundPortType" service-name="ns0:Log3">
-            <ns5:display-name>Log3</ns5:display-name>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns4:FileOutboundPortType" service-name="ns0:LogR2">
+            <ns5:display-name>LogR2</ns5:display-name>
             <ns5:process-name>getMaintOrder</ns5:process-name>
             <ns5:file-path>getMaintOrder.bpel</ns5:file-path>
         </consumes>

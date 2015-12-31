@@ -11,8 +11,8 @@
         <endpoint display-name="R1" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:GetMaintenanceOrders_Port" name="endpoint8" process-name="getMaintOrder" service-name="ns6:R1"/>
         <endpoint display-name="R2" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:GetMaintenanceOrders_Port" name="endpoint9" process-name="getMaintOrder" service-name="ns6:R2"/>
         <endpoint display-name="LogRequest" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns1:FileOutboundPortType" name="endpoint10" process-name="getMaintOrder" service-name="ns6:LogRequest"/>
-        <endpoint display-name="LogResponse" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint11" process-name="getMaintOrder" service-name="ns6:LogResponse"/>
-        <endpoint display-name="Log3" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint12" process-name="getMaintOrder" service-name="ns6:Log3"/>
+        <endpoint display-name="LogR1" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint11" process-name="getMaintOrder" service-name="ns6:LogR1"/>
+        <endpoint display-name="LogR2" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint12" process-name="getMaintOrder" service-name="ns6:LogR2"/>
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="GetMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="NRELAppGet-GetMaintOrder" unit-name="GetMaintOrder" unknown="false" x="146" y="97">
@@ -26,19 +26,19 @@
         <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="NRELAppGet-sun-file-binding" unit-name="sun-file-binding">
             <ports>
                 <port x="67" y="191">
-                    <link xlink:href="../jbiasa/GetMaintOrder/Log3.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='Log3_OutboundPort'])" xlink:type="simple"/>
+                    <link xlink:href="../jbiasa/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogResponse_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="114">
+                    <link xlink:href="../jbiasa/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='Log3_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
                 </port>
-                <port x="67" y="114">
+                <port x="67" y="37">
                     <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
-                </port>
-                <port x="67" y="37">
-                    <link xlink:href="../jbiasa/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogResponse_OutboundPort'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint2"/>
-                    <provides endpoint="endpoint2"/>
                 </port>
             </ports>
         </binding-component-service-unit>
@@ -74,41 +74,41 @@
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/Log3.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/NRELAppGet.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/Log3.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppGet.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
     </porttypes>
     <bindings>
         <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='GetMaintenanceOrders_Binding'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/Log3.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/NRELAppGet.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/NRELAppGet.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='GetMaintenanceOrders_Binding'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/Log3.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppGet.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppGet.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
     </bindings>
     <services>
         <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/Log3.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/NRELAppGet.wsdl#xpointer(/definitions/service[@name='NRELAppGetService1'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/NRELAppGet.wsdl#xpointer(/definitions/service[@name='NRELAppGetService2'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/Log3.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR1.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogR2.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogResponse.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppGet.wsdl#xpointer(/definitions/service[@name='NRELAppGetService1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppGet.wsdl#xpointer(/definitions/service[@name='NRELAppGetService2'])" xlink:type="simple"/>
     </services>

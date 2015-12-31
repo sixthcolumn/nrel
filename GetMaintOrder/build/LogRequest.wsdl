@@ -21,7 +21,7 @@
         <operation name="write">
             <file:operation verb="write"/>
             <input name="input1">
-                <file:message fileName="GetMaintOrderRequestLog.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+                <file:message fileName="getMaintOrderRequest.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
             </input>
         </operation>
     </binding>
