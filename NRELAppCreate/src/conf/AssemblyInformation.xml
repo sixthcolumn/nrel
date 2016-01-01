@@ -2,22 +2,22 @@
 <jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
     <service-assembly>
         <identification>
-            <name>NRELAppGet</name>
-            <description>Represents the Service Assembly of NRELAppGet</description>
+            <name>NRELAppCreate</name>
+            <description>Represents the Service Assembly of NRELAppCreate</description>
         </identification>
         <service-unit>
             <identification>
-                <name>NRELAppGet-GetMaintOrder</name>
+                <name>NRELAppCreate-Create2</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
-                <artifacts-zip>GetMaintOrder.jar</artifacts-zip>
+                <artifacts-zip>Create2.jar</artifacts-zip>
                 <component-name>sun-bpel-engine</component-name>
             </target>
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-database-binding</name>
+                <name>NRELAppCreate-sun-database-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -27,7 +27,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-email-binding</name>
+                <name>NRELAppCreate-sun-email-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -37,7 +37,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-file-binding</name>
+                <name>NRELAppCreate-sun-file-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -47,7 +47,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-ftp-binding</name>
+                <name>NRELAppCreate-sun-ftp-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -57,7 +57,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-hl7-binding</name>
+                <name>NRELAppCreate-sun-hl7-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -67,7 +67,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-http-binding</name>
+                <name>NRELAppCreate-sun-http-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -77,7 +77,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-jms-binding</name>
+                <name>NRELAppCreate-sun-jms-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -87,7 +87,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-ldap-binding</name>
+                <name>NRELAppCreate-sun-ldap-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -97,7 +97,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-rest-binding</name>
+                <name>NRELAppCreate-sun-rest-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -107,7 +107,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-scheduler-binding</name>
+                <name>NRELAppCreate-sun-scheduler-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
@@ -117,7 +117,7 @@
         </service-unit>
         <service-unit>
             <identification>
-                <name>NRELAppGet-sun-webspheremq-binding</name>
+                <name>NRELAppCreate-sun-webspheremq-binding</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>

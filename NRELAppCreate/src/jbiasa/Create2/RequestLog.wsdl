@@ -1,15 +1,15 @@
-<definitions name="R1ResponseLog" targetNamespace="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R1ResponseLog"
+<definitions name="RequestLog" targetNamespace="http://j2ee.netbeans.org/wsdl/Create2/src/RequestLog"
     xmlns="http://schemas.xmlsoap.org/wsdl/"
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-    xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/" xmlns:tns="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R1ResponseLog" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns0="http://iec.ch/TC57/2015/MaintenanceOrdersMessage">
+    xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/" xmlns:tns="http://j2ee.netbeans.org/wsdl/Create2/src/RequestLog" xmlns:ns="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     <types>
-        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R1ResponseLog">
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/Create2/src/RequestLog">
             <xsd:import namespace="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" schemaLocation="file:/Users/BenGoodwin/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd"/>
         </xsd:schema>
     </types>
     <message name="WriteInputMessage">
-        <part name="part1" element="ns0:MaintenanceOrdersResponseMessage"/>
+        <part name="part1" element="ns:CreateMaintenanceOrders"/>
     </message>    
     <portType name="FileOutboundPortType">
         <operation name="write">
@@ -21,16 +21,16 @@
         <operation name="write">
             <file:operation verb="write"/>
             <input name="input1">
-                <file:message fileName="createMaintOrder_r1.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+                <file:message fileName="createMaintOrder.xml" use="literal" part="part1"/>
             </input>
         </operation>
     </binding>
     <service name="FileOutboundService">
-        <port name="R1ResponseLog_OutboundPort" binding="tns:FileOutboundBinding">
+        <port name="RequestLog_OutboundPort" binding="tns:FileOutboundBinding">
             <file:address fileDirectory="/tmp"/>
         </port>
     </service>
-    <plnk:partnerLinkType name="R1ResponseLog">
+    <plnk:partnerLinkType name="RequestLog">
         <!-- A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
 In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
 A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->

@@ -9,8 +9,9 @@
              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              targetNamespace="NRELAppCreate"
-             xmlns:tns="NRELAppCreate" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/CreateMaintOrder/ExecuteMaintenanceOrders.wsdl"/>
+             xmlns:tns="NRELAppCreate" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Create2/src/ReplyLog" xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/">
+    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/Create2/ExecuteMaintenanceOrders.wsdl"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/Create2/src/ReplyLog" location="../jbiServiceUnits/Create2/ReplyLog.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:MaintenanceOrders_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -42,6 +43,15 @@
             </fault>
         </operation>
     </binding>
+    <binding name="casaBinding3" type="ns1:FileOutboundPortType">
+        <file:binding/>
+        <operation name="write">
+            <file:operation verb="poll"/>
+            <input name="input1">
+                <file:message fileName="createMaintOrder_r2.xml" pollingInterval="1000" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+            </input>
+        </operation>
+    </binding>
     <service name="NRELAppCreateService1">
         <port name="casaPort1" binding="tns:casaBinding1">
             <soap:address location="${NREL_CREATE_R1}"/>
@@ -50,6 +60,11 @@
     <service name="NRELAppCreateService2">
         <port name="casaPort2" binding="tns:casaBinding2">
             <soap:address location="${NREL_CREATE_R2}"/>
+        </port>
+    </service>
+    <service name="NRELAppCreateService3">
+        <port name="casaPort3" binding="tns:casaBinding3">
+            <file:address fileDirectory="/tmp" lockName="filebc.lck" workArea="filebc-in-processing" seqName="filebc.seq"/>
         </port>
     </service>
 </definitions>

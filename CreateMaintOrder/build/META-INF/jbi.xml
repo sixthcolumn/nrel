@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/CreateMaintOrder2/createMaintOrder2" xmlns:ns1="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns2="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/ServiceOutLog" xmlns:ns3="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R1ResponseLog" xmlns:ns4="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R2ResponseLog" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns0="http://enterprise.netbeans.org/bpel/CreateMaintOrder2/createMaintOrder2" xmlns:ns1="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns2="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogRequest" xmlns:ns3="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R1ResponseLog" xmlns:ns4="http://j2ee.netbeans.org/wsdl/CreateMaintOrder2/src/R2ResponseLog" xmlns:ns5="http://www.sun.com/jbi/descriptor/service-unit" version="1.0">
     <services binding-component="false">
         <provides endpoint-name="MaintenanceOrders_PortRole_myRole" interface-name="ns1:MaintenanceOrders_Port" service-name="ns0:Service">
             <ns5:display-name>Service</ns5:display-name>
@@ -16,8 +16,8 @@
             <ns5:process-name>createMaintOrder2</ns5:process-name>
             <ns5:file-path>createMaintOrder2.bpel</ns5:file-path>
         </consumes>
-        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns2:FileOutboundPortType" service-name="ns0:PartnerLink1">
-            <ns5:display-name>PartnerLink1</ns5:display-name>
+        <consumes endpoint-name="FileOutboundPortTypeRole_partnerRole" interface-name="ns2:FileOutboundPortType" service-name="ns0:RequestLog">
+            <ns5:display-name>RequestLog</ns5:display-name>
             <ns5:process-name>createMaintOrder2</ns5:process-name>
             <ns5:file-path>createMaintOrder2.bpel</ns5:file-path>
         </consumes>
