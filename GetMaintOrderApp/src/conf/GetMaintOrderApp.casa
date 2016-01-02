@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="GetMaintOrderApp" xmlns:ns2="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns3="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns4="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns5="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="casaPort1" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint1" service-name="ns1:GetMaintOrderAppService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint2" service-name="ns1:GetMaintOrderAppService2"/>
+        <endpoint endpoint-name="casaPort3" interface-name="ns3:FileOutboundPortType" name="endpoint3" service-name="ns1:GetMaintOrderAppService3"/>
+        <endpoint endpoint-name="LogRequest_OutboundPort" interface-name="ns4:FileOutboundPortType" name="endpoint4" service-name="ns4:FileOutboundService"/>
+        <endpoint endpoint-name="LogReply_OutboundPort" interface-name="ns3:FileOutboundPortType" name="endpoint5" service-name="ns3:FileOutboundService"/>
+        <endpoint endpoint-name="GetMaintenanceOrders_Port" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint6" service-name="ns2:GetMaintenanceOrders"/>
+        <endpoint display-name="Service" endpoint-name="GetMaintenanceOrders_PortRole_myRole" file-path="getMaintOrder.bpel" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint7" process-name="getMaintOrder" service-name="ns5:Service"/>
+        <endpoint display-name="R1" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint8" process-name="getMaintOrder" service-name="ns5:R1"/>
+        <endpoint display-name="R2" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns2:GetMaintenanceOrders_Port" name="endpoint9" process-name="getMaintOrder" service-name="ns5:R2"/>
+        <endpoint display-name="ServiceLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:FileOutboundPortType" name="endpoint10" process-name="getMaintOrder" service-name="ns5:ServiceLog"/>
+        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint11" process-name="getMaintOrder" service-name="ns5:R1Log"/>
+        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint12" process-name="getMaintOrder" service-name="ns5:R2Log"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="GetMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetMaintOrderApp-GetMaintOrder" unit-name="GetMaintOrder" unknown="false" x="148" y="306">
+            <provides endpoint="endpoint7"/>
+            <consumes endpoint="endpoint8"/>
+            <consumes endpoint="endpoint9"/>
+            <consumes endpoint="endpoint10"/>
+            <consumes endpoint="endpoint11"/>
+            <consumes endpoint="endpoint12"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="GetMaintOrderApp-sun-file-binding" unit-name="sun-file-binding">
+            <ports>
+                <port x="67" y="114">
+                    <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogReply_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port bindingType="file" x="67" y="191">
+                    <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService3']/port[@name='casaPort3'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="GetMaintOrderApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="348">
+                    <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders']/port[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port bindingType="soap" x="67" y="428">
+                    <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="67" y="505">
+                    <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint10" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint11" provider="endpoint5" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint7" state="unchanged"/>
+        <connection consumer="endpoint12" provider="endpoint3" state="new"/>
+        <connection consumer="endpoint8" provider="endpoint1" state="new"/>
+        <connection consumer="endpoint9" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint12" provider="endpoint5" state="deleted"/>
+        <connection consumer="endpoint8" provider="endpoint7" state="deleted"/>
+        <connection consumer="endpoint9" provider="endpoint7" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='GetMaintenanceOrders_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='GetMaintenanceOrders_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/GetMaintOrderApp.wsdl#xpointer(/definitions/service[@name='GetMaintOrderAppService3'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/CreateMaintOrder/createMaintOrder" xmlns:ns2="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogRequest" xmlns:ns3="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns4="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply" xmlns:ns5="CreateMaintOrderApp" version="1.0">
+    <services binding-component="true">
+        <provides endpoint-name="LogRequest_OutboundPort" interface-name="ns2:FileOutboundPortType" service-name="ns2:FileOutboundService"/>
+        <provides endpoint-name="LogReply_OutboundPort" interface-name="ns4:FileOutboundPortType" service-name="ns4:FileOutboundService"/>
+        <provides endpoint-name="casaPort1" interface-name="ns4:FileOutboundPortType" service-name="ns5:CreateMaintOrderAppService1"/>
+    </services>
+</jbi>
