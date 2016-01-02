@@ -1,4 +1,0 @@
-Bundle-Name: Epri2App
-Bundle-SymbolicName: Epri2App
-Bundle-ManifestVersion: 2
-Bundle-Version: 1.0.0

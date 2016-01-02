@@ -1,4 +1,0 @@
-Bundle-Name: GetMaintOrderApp
-Bundle-SymbolicName: GetMaintOrderApp
-Bundle-ManifestVersion: 2
-Bundle-Version: 1.0.0

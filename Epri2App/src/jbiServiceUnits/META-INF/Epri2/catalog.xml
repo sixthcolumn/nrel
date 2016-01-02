@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl" uri="../localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl"/>
-    <system systemId="http://localhost:8080/epriConnect/MaintOrderServiceCreate?wsdl=MaintenanceOrders_Port.wsdl" uri="../localhost_8080/epriConnect/MaintOrderServiceCreate.wsdl_MaintenanceOrders_Port.wsdl"/>
-    <system systemId="http://schemas.xmlsoap.org/soap/http" uri="src/_references/_relative/nbproject/private/retriever/schemas.xmlsoap.org/soap/http/index.xml"/>
-</catalog>
