@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="NRELAppCreate" xmlns:ns2="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns3="http://j2ee.netbeans.org/wsdl/CreateMainOrder/src/ReplyLog" xmlns:ns4="http://j2ee.netbeans.org/wsdl/CreateMainOrder/src/RequestLog" xmlns:ns5="http://enterprise.netbeans.org/bpel/CreateMainOrder/createMainOrder" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="casaPort1" interface-name="ns2:MaintenanceOrders_Port" name="endpoint1" service-name="ns1:NRELAppCreateService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns2:MaintenanceOrders_Port" name="endpoint2" service-name="ns1:NRELAppCreateService2"/>
+        <endpoint endpoint-name="casaPort3" interface-name="ns3:FileOutboundPortType" name="endpoint3" service-name="ns1:NRELAppCreateService3"/>
+        <endpoint endpoint-name="RequestLog_OutboundPort" interface-name="ns4:FileOutboundPortType" name="endpoint4" service-name="ns4:FileOutboundService"/>
+        <endpoint endpoint-name="ReplyLog_OutboundPort" interface-name="ns3:FileOutboundPortType" name="endpoint5" service-name="ns3:FileOutboundService"/>
+        <endpoint endpoint-name="MaintenanceOrders_Port" interface-name="ns2:MaintenanceOrders_Port" name="endpoint6" service-name="ns2:ExecuteMaintenanceOrders"/>
+        <endpoint display-name="Service" endpoint-name="MaintenanceOrders_PortRole_myRole" file-path="createMainOrder.bpel" interface-name="ns2:MaintenanceOrders_Port" name="endpoint7" process-name="createMainOrder" service-name="ns5:Service"/>
+        <endpoint display-name="R1" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMainOrder.bpel" interface-name="ns2:MaintenanceOrders_Port" name="endpoint8" process-name="createMainOrder" service-name="ns5:R1"/>
+        <endpoint display-name="R2" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMainOrder.bpel" interface-name="ns2:MaintenanceOrders_Port" name="endpoint9" process-name="createMainOrder" service-name="ns5:R2"/>
+        <endpoint display-name="RequestLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMainOrder.bpel" interface-name="ns4:FileOutboundPortType" name="endpoint10" process-name="createMainOrder" service-name="ns5:RequestLog"/>
+        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMainOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint11" process-name="createMainOrder" service-name="ns5:R1Log"/>
+        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMainOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint12" process-name="createMainOrder" service-name="ns5:R2Log"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="CreateMainOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="NRELAppCreate-CreateMainOrder" unit-name="CreateMainOrder" unknown="false" x="139" y="97">
+=======
 <casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Create2/src/ReplyLog" xmlns:ns2="http://j2ee.netbeans.org/wsdl/Create2/src/RequestLog" xmlns:ns3="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns4="NRELAppCreate" xmlns:ns5="http://enterprise.netbeans.org/bpel/Create2/create2" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
         <endpoint endpoint-name="ReplyLog_OutboundPort" interface-name="ns1:FileOutboundPortType" name="endpoint1" service-name="ns1:FileOutboundService"/>
@@ -16,6 +35,7 @@
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="Create2.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="NRELAppCreate-Create2" unit-name="Create2" unknown="false" x="163" y="338">
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
             <provides endpoint="endpoint7"/>
             <consumes endpoint="endpoint8"/>
             <consumes endpoint="endpoint9"/>
@@ -25,6 +45,22 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="NRELAppCreate-sun-file-binding" unit-name="sun-file-binding">
             <ports>
+<<<<<<< HEAD
+                <port x="67" y="114">
+                    <link xlink:href="../jbiasa/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='ReplyLog_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
+                </port>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiasa/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='RequestLog_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint4"/>
+                    <provides endpoint="endpoint4"/>
+                </port>
+                <port bindingType="file" x="67" y="268">
+                    <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService3']/port[@name='casaPort3'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+=======
                 <port x="67" y="191">
                     <link xlink:href="../jbiasa/Create2/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='ReplyLog_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
@@ -39,11 +75,29 @@
                     <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService3']/port[@name='casaPort3'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint6"/>
                     <provides endpoint="endpoint6"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
                 </port>
             </ports>
         </binding-component-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="NRELAppCreate-sun-http-binding" unit-name="sun-http-binding">
             <ports>
+<<<<<<< HEAD
+                <port x="67" y="345">
+                    <link xlink:href="../jbiasa/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders']/port[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint6"/>
+                    <provides endpoint="endpoint6"/>
+                </port>
+                <port bindingType="soap" x="67" y="422">
+                    <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="67" y="499">
+                    <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService2']/port[@name='casaPort2'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+=======
                 <port x="67" y="405">
                     <link xlink:href="../jbiasa/Create2/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders']/port[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
@@ -59,10 +113,43 @@
                     <consumes endpoint="endpoint5"/>
                     <provides endpoint="endpoint5"/>
                 </port>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
             </ports>
         </binding-component-service-unit>
     </service-units>
     <connections>
+<<<<<<< HEAD
+        <connection consumer="endpoint10" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint7" state="unchanged"/>
+        <connection consumer="endpoint11" provider="endpoint5" state="unchanged"/>
+        <connection consumer="endpoint8" provider="endpoint1" state="new"/>
+        <connection consumer="endpoint9" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint12" provider="endpoint3" state="new"/>
+        <connection consumer="endpoint8" provider="endpoint7" state="deleted"/>
+        <connection consumer="endpoint9" provider="endpoint7" state="deleted"/>
+        <connection consumer="endpoint12" provider="endpoint5" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/portType[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='MaintenanceOrders_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='MaintenanceOrders_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+=======
         <connection consumer="endpoint10" provider="endpoint2" state="unchanged"/>
         <connection consumer="endpoint3" provider="endpoint7" state="unchanged"/>
         <connection consumer="endpoint11" provider="endpoint1" state="unchanged"/>
@@ -93,11 +180,23 @@
         <link xlink:href="../jbiServiceUnits/Create2/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='MaintenanceOrders_Binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/Create2/ReplyLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/Create2/RequestLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
     </bindings>
     <services>
+<<<<<<< HEAD
+        <link xlink:href="../jbiasa/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService2'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService3'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CreateMainOrder/RequestLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+=======
         <link xlink:href="../jbiasa/Create2/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/Create2/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/Create2/RequestLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
@@ -107,6 +206,7 @@
         <link xlink:href="../jbiServiceUnits/Create2/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/Create2/ReplyLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/Create2/RequestLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService2'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/NRELAppCreate.wsdl#xpointer(/definitions/service[@name='NRELAppCreateService3'])" xlink:type="simple"/>

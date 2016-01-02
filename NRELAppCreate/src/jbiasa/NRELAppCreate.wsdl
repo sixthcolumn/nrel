@@ -9,9 +9,15 @@
              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              targetNamespace="NRELAppCreate"
+<<<<<<< HEAD
+             xmlns:tns="NRELAppCreate" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://j2ee.netbeans.org/wsdl/CreateMainOrder/src/ReplyLog" xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/">
+    <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/CreateMainOrder/ExecuteMaintenanceOrders.wsdl"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/CreateMainOrder/src/ReplyLog" location="../jbiServiceUnits/CreateMainOrder/ReplyLog.wsdl"/>
+=======
              xmlns:tns="NRELAppCreate" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://j2ee.netbeans.org/wsdl/Create2/src/ReplyLog" xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/">
     <import namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" location="../jbiServiceUnits/Create2/ExecuteMaintenanceOrders.wsdl"/>
     <import namespace="http://j2ee.netbeans.org/wsdl/Create2/src/ReplyLog" location="../jbiServiceUnits/Create2/ReplyLog.wsdl"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:MaintenanceOrders_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>

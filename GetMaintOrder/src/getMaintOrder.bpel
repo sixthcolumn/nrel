@@ -9,9 +9,20 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://iec.ch/TC57/2015/GetMaintenanceOrdersMessage">
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
     <import namespace="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" location="GetMaintenanceOrdersWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrders" location="file:/usr/local/git/nrel/61968/wsdl/CimGet/GetMaintenanceOrders.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+<<<<<<< HEAD
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/RequestLog" location="RequestLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" location="ReplyLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="R1" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:R1_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
+        <partnerLink name="R2" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:R2_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
+        <partnerLink name="RequestLog" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/RequestLog" partnerLinkType="tns:RequestLog" partnerRole="FileOutboundPortTypeRole"/>
+        <partnerLink name="R1Log" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" partnerLinkType="tns:ReplyLog" partnerRole="FileOutboundPortTypeRole"/>
+        <partnerLink name="R2Log" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" partnerLinkType="tns:ReplyLog" partnerRole="FileOutboundPortTypeRole"/>
+        <partnerLink name="Service" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:Service_PortLinkType" myRole="GetMaintenanceOrders_PortRole"/>
+=======
     <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" location="LogRequest.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" location="LogR1.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/Log3" location="LogR2.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -23,17 +34,17 @@
         <partnerLink name="LogR1" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" partnerLinkType="tns:LogResponse" partnerRole="FileOutboundPortTypeRole"/>
         <partnerLink name="LogR2" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" partnerLinkType="tns:LogResponse" partnerRole="FileOutboundPortTypeRole"/>
         <partnerLink name="Service" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:GetMaintenanceOrders_PortLinkType" myRole="GetMaintenanceOrders_PortRole"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
     </partnerLinks>
     <variables>
-        <variable name="Log3In" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/Log3" messageType="tns:WriteInputMessage"/>
-        <variable name="LogResponse2In" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" messageType="tns:WriteInputMessage"/>
-        <variable name="LogResponse1In" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" messageType="tns:WriteInputMessage"/>
-        <variable name="R2Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="R2In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
-        <variable name="ServiceOut" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="R1Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="R1In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
-        <variable name="LogRequestIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" messageType="tns:WriteInputMessage"/>
+        <variable name="ReplyFromR1" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="LogResponseR2" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" messageType="tns:WriteInputMessage"/>
+        <variable name="LogResponseR1" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" messageType="tns:WriteInputMessage"/>
+        <variable name="LogRequestIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/RequestLog" messageType="tns:WriteInputMessage"/>
+        <variable name="InvokeR2Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="InvokeR2In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
+        <variable name="InvokeR1Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="InvokeR1In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
         <variable name="ServiceIn" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
     </variables>
     <sequence>
@@ -41,40 +52,42 @@
         <assign name="Assign1">
             <copy>
                 <from variable="ServiceIn"/>
-                <to variable="R1In"/>
+                <to variable="InvokeR1In"/>
+            </copy>
+            <copy>
+                <from variable="ServiceIn"/>
+                <to variable="InvokeR2In"/>
             </copy>
             <copy>
                 <from variable="ServiceIn" part="GetMaintenanceOrdersRequestMessage"/>
                 <to variable="LogRequestIn" part="part1"/>
             </copy>
-            <copy>
-                <from variable="ServiceIn"/>
-                <to variable="R2In"/>
-            </copy>
         </assign>
-        <invoke name="InvokeR1" partnerLink="R1" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R1In" outputVariable="R1Out"/>
-        <invoke name="InvokeR2" partnerLink="R2" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R2In" outputVariable="R2Out"/>
-        <invoke name="LogRequest" partnerLink="LogRequest" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" portType="tns:FileOutboundPortType" inputVariable="LogRequestIn"/>
+        <invoke name="InvokeR1" partnerLink="R1" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="InvokeR1In" outputVariable="InvokeR1Out"/>
+        <invoke name="InvokeR2" partnerLink="R2" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="InvokeR2In" outputVariable="InvokeR2Out"/>
+        <invoke name="LogRequest" partnerLink="RequestLog" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/RequestLog" portType="tns:FileOutboundPortType" inputVariable="LogRequestIn"/>
         <assign name="Assign2">
             <copy>
-                <from variable="R1Out"/>
-                <to variable="ServiceOut"/>
+                <from variable="InvokeR1Out"/>
+                <to variable="ReplyFromR1"/>
             </copy>
             <copy>
-                <from variable="R1Out" part="GetMaintenanceOrdersResponseMessage"/>
-                <to variable="LogResponse1In" part="part1"/>
+                <from variable="InvokeR1Out" part="GetMaintenanceOrdersResponseMessage"/>
+                <to variable="LogResponseR1" part="part1"/>
             </copy>
             <copy>
-                <from variable="R1Out"/>
-                <to variable="Log3In" part="part1"/>
-            </copy>
-            <copy>
-                <from variable="R2Out" part="GetMaintenanceOrdersResponseMessage"/>
-                <to variable="LogResponse2In" part="part1"/>
+                <from variable="InvokeR2Out" part="GetMaintenanceOrdersResponseMessage"/>
+                <to variable="LogResponseR2" part="part1"/>
             </copy>
         </assign>
+<<<<<<< HEAD
+        <invoke name="LogR1Response" partnerLink="R1Log" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" portType="tns:FileOutboundPortType" inputVariable="LogResponseR1"/>
+        <invoke name="LogResponseR2" partnerLink="R2Log" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/ReplyLog" portType="tns:FileOutboundPortType" inputVariable="LogResponseR2"/>
+        <reply name="ReplyFromR1" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ReplyFromR1"/>
+=======
         <invoke name="LogResponse1" partnerLink="LogR1" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" portType="tns:FileOutboundPortType" inputVariable="LogResponse1In"/>
         <invoke name="LogResponse2" partnerLink="LogR2" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogResponse" portType="tns:FileOutboundPortType" inputVariable="LogResponse2In"/>
         <reply name="Reply1" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ServiceOut"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
     </sequence>
 </process>

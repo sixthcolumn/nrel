@@ -38,7 +38,7 @@
 	</wsdl:binding>
 	<wsdl:service name="ExecuteMaintenanceOrders">
 		<wsdl:port name="MaintenanceOrders_Port" binding="tns:MaintenanceOrders_Binding">
-			<soap:address location="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders"/>
+			<soap:address location="${NREL_CREATE_SERVICE}"/>
 		</wsdl:port>
 	</wsdl:service>
 	<xs:schema targetNamespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrdersMessage" elementFormDefault="qualified">

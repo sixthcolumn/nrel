@@ -102,9 +102,15 @@
                 COMPILATION SECTION
             -->
     <target name="deps-jar" depends="init" unless="${no.dependencies}">
+<<<<<<< HEAD
+        <ant target="dist_se" inheritall="false" antfile="${project.CreateMainOrder}/build.xml"/>
+        <property name="CreateMainOrder.su.name" value="CreateMainOrder"/>
+        <unzip src="${reference.CreateMainOrder.dist_se}" dest="${src.dir}/../jbiServiceUnits/${CreateMainOrder.su.name}">
+=======
         <ant target="dist_se" inheritall="false" antfile="${project.Create2}/build.xml"/>
         <property name="Create2.su.name" value="Create2"/>
         <unzip src="${reference.Create2.dist_se}" dest="${src.dir}/../jbiServiceUnits/${Create2.su.name}">
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
             <patternset>
                 <include name="**/*.wsdl"/>
                 <include name="**/*.WSDL"/>
@@ -114,12 +120,21 @@
                 <include name="META-INF/catalog.xml"/>
             </patternset>
         </unzip>
+<<<<<<< HEAD
+        <property name="CreateMainOrder.su.dir" value="${src.dir}/../jbiServiceUnits/${CreateMainOrder.su.name}"/>
+        <move file="${CreateMainOrder.su.dir}/META-INF/jbi.xml" todir="${CreateMainOrder.su.dir}"/>
+        <move todir="${src.dir}/../jbiServiceUnits/META-INF/${CreateMainOrder.su.name}">
+            <fileset dir="${CreateMainOrder.su.dir}/META-INF"/>
+        </move>
+        <copy todir="${build.dir}" file="${reference.CreateMainOrder.dist_se}"/>
+=======
         <property name="Create2.su.dir" value="${src.dir}/../jbiServiceUnits/${Create2.su.name}"/>
         <move file="${Create2.su.dir}/META-INF/jbi.xml" todir="${Create2.su.dir}"/>
         <move todir="${src.dir}/../jbiServiceUnits/META-INF/${Create2.su.name}">
             <fileset dir="${Create2.su.dir}/META-INF"/>
         </move>
         <copy todir="${build.dir}" file="${reference.Create2.dist_se}"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
     </target>
     <target name="deps-javaee-jar" depends="init" unless="${no.dependencies}"/>
     <target name="pre-pre-compile" depends="init,deps-jar">
@@ -130,6 +145,15 @@
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target name="library-inclusion-in-archive" depends="compile">
+<<<<<<< HEAD
+        <unjar dest="${build.classes.dir}" src="${reference.CreateMainOrder.dist_se}"/>
+    </target>
+    <target name="library-inclusion-in-manifest" depends="compile">
+        <basename property="included.lib.reference.CreateMainOrder.dist_se" file="${reference.CreateMainOrder.dist_se}"/>
+        <copy todir="${build.classes.dir}" file="${reference.CreateMainOrder.dist_se}"/>
+        <manifest file="${build.classes.dir}/META-INF/MANIFEST.MF" mode="update">
+            <attribute name="Class-Path" value="${included.lib.reference.CreateMainOrder.dist_se}"/>
+=======
         <unjar dest="${build.classes.dir}" src="${reference.Create2.dist_se}"/>
     </target>
     <target name="library-inclusion-in-manifest" depends="compile">
@@ -137,6 +161,7 @@
         <copy todir="${build.classes.dir}" file="${reference.Create2.dist_se}"/>
         <manifest file="${build.classes.dir}/META-INF/MANIFEST.MF" mode="update">
             <attribute name="Class-Path" value="${included.lib.reference.Create2.dist_se}"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
         </manifest>
     </target>
     <target name="do-compile" depends="init,deps-jar,pre-pre-compile,pre-compile"/>
@@ -231,7 +256,11 @@
                 CLEANUP SECTION
             -->
     <target name="deps-clean" depends="init" unless="${no.dependencies}">
+<<<<<<< HEAD
+        <ant target="clean" inheritall="false" antfile="${project.CreateMainOrder}/build.xml"/>
+=======
         <ant target="clean" inheritall="false" antfile="${project.Create2}/build.xml"/>
+>>>>>>> bf4ac937c8b073a31be751592eacde45cd7c3494
     </target>
     <target name="do-clean" depends="init">
         <delete dir="${build.dir}"/>
