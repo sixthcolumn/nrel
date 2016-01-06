@@ -3,6 +3,6 @@
     <services binding-component="true">
         <provides endpoint-name="LogRequest_OutboundPort" interface-name="ns2:FileOutboundPortType" service-name="ns2:FileOutboundService"/>
         <provides endpoint-name="LogReply_OutboundPort" interface-name="ns4:FileOutboundPortType" service-name="ns4:FileOutboundService"/>
-        <provides endpoint-name="casaPort1" interface-name="ns4:FileOutboundPortType" service-name="ns5:CreateMaintOrderAppService1"/>
+        <provides endpoint-name="casaPort3" interface-name="ns4:FileOutboundPortType" service-name="ns5:CreateMaintOrderAppService3"/>
     </services>
 </jbi>

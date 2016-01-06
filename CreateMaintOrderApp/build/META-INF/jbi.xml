@@ -49,16 +49,16 @@
                 <provider endpoint-name="LogReply_OutboundPort" service-name="ns4:FileOutboundService"/>
             </connection>
             <connection>
-                <consumer endpoint-name="MaintenanceOrders_PortRole_partnerRole" service-name="ns1:R1"/>
-                <provider endpoint-name="casaPort2" service-name="ns5:CreateMaintOrderAppService2"/>
-            </connection>
-            <connection>
-                <consumer endpoint-name="MaintenanceOrders_PortRole_partnerRole" service-name="ns1:R2"/>
+                <consumer endpoint-name="FileOutboundPortTypeRole_partnerRole" service-name="ns1:R2Log"/>
                 <provider endpoint-name="casaPort3" service-name="ns5:CreateMaintOrderAppService3"/>
             </connection>
             <connection>
-                <consumer endpoint-name="FileOutboundPortTypeRole_partnerRole" service-name="ns1:R2Log"/>
+                <consumer endpoint-name="MaintenanceOrders_PortRole_partnerRole" service-name="ns1:R1"/>
                 <provider endpoint-name="casaPort1" service-name="ns5:CreateMaintOrderAppService1"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="MaintenanceOrders_PortRole_partnerRole" service-name="ns1:R2"/>
+                <provider endpoint-name="casaPort2" service-name="ns5:CreateMaintOrderAppService2"/>
             </connection>
         </connections>
     </service-assembly>

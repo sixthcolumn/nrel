@@ -1,16 +1,15 @@
-<definitions name="LogReply" targetNamespace="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply"
+<definitions name="LogReply" targetNamespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply"
     xmlns="http://schemas.xmlsoap.org/wsdl/"
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-    xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/" xmlns:tns="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply" xmlns:ns="http://iec.ch/TC57/2011/schema/message" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns0="http://iec.ch/TC57/2015/MaintenanceOrdersMessage">
+    xmlns:file="http://schemas.sun.com/jbi/wsdl-extensions/file/" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns="http://iec.ch/TC57/2015/GetMaintenanceOrdersMessage" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
     <types>
-        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply">
-            <xsd:import namespace="http://iec.ch/TC57/2011/schema/message" schemaLocation="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/Message.xsd"/>
-            <xsd:import namespace="http://iec.ch/TC57/2015/MaintenanceOrdersMessage" schemaLocation="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd"/>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply">
+            <xsd:import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrdersMessage" schemaLocation="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/GetMaintenanceOrdersMessage.xsd"/>
         </xsd:schema>
     </types>
     <message name="WriteInputMessage">
-        <part name="part1" element="ns0:MaintenanceOrdersResponseMessage"/>
+        <part name="part1" element="ns:GetMaintenanceOrdersResponseMessage"/>
     </message>    
     <portType name="FileOutboundPortType">
         <operation name="write">
@@ -22,7 +21,7 @@
         <operation name="write">
             <file:operation verb="write"/>
             <input name="input1">
-                <file:message fileName="createMaintOrder_r1.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+                <file:message fileName="getMaintOrder_r1.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
             </input>
         </operation>
     </binding>
