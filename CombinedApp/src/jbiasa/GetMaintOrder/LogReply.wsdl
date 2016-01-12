@@ -21,13 +21,13 @@
         <operation name="write">
             <file:operation verb="write"/>
             <input name="input1">
-                <file:message fileName="getMaintOrder_r1.xml" use="literal" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
+                <file:message fileName="getMaintOrder_r1.xml" part="part1" recordDelimiter="LINE FEED" multipleRecordsPerFile="true"/>
             </input>
         </operation>
     </binding>
     <service name="FileOutboundService">
         <port name="LogReply_OutboundPort" binding="tns:FileOutboundBinding">
-            <file:address fileDirectory="/tmp"/>
+            <file:address fileDirectory="Default System Temp Dir"/>
         </port>
     </service>
     <plnk:partnerLinkType name="LogReply">

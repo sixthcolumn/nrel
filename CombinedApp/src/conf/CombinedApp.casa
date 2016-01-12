@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogRequest" xmlns:ns2="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply" xmlns:ns3="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns4="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns5="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns6="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns7="CombinedApp" xmlns:ns8="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:ns9="http://enterprise.netbeans.org/bpel/CreateMaintOrder/createMaintOrder" xmlns:xlink="http://www.w3.org/2000/xlink">
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns2="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogRequest" xmlns:ns3="http://j2ee.netbeans.org/wsdl/CreateMaintOrder/src/LogReply" xmlns:ns4="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns5="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders" xmlns:ns6="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns7="CombinedApp" xmlns:ns8="http://enterprise.netbeans.org/bpel/CreateMaintOrder/createMaintOrder" xmlns:ns9="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
         <endpoint endpoint-name="LogRequest_OutboundPort" interface-name="ns1:FileOutboundPortType" name="endpoint1" service-name="ns1:FileOutboundService"/>
-        <endpoint endpoint-name="LogReply_OutboundPort" interface-name="ns2:FileOutboundPortType" name="endpoint2" service-name="ns2:FileOutboundService"/>
-        <endpoint endpoint-name="MaintenanceOrders_Port" interface-name="ns3:MaintenanceOrders_Port" name="endpoint3" service-name="ns3:ExecuteMaintenanceOrders"/>
-        <endpoint endpoint-name="LogRequest_OutboundPort" interface-name="ns4:FileOutboundPortType" name="endpoint4" service-name="ns4:FileOutboundService"/>
-        <endpoint endpoint-name="LogReply_OutboundPort" interface-name="ns5:FileOutboundPortType" name="endpoint5" service-name="ns5:FileOutboundService"/>
+        <endpoint endpoint-name="LogRequest_OutboundPort" interface-name="ns2:FileOutboundPortType" name="endpoint2" service-name="ns2:FileOutboundService"/>
+        <endpoint endpoint-name="LogReply_OutboundPort" interface-name="ns3:FileOutboundPortType" name="endpoint3" service-name="ns3:FileOutboundService"/>
+        <endpoint endpoint-name="LogReply_OutboundPort" interface-name="ns4:FileOutboundPortType" name="endpoint4" service-name="ns4:FileOutboundService"/>
+        <endpoint endpoint-name="MaintenanceOrders_Port" interface-name="ns5:MaintenanceOrders_Port" name="endpoint5" service-name="ns5:ExecuteMaintenanceOrders"/>
         <endpoint endpoint-name="GetMaintenanceOrders_Port" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint6" service-name="ns6:GetMaintenanceOrders"/>
-        <endpoint endpoint-name="casaPort1" interface-name="ns3:MaintenanceOrders_Port" name="endpoint7" service-name="ns7:CombinedAppService1"/>
-        <endpoint endpoint-name="casaPort2" interface-name="ns3:MaintenanceOrders_Port" name="endpoint8" service-name="ns7:CombinedAppService2"/>
-        <endpoint endpoint-name="casaPort3" interface-name="ns2:FileOutboundPortType" name="endpoint9" service-name="ns7:CombinedAppService3"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns5:MaintenanceOrders_Port" name="endpoint7" service-name="ns7:CombinedAppService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns5:MaintenanceOrders_Port" name="endpoint8" service-name="ns7:CombinedAppService2"/>
+        <endpoint endpoint-name="casaPort3" interface-name="ns3:FileOutboundPortType" name="endpoint9" service-name="ns7:CombinedAppService3"/>
         <endpoint endpoint-name="casaPort4" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint10" service-name="ns7:CombinedAppService4"/>
-        <endpoint endpoint-name="casaPort5" interface-name="ns5:FileOutboundPortType" name="endpoint11" service-name="ns7:CombinedAppService5"/>
-        <endpoint endpoint-name="casaPort6" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint12" service-name="ns7:CombinedAppService6"/>
-        <endpoint display-name="Service" endpoint-name="GetMaintenanceOrders_PortRole_myRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint13" process-name="getMaintOrder" service-name="ns8:Service"/>
-        <endpoint display-name="R1" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint14" process-name="getMaintOrder" service-name="ns8:R1"/>
-        <endpoint display-name="R2" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint15" process-name="getMaintOrder" service-name="ns8:R2"/>
-        <endpoint display-name="ServiceLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:FileOutboundPortType" name="endpoint16" process-name="getMaintOrder" service-name="ns8:ServiceLog"/>
-        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns5:FileOutboundPortType" name="endpoint17" process-name="getMaintOrder" service-name="ns8:R1Log"/>
-        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns5:FileOutboundPortType" name="endpoint18" process-name="getMaintOrder" service-name="ns8:R2Log"/>
-        <endpoint display-name="Service" endpoint-name="MaintenanceOrders_PortRole_myRole" file-path="createMaintOrder.bpel" interface-name="ns3:MaintenanceOrders_Port" name="endpoint19" process-name="createMaintOrder" service-name="ns9:Service"/>
-        <endpoint display-name="R1" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns3:MaintenanceOrders_Port" name="endpoint20" process-name="createMaintOrder" service-name="ns9:R1"/>
-        <endpoint display-name="R2" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns3:MaintenanceOrders_Port" name="endpoint21" process-name="createMaintOrder" service-name="ns9:R2"/>
-        <endpoint display-name="RequestLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns1:FileOutboundPortType" name="endpoint22" process-name="createMaintOrder" service-name="ns9:RequestLog"/>
-        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint23" process-name="createMaintOrder" service-name="ns9:R1Log"/>
-        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint24" process-name="createMaintOrder" service-name="ns9:R2Log"/>
+        <endpoint endpoint-name="casaPort5" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint11" service-name="ns7:CombinedAppService5"/>
+        <endpoint endpoint-name="casaPort6" interface-name="ns4:FileOutboundPortType" name="endpoint12" service-name="ns7:CombinedAppService6"/>
+        <endpoint display-name="Service" endpoint-name="MaintenanceOrders_PortRole_myRole" file-path="createMaintOrder.bpel" interface-name="ns5:MaintenanceOrders_Port" name="endpoint13" process-name="createMaintOrder" service-name="ns8:Service"/>
+        <endpoint display-name="R1" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns5:MaintenanceOrders_Port" name="endpoint14" process-name="createMaintOrder" service-name="ns8:R1"/>
+        <endpoint display-name="R2" endpoint-name="MaintenanceOrders_PortRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns5:MaintenanceOrders_Port" name="endpoint15" process-name="createMaintOrder" service-name="ns8:R2"/>
+        <endpoint display-name="RequestLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint16" process-name="createMaintOrder" service-name="ns8:RequestLog"/>
+        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint17" process-name="createMaintOrder" service-name="ns8:R1Log"/>
+        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="createMaintOrder.bpel" interface-name="ns3:FileOutboundPortType" name="endpoint18" process-name="createMaintOrder" service-name="ns8:R2Log"/>
+        <endpoint display-name="Service" endpoint-name="GetMaintenanceOrders_PortRole_myRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint19" process-name="getMaintOrder" service-name="ns9:Service"/>
+        <endpoint display-name="R1" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint20" process-name="getMaintOrder" service-name="ns9:R1"/>
+        <endpoint display-name="R2" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns6:GetMaintenanceOrders_Port" name="endpoint21" process-name="getMaintOrder" service-name="ns9:R2"/>
+        <endpoint display-name="ServiceLog" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns1:FileOutboundPortType" name="endpoint22" process-name="getMaintOrder" service-name="ns9:ServiceLog"/>
+        <endpoint display-name="R1Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:FileOutboundPortType" name="endpoint23" process-name="getMaintOrder" service-name="ns9:R1Log"/>
+        <endpoint display-name="R2Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns4:FileOutboundPortType" name="endpoint24" process-name="getMaintOrder" service-name="ns9:R2Log"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="GetMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CombinedApp-GetMaintOrder" unit-name="GetMaintOrder" unknown="false" x="131" y="897">
+        <service-engine-service-unit artifacts-zip="CreateMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CombinedApp-CreateMaintOrder" unit-name="CreateMaintOrder" unknown="false" x="136" y="97">
             <provides endpoint="endpoint13"/>
             <consumes endpoint="endpoint14"/>
             <consumes endpoint="endpoint15"/>
@@ -35,7 +35,7 @@
             <consumes endpoint="endpoint17"/>
             <consumes endpoint="endpoint18"/>
         </service-engine-service-unit>
-        <service-engine-service-unit artifacts-zip="CreateMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CombinedApp-CreateMaintOrder" unit-name="CreateMaintOrder" unknown="false" x="156" y="164">
+        <service-engine-service-unit artifacts-zip="GetMaintOrder.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="CombinedApp-GetMaintOrder" unit-name="GetMaintOrder" unknown="false" x="146" y="572">
             <provides endpoint="endpoint19"/>
             <consumes endpoint="endpoint20"/>
             <consumes endpoint="endpoint21"/>
@@ -45,66 +45,66 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="CombinedApp-sun-file-binding" unit-name="sun-file-binding">
             <ports>
-                <port bindingType="file" x="67" y="508">
+                <port bindingType="file" x="67" y="469">
                     <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService3']/port[@name='casaPort3'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint9"/>
                     <provides endpoint="endpoint9"/>
                 </port>
-                <port bindingType="file" x="67" y="1059">
-                    <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService5']/port[@name='casaPort5'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint11"/>
-                    <provides endpoint="endpoint11"/>
+                <port bindingType="file" x="67" y="968">
+                    <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService6']/port[@name='casaPort6'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint12"/>
+                    <provides endpoint="endpoint12"/>
                 </port>
-                <port x="67" y="431">
+                <port x="67" y="384">
                     <link xlink:href="../jbiasa/CreateMaintOrder/LogReply.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogReply_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+                <port x="67" y="307">
+                    <link xlink:href="../jbiasa/CreateMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
                 </port>
-                <port x="67" y="594">
-                    <link xlink:href="../jbiasa/CreateMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint1"/>
-                    <provides endpoint="endpoint1"/>
-                </port>
-                <port x="67" y="1136">
+                <port x="67" y="891">
                     <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogReply_OutboundPort'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint5"/>
-                    <provides endpoint="endpoint5"/>
-                </port>
-                <port x="67" y="1213">
-                    <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint4"/>
                     <provides endpoint="endpoint4"/>
+                </port>
+                <port x="67" y="814">
+                    <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='LogRequest_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
                 </port>
             </ports>
         </binding-component-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="CombinedApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port bindingType="soap" x="67" y="61">
+                <port bindingType="soap" x="67" y="76">
                     <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint7"/>
                     <provides endpoint="endpoint7"/>
                 </port>
-                <port bindingType="soap" x="67" y="138">
+                <port bindingType="soap" x="67" y="153">
                     <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint8"/>
                     <provides endpoint="endpoint8"/>
                 </port>
-                <port bindingType="soap" x="67" y="740">
+                <port bindingType="soap" x="67" y="583">
                     <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService4']/port[@name='casaPort4'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint10"/>
                     <provides endpoint="endpoint10"/>
                 </port>
-                <port bindingType="soap" x="67" y="820">
-                    <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService6']/port[@name='casaPort6'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint12"/>
-                    <provides endpoint="endpoint12"/>
+                <port bindingType="soap" x="67" y="660">
+                    <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/service[@name='CombinedAppService5']/port[@name='casaPort5'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint11"/>
+                    <provides endpoint="endpoint11"/>
                 </port>
-                <port x="67" y="215">
+                <port x="67" y="230">
                     <link xlink:href="../jbiasa/CreateMaintOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='ExecuteMaintenanceOrders']/port[@name='MaintenanceOrders_Port'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint3"/>
-                    <provides endpoint="endpoint3"/>
+                    <consumes endpoint="endpoint5"/>
+                    <provides endpoint="endpoint5"/>
                 </port>
-                <port x="67" y="925">
+                <port x="67" y="737">
                     <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/service[@name='GetMaintenanceOrders']/port[@name='GetMaintenanceOrders_Port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint6"/>
                     <provides endpoint="endpoint6"/>
@@ -113,24 +113,24 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint16" provider="endpoint4" state="unchanged"/>
         <connection consumer="endpoint22" provider="endpoint1" state="unchanged"/>
-        <connection consumer="endpoint3" provider="endpoint19" state="unchanged"/>
-        <connection consumer="endpoint23" provider="endpoint2" state="unchanged"/>
-        <connection consumer="endpoint17" provider="endpoint5" state="unchanged"/>
-        <connection consumer="endpoint6" provider="endpoint13" state="unchanged"/>
-        <connection consumer="endpoint20" provider="endpoint7" state="new"/>
-        <connection consumer="endpoint21" provider="endpoint8" state="new"/>
-        <connection consumer="endpoint24" provider="endpoint9" state="new"/>
-        <connection consumer="endpoint14" provider="endpoint10" state="new"/>
-        <connection consumer="endpoint15" provider="endpoint12" state="new"/>
-        <connection consumer="endpoint18" provider="endpoint11" state="new"/>
-        <connection consumer="endpoint20" provider="endpoint19" state="deleted"/>
-        <connection consumer="endpoint21" provider="endpoint19" state="deleted"/>
-        <connection consumer="endpoint24" provider="endpoint2" state="deleted"/>
-        <connection consumer="endpoint18" provider="endpoint5" state="deleted"/>
+        <connection consumer="endpoint16" provider="endpoint2" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint13" state="unchanged"/>
+        <connection consumer="endpoint17" provider="endpoint3" state="unchanged"/>
+        <connection consumer="endpoint23" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint19" state="unchanged"/>
+        <connection consumer="endpoint18" provider="endpoint9" state="new"/>
+        <connection consumer="endpoint14" provider="endpoint7" state="new"/>
+        <connection consumer="endpoint15" provider="endpoint8" state="new"/>
+        <connection consumer="endpoint20" provider="endpoint10" state="new"/>
+        <connection consumer="endpoint21" provider="endpoint11" state="new"/>
+        <connection consumer="endpoint24" provider="endpoint12" state="new"/>
         <connection consumer="endpoint14" provider="endpoint13" state="deleted"/>
         <connection consumer="endpoint15" provider="endpoint13" state="deleted"/>
+        <connection consumer="endpoint18" provider="endpoint3" state="deleted"/>
+        <connection consumer="endpoint24" provider="endpoint4" state="deleted"/>
+        <connection consumer="endpoint20" provider="endpoint19" state="deleted"/>
+        <connection consumer="endpoint21" provider="endpoint19" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
@@ -149,24 +149,24 @@
         <link xlink:href="../jbiServiceUnits/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
     </porttypes>
     <bindings>
+        <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
-        <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CreateMaintOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='MaintenanceOrders_Binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CreateMaintOrder/LogReply.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/CreateMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/GetMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='GetMaintenanceOrders_Binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/LogReply.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding2'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding3'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding4'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding5'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/CombinedApp.wsdl#xpointer(/definitions/binding[@name='casaBinding6'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CreateMaintOrder/ExecuteMaintenanceOrders.wsdl#xpointer(/definitions/binding[@name='MaintenanceOrders_Binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogReply.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/CreateMaintOrder/LogRequest.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>

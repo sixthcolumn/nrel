@@ -148,16 +148,16 @@
         <!-- You can override this target in the ../build.xml file. -->
     </target>
     <target name="library-inclusion-in-archive" depends="compile">
-        <unjar dest="${build.classes.dir}" src="${reference.GetMaintOrder.dist_se}"/>
         <unjar dest="${build.classes.dir}" src="${reference.CreateMaintOrder.dist_se}"/>
+        <unjar dest="${build.classes.dir}" src="${reference.GetMaintOrder.dist_se}"/>
     </target>
     <target name="library-inclusion-in-manifest" depends="compile">
-        <basename property="included.lib.reference.GetMaintOrder.dist_se" file="${reference.GetMaintOrder.dist_se}"/>
-        <copy todir="${build.classes.dir}" file="${reference.GetMaintOrder.dist_se}"/>
         <basename property="included.lib.reference.CreateMaintOrder.dist_se" file="${reference.CreateMaintOrder.dist_se}"/>
         <copy todir="${build.classes.dir}" file="${reference.CreateMaintOrder.dist_se}"/>
+        <basename property="included.lib.reference.GetMaintOrder.dist_se" file="${reference.GetMaintOrder.dist_se}"/>
+        <copy todir="${build.classes.dir}" file="${reference.GetMaintOrder.dist_se}"/>
         <manifest file="${build.classes.dir}/META-INF/MANIFEST.MF" mode="update">
-            <attribute name="Class-Path" value="${included.lib.reference.GetMaintOrder.dist_se},${included.lib.reference.CreateMaintOrder.dist_se}"/>
+            <attribute name="Class-Path" value="${included.lib.reference.CreateMaintOrder.dist_se},${included.lib.reference.GetMaintOrder.dist_se}"/>
         </manifest>
     </target>
     <target name="do-compile" depends="init,deps-jar,pre-pre-compile,pre-compile"/>

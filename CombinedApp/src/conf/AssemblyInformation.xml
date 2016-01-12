@@ -7,21 +7,21 @@
         </identification>
         <service-unit>
             <identification>
-                <name>CombinedApp-GetMaintOrder</name>
-                <description>Represents this Service Unit</description>
-            </identification>
-            <target>
-                <artifacts-zip>GetMaintOrder.jar</artifacts-zip>
-                <component-name>sun-bpel-engine</component-name>
-            </target>
-        </service-unit>
-        <service-unit>
-            <identification>
                 <name>CombinedApp-CreateMaintOrder</name>
                 <description>Represents this Service Unit</description>
             </identification>
             <target>
                 <artifacts-zip>CreateMaintOrder.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>CombinedApp-GetMaintOrder</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>GetMaintOrder.jar</artifacts-zip>
                 <component-name>sun-bpel-engine</component-name>
             </target>
         </service-unit>
