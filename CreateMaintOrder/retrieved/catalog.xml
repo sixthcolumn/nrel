@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/ExecuteMaintenanceOrders.wsdl" uri="src/ExecuteMaintenanceOrders.wsdl"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd" uri="src/xsd/MaintenanceOrdersMessage.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrders.xsd" uri="src/xsd/MaintenanceOrders.xsd"/>
+</catalog>

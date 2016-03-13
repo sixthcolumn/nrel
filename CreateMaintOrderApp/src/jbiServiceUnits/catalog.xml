@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/ExecuteMaintenanceOrders.wsdl" uri="../CreateMaintOrder/ExecuteMaintenanceOrders.wsdl"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd" uri="../CreateMaintOrder/xsd/MaintenanceOrdersMessage.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/Message.xsd" uri="../CreateMaintOrder/xsd/Message.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrders.xsd" uri="../CreateMaintOrder/xsd/MaintenanceOrders.xsd"/>
-    <system systemId="http://ws-i.org/schemas/conformanceClaim/" uri="CreateMaintOrder/src/_references/_relative/nbproject/private/retriever/ws-i.org/schemas/conformanceclaim/index.xml"/>
-    <system systemId="http://schemas.xmlsoap.org/soap/encoding/" uri="CreateMaintOrder/src/_references/_relative/nbproject/private/retriever/schemas.xmlsoap.org/soap/encoding/index.xsd"/>
-    <system systemId="http://schemas.xmlsoap.org/wsdl/mime/" uri="CreateMaintOrder/src/_references/_relative/nbproject/private/retriever/schemas.xmlsoap.org/wsdl/mime/index.xsd"/>
-</catalog>

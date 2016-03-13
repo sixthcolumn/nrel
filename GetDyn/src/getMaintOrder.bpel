@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="getMaintOrder"
+    targetNamespace="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://iec.ch/TC57/2015/GetMaintenanceOrdersMessage" xmlns:ns1="http://iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty" xmlns:ns2="http://j2ee.netbeans.org/xsd/tableSchema">
+    <import namespace="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" location="GetMaintenanceOrdersWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrders" location="file:/usr/local/git/nrel/61968/wsdl/CimGet/GetMaintenanceOrders.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" location="LogRequest.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" location="LogReply.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetDyn/src/newWSDL" location="fileLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetDyn/src/jdbc" location="jdbc.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="JDBC" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/jdbc" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
+        <partnerLink name="R1" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:R1_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
+        <partnerLink name="FileLog" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/newWSDL" partnerLinkType="tns:newWSDL" partnerRole="FileOutboundPortTypeRole"/>
+        <partnerLink name="R2" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:GetMaintenanceOrders_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
+        <partnerLink name="Service" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:Service_PortLinkType" myRole="GetMaintenanceOrders_PortRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="R2Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="R2In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
+        <variable name="ServiceFault" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersFaultMessage"/>
+        <variable name="R1out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="R1in" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
+        <variable name="jdbcOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/jdbc" messageType="tns:outputMsg"/>
+        <variable name="jdbcIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/jdbc" messageType="tns:inputMsg"/>
+        <variable name="WriteToLogIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/newWSDL" messageType="tns:WriteInputMessage"/>
+        <variable name="ServiceOut" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
+        <variable name="ServiceIn" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
+    </variables>
+    <sequence>
+        <receive name="Receive1" createInstance="yes" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ServiceIn"/>
+        <assign name="aJDBC">
+            <copy>
+                <from>$ServiceIn.GetMaintenanceOrdersRequestMessage/ns0:Header/ns1:User/ns1:Organization</from>
+                <to>$jdbcIn.part/ns2:param1</to>
+            </copy>
+        </assign>
+        <invoke name="iJDBC" partnerLink="JDBC" operation="get_url" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/jdbc" portType="tns:jdbcPortType" inputVariable="jdbcIn" outputVariable="jdbcOut"/>
+        <if name="IfNotNull">
+            <condition>'' != $jdbcOut.part</condition>
+            <sequence name="Sequence1">
+                <assign name="aOutbound">
+                    <copy>
+                        <from variable="ServiceIn" part="GetMaintenanceOrdersRequestMessage"/>
+                            <to variable="R1in" part="GetMaintenanceOrdersRequestMessage"/>
+                    </copy>
+                        <copy>
+                        <from variable="jdbcOut" part="part"/>
+                            <to variable="R1in" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+                    </copy>
+                        <copy>
+                        <from variable="jdbcOut" part="part"/>
+                            <to variable="WriteToLogIn" part="part1"/>
+                    </copy>
+                    <copy>
+                        <from variable="ServiceIn" part="GetMaintenanceOrdersRequestMessage"/>
+                        <to variable="R2In" part="GetMaintenanceOrdersRequestMessage"/>
+                    </copy>
+                </assign>
+                <invoke name="iClientEP" partnerLink="R1" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R1in" outputVariable="R1out"/>
+                <invoke name="iLogEP" partnerLink="R2" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R2In" outputVariable="R2Out"/>
+                <invoke name="iFileLog" partnerLink="FileLog" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetDyn/src/newWSDL" portType="tns:FileOutboundPortType" inputVariable="WriteToLogIn"/>
+                <assign name="aReply">
+                    <copy>
+                            <from variable="R1out" part="GetMaintenanceOrdersResponseMessage"/>
+                                <to variable="ServiceOut" part="GetMaintenanceOrdersResponseMessage"/>
+                        </copy>
+                </assign>
+                <reply name="ServiceReply" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ServiceOut"/>
+            </sequence>
+            <else>
+                <sequence name="Sequence2">
+                    <assign name="Assign1">
+                        <copy>
+                            <from>'FAILED'</from>
+                            <to>$ServiceFault.GetMaintenanceOrdersFaultMessage/ns0:Reply/ns1:Result</to>
+                        </copy>
+                        <copy>
+                            <from>'6001'</from>
+                            <to>$ServiceFault.GetMaintenanceOrdersFaultMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                        </copy>
+                        <copy>
+                            <from>'FATAL'</from>
+                            <to>$ServiceFault.GetMaintenanceOrdersFaultMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                        </copy>
+                        <copy>
+                            <from>'Lookup of Header.User.Organization failed'</from>
+                            <to>$ServiceFault.GetMaintenanceOrdersFaultMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                        </copy>
+                    </assign>
+                    <reply name="Fault" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" faultName="tns:GetMaintenanceOrdersFault" variable="ServiceFault"/>
+                </sequence>
+            </else>
+        </if>
+    </sequence>
+</process>
