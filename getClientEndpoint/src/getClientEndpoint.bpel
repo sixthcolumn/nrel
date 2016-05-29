@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="getClientEndpoint"
+    targetNamespace="http://enterprise.netbeans.org/bpel/getClientEndpoint/getClientEndpoint"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/getClientEndpoint/getClientEndpoint"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://j2ee.netbeans.org/xsd/tableSchema" xmlns:ns1="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+    <import namespace="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" location="fileLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" location="jdbc.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" location="getEPR.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="JDBC" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
+        <partnerLink name="Log" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" partnerLinkType="tns:fileLog" partnerRole="FileOutboundPortTypeRole"/>
+        <partnerLink name="EPRService" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" partnerLinkType="tns:getEPR" myRole="getEPRPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="LogIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" messageType="tns:WriteInputMessage"/>
+        <variable name="JdbcOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" messageType="tns:outputMsg"/>
+        <variable name="JdbcIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" messageType="tns:inputMsg"/>
+        <variable name="EPRSOAPreply" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" messageType="tns:getEPROperationResponse"/>
+        <variable name="EPRSOAPIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" messageType="tns:getEPROperationRequest"/>
+    </variables>
+    <sequence name="Sequence1">
+        <receive name="EPRIn" createInstance="yes" partnerLink="EPRService" operation="getEPROperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" portType="tns:getEPRPortType" variable="EPRSOAPIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from>$EPRSOAPIn.part1/client</from>
+                <to>$JdbcIn.part/ns0:client</to>
+            </copy>
+        </assign>
+        <invoke name="InvokeJDBC" partnerLink="JDBC" operation="jdbcGet" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" portType="tns:jdbcPortType" inputVariable="JdbcIn" outputVariable="JdbcOut"/>
+        <assign name="Assign2">
+            <copy>
+                <from>$JdbcOut.part/ns0:jdbc_Record/ns0:endpoint</from>
+                <to>$EPRSOAPreply.part1/url</to>
+            </copy>
+            <copy>
+                <from variable="JdbcOut" part="part"/>
+                <to variable="LogIn" part="part1"/>
+            </copy>
+        </assign>
+        <invoke name="Log" partnerLink="Log" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" portType="tns:FileOutboundPortType" inputVariable="LogIn"/>
+        <reply name="EPROut" partnerLink="EPRService" operation="getEPROperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" portType="tns:getEPRPortType" variable="EPRSOAPreply"/>
+    </sequence>
+</process>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="jdbc" targetNamespace="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://j2ee.netbeans.org/xsd/tableSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plink="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" xmlns:tns="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc">
+    <types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/">
+            <xsd:import namespace="http://j2ee.netbeans.org/xsd/tableSchema" schemaLocation="xsd/jdbc.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="outputMsg">
+        <part name="part" type="xsd:string"/>
+    </message>
+    <message name="inputMsg">
+        <part name="part" element="ns:jdbc_Request"/>
+    </message>
+    <message name="inputVendorUrl">
+        <part name="part1" element="ns:getVendorURL_Request"/>
+    </message>
+    <portType name="jdbcPortType">
+        <operation name="get_url">
+            <input name="input" message="tns:inputMsg"/>
+            <output name="output" message="tns:outputMsg"/>
+        </operation>
+        <operation name="get_vendor_url">
+            <input name="v_input" message="tns:inputVendorUrl"/>
+            <output name="v_output" message="tns:outputMsg"/>
+        </operation>
+    </portType>
+    <binding name="binding" type="tns:jdbcPortType">
+        <jdbc:binding xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/"/>
+        <operation name="get_url">
+            <jdbc:operation xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/"/>
+            <input name="input">
+                <jdbc:input xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" MarkColumnName="" MarkColumnValue="" MoveRowToTableName="" PKName="" PollMilliSeconds="5000" PollingPostProcessing="MoveRow" TableName="jdbc" Transaction="NOTransaction" numberOfRecords="" operationType="jdbc_Operation" paramOrder="" sql="select endpoint from clients where client_name = ?"/>
+            </input>
+            <output name="output">
+                <jdbc:output xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" returnPartName="part"/>
+            </output>
+        </operation>
+        <operation name="get_vendor_url">
+            <jdbc:operation xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/"/>
+            <input name="v_input">
+                <jdbc:input xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" MarkColumnName="" MarkColumnValue="" MoveRowToTableName="" PKName="" PollMilliSeconds="5000" PollingPostProcessing="MoveRow" TableName="jdbc" Transaction="NOTransaction" numberOfRecords="" operationType="jdbc_Operation" paramOrder="" sql="SELECT tss.harness_url FROM vendor v, message m, vendor_test_sequences vts, test_sequence ts, test_seq_step tss, vendor_test_seq_steps vtss, package p, package_group pg WHERE v.name = ? AND m.name = ? AND vts.vendor_id = v.vendor_id AND ts.test_sequence_id = vts.test_sequence_id AND ts.type != ? AND tss.test_sequence_id = ts.test_sequence_id AND vtss.test_seq_step_id = tss.test_seq_step_id AND vtss.vendor_test_sequences_id = vts.test_sequence_id AND p.name = ? AND pg.package_id = p.package_id AND tss.in_message_id = m.message_id AND m.package_group_id = pg.package_group_id"/>
+            </input>
+            <output name="v_output">
+                <jdbc:output xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" returnPartName="part"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="service">
+        <port name="port" binding="tns:binding">
+            <jdbc:address xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" jndiName="wms"/>
+        </port>
+    </service>
+    <plink:partnerLinkType xmlns:plink="http://docs.oasis-open.org/wsbpel/2.0/plnktype" name="jdbcpartner">
+        <plink:role name="jdbcPortTypeRole" portType="tns:jdbcPortType"/>
+    </plink:partnerLinkType>
+</definitions>

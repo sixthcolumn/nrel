@@ -4,6 +4,12 @@
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrdersMessage.xsd" uri="../xsd/MaintenanceOrdersMessage.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/Message.xsd" uri="../xsd/Message.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimCreate/xsd/MaintenanceOrders.xsd" uri="../xsd/MaintenanceOrders.xsd"/>
+    <system systemId="GetDyn/GetMaintenanceOrders.wsdl" uri="src/_references/_projects/GetDyn/src/GetMaintenanceOrders.wsdl"/>
+    <system systemId="xsd/GetMaintenanceOrdersMessage.xsd" uri="src/_references/_projects/GetDyn/src/xsd/GetMaintenanceOrdersMessage.xsd"/>
+    <system systemId="Message.xsd" uri="src/_references/_projects/GetDyn/src/xsd/Message.xsd"/>
+    <system systemId="MaintenanceOrders.xsd" uri="src/_references/_projects/GetDyn/src/xsd/MaintenanceOrders.xsd"/>
+    <system systemId="GetMaintenanceOrders.xsd" uri="src/_references/_projects/GetDyn/src/xsd/GetMaintenanceOrders.xsd"/>
+    <system systemId="xsd/MaintenanceOrdersMessage.xsd" uri="src/_references/_projects/GetDyn/src/xsd/MaintenanceOrdersMessage.xsd"/>
     <system systemId="http://ws-i.org/schemas/conformanceClaim/" uri="src/_references/_relative/nbproject/private/retriever/ws-i.org/schemas/conformanceclaim/index.xml"/>
     <system systemId="http://schemas.xmlsoap.org/soap/encoding/" uri="src/_references/_relative/nbproject/private/retriever/schemas.xmlsoap.org/soap/encoding/index.xsd"/>
     <system systemId="http://schemas.xmlsoap.org/wsdl/mime/" uri="src/_references/_relative/nbproject/private/retriever/schemas.xmlsoap.org/wsdl/mime/index.xsd"/>

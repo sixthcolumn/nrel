@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<definitions
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ExecuteMaintenanceOrdersWrapper" targetNamespace="http://enterprise.netbeans.org/bpel/ExecuteMaintenanceOrdersWrapper" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteMaintenanceOrdersWrapper" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders">
+    <import location="file:/usr/local/git/nrel/61968/wsdl/CimCreate/ExecuteMaintenanceOrders.wsdl" namespace="http://iec.ch/TC57/2015/ExecuteMaintenanceOrders"/>
+    <plnk:partnerLinkType name="Service_PortLinkType">
+        <plnk:role name="MaintenanceOrders_PortRole" portType="ns:MaintenanceOrders_Port"/>
+    </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="R1_PortLinkType">
+        <plnk:role name="MaintenanceOrders_PortRole" portType="ns:MaintenanceOrders_Port"/>
+    </plnk:partnerLinkType>
+    <plnk:partnerLinkType name="R2_PortLinkType">
+        <plnk:role name="MaintenanceOrders_PortRole" portType="ns:MaintenanceOrders_Port"/>
+    </plnk:partnerLinkType>
+</definitions>

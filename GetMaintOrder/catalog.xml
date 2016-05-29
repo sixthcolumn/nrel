@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/GetMaintenanceOrders.wsdl" uri="src/GetMaintenanceOrders.wsdl"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/GetMaintenanceOrdersMessage.xsd" uri="src/xsd/GetMaintenanceOrdersMessage.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/MaintenanceOrdersMessage.xsd" uri="src/xsd/MaintenanceOrdersMessage.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/MaintenanceOrders.xsd" uri="src/xsd/MaintenanceOrders.xsd"/>
-    <system systemId="file:/usr/local/git/nrel/61968/wsdl/CimGet/xsd/GetMaintenanceOrders.xsd" uri="src/xsd/GetMaintenanceOrders.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/opendms/DER/wsdl/GetDERGroup.wsdl" uri="src/GetDERGroup.wsdl"/>
+    <system systemId="file:/Users/BenGoodwin/git/opendms/DER/wsdl/xsd/GetDERGroupMessage.xsd" uri="src/xsd/GetDERGroupMessage.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/opendms/DER/wsdl/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
+    <system systemId="file:/Users/BenGoodwin/git/opendms/DER/wsdl/xsd/DERGroup.xsd" uri="src/xsd/DERGroup.xsd"/>
 </catalog>

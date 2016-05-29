@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:ns2="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns3="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns4="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns5="testGET" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/jbi ./jbi.xsd">
+    <service-assembly>
+        <identification>
+            <name>testGET</name>
+            <description>Represents the Service Assembly of testGET</description>
+        </identification>
+        <service-unit>
+            <identification>
+                <name>testGET-GetMaintOrder</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>GetMaintOrder.jar</artifacts-zip>
+                <component-name>sun-bpel-engine</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>testGET-sun-file-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-file-binding.jar</artifacts-zip>
+                <component-name>sun-file-binding</component-name>
+            </target>
+        </service-unit>
+        <service-unit>
+            <identification>
+                <name>testGET-sun-http-binding</name>
+                <description>Represents this Service Unit</description>
+            </identification>
+            <target>
+                <artifacts-zip>sun-http-binding.jar</artifacts-zip>
+                <component-name>sun-http-binding</component-name>
+            </target>
+        </service-unit>
+        <connections>
+            <connection>
+                <consumer endpoint-name="FileOutboundPortTypeRole_partnerRole" service-name="ns1:ServiceLog"/>
+                <provider endpoint-name="LogRequest_OutboundPort" service-name="ns2:FileOutboundService"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="FileOutboundPortTypeRole_partnerRole" service-name="ns1:R1Log"/>
+                <provider endpoint-name="LogReply_OutboundPort" service-name="ns3:FileOutboundService"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="FileOutboundPortTypeRole_partnerRole" service-name="ns1:R2Log"/>
+                <provider endpoint-name="LogReply_OutboundPort" service-name="ns3:FileOutboundService"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="GetMaintenanceOrders_Port" service-name="ns4:GetMaintenanceOrders"/>
+                <provider endpoint-name="GetMaintenanceOrders_PortRole_myRole" service-name="ns1:Service"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" service-name="ns1:R1"/>
+                <provider endpoint-name="casaPort2" service-name="ns5:testGETService2"/>
+            </connection>
+            <connection>
+                <consumer endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" service-name="ns1:R2"/>
+                <provider endpoint-name="casaPort1" service-name="ns5:testGETService1"/>
+            </connection>
+        </connections>
+    </service-assembly>
+</jbi>

@@ -13,7 +13,7 @@
         <endpoint display-name="R2" endpoint-name="GetMaintenanceOrders_PortRole_partnerRole" file-path="getMaintOrder.bpel" interface-name="ns3:GetMaintenanceOrders_Port" name="endpoint10" process-name="getMaintOrder" service-name="ns5:R2"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="GetDyn.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetDynApp-GetDyn" unit-name="GetDyn" unknown="false" x="258" y="186">
+        <service-engine-service-unit artifacts-zip="GetDyn.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetDynApp-GetDyn" unit-name="GetDyn" unknown="false" x="123" y="186">
             <provides endpoint="endpoint6"/>
             <consumes endpoint="endpoint7"/>
             <consumes endpoint="endpoint8"/>
@@ -31,7 +31,7 @@
         </binding-component-service-unit>
         <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="GetDynApp-sun-file-binding" unit-name="sun-file-binding">
             <ports>
-                <port x="67" y="530">
+                <port x="67" y="533">
                     <link xlink:href="../jbiasa/GetDyn/fileLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='newWSDL_OutboundPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
@@ -45,12 +45,12 @@
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
                 </port>
-                <port bindingType="soap" x="67" y="339">
+                <port bindingType="soap" x="67" y="379">
                     <link xlink:href="../jbiasa/GetDynApp.wsdl#xpointer(/definitions/service[@name='GetDynAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint4"/>
                     <provides endpoint="endpoint4"/>
                 </port>
-                <port bindingType="soap" x="67" y="453">
+                <port bindingType="soap" x="67" y="456">
                     <link xlink:href="../jbiasa/GetDynApp.wsdl#xpointer(/definitions/service[@name='GetDynAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint5"/>
                     <provides endpoint="endpoint5"/>

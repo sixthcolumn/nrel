@@ -9,65 +9,98 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling">
-    <import namespace="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" location="GetMaintenanceOrdersWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://iec.ch/TC57/2015/GetMaintenanceOrders" location="file:/usr/local/git/nrel/61968/wsdl/CimGet/GetMaintenanceOrders.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" location="LogRequest.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" location="LogReply.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://iec.ch/TC57/2011/GetDERGroupMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:ns2="http://j2ee.netbeans.org/xsd/tableSchema" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty">
+    <import namespace="http://enterprise.netbeans.org/bpel/GetDERGroupWrapper" location="GetDERGroupWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://iec.ch/TC57/2011/GetDERGroup" location="file:/Users/BenGoodwin/git/opendms/DER/wsdl/GetDERGroup.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" location="jdbc.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
-        <partnerLink name="R1" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:R1_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
-        <partnerLink name="R2" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:R2_PortLinkType" partnerRole="GetMaintenanceOrders_PortRole"/>
-        <partnerLink name="ServiceLog" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" partnerLinkType="tns:LogRequest" partnerRole="FileOutboundPortTypeRole"/>
-        <partnerLink name="R1Log" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" partnerLinkType="tns:LogReply" partnerRole="FileOutboundPortTypeRole"/>
-        <partnerLink name="R2Log" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" partnerLinkType="tns:LogReply" partnerRole="FileOutboundPortTypeRole"/>
-        <partnerLink name="Service" xmlns:tns="http://enterprise.netbeans.org/bpel/GetMaintenanceOrdersWrapper" partnerLinkType="tns:Service_PortLinkType" myRole="GetMaintenanceOrders_PortRole"/>
+        <partnerLink name="JDBC" xmlns:tns="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
+        <partnerLink name="Vendor" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupWrapper" partnerLinkType="tns:GetDERGroup_PortLinkType" partnerRole="GetDERGroup_PortRole"/>
+        <partnerLink name="R1" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupWrapper" partnerLinkType="tns:GetDERGroup_PortLinkType" partnerRole="GetDERGroup_PortRole"/>
+        <partnerLink name="ServiceIn" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupWrapper" partnerLinkType="tns:GetDERGroup_PortLinkType" myRole="GetDERGroup_PortRole"/>
     </partnerLinks>
     <variables>
-        <variable name="ServiceOut" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="LogR2In" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" messageType="tns:WriteInputMessage"/>
-        <variable name="LogR1In" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" messageType="tns:WriteInputMessage"/>
-        <variable name="ServiceLogIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" messageType="tns:WriteInputMessage"/>
-        <variable name="R2Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="R2In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
-        <variable name="R1Out" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersResponseMessage"/>
-        <variable name="R1In" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
-        <variable name="ServiceIn" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" messageType="tns:GetMaintenanceOrdersRequestMessage"/>
+        <variable name="FaultOut" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:FaultMessage"/>
+        <variable name="ServiceOut" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:ResponseMessage"/>
+        <variable name="R1Out" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:ResponseMessage"/>
+        <variable name="R1In" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:GetDERGroupRequestMessage"/>
+        <variable name="VendorOut" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:ResponseMessage"/>
+        <variable name="VendorIn" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:GetDERGroupRequestMessage"/>
+        <variable name="JDBCOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" messageType="tns:outputMsg"/>
+        <variable name="JDBCIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" messageType="tns:inputVendorUrl"/>
+        <variable name="ServiceIn" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" messageType="tns:GetDERGroupRequestMessage"/>
     </variables>
     <sequence>
-        <receive name="Receive1" createInstance="yes" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ServiceIn"/>
+        <receive name="Receive1" createInstance="yes" partnerLink="ServiceIn" operation="GetDERGroup" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" portType="tns:GetDERGroup_Port" variable="ServiceIn"/>
         <assign name="Assign1">
             <copy>
-                <from variable="ServiceIn"/>
-                <to variable="R2In"/>
+                <from>$ServiceIn.GetDERGroupRequestMessage/ns0:Header/ns1:User/ns1:Organization</from>
+                <to>$JDBCIn.part1/ns2:vendor</to>
             </copy>
             <copy>
-                <from variable="ServiceIn"/>
-                <to variable="R1In"/>
+                <from>'CIM_DER(createDERGroup)'</from>
+                <to>$JDBCIn.part1/ns2:message_name</to>
             </copy>
             <copy>
-                <from variable="ServiceIn" part="GetMaintenanceOrdersRequestMessage"/>
-                <to variable="ServiceLogIn" part="part1"/>
+                <from>'standalone'</from>
+                <to>$JDBCIn.part1/ns2:test_seq_type</to>
+            </copy>
+            <copy>
+                <from>'CIM DER'</from>
+                <to>$JDBCIn.part1/ns2:package_name</to>
             </copy>
         </assign>
-        <invoke name="InvokeR1" partnerLink="R1" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R1In" outputVariable="R1Out"/>
-        <invoke name="InvokeR2" partnerLink="R2" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" inputVariable="R2In" outputVariable="R2Out"/>
-        <invoke name="LogService" partnerLink="ServiceLog" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" portType="tns:FileOutboundPortType" inputVariable="ServiceLogIn"/>
-        <assign name="Assign2">
-            <copy>
-                <from variable="R2Out" part="GetMaintenanceOrdersResponseMessage"/>
-                <to variable="LogR2In" part="part1"/>
-            </copy>
-            <copy>
-                <from variable="R1Out" part="GetMaintenanceOrdersResponseMessage"/>
-                <to variable="LogR1In" part="part1"/>
-            </copy>
-            <copy>
-                <from variable="R1Out"/>
-                <to variable="ServiceOut"/>
-            </copy>
-        </assign>
-        <invoke name="LogR1" partnerLink="R1Log" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" portType="tns:FileOutboundPortType" inputVariable="LogR1In"/>
-        <invoke name="LogR2" partnerLink="R2Log" operation="write" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" portType="tns:FileOutboundPortType" inputVariable="LogR2In"/>
-        <reply name="ServiceReply" partnerLink="Service" operation="GetMaintenanceOrders" xmlns:tns="http://iec.ch/TC57/2015/GetMaintenanceOrders" portType="tns:GetMaintenanceOrders_Port" variable="ServiceOut"/>
+        <invoke name="InvokeJDBC" partnerLink="JDBC" operation="get_vendor_url" xmlns:tns="http://j2ee.netbeans.org/wsdl/sixc/src/jdbc" portType="tns:jdbcPortType" inputVariable="JDBCIn" outputVariable="JDBCOut"/>
+        <if name="NotNull">
+            <condition>$JDBCOut.part != ''</condition>
+            <sequence name="Sequence1">
+                <assign name="Assign2">
+                    <copy>
+                        <from variable="JDBCOut" part="part"/>
+                        <to variable="VendorIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+                    </copy>
+                    <copy>
+                        <from variable="VendorIn" part="GetDERGroupRequestMessage"/>
+                        <to variable="VendorIn" part="GetDERGroupRequestMessage"/>
+                    </copy>
+                    <copy>
+                        <from variable="VendorIn" part="GetDERGroupRequestMessage"/>
+                        <to variable="R1In" part="GetDERGroupRequestMessage"/>
+                    </copy>
+                </assign>
+                <invoke name="Invoke1" partnerLink="Vendor" operation="GetDERGroup" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" portType="tns:GetDERGroup_Port" inputVariable="VendorIn" outputVariable="VendorOut"/>
+                <invoke name="Invoke2" partnerLink="R1" operation="GetDERGroup" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" portType="tns:GetDERGroup_Port" inputVariable="R1In" outputVariable="R1Out"/>
+                <assign name="Assign3">
+                    <copy>
+                        <from variable="VendorOut" part="ResponseMessage"/>
+                        <to variable="ServiceOut" part="ResponseMessage"/>
+                    </copy>
+                </assign>
+                <reply name="ServiceOut" partnerLink="ServiceIn" operation="GetDERGroup" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" portType="tns:GetDERGroup_Port" variable="ServiceOut"/>
+            </sequence>
+            <else>
+                <sequence name="Sequence2">
+                    <assign name="Assign4">
+                        <copy>
+                            <from>'Failed'</from>
+                            <to>$FaultOut.FaultMessage/ns0:Reply/ns1:Result</to>
+                        </copy>
+                        <copy>
+                            <from>'Lookup of Header.User.Organization failed'</from>
+                            <to>$FaultOut.FaultMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                        </copy>
+                        <copy>
+                            <from>'6001'</from>
+                            <to>$FaultOut.FaultMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                        </copy>
+                        <copy>
+                            <from>'FATAL'</from>
+                            <to>$FaultOut.FaultMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                        </copy>
+                    </assign>
+                    <reply name="FaultOut" partnerLink="ServiceIn" operation="GetDERGroup" xmlns:tns="http://iec.ch/TC57/2011/GetDERGroup" portType="tns:GetDERGroup_Port" faultName="tns:GetDERGroupFault" variable="FaultOut"/>
+                </sequence>
+            </else>
+        </if>
     </sequence>
 </process>

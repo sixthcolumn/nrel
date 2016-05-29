@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" xmlns:ns2="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" xmlns:ns3="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/newWSDL" xmlns:ns4="http://enterprise.netbeans.org/bpel/getClientEndpoint/getClientEndpoint" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="port" interface-name="ns1:jdbcPortType" name="endpoint1" service-name="ns1:service"/>
+        <endpoint endpoint-name="fileLog_OutboundPort" interface-name="ns2:FileOutboundPortType" name="endpoint2" service-name="ns2:FileOutboundService"/>
+        <endpoint endpoint-name="getEPRPort" interface-name="ns3:getEPRPortType" name="endpoint3" service-name="ns3:getEPRService"/>
+        <endpoint display-name="EPRService" endpoint-name="getEPRPortTypeRole_myRole" file-path="getClientEndpoint.bpel" interface-name="ns3:getEPRPortType" name="endpoint4" process-name="getClientEndpoint" service-name="ns4:EPRService"/>
+        <endpoint display-name="JDBC" endpoint-name="jdbcPortTypeRole_partnerRole" file-path="getClientEndpoint.bpel" interface-name="ns1:jdbcPortType" name="endpoint5" process-name="getClientEndpoint" service-name="ns4:JDBC"/>
+        <endpoint display-name="Log" endpoint-name="FileOutboundPortTypeRole_partnerRole" file-path="getClientEndpoint.bpel" interface-name="ns2:FileOutboundPortType" name="endpoint6" process-name="getClientEndpoint" service-name="ns4:Log"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="getClientEndpoint.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="getClientEndpointApp-getClientEndpoint" unit-name="getClientEndpoint" unknown="false" x="135" y="97">
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-database-binding.jar" component-name="sun-database-binding" description="Represents this Service Unit" name="getClientEndpointApp-sun-database-binding" unit-name="sun-database-binding">
+            <ports>
+                <port x="67" y="356">
+                    <link xlink:href="../jbiasa/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/service[@name='service']/port[@name='port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-file-binding.jar" component-name="sun-file-binding" description="Represents this Service Unit" name="getClientEndpointApp-sun-file-binding" unit-name="sun-file-binding">
+            <ports>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiServiceUnits/getClientEndpoint/fileLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService']/port[@name='fileLog_OutboundPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="getClientEndpointApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="220">
+                    <link xlink:href="../jbiasa/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/service[@name='getEPRService']/port[@name='getEPRPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint3" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint1" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint2" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/portType[@name='getEPRPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/getClientEndpointApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/fileLog.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/portType[@name='getEPRPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpointApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/binding[@name='getEPRBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/fileLog.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/binding[@name='getEPRBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/service[@name='getEPRService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/fileLog.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/getEPR.wsdl#xpointer(/definitions/service[@name='getEPRService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/getClientEndpoint/jdbc.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
