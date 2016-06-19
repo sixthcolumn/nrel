@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<jbi xmlns="http://java.sun.com/xml/ns/jbi" xmlns:ns1="http://enterprise.netbeans.org/bpel/GetMaintOrder/getMaintOrder" xmlns:ns2="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/fileLog" xmlns:ns3="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogRequest" xmlns:ns4="http://j2ee.netbeans.org/wsdl/getClientEndpoint/src/jdbc" xmlns:ns5="http://j2ee.netbeans.org/wsdl/GetMaintOrder/src/LogReply" xmlns:ns6="http://iec.ch/TC57/2015/GetMaintenanceOrders" xmlns:ns7="GetMaintOrderApp" version="1.0">
-    <services binding-component="true">
-        <provides endpoint-name="casaPort1" interface-name="ns6:GetMaintenanceOrders_Port" service-name="ns7:GetMaintOrderAppService1"/>
-        <provides endpoint-name="casaPort2" interface-name="ns6:GetMaintenanceOrders_Port" service-name="ns7:GetMaintOrderAppService2"/>
-        <consumes endpoint-name="GetMaintenanceOrders_Port" interface-name="ns6:GetMaintenanceOrders_Port" service-name="ns6:GetMaintenanceOrders"/>
-        <consumes endpoint-name="casaPort2" interface-name="ns6:GetMaintenanceOrders_Port" service-name="ns7:GetMaintOrderAppService2"/>
-    </services>
-</jbi>

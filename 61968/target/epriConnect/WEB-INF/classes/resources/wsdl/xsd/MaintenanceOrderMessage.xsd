@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://iec.ch/TC57/2011/MaintenanceOrderMessage"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.iec.ch/TC57/2011/schema/message"
+	xmlns:obj="http://iec.ch/TC57/2014/MaintenanceOrders#"
+	targetNamespace="http://iec.ch/TC57/2011/MaintenanceOrderMessage"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0.0">
+	<!-- Base Message Definitions -->
+	<xs:import namespace="http://www.iec.ch/TC57/2011/schema/message"
+		schemaLocation="Message.xsd" />
+	<!-- CIM Information Object Definition -->
+	<xs:import namespace="http://iec.ch/TC57/2014/MaintenanceOrders#"
+		schemaLocation="MaintenanceOrder.xsd" />
+	<!-- PayloadType Definition -->
+	<xs:complexType name="MaintenanceOrderPayloadType">
+		<xs:sequence>
+			<xs:element ref="obj:MaintenanceOrders" />
+			<xs:element name="OperationSet" type="msg:OperationSet"
+				minOccurs="0" />
+			<xs:element name="Compressed" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For compressed and/or binary, uuencoded
+						payloads</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Format" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Hint as to format of payload, e.g. XML, RDF, SVF,
+						BINARY,
+						PDF, ...</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Message Types -->
+	<!-- RequestMessageType -->
+	<xs:complexType name="MaintenanceOrderRequestMessageType">
+		<xs:sequence>
+			<xs:element name="Header" type="msg:HeaderType" />
+			<xs:element name="Request" type="msg:RequestType"
+				minOccurs="0" />
+			<xs:element name="Payload"
+				type="tns:MaintenanceOrderPayloadType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ResponseMessageType -->
+	<xs:complexType name="MaintenanceOrderResponseMessageType">
+		<xs:sequence>
+			<xs:element name="Header" type="msg:HeaderType" />
+			<xs:element name="Reply" type="msg:ReplyType" />
+			<xs:element name="Payload"
+				type="tns:MaintenanceOrderPayloadType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- EventMessageType -->
+	<xs:complexType name="MaintenanceOrderEventMessageType">
+		<xs:sequence>
+			<xs:element name="Header" type="msg:HeaderType" />
+			<xs:element name="Payload"
+				type="tns:MaintenanceOrderPayloadType" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<!-- FaultMessageType -->
+	<xs:complexType name="MaintenanceOrderFaultMessageType">
+		<xs:sequence>
+			<xs:element name="Reply" type="msg:ReplyType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CreateMaintenanceOrder"
+		type="tns:MaintenanceOrderRequestMessageType" />
+	<xs:element name="ChangeMaintenanceOrder"
+		type="tns:MaintenanceOrderRequestMessageType" />
+	<xs:element name="CancelMaintenanceOrder"
+		type="tns:MaintenanceOrderRequestMessageType" />
+	<xs:element name="CloseMaintenanceOrder"
+		type="tns:MaintenanceOrderRequestMessageType" />
+	<xs:element name="DeleteMaintenanceOrder"
+		type="tns:MaintenanceOrderRequestMessageType" />
+	<xs:element name="CreatedMaintenanceOrder"
+		type="tns:MaintenanceOrderEventMessageType" />
+	<xs:element name="ChangedMaintenanceOrder"
+		type="tns:MaintenanceOrderEventMessageType" />
+	<xs:element name="CanceledMaintenanceOrder"
+		type="tns:MaintenanceOrderEventMessageType" />
+	<xs:element name="ClosedMaintenanceOrder"
+		type="tns:MaintenanceOrderEventMessageType" />
+	<xs:element name="DeletedMaintenanceOrder"
+		type="tns:MaintenanceOrderEventMessageType" />
+	<xs:element name="MaintenanceOrderResponseMessage"
+		type="tns:MaintenanceOrderResponseMessageType" />
+	<xs:element name="MaintenanceOrderFaultMessage"
+		type="tns:MaintenanceOrderFaultMessageType" />
+</xs:schema>

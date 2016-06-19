@@ -10101,3 +10101,482 @@
 88906981 [http-bio-8080-exec-4] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
 88906983 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
 88906989 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 3106
+2801 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+2367 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+2844 [localhost-startStop-1] DEBUG org.springframework.transaction.annotation.AnnotationTransactionAttributeSource  - Adding transactional method 'find' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+82564 [http-bio-8080-exec-4] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+82583 [http-bio-8080-exec-4] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+82611 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+82676 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1936
+82883 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+82884 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => cvc-complex-type.2.4.a: Invalid content was found starting with element 'mes:Verb'. One of '{"http://www.iec.ch/TC57/2011/schema/message":Noun}' is expected.
+82884 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 7
+82887 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1936
+82943 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+99180 [http-bio-8080-exec-5] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+99188 [http-bio-8080-exec-5] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+99189 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+99202 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1938
+99204 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+99204 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => cvc-complex-type.2.4.a: Invalid content was found starting with element 'mes:Verb'. One of '{"http://www.epri.com/2016/DERGroupDispatchesMessage":Header}' is expected.
+99204 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 5
+99204 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1938
+99218 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+144325 [http-bio-8080-exec-6] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+144334 [http-bio-8080-exec-6] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+144335 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+144347 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1940
+144383 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1940
+144398 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+2364 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+2852 [localhost-startStop-1] DEBUG org.springframework.transaction.annotation.AnnotationTransactionAttributeSource  - Adding transactional method 'find' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+11644 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+11658 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+11682 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+17412 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1944
+29229 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1944
+29276 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+85279 [http-bio-8080-exec-2] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+85288 [http-bio-8080-exec-2] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+85289 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+89188 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1946
+110835 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1946
+110854 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+2224 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+2688 [localhost-startStop-1] DEBUG org.springframework.transaction.annotation.AnnotationTransactionAttributeSource  - Adding transactional method 'find' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+13346 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+13366 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13387 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+20226 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1948
+38080 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1948
+38123 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+2439 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+2922 [localhost-startStop-1] DEBUG org.springframework.transaction.annotation.AnnotationTransactionAttributeSource  - Adding transactional method 'find' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+24691 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+24706 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+24730 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+28583 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1950
+42551 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236524924 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236524939 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236524944 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236524967 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1952
+236525061 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+236525061 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => cvc-complex-type.2.4.a: Invalid content was found starting with element 'mes:Verb'. One of '{"http://www.iec.ch/TC57/2011/schema/message":Noun}' is expected.
+236525062 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 7
+236525068 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1952
+236525142 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236562916 [http-bio-8080-exec-2] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236562927 [http-bio-8080-exec-2] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236562928 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236562943 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1954
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => ?
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 34
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => ? [line:34]
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 34
+236562950 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1954
+236562964 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236599125 [http-bio-8080-exec-3] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236599140 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236599142 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236599157 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1956
+236599163 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1956
+236599176 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236617759 [http-bio-8080-exec-4] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236617769 [http-bio-8080-exec-4] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236617771 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236617780 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1958
+236617786 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - handleEvent called
+236617786 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - message => For input string: "a"
+236617786 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.DetailValidationHandler  - line number => 52
+236617787 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1958
+236617803 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236629713 [http-bio-8080-exec-5] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236629722 [http-bio-8080-exec-5] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236629723 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236629737 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1960
+236629764 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236685527 [http-bio-8080-exec-9] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+236685543 [http-bio-8080-exec-9] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236685545 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236685556 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1962
+236685565 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+236733226 [http-bio-8080-exec-8] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM executeDERGroups failed
+236733235 [http-bio-8080-exec-8] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+236733237 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+236733246 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1964
+236733255 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+37596 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+37622 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+37688 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - org : sixc
+37747 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 45
+37981 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 45
+38026 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+7315 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+7334 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+7362 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - org : sixc
+7434 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 47
+7659 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 47
+7698 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+11553 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+11573 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+11605 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - org : sixc
+11668 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 49
+11947 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+188392 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+188394 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+188405 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - org : sixc
+188430 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 51
+188440 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+15420 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+15443 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+15473 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+15500 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+15500 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - header.message ID is required
+15501 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 0
+15588 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+15597 [http-bio-8080-exec-1] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+15597 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+72768 [http-bio-8080-exec-2] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+72770 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+77591 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+101394 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+112793 [http-bio-8080-exec-2] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - header.message ID is required
+112793 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 53
+5307 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+5328 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+5358 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+5384 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+5430 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 55
+5707 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+5712 [http-bio-8080-exec-1] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+5713 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+5713 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+84756 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+84757 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+88845 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+95929 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+95950 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 57
+95962 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+104961 [http-bio-8080-exec-3] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+121203 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+124338 [http-bio-8080-exec-3] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+6950 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+6970 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+7000 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+7027 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+7075 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 59
+7342 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+7346 [http-bio-8080-exec-1] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+7347 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+7347 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+4279 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+4312 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+4347 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+4389 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+4457 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 61
+4871 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+4878 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+4900 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.MessageID must be unique
+12844 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+12866 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+12897 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+12925 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12972 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 63
+13244 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13249 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13265 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.MessageID must be unique
+9757 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+9777 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+9806 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+9834 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+9883 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 65
+10150 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+10156 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+10162 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : 9e8b08bb-3818-4d07-8b13-8bb4e3be5d69
+6798 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+6819 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+6851 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+6880 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+6939 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 67
+7217 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+7222 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+7242 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : bbf33d80-1e0c-43d2-a83c-c80c659cf1c9
+4877 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+4896 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+4926 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+4955 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+5002 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 69
+5276 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+5282 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+5300 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : fc35c3f7-609f-4301-b24c-725653b1bcfc
+10866964 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+10866969 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+10867048 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+10867063 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+10867077 [http-bio-8080-exec-3] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - header.MessageID must be unique
+10867079 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 69
+10867142 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+10867146 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+10867146 [http-bio-8080-exec-3] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+10976451 [http-bio-8080-exec-4] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+10976452 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+10976468 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+10976482 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+10976503 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 72
+10976518 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+10976524 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+10976544 [http-bio-8080-exec-4] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : 18bd5cdb-8fb7-4b45-b45e-b337fb841182
+13449690 [http-bio-8080-exec-6] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13449692 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13449722 [http-bio-8080-exec-6] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13449723 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13449723 [http-bio-8080-exec-6] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13449728 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:ca012c22-3e8d-499b-be45-0eb37ff2296c
+13449745 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 74
+13449809 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 74
+13449826 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13449830 [http-bio-8080-exec-6] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+13449830 [http-bio-8080-exec-6] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+13598107 [http-bio-8080-exec-7] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13598108 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13598115 [http-bio-8080-exec-7] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13598115 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13598115 [http-bio-8080-exec-7] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13598121 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:0e2a4461-34c9-4b66-8940-fe9eb2064169
+13598143 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 76
+13598164 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13598171 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13629478 [http-bio-8080-exec-9] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13629479 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13629484 [http-bio-8080-exec-9] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13629484 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13629484 [http-bio-8080-exec-9] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13629490 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:8b9c6b48-2b58-43ff-b628-6e017e4b8537
+13629511 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 78
+13629529 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13629536 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13690794 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13690795 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13690799 [http-bio-8080-exec-1] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13690799 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13690799 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13690804 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:85b46cd2-4531-43c6-b3fa-8a6ac056b35e
+13690821 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 80
+13690838 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13690843 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13841666 [http-bio-8080-exec-8] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13841668 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13841675 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+13841687 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13841707 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 82
+13841725 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 82
+13841737 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13841740 [http-bio-8080-exec-8] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+13841740 [http-bio-8080-exec-8] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+13857269 [http-bio-8080-exec-9] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13857271 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13857275 [http-bio-8080-exec-9] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13857275 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13857275 [http-bio-8080-exec-9] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13857280 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:5596c739-7c97-4d58-8af3-f50054d9f146
+13857298 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 84
+13857312 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 84
+13857390 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13857396 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+13857396 [http-bio-8080-exec-9] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+13922860 [http-bio-8080-exec-10] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13922861 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13922863 [http-bio-8080-exec-10] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+13922863 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+13922863 [http-bio-8080-exec-10] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+13922868 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:fe9f83c6-b79d-45e7-9f93-d424e267f862
+13922905 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 86
+13922919 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13922923 [http-bio-8080-exec-10] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+19595 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+19616 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+19632 [http-bio-8080-exec-1] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+19632 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+19638 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+19657 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:3ce56b3a-eeb2-48dc-8b41-62ec3319dea3
+19709 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 88
+20017 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+20022 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+398844 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+398848 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+398855 [http-bio-8080-exec-3] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+398855 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+398855 [http-bio-8080-exec-3] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+398862 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:f3f04986-edf9-40d7-98d0-671cc7b16faa
+398886 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 90
+398899 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+398904 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+532989 [http-bio-8080-exec-5] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+532990 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+532998 [http-bio-8080-exec-5] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+532998 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+532998 [http-bio-8080-exec-5] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+533004 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:e62c95b1-8687-4491-b167-d3b6725f828b
+533024 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 92
+533033 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+533037 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+661988 [http-bio-8080-exec-7] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+661990 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+661996 [http-bio-8080-exec-7] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+661996 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+661997 [http-bio-8080-exec-7] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+662002 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:81b182f0-8496-4b65-8ce7-808403b6495d
+662056 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 94
+662066 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+662082 [http-bio-8080-exec-7] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+8372 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+8394 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+8429 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+8433 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+8437 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:a0ddb232-bf01-49ae-97bc-9542770ebc9b
+8488 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 96
+8769 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+8774 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+23710 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+23731 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+36134 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //*[local-name()='Header']/*[local-name()='Organization']/text()
+64012 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : 
+64020 [http-bio-8080-exec-1] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - Unable to retrieve value for User/Organization. Cannot set vendor id
+76949 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //*[local-name()='Header']/*[local-name()='MessageID']/text()
+85362 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:676d9ee2-73cf-4924-b3e5-2624cbe23c21
+85436 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 98
+85709 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+93195 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+93199 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+7969 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+7992 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+8004 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+8029 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+8057 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+8061 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:4c005fe9-9565-463d-9cda-50a184e040f5
+8108 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 100
+8406 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+8409 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+8413 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+34113 [http-bio-8080-exec-3] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+34115 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+34118 [http-bio-8080-exec-3] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+34123 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+34136 [http-bio-8080-exec-3] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+34140 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:b2c323f3-205b-4dbd-9c48-8d01989b665f
+34164 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 102
+34174 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+34175 [http-bio-8080-exec-3] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+34178 [http-bio-8080-exec-3] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+82134 [http-bio-8080-exec-5] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+82136 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+82140 [http-bio-8080-exec-5] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+82145 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+82156 [http-bio-8080-exec-5] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+82160 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:c25ba1fd-6361-4b0a-9a36-3f343fa69443
+82179 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 104
+82188 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+82190 [http-bio-8080-exec-5] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+82193 [http-bio-8080-exec-5] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+69762 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+69783 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+69795 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+69818 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+69845 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+69848 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:36551f67-9d3e-4871-8070-1c045213cba9
+69895 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 106
+70123 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+70124 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [014f301a-26e9-4781-868a-3d6cd2809021]
+70177 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+70179 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+70182 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13532 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13552 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13560 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+13585 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+13608 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+13612 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : uuid:d84976e2-7c6b-46cf-b8b4-e5c6f278537a
+13660 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 108
+13893 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+13893 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [e8106e48-5306-4f4c-b2e2-a3598ad5ebf3]
+13952 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13954 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+13957 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13486 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+13508 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+13514 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+13515 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupsMessage
+13515 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+13515 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+13515 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroups#
+13517 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+13539 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+13562 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+13565 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13614 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 110
+13835 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+13835 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [c85917fd-7e30-41cc-93d3-9ec59b8b4223]
+13892 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns2: uri http://www.epri.com/2016/DERGroupsMessage
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns3: uri http://www.epri.com/2013/DERGroups#
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix DEFAULT: uri http://www.iec.ch/TC57/2011/schema/message
+13894 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='CorrelationID']/text()
+13897 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+13914 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+13917 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : c85917fd-7e30-41cc-93d3-9ec59b8b4223
+12198 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+12219 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+12225 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+12225 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupsMessage
+12225 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+12225 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+12225 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroups#
+12228 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='User']/*[local-name()='Organization']/text()
+12254 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+12279 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:MessageID/text()
+12282 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - *********** messageID :L 5056eab4-120c-11e5-9493-1697f925ec7b
+12283 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+12286 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12336 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 112
+12569 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+12569 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [ddff63d7-db5a-4cb6-9546-6ec8fde73e62]
+12626 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+12628 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+12628 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns2: uri http://www.epri.com/2016/DERGroupsMessage
+12629 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns3: uri http://www.epri.com/2013/DERGroups#
+12629 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+12629 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix DEFAULT: uri http://www.iec.ch/TC57/2011/schema/message
+12630 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:CorrelationID/text()
+12632 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - ***** CORRELATION ID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12632 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12649 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - //*[local-name()='Header']/*[local-name()='MessageID']/text()
+12652 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : ddff63d7-db5a-4cb6-9546-6ec8fde73e62
+7130 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+7152 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+7159 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+7159 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupsMessage
+7159 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+7159 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+7159 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroups#
+7161 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:User/mes:Organization/text()
+7185 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+7208 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:MessageID/text()
+7211 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+7256 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 114
+7479 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+7479 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [d0c2b4b5-0f33-4483-9b6a-7c70ba7c3a53]
+7534 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+7536 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+7536 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns2: uri http://www.epri.com/2016/DERGroupsMessage
+7536 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns3: uri http://www.epri.com/2013/DERGroups#
+7536 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+7536 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix DEFAULT: uri http://www.iec.ch/TC57/2011/schema/message
+7537 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:CorrelationID/text()
+7539 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+7559 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:MessageID/text()
+7561 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : d0c2b4b5-0f33-4483-9b6a-7c70ba7c3a53

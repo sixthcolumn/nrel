@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" uri="src/ExecuteDERGroups.wsdl"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupsMessage.xsd" uri="src/xsd/DERGroupsMessage.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroups.xsd" uri="src/xsd/DERGroups.xsd"/>
+</catalog>

@@ -24,6 +24,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.common.injection.NoJSR250Annotations;
 import org.apache.cxf.common.logging.LogUtils;
 import org.apache.cxf.interceptor.AbstractLoggingInterceptor;
@@ -37,19 +38,23 @@ import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.Phase;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sixthc.dao.EpriLogDao;
-import com.sixthc.model.EpriLog;
+import com.sixthc.dao.MessageLogDao;
+import com.sixthc.dao.VendorDao;
+import com.sixthc.model.MessageLog;
+import com.sixthc.model.Vendor;
+import com.sixthc.util.XmlStringParser;
 
 /**
  * 
  */
 @NoJSR250Annotations
 public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
-	private String vendorRoleType = null;
-	private String interfaceName = null;
 	private String packageName = null;
+	private String messageName = null;
+	private String packageGroupName = null;
 	private String resultCode = null;
 	private String stage = null;
+	private XmlStringParser parser;
 	private static final Logger LOG = LogUtils
 			.getLogger(LoggingOutInterceptor.class);
 	private static final String LOG_SETUP = LoggingOutInterceptor.class
@@ -58,8 +63,11 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 	.getLogger(LoggingOutInterceptor.class);
 
 	@Autowired
-	private EpriLogDao epriLogDao;
-	EpriLog epriLog = new EpriLog();
+	private MessageLogDao messageLogDao;
+	MessageLog messageLog = new MessageLog();
+	
+	@Autowired
+	private VendorDao vendorDao;
 	
 	public LoggingOutInterceptor(String phase) {
 		super(phase);
@@ -123,30 +131,29 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 			}
 			final LoggingMessage buffer = new LoggingMessage(
 					"Outbound Message\n---------------------------", id);
-			epriLog.setMessageId(id);
+			messageLog.setMessageId(id);
 			
 			// link up with correct interface
-			epriLog.setVendorRoleTypeName(getVendorRoleType());
-			epriLog.setPackageName(getPackageName());
-			epriLog.setInterfaceName(getInterfaceName());
-			epriLogDao.setInterface(epriLog);
-			epriLog.setStage(stage);
+			messageLog.setPackageName(getPackageName());
+			messageLog.setPackageGroupName(getPackageGroupName());
+			messageLog.setMessageName(getMessageName());
+			messageLog.setStage(stage);
 
 			
 			Integer responseCode = (Integer) message.get(Message.RESPONSE_CODE);
 			if (responseCode != null) {
-				epriLog.setResponseCode(String.valueOf(responseCode));
+				messageLog.setResponseCode(String.valueOf(responseCode));
 			}
 
 			String encoding = (String) message.get(Message.ENCODING);
 
 			if (encoding != null) {
-				epriLog.setEncoding(encoding);
+				messageLog.setEncoding(encoding);
 			}
 			String httpMethod = (String) message
 					.get(Message.HTTP_REQUEST_METHOD);
 			if (httpMethod != null) {
-				epriLog.setHttpMethod(httpMethod);
+				messageLog.setHttpMethod(httpMethod);
 			}
 			String address = (String) message.get(Message.ENDPOINT_ADDRESS);
 			if (address != null) {
@@ -154,12 +161,16 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 			}
 			String ct = (String) message.get(Message.CONTENT_TYPE);
 			if (ct != null) {
-				epriLog.setContentType(ct);
+				messageLog.setContentType(ct);
 			}
 			Object headers = message.get(Message.PROTOCOL_HEADERS);
 			if (headers != null) {
-				epriLog.setHeader(headers.toString());
+				messageLog.setHeader(headers.toString());
 			}
+			
+			// infer interface if not set
+			if (messageName != null)
+				messageLog.setMessageName(getMessageName());
 
 			if (cos.getTempFile() == null) {
 				// buffer.append("Outbound Message:\n");
@@ -183,14 +194,53 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 
 				writePayload(payload, cos, encoding, ct);
 				buffer.getPayload().append(payload);
-				epriLog.setPayload(payload.toString());
+				String payloadString = payload.toString();
+				messageLog.setPayload(payloadString);
+				
+				// special processing for each message type, CIM, MS...
+				processPayload(new XmlStringParser(payloadString), messageLog);
+				
+				/*
+				 * we require the header to contain User/Organization, and for the value to
+				 * correspond to name attribute in vendor table, else we can't track who
+				 * owns this message
+				 */
+//				parser = new XmlStringParser(payloadString);
+//				String org = parser.getTagValue("http://www.iec.ch/TC57/2011/schema/message", "User", "Organization");
+//				log.debug("org : " + org);
+//				if( !StringUtils.isBlank(org)) {
+//					Vendor vendor = vendorDao.findByName(org);
+//					if( vendor != null ) {
+//						messageLog.setVendor(vendor);;
+//					} else{
+//						log.error("bad value for User/Organization passed : " + org + ". Cannot set vendor id");
+//					}
+//				} else {
+//					log.error("Unable to retrieve value for User/Organization. Cannot set vendor id");
+//				}
+//				
+//				/*
+//				 * We identify the vendor for the outgoing message by looking at
+//				 * the vendor associated with the incoming message
+//				 */
+//				String correlationID = parser.getHeaderValueWC("CorrelationID");
+//				log.debug("correlation ID : " + correlationID);
+//				if( !StringUtils.isBlank(correlationID)) {
+//					log.error("unexpected, correlation id not set");
+//				} else {
+//					MessageLog ml = messageLogDao.findByMessageID(correlationID);
+//					if( ml == null )
+//						log.error("Unable to retrieve message log using corrleation ID of " + correlationID);
+//					else
+//						messageLog.setVendor(ml.getVendor());
+//				}
 
 			} catch (Exception ex) {
 				// ignore
 			}
 
-			epriLog.setResultCode(resultCode);
-			epriLogDao.save(epriLog);
+			messageLog.setResultCode(resultCode);
+			messageLogDao.save(messageLog);
 			log(buffer.toString());
 			try {
 				// empty out the cache
@@ -203,28 +253,42 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 		}
 	}
 
-	public String getVendorRoleType() {
-		return vendorRoleType;
-	}
-
-	public void setVendorRoleType(String vendorRoleType) {
-		this.vendorRoleType = vendorRoleType;
-	}
-
-	public String getInterfaceName() {
-		return interfaceName;
-	}
-
-	public void setInterfaceName(String iface) {
-		this.interfaceName = iface;
-	}
-
 	public String getPackageName() {
 		return packageName;
 	}
 
-	public void setPackageName(String pkg) {
-		this.packageName = pkg;
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
+	}
+
+	public String getMessageName() {
+		return messageName;
+	}
+
+	public void setMessageName(String messageName) {
+		this.messageName = messageName;
+	}
+
+	public String getPackageGroupName() {
+		return packageGroupName;
+	}
+
+	public void setPackageGroupName(String packageGroupName) {
+		this.packageGroupName = packageGroupName;
+	}
+	
+	/**
+	 * Override this method if you wish to search for tags
+	 * and react to values and such
+	 * 
+	 * @param payload
+	 * @throws Fault
+	 */
+	public void processPayload(XmlStringParser payload, MessageLog messageLog) throws Fault {
+	}
+	
+	public String inferMessage(String action) {
+		return "";
 	}
 
 	@Override
