@@ -22,20 +22,7 @@
     <operation name="get">
     <jdbc:operation xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/"/>
       <input name="input">
-    <jdbc:input xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" MarkColumnName="" MarkColumnValue="" MoveRowToTableName="" PKName="" PollMilliSeconds="5000" PollingPostProcessing="MoveRow" TableName="getVendorURL" Transaction="NOTransaction" numberOfRecords="" operationType="getVendorURL_Operation" sql="SELECT 
-    test_seq_step.harness_url
-FROM
-    vendor,
-    vendor_test_sequences,
-    test_sequence,
-    test_seq_step
-WHERE
-    vendor.name = ?
-        AND vendor_test_sequences.vendor_id = vendor.vendor_id
-        AND test_sequence.test_sequence_id = vendor_test_sequences.test_sequence_id
-        AND test_seq_step.test_sequence_id = test_sequence.test_sequence_id
-        AND test_sequence.type = ?
-        AND test_sequence.name = ?" paramOrder="vendor,call_type,op_name"/>
+    <jdbc:input xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" MarkColumnName="" MarkColumnValue="" MoveRowToTableName="" PKName="" PollMilliSeconds="5000" PollingPostProcessing="MoveRow" TableName="getVendorURL" Transaction="NOTransaction" numberOfRecords="" operationType="getVendorURL_Operation" sql="select get_vendor_url(?,?,?) from dual" paramOrder="vendor,call_type,op_name"/>
       </input>
       <output name="output">
     <jdbc:output xmlns:jdbc="http://schemas.sun.com/jbi/wsdl-extensions/jdbc/" returnPartName="part"/>

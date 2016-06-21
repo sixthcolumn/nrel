@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" xmlns:ns2="http://www.epri.com/2016/ExecuteDERGroups" xmlns:ns3="ExecuteDERGroupsApp" xmlns:ns4="http://enterprise.netbeans.org/bpel/ExecuteDERGroups/executeDERGroups" xmlns:xlink="http://www.w3.org/2000/xlink">
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/2016/ExecuteDERGroups" xmlns:ns2="ExecuteDERGroupsApp" xmlns:ns3="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" xmlns:ns4="http://enterprise.netbeans.org/bpel/ExecuteDERGroups/executeDERGroups" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
-        <endpoint endpoint-name="port" interface-name="ns1:jdbcPortType" name="endpoint1" service-name="ns1:service"/>
-        <endpoint endpoint-name="DERGroups_Port" interface-name="ns2:DERGroups_Port" name="endpoint2" service-name="ns2:ExecuteDERGroups"/>
-        <endpoint endpoint-name="casaPort1" interface-name="ns2:DERGroups_Port" name="endpoint3" service-name="ns3:ExecuteDERGroupsAppService1"/>
-        <endpoint display-name="PartnerLink1" endpoint-name="DERGroups_PortRole_myRole" file-path="executeDERGroups.bpel" interface-name="ns2:DERGroups_Port" name="endpoint4" process-name="executeDERGroups" service-name="ns4:PartnerLink1"/>
-        <endpoint display-name="JDBCLink" endpoint-name="jdbcPortTypeRole_partnerRole" file-path="executeDERGroups.bpel" interface-name="ns1:jdbcPortType" name="endpoint5" process-name="executeDERGroups" service-name="ns4:JDBCLink"/>
-        <endpoint display-name="R1" endpoint-name="DERGroups_PortRole_partnerRole" file-path="executeDERGroups.bpel" interface-name="ns2:DERGroups_Port" name="endpoint6" process-name="executeDERGroups" service-name="ns4:R1"/>
+        <endpoint endpoint-name="DERGroups_Port" interface-name="ns1:DERGroups_Port" name="endpoint1" service-name="ns1:ExecuteDERGroups"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns1:DERGroups_Port" name="endpoint2" service-name="ns2:ExecuteDERGroupsAppService1"/>
+        <endpoint endpoint-name="port" interface-name="ns3:jdbcPortType" name="endpoint3" service-name="ns3:service"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="DERGroups_PortRole_myRole" file-path="executeDERGroups.bpel" interface-name="ns1:DERGroups_Port" name="endpoint4" process-name="executeDERGroups" service-name="ns4:PartnerLink1"/>
+        <endpoint display-name="JDBCLink" endpoint-name="jdbcPortTypeRole_partnerRole" file-path="executeDERGroups.bpel" interface-name="ns3:jdbcPortType" name="endpoint5" process-name="executeDERGroups" service-name="ns4:JDBCLink"/>
+        <endpoint display-name="R1" endpoint-name="DERGroups_PortRole_partnerRole" file-path="executeDERGroups.bpel" interface-name="ns1:DERGroups_Port" name="endpoint6" process-name="executeDERGroups" service-name="ns4:R1"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="ExecuteDERGroups.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ExecuteDERGroupsApp-ExecuteDERGroups" unit-name="ExecuteDERGroups" unknown="false" x="133" y="97">
+        <service-engine-service-unit artifacts-zip="ExecuteDERGroups.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ExecuteDERGroupsApp-ExecuteDERGroups" unit-name="ExecuteDERGroups" unknown="false" x="134" y="200">
             <provides endpoint="endpoint4"/>
             <consumes endpoint="endpoint5"/>
             <consumes endpoint="endpoint6"/>
@@ -18,8 +18,8 @@
             <ports>
                 <port x="67" y="37">
                     <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/getVendorURL.wsdl#xpointer(/definitions/service[@name='service']/port[@name='port'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint1"/>
-                    <provides endpoint="endpoint1"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
                 </port>
             </ports>
         </binding-component-service-unit>
@@ -27,29 +27,27 @@
             <ports>
                 <port x="67" y="244">
                     <link xlink:href="../jbiasa/ExecuteDERGroups/ExecuteDERGroups.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroups']/port[@name='DERGroups_Port'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint2"/>
-                    <provides endpoint="endpoint2"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
                 </port>
                 <port bindingType="soap" x="67" y="421">
                     <link xlink:href="../jbiasa/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupsAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint3"/>
-                    <provides endpoint="endpoint3"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
                 </port>
             </ports>
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint5" provider="endpoint1" state="unchanged"/>
-        <connection consumer="endpoint2" provider="endpoint4" state="unchanged"/>
-        <connection consumer="endpoint6" provider="endpoint3" state="new"/>
-        <connection consumer="endpoint6" provider="endpoint4" state="deleted"/>
+        <connection consumer="endpoint5" provider="endpoint3" state="unchanged"/>
+        <connection consumer="endpoint1" provider="endpoint4" state="new"/>
+        <connection consumer="endpoint6" provider="endpoint2" state="new"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/ExecuteDERGroups/ExecuteDERGroups.wsdl#xpointer(/definitions/portType[@name='DERGroups_Port'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/ExecuteDERGroups.wsdl#xpointer(/definitions/portType[@name='DERGroups_Port'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/getVendorURL.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/jdbc.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/logFile.wsdl#xpointer(/definitions/portType[@name='FileOutboundPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
     </porttypes>
@@ -58,7 +56,6 @@
         <link xlink:href="../jbiasa/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/ExecuteDERGroups.wsdl#xpointer(/definitions/binding[@name='DERGroups_Binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/getVendorURL.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/jdbc.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/logFile.wsdl#xpointer(/definitions/binding[@name='FileOutboundBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
     </bindings>
@@ -67,7 +64,6 @@
         <link xlink:href="../jbiasa/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupsAppService1'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/ExecuteDERGroups.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroups'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/getVendorURL.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>
-        <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/jdbc.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroups/logFile.wsdl#xpointer(/definitions/service[@name='FileOutboundService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/ExecuteDERGroupsApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupsAppService1'])" xlink:type="simple"/>
     </services>

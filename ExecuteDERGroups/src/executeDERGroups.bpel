@@ -13,7 +13,6 @@
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" location="ExecuteDERGroupsWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://www.epri.com/2016/ExecuteDERGroups" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/logFile" location="logFile.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/jdbc" location="jdbc.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" location="getVendorURL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
         <partnerLink name="JDBCLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
