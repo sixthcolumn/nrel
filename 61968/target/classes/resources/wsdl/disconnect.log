@@ -1,5 +1,0 @@
-2399 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
-14548 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM MaintenanceOrder failed
-14565 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
-14591 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
-14681 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1161
