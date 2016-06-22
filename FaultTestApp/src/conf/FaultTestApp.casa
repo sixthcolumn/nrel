@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/2016/ExecuteDERGroups" xmlns:ns2="FaultTestApp" xmlns:ns3="http://enterprise.netbeans.org/bpel/FaultTest/faultTest" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="DERGroups_Port" interface-name="ns1:DERGroups_Port" name="endpoint1" service-name="ns1:ExecuteDERGroups"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns1:DERGroups_Port" name="endpoint2" service-name="ns2:FaultTestAppService1"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="DERGroups_PortRole_myRole" file-path="faultTest.bpel" interface-name="ns1:DERGroups_Port" name="endpoint3" process-name="faultTest" service-name="ns3:PartnerLink1"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="DERGroups_PortRole_partnerRole" file-path="faultTest.bpel" interface-name="ns1:DERGroups_Port" name="endpoint4" process-name="faultTest" service-name="ns3:PartnerLink2"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="FaultTest.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="FaultTestApp-FaultTest" unit-name="FaultTest" unknown="false" x="162" y="97">
+            <provides endpoint="endpoint3"/>
+            <consumes endpoint="endpoint4"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="FaultTestApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiasa/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroups']/port[@name='DERGroups_Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="67" y="263">
+                    <link xlink:href="../jbiasa/FaultTestApp.wsdl#xpointer(/definitions/service[@name='FaultTestAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint1" provider="endpoint3" state="unchanged"/>
+        <connection consumer="endpoint4" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint4" provider="endpoint3" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/portType[@name='DERGroups_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/FaultTestApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/portType[@name='DERGroups_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTestApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/binding[@name='DERGroups_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/FaultTestApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/binding[@name='DERGroups_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTestApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroups'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/FaultTestApp.wsdl#xpointer(/definitions/service[@name='FaultTestAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroups'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/FaultTestApp.wsdl#xpointer(/definitions/service[@name='FaultTestAppService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
