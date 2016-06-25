@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" uri="../ExecuteDERGroups.wsdl"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupsMessage.xsd" uri="../xsd/DERGroupsMessage.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/Message.xsd" uri="../xsd/Message.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroups.xsd" uri="../xsd/DERGroups.xsd"/>
+    <system systemId="ExecuteDERGroupsApp/ExecuteDERGroups/ExecuteDERGroupsWrapper.wsdl" uri="src/_references/_projects/ExecuteDERGroupsApp/src/jbiasa/ExecuteDERGroups/ExecuteDERGroupsWrapper.wsdl"/>
+</catalog>
