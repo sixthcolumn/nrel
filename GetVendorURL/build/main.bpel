@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="main"
+    targetNamespace="http://enterprise.netbeans.org/bpel/GetVendorURL/main"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/GetVendorURL/main"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://j2ee.netbeans.org/xsd/tableSchema">
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" location="getVendor.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" location="jdbcVendor.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="PartnerLink2" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
+        <partnerLink name="PartnerLink1" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" partnerLinkType="tns:getVendor" myRole="getVendorPortTypeRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="FaultOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationFault"/>
+        <variable name="ServiceOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationResponse"/>
+        <variable name="jdbcOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" messageType="tns:outputMsg"/>
+        <variable name="jdbcIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" messageType="tns:inputMsg"/>
+        <variable name="ServiceIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationRequest"/>
+    </variables>
+    <sequence>
+        <receive name="ServiceIn" createInstance="yes" partnerLink="PartnerLink1" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" variable="ServiceIn"/>
+        <assign name="Assign1">
+            <copy>
+                <from variable="ServiceIn" part="vendorName"/>
+                <to>$jdbcIn.part/ns0:vendorName</to>
+            </copy>
+            <copy>
+                <from variable="ServiceIn" part="opName"/>
+                <to>$jdbcIn.part/ns0:opName</to>
+            </copy>
+        </assign>
+        <invoke name="InvokeJDBC" partnerLink="PartnerLink2" operation="get_vendor" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" portType="tns:jdbcPortType" inputVariable="jdbcIn" outputVariable="jdbcOut">
+        </invoke>
+        <if name="IfNotNull">
+            <condition>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:harness_url/@isNull = false()</condition>
+            <sequence name="Sequence1">
+                <assign name="Assign2">
+                    <copy>
+                        <from>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:harness_url</from>
+                        <to variable="ServiceOut" part="url"/>
+                    </copy>
+                </assign>
+                <reply name="Reply1" partnerLink="PartnerLink1" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" variable="ServiceOut"/>
+            </sequence>               
+            <else>
+                <sequence name="Sequence2">
+                    <assign name="Assign3">
+                        <copy>
+                            <from>'6003'</from>
+                            <to variable="FaultOut" part="code"/>
+                        </copy>
+                        <copy>
+                            <from>concat('Vendor name :', $ServiceIn.vendorName, ', Op name :', $ServiceIn.opName)</from>
+                            <to variable="FaultOut" part="reason"/>
+                        </copy>
+                    </assign>
+                    <reply name="Reply2" partnerLink="PartnerLink1" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" faultName="tns:fault1" variable="FaultOut"/>
+                </sequence>                
+            </else>
+        </if>
+    </sequence>
+</process>
