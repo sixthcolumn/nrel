@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="GetVendor-soap-ui" resourceRoot="${projectDir}" soapui-version="4.5.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="getVendorBinding" type="wsdl" bindingName="{http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor}getVendorBinding" soapVersion="1_1" anonymous="optional" definition="GetVendorURL/src/getVendor.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/usr/local/git/nrel/GetVendorURL/src/getVendor.wsdl"><con:part><con:url>file:/usr/local/git/nrel/GetVendorURL/src/getVendor.wsdl</con:url><con:content><![CDATA[<definitions name="getVendor" targetNamespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types/>
+  <message name="getVendorOperationRequest">
+    <part name="vendorName" type="xsd:string"/>
+    <part name="opName" type="xsd:string"/>
+  </message>
+  <message name="getVendorOperationResponse">
+    <part name="url" type="xsd:string"/>
+  </message>
+  <message name="getVendorOperationFault">
+    <part name="code" type="xsd:string"/>
+    <part name="reason" type="xsd:string"/>
+  </message>
+  <portType name="getVendorPortType">
+    <operation name="getVendorOperation">
+      <input name="input1" message="tns:getVendorOperationRequest"/>
+      <output name="output1" message="tns:getVendorOperationResponse"/>
+      <fault name="fault1" message="tns:getVendorOperationFault"/>
+    </operation>
+  </portType>
+  <binding name="getVendorBinding" type="tns:getVendorPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getVendorOperation">
+      <soap:operation/>
+      <input name="input1">
+        <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor"/>
+      </input>
+      <output name="output1">
+        <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor"/>
+      </output>
+      <fault name="fault1">
+        <soap:fault name="fault1" use="literal" namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="getVendorService">
+    <port name="getVendorPort" binding="tns:getVendorBinding">
+      <soap:address location="http://localhost:${HttpDefaultPort}/getVendorService/getVendorURL"/>
+    </port>
+  </service>
+  <plnk:partnerLinkType name="getVendor">
+    <!--A partner link type is automatically generated when a new port type is added. Partner link types are used by BPEL processes. 
+In a BPEL process, a partner link represents the interaction between the BPEL process and a partner service. Each partner link is associated with a partner link type.
+A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
+    <plnk:role name="getVendorPortTypeRole" portType="tns:getVendorPortType"/>
+  </plnk:partnerLinkType>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getVendorOperation" bindingOperationName="getVendorOperation" type="Request-Response" outputName="output1" inputName="input1" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getVendorOperation>
+         <vendorName>?</vendorName>
+         <opName>?</opName>
+      </get:getVendorOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor/getVendorPortType/input1"/></con:call></con:operation></con:interface><con:testSuite name="getVendorBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getVendorOperation TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="getVendorOperation"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>getVendorBinding</con:interface><con:operation>getVendorOperation</con:operation><con:request name="getVendorOperation"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getVendorOperation>
+         <vendorName>sixc</vendorName>
+         <opName>CIM_DER (createDERGroup)</opName>
+      </get:getVendorOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor/getVendorPortType/input1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getVendorOperationFail"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>getVendorBinding</con:interface><con:operation>getVendorOperation</con:operation><con:request name="getVendorOperationFail"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:getVendorOperation>
+         <vendorName>sixce</vendorName>
+         <opName>CIM_DER (createDERGroup)</opName>
+      </get:getVendorOperation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor/getVendorPortType/input1" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
