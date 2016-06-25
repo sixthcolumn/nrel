@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/2016/ExecuteDERGroups" xmlns:ns2="FaultTestApp" xmlns:ns3="http://enterprise.netbeans.org/bpel/FaultTest/faultTest" xmlns:xlink="http://www.w3.org/2000/xlink">
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/2016/ExecuteDERGroups" xmlns:ns2="FaultTestApp" xmlns:ns3="http://enterprise.netbeans.org/bpel/FaultTest/faultTest" xmlns:ns4="http://enterprise.netbeans.org/bpel/FaultTest/proc2" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
         <endpoint endpoint-name="DERGroups_Port" interface-name="ns1:DERGroups_Port" name="endpoint1" service-name="ns1:ExecuteDERGroups"/>
         <endpoint endpoint-name="casaPort1" interface-name="ns1:DERGroups_Port" name="endpoint2" service-name="ns2:FaultTestAppService1"/>
-        <endpoint display-name="PartnerLink1" endpoint-name="DERGroups_PortRole_myRole" file-path="faultTest.bpel" interface-name="ns1:DERGroups_Port" name="endpoint3" process-name="faultTest" service-name="ns3:PartnerLink1"/>
-        <endpoint display-name="PartnerLink2" endpoint-name="DERGroups_PortRole_partnerRole" file-path="faultTest.bpel" interface-name="ns1:DERGroups_Port" name="endpoint4" process-name="faultTest" service-name="ns3:PartnerLink2"/>
+        <endpoint display-name="PartnerLink1" endpoint-name="DERGroups_PortRole_myRole" file-path="executeDERGroups.bpel" interface-name="ns1:DERGroups_Port" name="endpoint3" process-name="faultTest" service-name="ns3:PartnerLink1"/>
+        <endpoint display-name="PartnerLinkA" endpoint-name="DERGroups_PortRole_myRole" file-path="main.bpel" interface-name="ns1:DERGroups_Port" name="endpoint4" process-name="proc2" service-name="ns4:PartnerLinkA"/>
+        <endpoint display-name="PartnerLink2" endpoint-name="DERGroups_PortRole_partnerRole" file-path="executeDERGroups.bpel" interface-name="ns1:DERGroups_Port" name="endpoint5" process-name="faultTest" service-name="ns3:PartnerLink2"/>
+        <endpoint display-name="PartnerLinkB" endpoint-name="DERGroups_PortRole_partnerRole" file-path="main.bpel" interface-name="ns1:DERGroups_Port" name="endpoint6" process-name="proc2" service-name="ns4:PartnerLinkB"/>
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="FaultTest.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="FaultTestApp-FaultTest" unit-name="FaultTest" unknown="false" x="162" y="97">
             <provides endpoint="endpoint3"/>
-            <consumes endpoint="endpoint4"/>
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="FaultTestApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
@@ -28,8 +32,8 @@
     </service-units>
     <connections>
         <connection consumer="endpoint1" provider="endpoint3" state="unchanged"/>
-        <connection consumer="endpoint4" provider="endpoint2" state="new"/>
-        <connection consumer="endpoint4" provider="endpoint3" state="deleted"/>
+        <connection consumer="endpoint5" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint5" provider="endpoint3" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/FaultTest/ExecuteDERGroups.wsdl#xpointer(/definitions/portType[@name='DERGroups_Port'])" xlink:type="simple"/>

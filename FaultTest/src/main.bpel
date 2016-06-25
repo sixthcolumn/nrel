@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="proc2"
+    targetNamespace="http://enterprise.netbeans.org/bpel/FaultTest/proc2"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/FaultTest/proc2"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/2016/DERGroupsMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message">
+   <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" location="ExecuteDERGroupsWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://www.epri.com/2016/ExecuteDERGroups" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" location="ExecuteDERGroupsApp/ExecuteDERGroups/ExecuteDERGroupsWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <partnerLinks>
+      <partnerLink name="PartnerLinkA" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" partnerLinkType="tns:DERGroups_PortLinkType" myRole="DERGroups_PortRole"/>
+   </partnerLinks>
+   <variables>
+      <variable name="ServiceIn" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:CreateDERGroupsRequestMessage"/>
+   </variables>
+   <sequence>
+      <receive name="ServiceIn" createInstance="yes" partnerLink="PartnerLinkA" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceIn"/>
+      <scope name="Scope1">
+         <variables>
+            <variable name="ServiceOut" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
+            <variable name="Service1Out" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
+            <variable name="ServiceFaultOut" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
+         </variables>
+         <faultHandlers>
+            <catch faultName="sxeh:systemFault" faultVariable="faultVar" faultMessageType="sxeh:faultMessage">
+               <sequence name="Sequence1">
+                  <assign name="Assign1">
+                     <copy>
+                        <from variable="faultVar" part="fault"/>
+                        <to>$ServiceFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                     </copy>
+                     <copy>
+                        <from>'FATAL'</from>
+                        <to>$ServiceFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                     </copy>
+                     <copy>
+                        <from>'6002'</from>
+                        <to>$ServiceFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                     </copy>
+                     <copy>
+                        <from>'Failed'</from>
+                        <to>$ServiceFaultOut.ResponseMessage/ns0:Reply/ns1:Result</to>
+                     </copy>
+                  </assign>
+                  <reply name="Reply1" partnerLink="PartnerLinkA" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceFaultOut"/>
+               </sequence>
+            </catch>
+         </faultHandlers>
+         <sequence name="Sequence2">
+            <invoke name="Invoke1" partnerLink="PartnerLinkB" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" inputVariable="ServiceIn" outputVariable="Service1Out"/>
+            <assign name="Assign2">
+               <copy>
+                  <from>$Service1Out.ResponseMessage/ns0:Header</from>
+                  <to>$ServiceOut.ResponseMessage/ns0:Header</to>
+               </copy>
+               <copy>
+                  <from>$Service1Out.ResponseMessage/ns0:Reply</from>
+                  <to>$ServiceOut.ResponseMessage/ns0:Reply</to>
+               </copy>
+               <copy>
+                  <from>$Service1Out.ResponseMessage/ns0:Payload</from>
+                  <to>$ServiceOut.ResponseMessage/ns0:Payload</to>
+               </copy>
+            </assign>
+            <reply name="Reply2" partnerLink="PartnerLinkA" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceOut"/>
+         </sequence>
+      </scope>
+   </sequence>
+</process>

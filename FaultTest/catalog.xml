@@ -5,4 +5,5 @@
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupsMessage.xsd" uri="src/xsd/DERGroupsMessage.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroups.xsd" uri="src/xsd/DERGroups.xsd"/>
+    <system systemId="ExecuteDERGroupsApp/ExecuteDERGroups/ExecuteDERGroupsWrapper.wsdl" uri="nb-uri:ExecuteDERGroupsApp#src/jbiasa/ExecuteDERGroups/ExecuteDERGroupsWrapper.wsdl"/>
 </catalog>
