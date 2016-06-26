@@ -9,7 +9,4 @@
     <plnk:partnerLinkType name="DERGroups_PortLinkType">
         <plnk:role name="DERGroups_PortRole" portType="ns:DERGroups_Port"/>
     </plnk:partnerLinkType>
-    <plnk:partnerLinkType name="DERGroups_PortLinkType2">
-        <plnk:role name="DERGroups_PortRole" portType="ns:DERGroups_Port"/>
-    </plnk:partnerLinkType>
 </definitions>

@@ -29,7 +29,7 @@
     </binding>
     <service name="ExecuteDERGroupsAppService1">
         <port name="casaPort1" binding="tns:casaBinding1">
-            <soap:address location="http://localhost:${HttpDefaultPort}/ExecuteDERGroupsAppService1/casaPort1"/>
+            <soap:address location="http://localhost:8070/epriConnect/executeDERGroups"/>
         </port>
     </service>
 </definitions>

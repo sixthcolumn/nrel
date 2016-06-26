@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
+    <system systemId="http://localhost:9080/getVendorService/getVendorURL" uri="src/localhost_9080/getVendorService/getVendorURL.xml"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" uri="src/ExecuteDERGroups.wsdl"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupsMessage.xsd" uri="src/xsd/DERGroupsMessage.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroups.xsd" uri="src/xsd/DERGroups.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/GetVendorURL/src/getVendor.wsdl" uri="src/getVendor.wsdl"/>
+    <nextCatalog catalog="nbproject/private/retriever/catalog.xml"/>
 </catalog>

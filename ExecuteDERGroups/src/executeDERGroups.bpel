@@ -9,101 +9,97 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/2016/DERGroupsMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty" xmlns:ns2="http://j2ee.netbeans.org/xsd/tableSchema">
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/2016/DERGroupsMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty">
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" location="ExecuteDERGroupsWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://www.epri.com/2016/ExecuteDERGroups" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroups.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/logFile" location="logFile.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
-    <import namespace="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" location="getVendorURL.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" location="file:/usr/local/git/nrel/GetVendorURL/src/getVendor.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
-        <partnerLink name="JDBCLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" partnerLinkType="tns:jdbcpartner" partnerRole="jdbcPortTypeRole"/>
-        <partnerLink name="R1" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" partnerLinkType="tns:DERGroups_PortLinkType2" partnerRole="DERGroups_PortRole"/>
-        <partnerLink name="PartnerLink1" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" partnerLinkType="tns:DERGroups_PortLinkType" myRole="DERGroups_PortRole"/>
+        <partnerLink name="VendorLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" partnerLinkType="tns:getVendor" partnerRole="getVendorPortTypeRole"/>
+        <partnerLink name="RemoteLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" partnerLinkType="tns:DERGroups_PortLinkType" partnerRole="DERGroups_PortRole"/>
+        <partnerLink name="ServiceInLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupsWrapper" partnerLinkType="tns:DERGroups_PortLinkType" myRole="DERGroups_PortRole"/>
     </partnerLinks>
-    <variables>
-        <variable name="ServiceOut" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
-        <variable name="R1Out" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
-        <variable name="R1In" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:CreateDERGroupsRequestMessage"/>
-        <variable name="getURLOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" messageType="tns:outputMsg"/>
-        <variable name="getURLIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" messageType="tns:inputMsg"/>
-        <variable name="ServiceIn" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:CreateDERGroupsRequestMessage"/>
-    </variables>
     <sequence>
-        <receive name="ServiceIn" createInstance="yes" partnerLink="PartnerLink1" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceIn"/>
-        <assign name="Assign1">
-            <copy>
-                <from>$ServiceIn.CreateDERGroupsRequestMessage/ns0:Header/ns1:User/ns1:Organization</from>
-                <to>$getURLIn.part/ns2:vendor</to>
-            </copy>
-            <copy>
-                <from>'standard'</from>
-                <to>$getURLIn.part/ns2:call_type</to>
-            </copy>
-            <copy>
-                <from>'CIM_DER (createDERGroup)'</from>
-                <to>$getURLIn.part/ns2:op_name</to>
-            </copy>
-        </assign>
-        <invoke name="getURL" partnerLink="JDBCLink" operation="get" xmlns:tns="http://j2ee.netbeans.org/wsdl/ExecuteDERGroups/src/getVendorURL" portType="tns:jdbcPortType" inputVariable="getURLIn" outputVariable="getURLOut"/>
-        <if name="IfNotNull">
-            <condition>true() != $getURLOut.part/ns2:getVendorURL_Record/ns2:harness_url/@isNull</condition>
+        <scope name="Scope1">
+            <variables>
+                <variable name="FaultVar" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:FaultMessage"/>
+                <variable name="ServiceOut" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
+                <variable name="CreateDERGroupsOut" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:ResponseMessage"/>
+                <variable name="CreateDERGroupsIn" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:CreateDERGroupsRequestMessage"/>
+                <variable name="vendorOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationResponse"/>
+                <variable name="vendorIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationRequest"/>
+                <variable name="ServiceIn" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" messageType="tns:CreateDERGroupsRequestMessage"/>
+            </variables>
+            <faultHandlers>
+                <catch faultName="sxeh:systemFault" faultVariable="faultName" faultMessageType="sxeh:faultMessage">
+                    <sequence name="Sequence2">
+                        <assign name="Assign4">
+                            <copy>
+                                <from variable="faultName" part="fault"/>
+                                <to>$FaultVar.FaultMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                            </copy>
+                            <copy>
+                                <from>'6005'</from>
+                                <to>$FaultVar.FaultMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                            </copy>
+                        </assign>
+                        <reply name="Reply1" partnerLink="ServiceInLink" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" faultName="tns:CreateDERGroupsFault" variable="FaultVar"/>
+                    </sequence>
+                </catch>
+            </faultHandlers>
             <sequence name="Sequence1">
-                <assign name="Assign3">
+                <receive name="ServiceIn" createInstance="yes" partnerLink="ServiceInLink" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceIn"/>
+                <assign name="Assign1">
+                    <copy>
+                        <from>$ServiceIn.CreateDERGroupsRequestMessage/ns0:Header/ns1:User/ns1:Organization</from>
+                        <to variable="vendorIn" part="vendorName"/>
+                    </copy>
+                    <copy>
+                        <from>'CIM_DER (createDERGroup)'</from>
+                        <to variable="vendorIn" part="opName"/>
+                    </copy>
+                </assign>
+                <invoke name="Invoke1" partnerLink="VendorLink" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="vendorIn" outputVariable="vendorOut">
+                    <sxt:trace>
+                        <sxt:log level="info" location="onComplete">
+                            <from>concat('*****', $vendorOut.url)</from>
+                        </sxt:log>
+                    </sxt:trace>
+                </invoke>
+                <assign name="Assign2">
                     <copy>
                         <from>$ServiceIn.CreateDERGroupsRequestMessage/ns0:Header</from>
-                        <to>$R1In.CreateDERGroupsRequestMessage/ns0:Header</to>
+                        <to>$CreateDERGroupsIn.CreateDERGroupsRequestMessage/ns0:Header</to>
                     </copy>
                     <copy>
                         <from>$ServiceIn.CreateDERGroupsRequestMessage/ns0:Request</from>
-                        <to>$R1In.CreateDERGroupsRequestMessage/ns0:Request</to>
+                        <to>$CreateDERGroupsIn.CreateDERGroupsRequestMessage/ns0:Request</to>
                     </copy>
                     <copy>
                         <from>$ServiceIn.CreateDERGroupsRequestMessage/ns0:Payload</from>
-                        <to>$R1In.CreateDERGroupsRequestMessage/ns0:Payload</to>
+                        <to>$CreateDERGroupsIn.CreateDERGroupsRequestMessage/ns0:Payload</to>
                     </copy>
                     <copy>
-                        <from>'http://localhost:8080/epriConnect/executeDERGroups'</from>
-                        <to variable="R1In" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+                        <from variable="vendorOut" part="url"/>
+                        <to variable="CreateDERGroupsIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
                     </copy>
                 </assign>
-                <invoke name="Invoke1" partnerLink="R1" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" inputVariable="R1In" outputVariable="R1Out"/>
-                <assign name="Assign4">
+                <invoke name="Invoke2" partnerLink="RemoteLink" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" inputVariable="CreateDERGroupsIn" outputVariable="CreateDERGroupsOut"/>
+                <assign name="Assign3">
                     <copy>
-                        <from>$R1Out.ResponseMessage/ns0:Header</from>
+                        <from>$CreateDERGroupsOut.ResponseMessage/ns0:Header</from>
                         <to>$ServiceOut.ResponseMessage/ns0:Header</to>
                     </copy>
                     <copy>
-                        <from>$R1Out.ResponseMessage/ns0:Reply</from>
+                        <from>$CreateDERGroupsOut.ResponseMessage/ns0:Reply</from>
                         <to>$ServiceOut.ResponseMessage/ns0:Reply</to>
                     </copy>
                     <copy>
-                        <from>$R1Out.ResponseMessage/ns0:Payload</from>
+                        <from>$CreateDERGroupsOut.ResponseMessage/ns0:Payload</from>
                         <to>$ServiceOut.ResponseMessage/ns0:Payload</to>
                     </copy>
                 </assign>
+                <reply name="ServiceOut" partnerLink="ServiceInLink" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceOut"/>
             </sequence>
-            <else>
-                <sequence name="Sequence2">
-                    <assign name="Assign2">
-                        <copy>
-                            <from>'Failed'</from>
-                            <to>$ServiceOut.ResponseMessage/ns0:Reply/ns1:Result</to>
-                        </copy>
-                        <copy>
-                            <from>'6001'</from>
-                            <to>$ServiceOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
-                        </copy>
-                        <copy>
-                            <from>'6001'</from>
-                            <to>$ServiceOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
-                        </copy>
-                        <copy>
-                            <from>'Vendor URL lookup failed'</from>
-                            <to>$ServiceOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
-                        </copy>
-                    </assign>
-                </sequence>
-            </else>
-        </if>
-        <reply name="Reply1" partnerLink="PartnerLink1" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" variable="ServiceOut"/>
+        </scope>
     </sequence>
 </process>
