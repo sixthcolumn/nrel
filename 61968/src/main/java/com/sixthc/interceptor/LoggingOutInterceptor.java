@@ -54,21 +54,21 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 	private String packageGroupName = null;
 	private String resultCode = null;
 	private String stage = null;
-	private XmlStringParser parser;
+	private boolean strict = false;
 	private static final Logger LOG = LogUtils
 			.getLogger(LoggingOutInterceptor.class);
 	private static final String LOG_SETUP = LoggingOutInterceptor.class
 			.getName() + ".log-setup";
 	private static org.apache.log4j.Logger log = org.apache.log4j.Logger
-	.getLogger(LoggingOutInterceptor.class);
+			.getLogger(LoggingOutInterceptor.class);
 
 	@Autowired
 	private MessageLogDao messageLogDao;
 	MessageLog messageLog = new MessageLog();
-	
+
 	@Autowired
 	private VendorDao vendorDao;
-	
+
 	public LoggingOutInterceptor(String phase) {
 		super(phase);
 		addBefore(StaxOutInterceptor.class.getName());
@@ -121,7 +121,7 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 		}
 
 		public void onClose(CachedOutputStream cos) {
-			
+
 			log.debug("onClose");
 			String id = (String) message.getExchange().get(
 					LoggingMessage.ID_KEY);
@@ -132,14 +132,13 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 			final LoggingMessage buffer = new LoggingMessage(
 					"Outbound Message\n---------------------------", id);
 			messageLog.setMessageId(id);
-			
+
 			// link up with correct interface
 			messageLog.setPackageName(getPackageName());
 			messageLog.setPackageGroupName(getPackageGroupName());
 			messageLog.setMessageName(getMessageName());
 			messageLog.setStage(stage);
 
-			
 			Integer responseCode = (Integer) message.get(Message.RESPONSE_CODE);
 			if (responseCode != null) {
 				messageLog.setResponseCode(String.valueOf(responseCode));
@@ -167,7 +166,7 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 			if (headers != null) {
 				messageLog.setHeader(headers.toString());
 			}
-			
+
 			// infer interface if not set
 			if (messageName != null)
 				messageLog.setMessageName(getMessageName());
@@ -196,44 +195,46 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 				buffer.getPayload().append(payload);
 				String payloadString = payload.toString();
 				messageLog.setPayload(payloadString);
-				
+
 				// special processing for each message type, CIM, MS...
 				processPayload(new XmlStringParser(payloadString), messageLog);
-				
+
 				/*
-				 * we require the header to contain User/Organization, and for the value to
-				 * correspond to name attribute in vendor table, else we can't track who
+				 * we require the header to contain User/Organization, and for
+				 * the value to
+				 * correspond to name attribute in vendor table, else we can't
+				 * track who
 				 * owns this message
 				 */
-//				parser = new XmlStringParser(payloadString);
-//				String org = parser.getTagValue("http://www.iec.ch/TC57/2011/schema/message", "User", "Organization");
-//				log.debug("org : " + org);
-//				if( !StringUtils.isBlank(org)) {
-//					Vendor vendor = vendorDao.findByName(org);
-//					if( vendor != null ) {
-//						messageLog.setVendor(vendor);;
-//					} else{
-//						log.error("bad value for User/Organization passed : " + org + ". Cannot set vendor id");
-//					}
-//				} else {
-//					log.error("Unable to retrieve value for User/Organization. Cannot set vendor id");
-//				}
-//				
-//				/*
-//				 * We identify the vendor for the outgoing message by looking at
-//				 * the vendor associated with the incoming message
-//				 */
-//				String correlationID = parser.getHeaderValueWC("CorrelationID");
-//				log.debug("correlation ID : " + correlationID);
-//				if( !StringUtils.isBlank(correlationID)) {
-//					log.error("unexpected, correlation id not set");
-//				} else {
-//					MessageLog ml = messageLogDao.findByMessageID(correlationID);
-//					if( ml == null )
-//						log.error("Unable to retrieve message log using corrleation ID of " + correlationID);
-//					else
-//						messageLog.setVendor(ml.getVendor());
-//				}
+				//				parser = new XmlStringParser(payloadString);
+				//				String org = parser.getTagValue("http://www.iec.ch/TC57/2011/schema/message", "User", "Organization");
+				//				log.debug("org : " + org);
+				//				if( !StringUtils.isBlank(org)) {
+				//					Vendor vendor = vendorDao.findByName(org);
+				//					if( vendor != null ) {
+				//						messageLog.setVendor(vendor);;
+				//					} else{
+				//						log.error("bad value for User/Organization passed : " + org + ". Cannot set vendor id");
+				//					}
+				//				} else {
+				//					log.error("Unable to retrieve value for User/Organization. Cannot set vendor id");
+				//				}
+				//				
+				//				/*
+				//				 * We identify the vendor for the outgoing message by looking at
+				//				 * the vendor associated with the incoming message
+				//				 */
+				//				String correlationID = parser.getHeaderValueWC("CorrelationID");
+				//				log.debug("correlation ID : " + correlationID);
+				//				if( !StringUtils.isBlank(correlationID)) {
+				//					log.error("unexpected, correlation id not set");
+				//				} else {
+				//					MessageLog ml = messageLogDao.findByMessageID(correlationID);
+				//					if( ml == null )
+				//						log.error("Unable to retrieve message log using corrleation ID of " + correlationID);
+				//					else
+				//						messageLog.setVendor(ml.getVendor());
+				//				}
 
 			} catch (Exception ex) {
 				// ignore
@@ -276,7 +277,7 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 	public void setPackageGroupName(String packageGroupName) {
 		this.packageGroupName = packageGroupName;
 	}
-	
+
 	/**
 	 * Override this method if you wish to search for tags
 	 * and react to values and such
@@ -284,9 +285,10 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 	 * @param payload
 	 * @throws Fault
 	 */
-	public void processPayload(XmlStringParser payload, MessageLog messageLog) throws Fault {
+	public void processPayload(XmlStringParser payload, MessageLog messageLog)
+			throws Fault {
 	}
-	
+
 	public String inferMessage(String action) {
 		return "";
 	}
@@ -295,13 +297,21 @@ public class LoggingOutInterceptor extends AbstractLoggingInterceptor {
 	protected Logger getLogger() {
 		return LOG;
 	}
-	
+
 	public void setResultCode(String rc) {
 		this.resultCode = rc;
 	}
-	
+
 	public void setStage(String stage) {
 		this.stage = stage;
+	}
+
+	public void setStrict(boolean strict) {
+		this.strict = strict;
+	}
+
+	public boolean isStrict() {
+		return this.strict;
 	}
 
 }

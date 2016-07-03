@@ -37,7 +37,7 @@ public class CIMLoggingOutInterceptor extends LoggingOutInterceptor {
 
 		log.debug("correlationID : " + correlationID);
 
-		if (StringUtils.isBlank(correlationID)) {
+		if (isStrict() == true && StringUtils.isBlank(correlationID)) {
 			// CorrelationID CANNOT be empty/null
 			log.error("header.CorrelationID is required");
 			Fault fault = new Fault(new Exception(
@@ -74,13 +74,13 @@ public class CIMLoggingOutInterceptor extends LoggingOutInterceptor {
 
 		log.debug("messageID : " + messageID);
 
-		if (StringUtils.isBlank(messageID)) {
+		if (isStrict() == true && StringUtils.isBlank(messageID)) {
 			// MessageID CANNOT be empty/null
 			log.error("header.message ID is required");
 			Fault fault = new Fault(new Exception(
 					"CIM header.MessageID required"));
 			throw fault;
-		} else if (!messageLogDao.messageIDIsUnique(messageID)) {
+		} else if (isStrict() == true && !messageLogDao.messageIDIsUnique(messageID)) {
 			log.error("header.MessageID must be unique");
 			Fault fault = new Fault(new Exception(
 					"CIM header.MessageID is not unique"));

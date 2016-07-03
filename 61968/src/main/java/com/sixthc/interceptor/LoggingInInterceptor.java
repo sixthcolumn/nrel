@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.helpers.CastUtils;
 import org.apache.cxf.helpers.IOUtils;
 import org.apache.cxf.interceptor.AbstractLoggingInterceptor;
@@ -51,15 +52,15 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 	private String packageGroupName = null;
 	private String resultCode = null;
 	private String stage = null;
-	private XmlStringParser parser;
+	private boolean strict = false;
 
 	@Autowired
 	private MessageLogDao messageLogDao;
-	
+
 	@Autowired
 	private VendorDao vendorDao;
 
-	MessageLog messageLog= new MessageLog();
+	MessageLog messageLog = new MessageLog();
 
 	public LoggingInInterceptor() {
 		super(Phase.RECEIVE);
@@ -116,11 +117,10 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 		Map<String, List<String>> headerMap = CastUtils.cast((Map) message
 				.get(Message.PROTOCOL_HEADERS));
 
-		
 		// infer interface if not set
 		if (messageName != null)
 			messageLog.setMessageName(getMessageName());
-		
+
 		if (headerMap != null) {
 			List<String> sa = headerMap.get("SOAPAction");
 			if (sa != null && sa.size() > 0) {
@@ -157,7 +157,7 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 				writePayload(payload, bos, encoding, ct);
 				String payloadString = payload.toString();
 				messageLog.setPayload(payloadString);
-				
+
 				// call parsing for specific type, MS, CIM, ...
 				processPayload(new XmlStringParser(payloadString), messageLog);
 
@@ -191,11 +191,11 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 	public String getPackage() {
 		return packageName;
 	}
-	
+
 	public String inferMessage(String action) {
 		return "";
 	}
-	
+
 	/**
 	 * Override this method if you wish to search for tags
 	 * and react to values and such
@@ -203,8 +203,9 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 	 * @param payload
 	 * @throws Fault
 	 */
-	public void processPayload(XmlStringParser payload, MessageLog messageLog) throws Fault {
-		
+	public void processPayload(XmlStringParser payload, MessageLog messageLog)
+			throws Fault {
+
 	}
 
 	public void setPackage(String pkg) {
@@ -226,15 +227,15 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 	public void setPackageName(String packageName) {
 		this.packageName = packageName;
 	}
-	
+
 	public String getPackageGroupName() {
 		return packageGroupName;
 	}
-	
+
 	public void setPackageGroupName(String packageGroupName) {
 		this.packageGroupName = packageGroupName;
 	}
-	
+
 	public void setResultCode(String rc) {
 		this.resultCode = rc;
 	}
@@ -242,4 +243,13 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 	public void setStage(String stage) {
 		this.stage = stage;
 	}
+
+	public void setStrict(boolean strict) {
+		this.strict = strict;
+	}
+
+	public boolean isStrict() {
+		return this.strict;
+	}
+
 }

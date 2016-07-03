@@ -22,6 +22,7 @@
 				<property name="messageName" value="CIM_DER(createDERGroups) " />
 				<property name="resultCode" value="success" />
 				<property name="stage" value="serviceIn" />
+				<property name="strict" value="false" />
 			</bean>
 		</jaxws:inInterceptors>
 		<jaxws:outInterceptors>
@@ -31,6 +32,7 @@
 				<property name="messageName" value="CIM_DER(createDERGroups) " />
 				<property name="resultCode" value="success" />
 				<property name="stage" value="serviceOut" />
+				<property name="strict" value="false" />
 			</bean>
 		</jaxws:outInterceptors>
 		<jaxws:outFaultInterceptors>
