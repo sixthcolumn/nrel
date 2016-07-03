@@ -22,7 +22,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.cxf.helpers.CastUtils;
 import org.apache.cxf.helpers.IOUtils;
 import org.apache.cxf.interceptor.AbstractLoggingInterceptor;
@@ -33,11 +32,11 @@ import org.apache.cxf.message.Message;
 import org.apache.cxf.phase.Phase;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.xml.sax.SAXException;
 
 import com.sixthc.dao.MessageLogDao;
 import com.sixthc.dao.VendorDao;
 import com.sixthc.model.MessageLog;
-import com.sixthc.model.Vendor;
 import com.sixthc.util.XmlStringParser;
 
 /**
@@ -163,6 +162,8 @@ public class LoggingInInterceptor extends AbstractLoggingInterceptor {
 				processPayload(new XmlStringParser(payloadString), messageLog);
 
 				bos.close();
+			} catch (SAXException se) {
+				log.warn("The SOAP inner package was not xml. Not an error");
 			} catch (Exception e) {
 				throw new Fault(e);
 			}

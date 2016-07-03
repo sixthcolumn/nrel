@@ -41,6 +41,7 @@ public class XmlStringParser {
 		InputSource inputSource = new InputSource(new StringReader(xmlString));
 		payloadDoc = builder.parse(inputSource);
 		unr = new UniversalNamespaceResolver2(payloadDoc, false);
+
 	}
 
 	//	public String getTagValue(String tag, String namespace)
@@ -68,6 +69,7 @@ public class XmlStringParser {
 
 	public String getTagValue(String namespace, String... tags)
 			throws ParserConfigurationException, IOException, SAXException {
+
 		String prefix = unr.getPrefix(namespace);
 
 		XPath xpath = XPathFactory.newInstance().newXPath();
@@ -190,8 +192,7 @@ public class XmlStringParser {
 			examineNode(document.getFirstChild(), toplevelOnly);
 			log.debug("The list of the cached namespaces:");
 			for (String key : prefix2Uri.keySet()) {
-				log.debug("prefix " + key + ": uri "
-						+ prefix2Uri.get(key));
+				log.debug("prefix " + key + ": uri " + prefix2Uri.get(key));
 			}
 		}
 

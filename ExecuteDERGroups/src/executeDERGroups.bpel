@@ -41,6 +41,10 @@
                                 <from>'6005'</from>
                                 <to>$FaultVar.FaultMessage/ns0:Reply/ns1:Error/ns1:code</to>
                             </copy>
+                            <copy>
+                                <from>'FATAL'</from>
+                                <to>$FaultVar.FaultMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                            </copy>
                         </assign>
                         <reply name="Reply1" partnerLink="ServiceInLink" operation="CreateDERGroups" xmlns:tns="http://www.epri.com/2016/ExecuteDERGroups" portType="tns:DERGroups_Port" faultName="tns:CreateDERGroupsFault" variable="FaultVar"/>
                     </sequence>

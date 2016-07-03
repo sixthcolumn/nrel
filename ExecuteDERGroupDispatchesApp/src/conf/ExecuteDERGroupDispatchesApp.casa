@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" xmlns:ns2="http://www.epri.com/2016/ExecuteDERGroupDispatches" xmlns:ns3="ExecuteDERGroupDispatchesApp" xmlns:ns4="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatches/executeDERGroupDispatches" xmlns:xlink="http://www.w3.org/2000/xlink">
+    <endpoints>
+        <endpoint endpoint-name="getVendorPort" interface-name="ns1:getVendorPortType" name="endpoint1" service-name="ns1:getVendorService"/>
+        <endpoint endpoint-name="DERGroupDispatches_Port" interface-name="ns2:DERGroupDispatches_Port" name="endpoint2" service-name="ns2:ExecuteDERGroupDispatches"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns2:DERGroupDispatches_Port" name="endpoint3" service-name="ns3:ExecuteDERGroupDispatchesAppService1"/>
+        <endpoint display-name="ServiceInLink" endpoint-name="DERGroupDispatches_PortRole_myRole" file-path="executeDERGroupDispatches.bpel" interface-name="ns2:DERGroupDispatches_Port" name="endpoint4" process-name="executeDERGroupDispatches" service-name="ns4:ServiceInLink"/>
+        <endpoint display-name="VendorLink" endpoint-name="getVendorPortTypeRole_partnerRole" file-path="executeDERGroupDispatches.bpel" interface-name="ns1:getVendorPortType" name="endpoint5" process-name="executeDERGroupDispatches" service-name="ns4:VendorLink"/>
+        <endpoint display-name="RemoteLink" endpoint-name="DERGroupDispatches_PortRole_partnerRole" file-path="executeDERGroupDispatches.bpel" interface-name="ns2:DERGroupDispatches_Port" name="endpoint6" process-name="executeDERGroupDispatches" service-name="ns4:RemoteLink"/>
+    </endpoints>
+    <service-units>
+        <service-engine-service-unit artifacts-zip="ExecuteDERGroupDispatches.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ExecuteDERGroupDispatchesApp-ExecuteDERGroupDispatches" unit-name="ExecuteDERGroupDispatches" unknown="false" x="102" y="97">
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
+            <consumes endpoint="endpoint6"/>
+        </service-engine-service-unit>
+        <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="ExecuteDERGroupDispatchesApp-sun-http-binding" unit-name="sun-http-binding">
+            <ports>
+                <port x="67" y="141">
+                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatches']/port[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port x="67" y="37">
+                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint1"/>
+                    <provides endpoint="endpoint1"/>
+                </port>
+                <port bindingType="soap" x="67" y="259">
+                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint3"/>
+                    <provides endpoint="endpoint3"/>
+                </port>
+            </ports>
+        </binding-component-service-unit>
+    </service-units>
+    <connections>
+        <connection consumer="endpoint5" provider="endpoint1" state="unchanged"/>
+        <connection consumer="endpoint2" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint6" provider="endpoint3" state="new"/>
+        <connection consumer="endpoint6" provider="endpoint4" state="deleted"/>
+    </connections>
+    <porttypes>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/portType[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/portType[@name='getVendorPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/portType[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/portType[@name='getVendorPortType'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/portType[@name='dummyCasaPortType'])" xlink:type="simple"/>
+    </porttypes>
+    <bindings>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/binding[@name='DERGroupDispatches_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/binding[@name='getVendorBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/binding[@name='DERGroupDispatches_Binding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/binding[@name='getVendorBinding'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/binding[@name='casaBinding1'])" xlink:type="simple"/>
+    </bindings>
+    <services>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatches'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService1'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatches'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService'])" xlink:type="simple"/>
+        <link xlink:href="../jbiServiceUnits/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService1'])" xlink:type="simple"/>
+    </services>
+    <regions>
+        <region name="WSDL Endpoints" width="150"/>
+        <region name="JBI Modules" width="500"/>
+        <region name="External Modules" width="200"/>
+    </regions>
+</casa>
