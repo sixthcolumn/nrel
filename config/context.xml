@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context xmlns="http://www.open-esb.net/standalone/jndi/">
+    <!--
+        WARNING:Be aware that you have to add JDBC driver in the classpath
+                (e.g. lib/ext of you OpenESB installation dir)
+                before being able to use this example !
+    -->
+    <!-- Oracle config sample -->
+    <dataSource-pool-properties>
+        <dbConnector-name>interop connector</dbConnector-name>
+        <datasource-classname>com.mysql.jdbc.jdbc2.optional.MysqlDataSource</datasource-classname>
+        <resource-type>Datasource</resource-type>
+        <database-name>MYSQL</database-name>
+        <database-vendor>Oracle</database-vendor>
+        <database-version>5.6</database-version>
+        <dbconnector-description>MYSQL Connector for WMS</dbconnector-description>
+        <dataSource-properties>
+            <property>
+                <name>user</name>
+                <value>interop_dev</value>
+                <description></description>
+            </property>
+            <property>
+                <name>password</name>
+                <value>interop_dev</value>
+                <description></description>
+            </property>
+            <property>
+                <name>hostName</name>
+                <value>localhost</value>
+                <description></description>
+            </property>
+            <property>
+                <name>port</name>
+                <value>3306</value>
+                <description></description>
+            </property>
+            <property>
+                <name>databaseName</name>
+                <value>interop_dev</value>
+                <description></description>
+            </property>
+        </dataSource-properties>
+        <pool-properties>
+            <property>
+                <name>initialSize</name>
+                <value>11</value>
+                <description></description>
+            </property>
+            <property>
+                <name>maxActive</name>
+                <value>4</value>
+                <description></description>
+            </property>
+            <property>
+                <name>maxIdle</name>
+                <value>4</value>
+                <description></description>
+            </property>
+            <property>
+                <name>minIdle</name>
+                <value>2</value>
+                <description></description>
+            </property>
+        </pool-properties>
+    </dataSource-pool-properties>
+    <jdbc-resources>
+        <dbConnector-name>interop connector</dbConnector-name>
+        <jndi-name>interop</jndi-name>
+        <description>Datasource connection to MYSQL WMS</description>
+    </jdbc-resources>
+</context>

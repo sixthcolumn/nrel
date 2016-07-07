@@ -12063,3 +12063,70 @@
 3418701 [http-bio-8080-exec-9] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
 3418701 [http-bio-8080-exec-9] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
 3418701 [http-bio-8080-exec-9] ERROR com.sixthc.interceptor.CIMLoggingOutInterceptor  - header.CorrelationID is required
+78701 [http-bio-8080-exec-2] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+78720 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+96518 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+96518 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupDispatchesMessage
+96518 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+96518 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+96518 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroupDispatches#
+96520 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:User/mes:Organization/text()
+96541 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+96565 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:MessageID/text()
+105398 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+105425 [http-bio-8080-exec-2] ERROR com.sixthc.interceptor.CIMLoggingInInterceptor  - header.MessageID must be unique
+111040 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 0
+111119 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+111120 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+111120 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+111121 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //null:CorrelationID/text()
+111123 [http-bio-8080-exec-2] ERROR com.sixthc.util.XmlStringParser  - javax.xml.xpath.XPathExpressionException
+111123 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 
+11931 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+11954 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+11959 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+11960 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupDispatchesMessage
+11960 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+11960 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+11960 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroupDispatches#
+11962 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:User/mes:Organization/text()
+11983 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+12006 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:MessageID/text()
+12009 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12042 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 273
+12260 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+12260 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [40873658-e1c7-43d7-b816-c02b5235f16a]
+12313 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+12315 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+12315 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns2: uri http://www.epri.com/2016/DERGroupDispatchesMessage
+12315 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix ns3: uri http://www.epri.com/2013/DERGroupDispatches#
+12315 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+12315 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - prefix DEFAULT: uri http://www.iec.ch/TC57/2011/schema/message
+12316 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:CorrelationID/text()
+12318 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+12339 [http-bio-8080-exec-1] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:MessageID/text()
+12341 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : 40873658-e1c7-43d7-b816-c02b5235f16a
+14741 [http-bio-8080-exec-2] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+14742 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+14745 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+14745 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix der: uri http://www.epri.com/2016/DERGroupDispatchesMessage
+14745 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix soapenv: uri http://schemas.xmlsoap.org/soap/envelope/
+14745 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix mes: uri http://www.iec.ch/TC57/2011/schema/message
+14745 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix der1: uri http://www.epri.com/2013/DERGroupDispatches#
+14747 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:User/mes:Organization/text()
+14750 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - org : sixc
+14761 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //mes:MessageID/text()
+14764 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - messageID : 5056eab4-120c-11e5-9493-1697f925ec7b
+14777 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 275
+14782 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set correlation id [5056eab4-120c-11e5-9493-1697f925ec7b]
+14782 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingInInterceptor  - createDERGroups set message id     [7b068030-7782-479a-a437-eb71f2aa8d92]
+14786 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - The list of the cached namespaces:
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix ns2: uri http://www.epri.com/2016/DERGroupDispatchesMessage
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix ns3: uri http://www.epri.com/2013/DERGroupDispatches#
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix soap: uri http://schemas.xmlsoap.org/soap/envelope/
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - prefix DEFAULT: uri http://www.iec.ch/TC57/2011/schema/message
+14788 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:CorrelationID/text()
+14790 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - correlationID : 5056eab4-120c-11e5-9493-1697f925ec7b
+14806 [http-bio-8080-exec-2] DEBUG com.sixthc.util.XmlStringParser  - xpath : //DEFAULT:MessageID/text()
+14808 [http-bio-8080-exec-2] DEBUG com.sixthc.interceptor.CIMLoggingOutInterceptor  - messageID : 7b068030-7782-479a-a437-eb71f2aa8d92
