@@ -230,7 +230,7 @@
 			<xs:documentation>Expressed in Watts, with a symbol of W.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="multiplier" type="m:multiplier"/>
+			<xs:element name="multiplier" type="m:UnitMultiplier"/>
 			<xs:element name="unit" type="xs:string" default="W"/>
 			<xs:element name="value" type="xs:float"/>
 		</xs:sequence>
@@ -240,7 +240,7 @@
 			<xs:documentation>Expressed in Volt-Ampere, with a symbol of VA.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="multiplier" type="m:multiplier"/>
+			<xs:element name="multiplier" type="m:UnitMultiplier"/>
 			<xs:element name="unit" type="xs:string" default="VA"/>
 			<xs:element name="value" type="xs:float"/>
 		</xs:sequence>
@@ -250,33 +250,69 @@
 			<xs:documentation>Expressed in Vars, with a symbol of VAr.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="multiplier" type="m:multiplier"/>
+			<xs:element name="multiplier" type="m:UnitMultiplier"/>
 			<xs:element name="unit" type="xs:string" default="VAr"/>
 			<xs:element name="value" type="xs:float"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="multiplier">
+	<xs:simpleType name="UnitMultiplier" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#UnitMultiplier">
+		<xs:annotation>
+			<xs:documentation>The unit multipliers defined for the CIM.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:annotation>
-				<xs:documentation>For the pruposes of DER the prefixes from milli to giga will be used.
-						giga		G	1,000,000,000
-						mega	M	1,000,000	
-						kilo		k	1,000
-						hecto	h	100
-						deka		da	10
-						deci		d	0.1	10-1
-						centi		c	0.01	10-2
-						milli		m	0.001	10-3
-			</xs:documentation>
-			</xs:annotation>
-			<xs:enumeration value="G"/>
-			<xs:enumeration value="M"/>
-			<xs:enumeration value="k"/>
-			<xs:enumeration value="h"/>
-			<xs:enumeration value="da"/>
-			<xs:enumeration value="d"/>
-			<xs:enumeration value="c"/>
-			<xs:enumeration value="m"/>
+			<xs:enumeration value="G">
+				<xs:annotation>
+					<xs:documentation>Giga 10**9</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="M">
+				<xs:annotation>
+					<xs:documentation>Mega 10**6</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="T">
+				<xs:annotation>
+					<xs:documentation>Tera 10**12</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="c">
+				<xs:annotation>
+					<xs:documentation>Centi 10**-2</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="d">
+				<xs:annotation>
+					<xs:documentation>Deci 10**-1</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="k">
+				<xs:annotation>
+					<xs:documentation>Kilo 10**3</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="m">
+				<xs:annotation>
+					<xs:documentation>Milli 10**-3</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="micro">
+				<xs:annotation>
+					<xs:documentation>Micro 10**-6</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="n">
+				<xs:annotation>
+					<xs:documentation>Nano 10**-9</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="none">
+				<xs:annotation/>
+			</xs:enumeration>
+			<xs:enumeration value="p">
+				<xs:annotation>
+					<xs:documentation>Pico 10**-12</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

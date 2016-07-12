@@ -5,4 +5,5 @@
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupDispatchesMessage.xsd" uri="src/xsd/DERGroupDispatchesMessage.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/Message.xsd" uri="src/xsd/Message.xsd"/>
     <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERGroupDispatches.xsd" uri="src/xsd/DERGroupDispatches.xsd"/>
+    <system systemId="file:/usr/local/git/nrel/61968/wsdl/xsd/DERCommon.xsd" uri="src/xsd/DERCommon.xsd"/>
 </catalog>

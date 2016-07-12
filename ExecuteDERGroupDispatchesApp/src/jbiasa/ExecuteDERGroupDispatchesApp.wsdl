@@ -9,8 +9,8 @@
              xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
              targetNamespace="ExecuteDERGroupDispatchesApp"
-             xmlns:tns="ExecuteDERGroupDispatchesApp" xmlns:ns="http://www.epri.com/2016/ExecuteDERGroupDispatches" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
-    <import namespace="http://www.epri.com/2016/ExecuteDERGroupDispatches" location="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl"/>
+             xmlns:tns="ExecuteDERGroupDispatchesApp" xmlns:ns="http://www.epri.com/ExecuteDERGroupDispatches" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:DERGroupDispatches_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -27,9 +27,29 @@
             </fault>
         </operation>
     </binding>
+    <binding name="casaBinding2" type="ns:DERGroupDispatches_Port">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="CreateDERGroupDispatches">
+            <soap:operation/>
+            <input name="CreateDERGroupDispatchesRequest">
+                <soap:body use="literal"/>
+            </input>
+            <output name="CreateDERGroupDispatchesResponse">
+                <soap:body use="literal"/>
+            </output>
+            <fault name="CreateDERGroupDispatchesFault">
+                <soap:fault name="CreateDERGroupDispatchesFault" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
     <service name="ExecuteDERGroupDispatchesAppService1">
         <port name="casaPort1" binding="tns:casaBinding1">
-            <soap:address location="${CreateDERGroupDispatches_SVR1}"/>
+            <soap:address location="${dispatches_endpoint}"/>
+        </port>
+    </service>
+    <service name="ExecuteDERGroupDispatchesAppService2">
+        <port name="casaPort2" binding="tns:casaBinding2">
+            <soap:address location="${dispatches_log_server}"/>
         </port>
     </service>
 </definitions>

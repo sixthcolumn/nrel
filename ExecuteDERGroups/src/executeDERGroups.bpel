@@ -58,7 +58,7 @@
                         <to variable="vendorIn" part="vendorName"/>
                     </copy>
                     <copy>
-                        <from>'CIM_DER (createDERGroup)'</from>
+                        <from>'CIM_DER (createDERGroupDispatch)'</from>
                         <to variable="vendorIn" part="opName"/>
                     </copy>
                 </assign>

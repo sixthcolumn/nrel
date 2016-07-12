@@ -11,22 +11,23 @@ import ch.iec.tc57._2011.schema.message.HeaderType;
 import ch.iec.tc57._2011.schema.message.ReplyType;
 import ch.iec.tc57._2011.schema.message.RequestType;
 
-import com.epri._2016.dergroupdispatchesmessage.DERGroupDispatchesPayloadType;
-import com.epri._2016.executedergroupdispatches.DERGroupDispatchesPort;
-import com.epri._2016.executedergroupdispatches.FaultMessage;
+import com.epri.dergroupdispatchesmessage.DERGroupDispatchesPayloadType;
+import com.epri.executedergroupdispatches.DERGroupDispatchesPort;
 import com.sixthc.dao.MessageLogDao;
 import com.sixthc.interceptor.CIMLoggingInInterceptor;
 
 public class ExecuteDERGroupDispatches implements DERGroupDispatchesPort {
 	private static org.apache.log4j.Logger log = Logger
 			.getLogger(CIMLoggingInInterceptor.class);
+	
 	@Autowired
 	private MessageLogDao messageLogDao;
 	
 	@Override
 	public void createDERGroupDispatches(Holder<HeaderType> header,
 			RequestType request, Holder<DERGroupDispatchesPayloadType> payload,
-			Holder<ReplyType> reply) throws FaultMessage {
+			Holder<ReplyType> reply)
+			throws com.epri.executedergroupdispatches.FaultMessage {
 
 		reply.value = new ReplyType();
 		reply.value.setResult("OK");
@@ -38,5 +39,4 @@ public class ExecuteDERGroupDispatches implements DERGroupDispatchesPort {
 		log.debug("createDERGroups set message id     [" + header.value.getMessageID() + "]");
 		
 	}
-
 }

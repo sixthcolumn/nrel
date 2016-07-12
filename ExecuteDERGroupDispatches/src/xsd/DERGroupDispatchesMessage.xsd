@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2015 rel. 4 sp1 (x64) (http://www.altova.com) by Gerald Gray (Electric Power Research Institute) -->
-<xs:schema xmlns:tns="http://www.epri.com/2016/DERGroupDispatchesMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.iec.ch/TC57/2011/schema/message" xmlns:obj="http://www.epri.com/2013/DERGroupDispatches#" targetNamespace="http://www.epri.com/2016/DERGroupDispatchesMessage" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+<xs:schema xmlns:tns="http://www.epri.com/DERGroupDispatchesMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.iec.ch/TC57/2011/schema/message" xmlns:obj="http://www.epri.com/DERGroupDispatches" targetNamespace="http://www.epri.com/DERGroupDispatchesMessage" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
 	<xs:annotation>
 		<xs:documentation>
 	// Copyright (c) 2016, Electric Power Research Institute
@@ -15,7 +15,7 @@
 	<!-- Base Message Definitions -->
 	<xs:import namespace="http://www.iec.ch/TC57/2011/schema/message" schemaLocation="Message.xsd"/>
 	<!-- DER Enterprise Integration  Object Definition -->
-	<xs:import namespace="http://www.epri.com/2013/DERGroupDispatches#" schemaLocation="DERGroupDispatches.xsd"/>
+	<xs:import namespace="http://www.epri.com/DERGroupDispatches" schemaLocation="DERGroupDispatches.xsd"/>
 	<!-- PayloadType Definition -->
 	<xs:complexType name="DERGroupDispatchesPayloadType">
 		<xs:sequence>

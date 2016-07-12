@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2015 rel. 4 sp1 (x64) (http://www.altova.com) by Gerald Gray (Electric Power Research Institute) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:a="http://langdale.com.au/2005/Message#" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns="http://langdale.com.au/2005/Message#" xmlns:m="http://www.epri.com/2013/DERGroupDispatches#" targetNamespace="http://www.epri.com/2013/DERGroupDispatches#" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:common="http://www.epri.com/DERCommon" xmlns="http://www.epri.com/DERGroupDispatches" targetNamespace="http://www.epri.com/DERGroupDispatches" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:annotation>
 		<xs:documentation/>
 	</xs:annotation>
-	<xs:element name="DERGroupDispatches" type="m:DERGroupDispatches"/>
+	<xs:import namespace="http://www.epri.com/DERCommon" schemaLocation="DERCommon.xsd"/>
+	<xs:element name="DERGroupDispatches" type="DERGroupDispatches"/>
 	<xs:complexType name="DERGroupDispatches">
 		<xs:sequence>
-			<xs:element name="DERGroupDispatch" type="m:DERGroupDispatch" maxOccurs="unbounded"/>
+			<xs:element name="DERGroupDispatch" type="DERGroupDispatch" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="DERGroupDispatch">
 		<xs:sequence>
-			<xs:element name="DERGroup" type="m:DERGroup">
+			<xs:element name="DERGroup" type="DERGroup">
 				<xs:annotation>
 					<xs:documentation>The DERGroup that the forecast is requested for</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="RequestedCapability" type="m:RequestedCapability">
+			<xs:element name="RequestedCapability" type="RequestedCapability">
 				<xs:annotation>
 					<xs:documentation>An enumeration for the capability types, watts, real or aparent power</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="extensionsList" type="m:extensionsList" minOccurs="0"/>
-			<xs:element name="Names" type="m:Name" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.Names">
+			<xs:element name="extensionsList" type="extensionsList" minOccurs="0"/>
+			<xs:element name="Names" type="Name" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.Names">
 				<xs:annotation>
 					<xs:documentation>All names of this identified object.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="mRID" type="m:mRID" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID">
+			<xs:element name="mRID" type="mRID" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID">
 				<xs:annotation>
 					<xs:documentation>A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.</xs:documentation>
 					<xs:documentation>Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</xs:documentation>
 					<xs:documentation>For CIMXML data files the mRID is mapped to rdf:ID or rdf:about attributes that identifies CIM object elements.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="otherCapability" type="m:otherCapability" minOccurs="0">
+			<xs:element name="otherCapability" type="otherCapability" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Other capabilities not originally foreseen for this request</xs:documentation>
 				</xs:annotation>
@@ -48,14 +49,8 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="name" type="xs:string"/>
-			<xs:element name="mRID" type="m:mRID" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID">
-				<xs:annotation>
-					<xs:documentation>A Model Authority issues mRIDs. Given that each Model Authority has a unique id and this id is part of the mRID, then the mRID is globally unique.</xs:documentation>
-					<xs:documentation>Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</xs:documentation>
-					<xs:documentation>For CIMXML data files the mRID is mapped to rdf:ID or rdf:about attributes that identifies CIM object elements.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="Names" type="m:Name" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.Names">
+			<xs:element name="mRID" type="common:mRID" minOccurs="0"/>
+			<xs:element name="Names" type="Name" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.Names">
 				<xs:annotation>
 					<xs:documentation>All names of this identified object.</xs:documentation>
 				</xs:annotation>
@@ -77,7 +72,7 @@
 			<xs:documentation>This is an optional, self-describing means to extend any MultiSpeak object.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="extensionsItem" type="m:extensionsItem" maxOccurs="unbounded"/>
+			<xs:element name="extensionsItem" type="extensionsItem" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="extValue">
@@ -112,7 +107,7 @@
 					<xs:documentation>Any free text that name the object.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NameType" type="m:NameType" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#Name.NameType">
+			<xs:element name="NameType" type="NameType" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#Name.NameType">
 				<xs:annotation>
 					<xs:documentation>Type of this name.</xs:documentation>
 				</xs:annotation>
@@ -136,7 +131,7 @@
 					<xs:documentation>Name of the name type.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="NameTypeAuthority" type="m:NameTypeAuthority" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#NameType.NameTypeAuthority">
+			<xs:element name="NameTypeAuthority" type="NameTypeAuthority" minOccurs="0" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#NameType.NameTypeAuthority">
 				<xs:annotation>
 					<xs:documentation>Authority responsible for managing names of this type.</xs:documentation>
 				</xs:annotation>
@@ -176,10 +171,10 @@
 	</xs:simpleType>
 	<xs:complexType name="RequestedCapability">
 		<xs:sequence>
-			<xs:element name="capabilityType" type="m:capabilityType"/>
+			<xs:element name="capabilityType" type="capabilityType"/>
 			<xs:element name="value" type="xs:float"/>
 			<xs:element name="capabilityUnits" type="xs:string"/>
-			<xs:element name="capabilityMultiplier" type="m:UnitMultiplier"/>
+			<xs:element name="capabilityMultiplier" type="common:UnitMultiplier"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:simpleType name="capabilityType">
@@ -189,64 +184,5 @@
 			<xs:enumeration value="ReactivePower"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="UnitMultiplier" sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#UnitMultiplier">
-		<xs:annotation>
-			<xs:documentation>The unit multipliers defined for the CIM.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="G">
-				<xs:annotation>
-					<xs:documentation>Giga 10**9</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="M">
-				<xs:annotation>
-					<xs:documentation>Mega 10**6</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="T">
-				<xs:annotation>
-					<xs:documentation>Tera 10**12</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="c">
-				<xs:annotation>
-					<xs:documentation>Centi 10**-2</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="d">
-				<xs:annotation>
-					<xs:documentation>Deci 10**-1</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="k">
-				<xs:annotation>
-					<xs:documentation>Kilo 10**3</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="m">
-				<xs:annotation>
-					<xs:documentation>Milli 10**-3</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="micro">
-				<xs:annotation>
-					<xs:documentation>Micro 10**-6</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="n">
-				<xs:annotation>
-					<xs:documentation>Nano 10**-9</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-			<xs:enumeration value="none">
-				<xs:annotation/>
-			</xs:enumeration>
-			<xs:enumeration value="p">
-				<xs:annotation>
-					<xs:documentation>Pico 10**-12</xs:documentation>
-				</xs:annotation>
-			</xs:enumeration>
-		</xs:restriction>
-	</xs:simpleType>
+	<xs:element name="UnitMultiplier" type="common:UnitMultiplier"/>
 </xs:schema>

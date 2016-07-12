@@ -19,7 +19,7 @@
 			<bean class="com.sixthc.interceptor.CIMLoggingInInterceptor">
 				<property name="packageName" value="CIM DER" />
 				<property name="packageGroupName" value="CIM DER Control" />
-				<property name="messageName" value="CIM_DER(createDERGroups) " />
+				<property name="messageName" value="CIM_DER(createDERGroups)" />
 				<property name="resultCode" value="success" />
 				<property name="stage" value="serviceIn" />
 				<property name="strict" value="false" />
@@ -29,7 +29,7 @@
 			<bean class="com.sixthc.interceptor.CIMLoggingOutInterceptor">
 				<property name="packageName" value="CIM DER" />
 				<property name="packageGroupName" value="CIM DER Control" />
-				<property name="messageName" value="CIM_DER(createDERGroups) " />
+				<property name="messageName" value="CIM_DER(createDERGroups)" />
 				<property name="resultCode" value="success" />
 				<property name="stage" value="serviceOut" />
 				<property name="strict" value="false" />
@@ -39,7 +39,7 @@
 			<bean class="com.sixthc.interceptor.CIMLoggingOutInterceptor">
 				<property name="packageName" value="CIM DER" />
 				<property name="packageGroupName" value="CIM DER Control" />
-				<property name="messageName" value="CIM_DER(createDERGroups) " />
+				<property name="messageName" value="CIM_DER(createDERGroups)" />
 				<property name="resultCode" value="fail" />
 				<property name="stage" value="serviceOutFault" />
 			</bean>
@@ -48,7 +48,7 @@
 			<bean class="com.sixthc.interceptor.CIMLoggingInInterceptor">
 				<property name="packageName" value="CIM DER" />
 				<property name="packageGroupName" value="CIM DER Control" />
-				<property name="messageName" value="CIM_DER(createDERGroups) " />
+				<property name="messageName" value="CIM_DER(createDERGroups)" />
 				<property name="resultCode" value="fail" />
 				<property name="stage" value="serviceInFault" />
 			</bean>

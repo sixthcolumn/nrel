@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="getDERGroupStatuses"
+    targetNamespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/getDERGroupStatuses"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/getDERGroupStatuses"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/GetDERGroupStatusesMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty">
+   <import namespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesWrapper" location="GetDERGroupStatusesWrapper.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://www.epri.com/GetDERGroupStatuses" location="file:/usr/local/git/nrel/61968/wsdl/GetDERGroupStatuses.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <import namespace="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" location="getVendor.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+   <partnerLinks>
+      <partnerLink name="GetVendorLink" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" partnerLinkType="tns:getVendor" partnerRole="getVendorPortTypeRole"/>
+      <partnerLink name="RemoteLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesWrapper" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" partnerRole="GetDERGroupStatuses_PortRole"/>
+      <partnerLink name="RemoteLogLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesWrapper" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" partnerRole="GetDERGroupStatuses_PortRole"/>
+      <partnerLink name="ServiceLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesWrapper" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" myRole="GetDERGroupStatuses_PortRole"/>
+   </partnerLinks>
+   <variables>
+      <variable name="ServiceOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+   </variables>
+   <sequence>
+      <scope name="Scope1">
+         <variables>
+            <variable name="FaultOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+            <variable name="LogOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+            <variable name="LogIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+            <variable name="RemoteOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+            <variable name="RemoteIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+            <variable name="GetVendorOut" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationResponse"/>
+            <variable name="GetVendorIn" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" messageType="tns:getVendorOperationRequest"/>
+            <variable name="ServiceIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+         </variables>
+         <faultHandlers>
+            <catch faultName="sxeh:systemFault" faultVariable="faultName" faultMessageType="sxeh:faultMessage">
+               <sequence name="Sequence2">
+                  <assign name="Assign3">
+                     <copy>
+                        <from>'6005'</from>
+                        <to>$FaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                     </copy>
+                     <copy>
+                        <from>'FATAL'</from>
+                        <to>$FaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                     </copy>
+                     <copy>
+                        <from variable="faultName" part="fault"/>
+                        <to>$FaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                     </copy>
+                  </assign>
+                  <reply name="Reply2" partnerLink="ServiceLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="FaultOut"/>
+               </sequence>
+            </catch>
+         </faultHandlers>
+         <sequence name="Sequence1">
+            <receive name="Receive1" createInstance="yes" partnerLink="ServiceLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="ServiceIn"/>
+            <assign name="Assign1">
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:Organization</from>
+                  <to variable="GetVendorIn" part="vendorName"/>
+               </copy>
+               <copy>
+                  <from>'CIM_DER (getDERGroupStatuses)'</from>
+                  <to variable="GetVendorIn" part="opName"/>
+               </copy>
+            </assign>
+            <invoke name="InvokeGetVendor" partnerLink="GetVendorLink" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="GetVendorIn" outputVariable="GetVendorOut"/>
+            <assign name="Assign2">
+               <copy>
+                  <from variable="GetVendorOut" part="url"/>
+                  <to variable="RemoteIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+               </copy>
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
+                  <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
+               </copy>
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
+                  <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
+               </copy>
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
+                  <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
+               </copy>
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
+                  <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
+               </copy>
+            </assign>
+            <invoke name="InvokeRemote" partnerLink="RemoteLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" inputVariable="RemoteIn" outputVariable="RemoteOut"/>
+            <invoke name="InvokeLog" partnerLink="RemoteLogLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" inputVariable="LogIn" outputVariable="LogOut"/>
+            <assign name="Assign4">
+               <copy>
+                  <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Header</from>
+                  <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Header</to>
+               </copy>
+               <copy>
+                  <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Reply</from>
+                  <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Reply</to>
+               </copy>
+               <copy>
+                  <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Payload</from>
+                  <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Payload</to>
+               </copy>
+            </assign>
+         </sequence>
+      </scope>
+      <reply name="Reply1" partnerLink="ServiceLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="ServiceOut"/>
+   </sequence>
+</process>

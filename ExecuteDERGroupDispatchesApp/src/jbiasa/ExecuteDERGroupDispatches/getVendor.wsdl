@@ -39,7 +39,7 @@
     </binding>
     <service name="getVendorService">
         <port name="getVendorPort" binding="tns:getVendorBinding">
-            <soap:address location="http://localhost:${HttpDefaultPort}/getVendorService/getVendorURL"/>
+            <soap:address location="${vendor_port}"/>
         </port>
     </service>
     <plnk:partnerLinkType name="getVendor">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Gerald R. Gray (EPRI) -->
-<xs:schema xmlns:tns="http://www.epri.com/2016/GetDERGroupStatusesMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.iec.ch/TC57/2011/schema/message" xmlns:obj1="http://www.epri.com/2013/DERGroupStatuses#" xmlns:obj2="http://www.epri.com/2016/GetDERGroupStatuses#" targetNamespace="http://www.epri.com/2016/GetDERGroupStatusesMessage" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+<xs:schema xmlns:tns="http://www.epri.com/GetDERGroupStatusesMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msg="http://www.iec.ch/TC57/2011/schema/message" xmlns:obj1="http://www.epri.com/DERGroupStatuses" xmlns:obj2="http://www.epri.com/GetDERGroupStatuses" targetNamespace="http://www.epri.com/GetDERGroupStatusesMessage" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
 	<xs:annotation>
 		<xs:documentation>
 	// Copyright (c) 2016, Electric Power Research Institute
@@ -15,9 +15,9 @@
 	<!-- Base Message Definitions -->
 	<xs:import namespace="http://www.iec.ch/TC57/2011/schema/message" schemaLocation="Message.xsd"/>
 	<!-- CIM Information Object Definition -->
-	<xs:import namespace="http://www.epri.com/2013/DERGroupStatuses#" schemaLocation="DERGroupStatuses.xsd"/>
+	<xs:import namespace="http://www.epri.com/DERGroupStatuses" schemaLocation="DERGroupStatuses.xsd"/>
 	<!-- Remove this Import if there is no "Get" Profile associated with this Object. -->
-	<xs:import namespace="http://www.epri.com/2016/GetDERGroupStatuses#" schemaLocation="GetDERGroupStatuses.xsd"/>
+	<xs:import namespace="http://www.epri.com/GetDERGroupStatuses" schemaLocation="GetDERGroupStatuses.xsd"/>
 	<!-- RequestType Definition -->
 	<xs:element name="GetDERGroupStatusesRequestMessage" type="tns:GetDERGroupStatusesRequestMessageType"/>
 	<xs:element name="GetDERGroupStatusesResponseMessage" type="tns:GetDERGroupStatusesResponseMessageType"/>

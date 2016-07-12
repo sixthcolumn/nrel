@@ -69,6 +69,7 @@
 -->
 	<import resource="spring/executeDERGroups.xml" />
 	<import resource="spring/executeDERGroupDispatches.xml" />
+	<import resource="spring/getDERGroupStatuses.xml" />
 	
 
 	<!-- <import resource="spring/rest-event.xml" /> -->
