@@ -69,6 +69,11 @@
             </assign>
             <invoke name="InvokeGetVendor" partnerLink="GetVendorLink" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="GetVendorIn" outputVariable="GetVendorOut"/>
             <assign name="Assign2">
+               <sxt:trace>
+                  <sxt:log level="info" location="onComplete">
+                     <from>concat(n**** URL :', $GetVendorOut.url)</from>
+                  </sxt:log>
+               </sxt:trace>
                <copy>
                   <from variable="GetVendorOut" part="url"/>
                   <to variable="RemoteIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
