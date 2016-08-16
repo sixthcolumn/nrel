@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="work_order_attachments"
-    ,catalog="wms"
+
 )
 public class WorkOrderAttachments  implements java.io.Serializable {
 

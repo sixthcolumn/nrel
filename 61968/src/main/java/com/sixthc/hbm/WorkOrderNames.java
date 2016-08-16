@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
  */
 @Entity
 @Table(name="work_order_names"
-    ,catalog="wms"
+ 
 )
 public class WorkOrderNames  implements java.io.Serializable {
 	private static Constraint con = new Constraint(WorkOrderNames.class);

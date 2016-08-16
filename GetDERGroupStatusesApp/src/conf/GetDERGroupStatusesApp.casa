@@ -11,7 +11,7 @@
         <endpoint display-name="RemoteLogLink" endpoint-name="GetDERGroupStatuses_PortRole_partnerRole" file-path="getDERGroupStatuses.bpel" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint8" process-name="getDERGroupStatuses" service-name="ns4:RemoteLogLink"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="GetDERGroupStatuses.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetDERGroupStatusesApp-GetDERGroupStatuses" unit-name="GetDERGroupStatuses" unknown="false" x="122" y="113">
+        <service-engine-service-unit artifacts-zip="GetDERGroupStatuses.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetDERGroupStatusesApp-GetDERGroupStatuses" unit-name="GetDERGroupStatuses" unknown="false" x="123" y="97">
             <provides endpoint="endpoint5"/>
             <consumes endpoint="endpoint6"/>
             <consumes endpoint="endpoint7"/>

@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="contactperson_emails"
-    ,catalog="wms"
+
 )
 public class ContactpersonEmails  implements java.io.Serializable {
 

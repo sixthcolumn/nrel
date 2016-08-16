@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="contactperson_phones"
-    ,catalog="wms"
+
 )
 public class ContactpersonPhones  implements java.io.Serializable {
 

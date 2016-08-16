@@ -6,6 +6,7 @@
     <types/>
     <message name="getVendorOperationRequest">
         <part name="vendorName" type="xsd:string"/>
+        <part name="userName" type="xsd:string"/>
         <part name="opName" type="xsd:string"/>
     </message>
     <message name="getVendorOperationResponse">

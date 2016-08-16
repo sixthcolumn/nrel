@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="maintorder_names"
-    ,catalog="wms"
+
 )
 public class MaintorderNames  implements java.io.Serializable {
 

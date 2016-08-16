@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="address_districts"
-    ,catalog="wms"
+
 )
 public class AddressDistricts  implements java.io.Serializable {
 

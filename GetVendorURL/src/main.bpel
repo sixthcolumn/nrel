@@ -34,15 +34,19 @@
                 <from variable="ServiceIn" part="opName"/>
                 <to>$jdbcIn.part/ns0:opName</to>
             </copy>
+            <copy>
+                <from variable="ServiceIn" part="userName"/>
+                <to>$jdbcIn.part/ns0:userName</to>
+            </copy>
         </assign>
         <invoke name="InvokeJDBC" partnerLink="PartnerLink2" operation="get_vendor" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/jdbcVendor" portType="tns:jdbcPortType" inputVariable="jdbcIn" outputVariable="jdbcOut">
         </invoke>
         <if name="IfNotNull">
-            <condition>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:harness_url/@isNull = false()</condition>
+            <condition>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:out_url/@isNull = false()</condition>
             <sequence name="Sequence1">
                 <assign name="Assign2">
                     <copy>
-                        <from>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:harness_url</from>
+                        <from>$jdbcOut.part/ns0:jdbcVendor_Record/ns0:out_url</from>
                         <to variable="ServiceOut" part="url"/>
                     </copy>
                 </assign>
@@ -56,7 +60,7 @@
                             <to variable="FaultOut" part="code"/>
                         </copy>
                         <copy>
-                            <from>concat('Vendor name :', $ServiceIn.vendorName, ', Op name :', $ServiceIn.opName)</from>
+                            <from>concat('Vendor name : ', $ServiceIn.vendorName, ', User name: ', $ServiceIn.userName, ', Op name : ', $ServiceIn.opName)</from>
                             <to variable="FaultOut" part="reason"/>
                         </copy>
                     </assign>

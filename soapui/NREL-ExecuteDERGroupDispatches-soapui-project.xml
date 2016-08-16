@@ -1213,7 +1213,7 @@
                 <mes:AckRequired>false</mes:AckRequired>                
                 <mes:User>
                     <mes:UserID>epriTest</mes:UserID>
-                    <mes:Organization>sixc</mes:Organization>
+                    <mes:Organization>ADMS</mes:Organization>
                 </mes:User>                
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                
               <!--  <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>     -->           
@@ -1255,4 +1255,44 @@
          </der:Payload>
       </der:CreateDERGroupDispatches>
    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="CreateDERGroupDispatches2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="CreateDERGroupDispatches2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://52.87.186.171:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der="http://www.epri.com/DERGroupDispatches">
+    <soapenv:Header />
+    <soapenv:Body>
+        <CreateDERGroupDispatches xmlns="http://www.epri.com/DERGroupDispatchesMessage">
+  <Header xmlns="http://www.epri.com/DERGroupDispatchesMessage">
+    <mes:Verb>create</mes:Verb>
+    <mes:Noun>DERGroupDispatches</mes:Noun>
+    <mes:Timestamp>2016-07-21T17:14:52.3124453+02:00</mes:Timestamp>
+    <mes:User>
+      <mes:UserID>ADMS</mes:UserID>
+      <mes:Organization>ADMS</mes:Organization>
+    </mes:User>
+    <mes:MessageID>DERGroupDispatches_7/21/2016 5:14:52 PM</mes:MessageID>
+  </Header>
+            <!--Optional:-->
+            <Request  xmlns="http://www.epri.com/DERGroupDispatchesMessage">
+                <!--Optional:-->
+                <mes:StartTime>2015-06-12T12:00:00.00-05:00</mes:StartTime>
+                <!--Optional:-->
+                <mes:EndTime>2015-06-12T12:00:00.00-05:00</mes:EndTime>
+            </Request>
+            <!--Optional:-->
+  <Payload xmlns="http://www.epri.com/DERGroupDispatchesMessage">
+    <der:DERGroupDispatches>
+      <der:DERGroupDispatch>
+        <der:DERGroup>
+          <der:name>DER Group A</der:name>
+          <der:mRID>fdcbba4d-9750-4823-b838-7fb087bd2ca3</der:mRID>
+        </der:DERGroup>
+        <der:RequestedCapability>
+          <der:capabilityType>RealPower</der:capabilityType>
+          <der:value>1.1</der:value>
+          <der:capabilityUnits>W</der:capabilityUnits>
+          <der:capabilityMultiplier>k</der:capabilityMultiplier>
+        </der:RequestedCapability>
+      </der:DERGroupDispatch>
+    </der:DERGroupDispatches>
+  </Payload>
+        </CreateDERGroupDispatches>
+    </soapenv:Body>
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

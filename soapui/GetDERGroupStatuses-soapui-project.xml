@@ -1169,7 +1169,7 @@ Names.name class. The status will return "what can you give me" in terms of powe
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.epri.com/GetDERGroupStatuses</con:endpoint><con:endpoint>http://localhost:8080/epriConnect/getDERGroupStatuses</con:endpoint><con:endpoint>http://localhost:8081/epriConnect/getDERGroupStatuses</con:endpoint><con:endpoint>http://52.87.186.171:8081/epriConnect/getDERGroupStatuses</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.epri.com/GetDERGroupStatuses" name="GetDERGroupStatuses" bindingOperationName="GetDERGroupStatuses" type="Request-Response" outputName="GetDERGroupStatusesResponse" inputName="GetDERGroupStatusesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.epri.com/GetDERGroupStatuses</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.epri.com/GetDERGroupStatusesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:get1="http://www.epri.com/GetDERGroupStatuses">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.epri.com/GetDERGroupStatuses</con:endpoint><con:endpoint>http://localhost:8080/epriConnect/getDERGroupStatuses</con:endpoint><con:endpoint>http://localhost:8081/epriConnect/getDERGroupStatuses</con:endpoint><con:endpoint>http://52.87.186.171:8081/epriConnect/getDERGroupStatuses</con:endpoint><con:endpoint>http://52.87.186.171:8080/epriConnect/getDERGroupStatuses</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.epri.com/GetDERGroupStatuses" name="GetDERGroupStatuses" bindingOperationName="GetDERGroupStatuses" type="Request-Response" outputName="GetDERGroupStatusesResponse" inputName="GetDERGroupStatusesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.epri.com/GetDERGroupStatuses</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.epri.com/GetDERGroupStatusesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:get1="http://www.epri.com/GetDERGroupStatuses">
    <soapenv:Header/>
    <soapenv:Body>
       <get:GetDERGroupStatusesRequestMessage>
@@ -1308,7 +1308,7 @@ Names.name class. The status will return "what can you give me" in terms of powe
                 <mes:AckRequired>false</mes:AckRequired>                
                 <mes:User>
                     <mes:UserID>epriTest</mes:UserID>
-                    <mes:Organization>sixc</mes:Organization>
+                    <mes:Organization>ADMS</mes:Organization>
                 </mes:User>                
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                
               <!--  <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>     -->           
@@ -1460,4 +1460,4 @@ Names.name class. The status will return "what can you give me" in terms of powe
          </get:Request>
       </get:GetDERGroupStatusesRequestMessage>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

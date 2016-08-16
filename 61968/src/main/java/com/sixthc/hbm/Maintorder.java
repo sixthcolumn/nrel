@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="maintorder"
-    ,catalog="wms"
+
 )
 public class Maintorder  implements java.io.Serializable {
 

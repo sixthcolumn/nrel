@@ -13,6 +13,16 @@
               </xsd:simpleContent>
             </xsd:complexType>
           </xsd:element>
+          <xsd:element name="userName">
+            <xsd:complexType>
+              <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                  <xsd:attribute name="isNull" type="xsd:boolean"></xsd:attribute>
+                  <xsd:attribute name="isDefaultColumn" type="xsd:boolean"></xsd:attribute>
+                </xsd:extension>
+              </xsd:simpleContent>
+            </xsd:complexType>
+          </xsd:element>
           <xsd:element name="opName">
             <xsd:complexType>
               <xsd:simpleContent>
@@ -36,7 +46,7 @@
     <xsd:element name="jdbcVendor_Record">
       <xsd:complexType>
         <xsd:sequence>
-          <xsd:element name="harness_url">
+          <xsd:element name="out_url">
             <xsd:complexType>
               <xsd:simpleContent>
                 <xsd:extension base="xsd:string">

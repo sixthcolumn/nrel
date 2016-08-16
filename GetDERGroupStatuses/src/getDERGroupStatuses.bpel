@@ -66,12 +66,16 @@
                   <from>'CIM_DER (getDERGroupStatuses)'</from>
                   <to variable="GetVendorIn" part="opName"/>
                </copy>
+               <copy>
+                  <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:UserID</from>
+                  <to variable="GetVendorIn" part="userName"/>
+               </copy>
             </assign>
             <invoke name="InvokeGetVendor" partnerLink="GetVendorLink" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="GetVendorIn" outputVariable="GetVendorOut"/>
             <assign name="Assign2">
                <sxt:trace>
                   <sxt:log level="info" location="onComplete">
-                     <from>concat(n**** URL :', $GetVendorOut.url)</from>
+                     <from>concat('**** Vendor URL :', $GetVendorOut.url)</from>
                   </sxt:log>
                </sxt:trace>
                <copy>
@@ -82,7 +86,7 @@
                   <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
                   <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
                </copy>
-               <copy>
+               <copy ignoreMissingFromData="yes">
                   <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
                   <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
                </copy>

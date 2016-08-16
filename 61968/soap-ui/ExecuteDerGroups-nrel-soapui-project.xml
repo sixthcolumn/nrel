@@ -1315,7 +1315,7 @@
                 <mes:AckRequired>false</mes:AckRequired>                
                 <mes:User>
                     <mes:UserID>epriTest</mes:UserID>
-                    <mes:Organization>sixc</mes:Organization>
+                    <mes:Organization>ADMS</mes:Organization>
                 </mes:User>                
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                
              <!--   <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>         -->        

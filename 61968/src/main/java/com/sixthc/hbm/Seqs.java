@@ -14,7 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="seqs"
-    ,catalog="wms"
+
 )
 public class Seqs  implements java.io.Serializable {
 

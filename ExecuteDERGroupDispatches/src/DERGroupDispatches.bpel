@@ -68,6 +68,10 @@
                         <from>'CIM_DER (createDERGroupDispatch)'</from>
                         <to variable="GetVendorIn" part="opName"/>
                     </copy>
+                    <copy>
+                        <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID</from>
+                        <to variable="GetVendorIn" part="userName"/>
+                    </copy>
                 </assign>
                 <invoke name="GetVendor" partnerLink="GetVendor" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="GetVendorIn" outputVariable="GetVendorOut"/>
                 <assign name="Assign3">

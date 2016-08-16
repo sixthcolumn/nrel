@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
  */
 @Entity
 @Table(name="contactperson_addresses"
-    ,catalog="wms"
+
 )
 public class ContactpersonAddresses  implements java.io.Serializable {
 	private static Constraint con = new Constraint(ContactpersonAddresses.class);

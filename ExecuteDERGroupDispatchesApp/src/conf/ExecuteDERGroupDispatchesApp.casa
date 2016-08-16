@@ -47,8 +47,8 @@
         <connection consumer="endpoint2" provider="endpoint5" state="unchanged"/>
         <connection consumer="endpoint7" provider="endpoint3" state="new"/>
         <connection consumer="endpoint8" provider="endpoint4" state="new"/>
-        <connection consumer="endpoint8" provider="endpoint5" state="deleted"/>
         <connection consumer="endpoint7" provider="endpoint5" state="deleted"/>
+        <connection consumer="endpoint8" provider="endpoint5" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/portType[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>

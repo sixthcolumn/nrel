@@ -13,7 +13,7 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-database-binding.jar" component-name="sun-database-binding" description="Represents this Service Unit" name="GetVendorURLApp-sun-database-binding" unit-name="sun-database-binding">
             <ports>
-                <port x="68" y="274">
+                <port x="0" y="-1">
                     <link xlink:href="../jbiasa/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/service[@name='service']/port[@name='port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
@@ -22,8 +22,8 @@
         </binding-component-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="GetVendorURLApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="68" y="37">
-                    <link xlink:href="../jbiServiceUnits/GetVendorURL/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
+                <port x="0" y="-1">
+                    <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
                 </port>
@@ -31,20 +31,23 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint2" provider="endpoint3" state="unchanged"/>
         <connection consumer="endpoint4" provider="endpoint1" state="unchanged"/>
+        <connection consumer="endpoint2" provider="endpoint3" state="unchanged"/>
     </connections>
     <porttypes>
+        <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/portType[@name='getVendorPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/getVendor.wsdl#xpointer(/definitions/portType[@name='getVendorPortType'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/portType[@name='jdbcPortType'])" xlink:type="simple"/>
     </porttypes>
     <bindings>
+        <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/binding[@name='getVendorBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/getVendor.wsdl#xpointer(/definitions/binding[@name='getVendorBinding'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/binding[@name='binding'])" xlink:type="simple"/>
     </bindings>
     <services>
+        <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService'])" xlink:type="simple"/>
         <link xlink:href="../jbiasa/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService'])" xlink:type="simple"/>
         <link xlink:href="../jbiServiceUnits/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/service[@name='service'])" xlink:type="simple"/>

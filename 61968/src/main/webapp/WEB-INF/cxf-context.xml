@@ -61,15 +61,15 @@
 	<import resource="spring/wms1.xml" />
 	<import resource="spring/wms2.xml" />
 	<import resource="spring/wo_server.xml" />
-	<import resource="spring/wms_cim_create.xml" />
 	<import resource="spring/wms_cim_delete.xml" />
 	<import resource="spring/wms_cim_create_request.xml" />
 	<import resource="spring/wms_cim_change_request.xml" />
-	<import resource="spring/wms_cim_get.xml" />
 -->
 	<import resource="spring/executeDERGroups.xml" />
 	<import resource="spring/executeDERGroupDispatches.xml" />
 	<import resource="spring/getDERGroupStatuses.xml" />
+	<import resource="spring/wms_cim_create.xml" />
+	<import resource="spring/wms_cim_get.xml" />
 	
 
 	<!-- <import resource="spring/rest-event.xml" /> -->
