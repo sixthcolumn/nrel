@@ -1,0 +1,731 @@
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : packages
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Vendor)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Vendor, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Vendor)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Vendor)
+          - SQL table alias mapping - vendor0_
+          - alias suffix - 0_
+          - suffixed key columns - {vendor_i1_8_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Vendor [PESSIMISTIC_READ]: select vendor0_.vendor_id as vendor_i1_8_0_, vendor0_.name as name2_8_0_ from vendor vendor0_ where vendor0_.vendor_id=? lock in share mode
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7d87242e]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : packages
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Vendor)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Vendor, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Vendor)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Vendor)
+          - SQL table alias mapping - vendor0_
+          - alias suffix - 0_
+          - suffixed key columns - {vendor_i1_8_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Vendor [PESSIMISTIC_WRITE]: select vendor0_.vendor_id as vendor_i1_8_0_, vendor0_.name as name2_8_0_ from vendor vendor0_ where vendor0_.vendor_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79627791]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : packages
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Vendor)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Vendor, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Vendor)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Vendor)
+          - SQL table alias mapping - vendor0_
+          - alias suffix - 0_
+          - suffixed key columns - {vendor_i1_8_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Vendor [PESSIMISTIC_FORCE_INCREMENT]: select vendor0_.vendor_id as vendor_i1_8_0_, vendor0_.name as name2_8_0_ from vendor vendor0_ where vendor0_.vendor_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27f6e0f8]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : packages
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Vendor)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Vendor, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Vendor)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Vendor)
+          - SQL table alias mapping - vendor0_
+          - alias suffix - 0_
+          - suffixed key columns - {vendor_i1_8_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Vendor [OPTIMISTIC]: select vendor0_.vendor_id as vendor_i1_8_0_, vendor0_.name as name2_8_0_ from vendor vendor0_ where vendor0_.vendor_id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@22f3b8be]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : packages
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Vendor)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Vendor, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Vendor)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Vendor)
+          - SQL table alias mapping - vendor0_
+          - alias suffix - 0_
+          - suffixed key columns - {vendor_i1_8_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Vendor [OPTIMISTIC_FORCE_INCREMENT]: select vendor0_.vendor_id as vendor_i1_8_0_, vendor0_.name as name2_8_0_ from vendor vendor0_ where vendor0_.vendor_id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity com.sixthc.bpel.spring.model.Vendor: select vendor0_.vendor_id as vendor_i1_8_1_, vendor0_.name as name2_8_1_, packages1_.VENDOR_ID as VENDOR_I1_8_3_, pkg2_.package_id as PACKAGE_2_1_3_, pkg2_.package_id as package_1_4_0_, pkg2_.name as name2_4_0_ from vendor vendor0_ left outer join VENDOR_PACKAGES packages1_ on vendor0_.vendor_id=packages1_.VENDOR_ID left outer join package pkg2_ on packages1_.PACKAGE_ID=pkg2_.package_id where vendor0_.vendor_id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity com.sixthc.bpel.spring.model.Vendor: select vendor0_.vendor_id as vendor_i1_8_1_, vendor0_.name as name2_8_1_, packages1_.VENDOR_ID as VENDOR_I1_8_3_, pkg2_.package_id as PACKAGE_2_1_3_, pkg2_.package_id as package_1_4_0_, pkg2_.name as name2_4_0_ from vendor vendor0_ left outer join VENDOR_PACKAGES packages1_ on vendor0_.vendor_id=packages1_.VENDOR_ID left outer join package pkg2_ on packages1_.PACKAGE_ID=pkg2_.package_id where vendor0_.vendor_id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3676 - Static SQL for entity: com.sixthc.bpel.spring.model.Pkg
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3681 -  Version select: select package_id from package where package_id =?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3684 -  Snapshot select: select pkg_.package_id, pkg_.name as name2_4_ from package pkg_ where pkg_.package_id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3687 -  Insert 0: insert into package (name, package_id) values (?, ?)
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3688 -  Update 0: update package set name=? where package_id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3689 -  Delete 0: delete from package where package_id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3692 -  Identity insert: insert into package (name) values (?)
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6611e15b]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [NONE]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4362d5bb]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [READ]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@37a6b607]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [UPGRADE]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4a5aedb0]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [UPGRADE_NOWAIT]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@545b72a8]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [UPGRADE_SKIPLOCKED]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5999e39]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [FORCE]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@67d970d8]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [PESSIMISTIC_READ]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? lock in share mode
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@697d28cd]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [PESSIMISTIC_WRITE]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@23500dea]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [PESSIMISTIC_FORCE_INCREMENT]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@27c53921]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [OPTIMISTIC]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@766d7940]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Pkg)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Pkg)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Pkg)
+          - SQL table alias mapping - pkg0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_1_4_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Pkg [OPTIMISTIC_FORCE_INCREMENT]: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity com.sixthc.bpel.spring.model.Pkg: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity com.sixthc.bpel.spring.model.Pkg: select pkg0_.package_id as package_1_4_0_, pkg0_.name as name2_4_0_ from package pkg0_ where pkg0_.package_id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3676 - Static SQL for entity: com.sixthc.bpel.spring.model.Request
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3681 -  Version select: select id from request where id =?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3684 -  Snapshot select: select request_.id, request_.data as data2_6_, request_.create_date as create_d3_6_, request_.request as request4_6_, request_.result as result5_6_ from request request_ where request_.id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3687 -  Insert 0: insert into request (data, create_date, request, result, id) values (?, ?, ?, ?, ?)
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3688 -  Update 0: update request set data=?, create_date=?, request=?, result=? where id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3689 -  Delete 0: delete from request where id=?
+2016-12-01 15:36:08 DEBUG AbstractEntityPersister:3692 -  Identity insert: insert into request (data, create_date, request, result) values (?, ?, ?, ?)
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@359b89f7]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [NONE]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@360180]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [READ]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@30358413]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [UPGRADE]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@20870411]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [UPGRADE_NOWAIT]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@3083ff38]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [UPGRADE_SKIPLOCKED]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7347a6a4]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [FORCE]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5e76ee18]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [PESSIMISTIC_READ]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? lock in share mode
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@74648cb0]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [PESSIMISTIC_WRITE]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4f7b0fa]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [PESSIMISTIC_FORCE_INCREMENT]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=? for update
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5ce985de]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [OPTIMISTIC]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@33f803ee]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : data
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : date
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : request
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : result
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(entity=com.sixthc.bpel.spring.model.Request)
+    - Returns
+       - EntityReturnImpl(entity=com.sixthc.bpel.spring.model.Request, querySpaceUid=<gen:0>, path=com.sixthc.bpel.spring.model.Request)
+    - QuerySpaces
+       - EntityQuerySpaceImpl(uid=<gen:0>, entity=com.sixthc.bpel.spring.model.Request)
+          - SQL table alias mapping - request0_
+          - alias suffix - 0_
+          - suffixed key columns - {id1_6_0_}
+
+2016-12-01 15:36:08 DEBUG EntityLoader:146 - Static select for entity com.sixthc.bpel.spring.model.Request [OPTIMISTIC_FORCE_INCREMENT]: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_MERGE on entity com.sixthc.bpel.spring.model.Request: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG Loader:56 - Static select for action ACTION_REFRESH on entity com.sixthc.bpel.spring.model.Request: select request0_.id as id1_6_0_, request0_.data as data2_6_0_, request0_.create_date as create_d3_6_0_, request0_.request as request4_6_0_, request0_.result as result5_6_0_ from request request0_ where request0_.id=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@2e2b58f0]
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@1fdc0c3e]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkgGroups
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(collection=com.sixthc.bpel.spring.model.Vendor.packages)
+    - Returns
+       - CollectionReturnImpl(collection=com.sixthc.bpel.spring.model.Vendor.packages, querySpaceUid=<gen:0>, path=[com.sixthc.bpel.spring.model.Vendor.packages])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.sixthc.bpel.spring.model.Pkg, querySpaceUid=<gen:1>, path=[com.sixthc.bpel.spring.model.Vendor.packages].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.sixthc.bpel.spring.model.Vendor.packages)
+          - SQL table alias mapping - packages0_
+          - alias suffix - 0_
+          - suffixed key columns - {VENDOR_I1_8_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - package_1_4_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.sixthc.bpel.spring.model.Pkg)
+                - SQL table alias mapping - pkg1_
+                - alias suffix - 1_
+                - suffixed key columns - {package_1_4_1_}
+
+2016-12-01 15:36:08 DEBUG CollectionLoader:114 - Static select for collection com.sixthc.bpel.spring.model.Vendor.packages: select packages0_.VENDOR_ID as VENDOR_I1_8_0_, packages0_.PACKAGE_ID as PACKAGE_2_1_0_, pkg1_.package_id as package_1_4_1_, pkg1_.name as name2_4_1_ from VENDOR_PACKAGES packages0_ inner join package pkg1_ on packages0_.PACKAGE_ID=pkg1_.package_id where packages0_.VENDOR_ID=?
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.CollectionQuerySpaceImpl@5a8e42c7]
+2016-12-01 15:36:08 DEBUG QuerySpacesImpl:192 - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@31c24543]
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : name
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:154 - Visiting attribute path : pkg
+2016-12-01 15:36:08 DEBUG MetamodelGraphWalker:162 - Property path deemed to be circular : pkg
+2016-12-01 15:36:08 DEBUG FetchStyleLoadPlanBuildingAssociationVisitationStrategy:94 - Building LoadPlan...
+2016-12-01 15:36:08 DEBUG LoadQueryJoinAndFetchProcessor:111 - processing queryspace <gen:0>
+2016-12-01 15:36:08 DEBUG LoadPlanTreePrinter:72 - LoadPlan(collection=com.sixthc.bpel.spring.model.Pkg.pkgGroups)
+    - Returns
+       - CollectionReturnImpl(collection=com.sixthc.bpel.spring.model.Pkg.pkgGroups, querySpaceUid=<gen:0>, path=[com.sixthc.bpel.spring.model.Pkg.pkgGroups])
+          - (collection element) CollectionFetchableElementEntityGraph(entity=com.sixthc.bpel.spring.model.PkgGroup, querySpaceUid=<gen:1>, path=[com.sixthc.bpel.spring.model.Pkg.pkgGroups].<elements>)
+    - QuerySpaces
+       - CollectionQuerySpaceImpl(uid=<gen:0>, collection=com.sixthc.bpel.spring.model.Pkg.pkgGroups)
+          - SQL table alias mapping - pkggroups0_
+          - alias suffix - 0_
+          - suffixed key columns - {package_3_4_0_}
+          - entity-element alias suffix - 1_
+          - 1_entity-element suffixed key columns - package_1_5_1_
+          - JOIN (JoinDefinedByMetadata(elements)) : <gen:0> -> <gen:1>
+             - EntityQuerySpaceImpl(uid=<gen:1>, entity=com.sixthc.bpel.spring.model.PkgGroup)
+                - SQL table alias mapping - pkggroups0_
+                - alias suffix - 1_
+                - suffixed key columns - {package_1_5_1_}
+
+2016-12-01 15:36:08 DEBUG CollectionLoader:114 - Static select for collection com.sixthc.bpel.spring.model.Pkg.pkgGroups: select pkggroups0_.package_id as package_3_4_0_, pkggroups0_.package_group_id as package_1_5_0_, pkggroups0_.package_group_id as package_1_5_1_, pkggroups0_.name as name2_5_1_, pkggroups0_.package_id as package_3_5_1_ from package_group pkggroups0_ where pkggroups0_.package_id=?
+2016-12-01 15:36:08 DEBUG SessionFactoryRegistry:67 - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@12224026
+2016-12-01 15:36:08 DEBUG SessionFactoryRegistry:89 - Registering SessionFactory: 59a8a9bd-70e4-45ca-884b-dda32adf3331 (<unnamed>)
+2016-12-01 15:36:08 DEBUG SessionFactoryRegistry:96 - Not binding SessionFactory to JNDI, no JNDI name configured
+2016-12-01 15:36:08 DEBUG SessionFactoryImpl:505 - Instantiated session factory
+2016-12-01 15:36:08 DEBUG NamedQueryRepository:155 - Checking 0 named HQL queries
+2016-12-01 15:36:08 DEBUG NamedQueryRepository:171 - Checking 0 named SQL queries
+2016-12-01 15:36:08 DEBUG StatisticsInitiator:110 - Statistics initialized [enabled=false]
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'employeeDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'employeeDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'messageDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'messageDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.MessageDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'messageDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'messageDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'messageLogDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'messageLogDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.MessageLogDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'messageLogDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageLogDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageLogDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'messageLogDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'PkgDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'PkgDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.PkgDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'PkgDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'PkgDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'PkgDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'PkgDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'PkgGroupDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'PkgGroupDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.PkgGroupDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'PkgGroupDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'PkgGroupDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'PkgGroupDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'PkgGroupDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'requestLogDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'requestLogDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.RequestLogDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'requestLogDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'requestLogDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'requestLogDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'requestLogDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'VendorDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'VendorDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.dao.VendorDaoImpl]: AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'VendorDao' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'VendorDao': AutowiredFieldElement for private org.hibernate.SessionFactory com.sixthc.bpel.spring.dao.AbstractDao.sessionFactory
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'VendorDao' to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'VendorDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'employeeService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'employeeService'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.EmployeeServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.EmployeeDao com.sixthc.bpel.spring.service.EmployeeServiceImpl.dao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'employeeService' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'employeeService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.EmployeeDao com.sixthc.bpel.spring.service.EmployeeServiceImpl.dao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'employeeDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'employeeService' to bean named 'employeeDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'EmployeeServiceImpl.saveEmployee' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:08 DEBUG InfrastructureAdvisorAutoProxyCreator:593 - Creating implicit proxy for bean 'employeeService' with 0 common interceptors and 1 specific interceptors
+2016-12-01 15:36:08 DEBUG JdkDynamicAopProxy:117 - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [com.sixthc.bpel.spring.service.EmployeeServiceImpl@124d0d3]
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'employeeService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'messageLogService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'messageLogService'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.MessageLogServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.MessageLogDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.dao
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.MessageLogServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.PkgGroupDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.pkgGroupDao
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.MessageLogServiceImpl]: AutowiredFieldElement for com.sixthc.bpel.spring.dao.PkgDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.pkgDao
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.MessageLogServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.MessageDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.msgDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'messageLogService' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageLogService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.MessageLogDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.dao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'messageLogDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageLogService' to bean named 'messageLogDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageLogService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.PkgGroupDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.pkgGroupDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'PkgGroupDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageLogService' to bean named 'PkgGroupDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageLogService': AutowiredFieldElement for com.sixthc.bpel.spring.dao.PkgDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.pkgDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'PkgDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageLogService' to bean named 'PkgDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'messageLogService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.MessageDao com.sixthc.bpel.spring.service.MessageLogServiceImpl.msgDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'messageDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'messageLogService' to bean named 'messageDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'MessageLogServiceImpl.saveMessageLog' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:08 DEBUG InfrastructureAdvisorAutoProxyCreator:593 - Creating implicit proxy for bean 'messageLogService' with 0 common interceptors and 1 specific interceptors
+2016-12-01 15:36:08 DEBUG JdkDynamicAopProxy:117 - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [com.sixthc.bpel.spring.service.MessageLogServiceImpl@1bf84171]
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'messageLogService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'requestLogService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'requestLogService'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.RequestLogServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.RequestLogDao com.sixthc.bpel.spring.service.RequestLogServiceImpl.dao
+2016-12-01 15:36:08 DEBUG InjectionMetadata:71 - Registered injected element on class [com.sixthc.bpel.spring.service.RequestLogServiceImpl]: AutowiredFieldElement for private com.sixthc.bpel.spring.dao.VendorDao com.sixthc.bpel.spring.service.RequestLogServiceImpl.vendorDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'requestLogService' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'requestLogService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.RequestLogDao com.sixthc.bpel.spring.service.RequestLogServiceImpl.dao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'requestLogDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'requestLogService' to bean named 'requestLogDao'
+2016-12-01 15:36:08 DEBUG InjectionMetadata:85 - Processing injected method of bean 'requestLogService': AutowiredFieldElement for private com.sixthc.bpel.spring.dao.VendorDao com.sixthc.bpel.spring.service.RequestLogServiceImpl.vendorDao
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'VendorDao'
+2016-12-01 15:36:08 DEBUG AutowiredAnnotationBeanPostProcessor:427 - Autowiring by type from bean name 'requestLogService' to bean named 'VendorDao'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'RequestLogServiceImpl.updateRequestLog' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:08 DEBUG InfrastructureAdvisorAutoProxyCreator:593 - Creating implicit proxy for bean 'requestLogService' with 0 common interceptors and 1 specific interceptors
+2016-12-01 15:36:08 DEBUG JdkDynamicAopProxy:117 - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [com.sixthc.bpel.spring.service.RequestLogServiceImpl@4db1ec28]
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'requestLogService'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'transactionAttributeSource'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'transactionInterceptor'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'dataSource'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:220 - Creating shared instance of singleton bean 'transactionManager'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:449 - Creating instance of bean 'transactionManager'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'hibernateConfiguration'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:755 - Autowiring by type from bean name 'transactionManager' via factory method to bean named 'sessionFactory'
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:523 - Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
+2016-12-01 15:36:08 DEBUG DefaultListableBeanFactory:1595 - Invoking afterPropertiesSet() on bean with name 'transactionManager'
+2016-12-01 15:36:08 INFO  HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@493cab44] of Hibernate SessionFactory for HibernateTransactionManager
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:477 - Finished creating instance of bean 'transactionManager'
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2016-12-01 15:36:09 DEBUG AnnotationConfigApplicationContext:700 - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@2bad1914]
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'lifecycleProcessor'
+2016-12-01 15:36:09 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+2016-12-01 15:36:09 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+2016-12-01 15:36:09 DEBUG PropertySourcesPropertyResolver:81 - Searching for key 'spring.liveBeansView.mbeanDomain' in [class path resource [application.properties]]
+2016-12-01 15:36:09 DEBUG PropertySourcesPropertyResolver:103 - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'requestLogService'
+2016-12-01 15:36:09 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'RequestLogServiceImpl.saveRequestLog' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'transactionManager'
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:367 - Creating new transaction with name [com.sixthc.bpel.spring.service.RequestLogServiceImpl.saveRequestLog]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:417 - Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@5322d536 updates=org.hibernate.engine.spi.ExecutableList@13dbf6de deletions=org.hibernate.engine.spi.ExecutableList@4e2c7301 orphanRemovals=org.hibernate.engine.spi.ExecutableList@48326ebf collectionCreations=org.hibernate.engine.spi.ExecutableList@6704e2a0 collectionRemovals=org.hibernate.engine.spi.ExecutableList@71baab36 collectionUpdates=org.hibernate.engine.spi.ExecutableList@163ea08f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@699f17b1 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:427 - Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@5322d536 updates=org.hibernate.engine.spi.ExecutableList@13dbf6de deletions=org.hibernate.engine.spi.ExecutableList@4e2c7301 orphanRemovals=org.hibernate.engine.spi.ExecutableList@48326ebf collectionCreations=org.hibernate.engine.spi.ExecutableList@6704e2a0 collectionRemovals=org.hibernate.engine.spi.ExecutableList@71baab36 collectionUpdates=org.hibernate.engine.spi.ExecutableList@163ea08f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@699f17b1 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2016-12-01 15:36:09 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/interop_dev]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:160 - begin
+2016-12-01 15:36:09 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2016-12-01 15:36:09 DEBUG JdbcTransaction:71 - disabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:488 - Exposing Hibernate transaction as JDBC transaction [com.mysql.jdbc.JDBC4Connection@325bc91]
+2016-12-01 15:36:09 DEBUG RequestLogServiceImpl:25 - save : com.sixthc.bpel.spring.model.RequestLog@227ed534
+2016-12-01 15:36:09 DEBUG ActionQueue:194 - Executing identity-insert immediately
+2016-12-01 15:36:09 DEBUG SQL:109 - insert into request_log (message, message_id) values (?, ?)
+2016-12-01 15:36:09 DEBUG IdentifierGeneratorHelper:94 - Natively generated identity: 227
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:755 - Initiating transaction commit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:551 - Committing Hibernate transaction on Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[com.sixthc.bpel.spring.model.RequestLog#227]],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@5322d536 updates=org.hibernate.engine.spi.ExecutableList@13dbf6de deletions=org.hibernate.engine.spi.ExecutableList@4e2c7301 orphanRemovals=org.hibernate.engine.spi.ExecutableList@48326ebf collectionCreations=org.hibernate.engine.spi.ExecutableList@6704e2a0 collectionRemovals=org.hibernate.engine.spi.ExecutableList@71baab36 collectionUpdates=org.hibernate.engine.spi.ExecutableList@163ea08f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@699f17b1 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:175 - committing
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2016-12-01 15:36:09 DEBUG EntityPrinter:114 - Listing entities:
+2016-12-01 15:36:09 DEBUG EntityPrinter:121 - com.sixthc.bpel.spring.model.RequestLog{message=testing part 2, id=227, message_id=12222}
+2016-12-01 15:36:09 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2016-12-01 15:36:09 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:633 - Closing Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[com.sixthc.bpel.spring.model.RequestLog#227]],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@5322d536 updates=org.hibernate.engine.spi.ExecutableList@13dbf6de deletions=org.hibernate.engine.spi.ExecutableList@4e2c7301 orphanRemovals=org.hibernate.engine.spi.ExecutableList@48326ebf collectionCreations=org.hibernate.engine.spi.ExecutableList@6704e2a0 collectionRemovals=org.hibernate.engine.spi.ExecutableList@71baab36 collectionUpdates=org.hibernate.engine.spi.ExecutableList@163ea08f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@699f17b1 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] after transaction
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'transactionManager'
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:367 - Creating new transaction with name [com.sixthc.bpel.spring.service.RequestLogServiceImpl.saveRequestLog]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:417 - Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@1dea32cc updates=org.hibernate.engine.spi.ExecutableList@7aacfe6b deletions=org.hibernate.engine.spi.ExecutableList@737361b8 orphanRemovals=org.hibernate.engine.spi.ExecutableList@1c14b23f collectionCreations=org.hibernate.engine.spi.ExecutableList@12c25480 collectionRemovals=org.hibernate.engine.spi.ExecutableList@1439a91f collectionUpdates=org.hibernate.engine.spi.ExecutableList@558e3c98 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@6d2c4b09 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:427 - Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@1dea32cc updates=org.hibernate.engine.spi.ExecutableList@7aacfe6b deletions=org.hibernate.engine.spi.ExecutableList@737361b8 orphanRemovals=org.hibernate.engine.spi.ExecutableList@1c14b23f collectionCreations=org.hibernate.engine.spi.ExecutableList@12c25480 collectionRemovals=org.hibernate.engine.spi.ExecutableList@1439a91f collectionUpdates=org.hibernate.engine.spi.ExecutableList@558e3c98 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@6d2c4b09 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2016-12-01 15:36:09 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/interop_dev]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:160 - begin
+2016-12-01 15:36:09 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2016-12-01 15:36:09 DEBUG JdbcTransaction:71 - disabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:488 - Exposing Hibernate transaction as JDBC transaction [com.mysql.jdbc.JDBC4Connection@22e287a8]
+2016-12-01 15:36:09 DEBUG RequestLogServiceImpl:25 - save : com.sixthc.bpel.spring.model.RequestLog@4638387c
+2016-12-01 15:36:09 DEBUG ActionQueue:194 - Executing identity-insert immediately
+2016-12-01 15:36:09 DEBUG SQL:109 - insert into request_log (message, message_id) values (?, ?)
+2016-12-01 15:36:09 DEBUG IdentifierGeneratorHelper:94 - Natively generated identity: 228
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:755 - Initiating transaction commit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:551 - Committing Hibernate transaction on Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[com.sixthc.bpel.spring.model.RequestLog#228]],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@1dea32cc updates=org.hibernate.engine.spi.ExecutableList@7aacfe6b deletions=org.hibernate.engine.spi.ExecutableList@737361b8 orphanRemovals=org.hibernate.engine.spi.ExecutableList@1c14b23f collectionCreations=org.hibernate.engine.spi.ExecutableList@12c25480 collectionRemovals=org.hibernate.engine.spi.ExecutableList@1439a91f collectionUpdates=org.hibernate.engine.spi.ExecutableList@558e3c98 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@6d2c4b09 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:175 - committing
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:149 - Processing flush-time cascades
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:189 - Dirty checking collections
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:123 - Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects
+2016-12-01 15:36:09 DEBUG AbstractFlushingEventListener:130 - Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections
+2016-12-01 15:36:09 DEBUG EntityPrinter:114 - Listing entities:
+2016-12-01 15:36:09 DEBUG EntityPrinter:121 - com.sixthc.bpel.spring.model.RequestLog{message=testing part 3, id=228, message_id=12222}
+2016-12-01 15:36:09 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2016-12-01 15:36:09 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:633 - Closing Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[EntityKey[com.sixthc.bpel.spring.model.RequestLog#228]],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@1dea32cc updates=org.hibernate.engine.spi.ExecutableList@7aacfe6b deletions=org.hibernate.engine.spi.ExecutableList@737361b8 orphanRemovals=org.hibernate.engine.spi.ExecutableList@1c14b23f collectionCreations=org.hibernate.engine.spi.ExecutableList@12c25480 collectionRemovals=org.hibernate.engine.spi.ExecutableList@1439a91f collectionUpdates=org.hibernate.engine.spi.ExecutableList@558e3c98 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@6d2c4b09 unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] after transaction
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2016-12-01 15:36:09 DEBUG AnnotationTransactionAttributeSource:108 - Adding transactional method 'RequestLogServiceImpl.getURLByVendor' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:09 DEBUG DefaultListableBeanFactory:247 - Returning cached instance of singleton bean 'transactionManager'
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:367 - Creating new transaction with name [com.sixthc.bpel.spring.service.RequestLogServiceImpl.getURLByVendor]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:417 - Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@3e12772b updates=org.hibernate.engine.spi.ExecutableList@2e4dc7e3 deletions=org.hibernate.engine.spi.ExecutableList@747e1fd4 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45bd30c collectionCreations=org.hibernate.engine.spi.ExecutableList@287cbb10 collectionRemovals=org.hibernate.engine.spi.ExecutableList@14dd2c34 collectionUpdates=org.hibernate.engine.spi.ExecutableList@4481149f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@7670f5db unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:427 - Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@3e12772b updates=org.hibernate.engine.spi.ExecutableList@2e4dc7e3 deletions=org.hibernate.engine.spi.ExecutableList@747e1fd4 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45bd30c collectionCreations=org.hibernate.engine.spi.ExecutableList@287cbb10 collectionRemovals=org.hibernate.engine.spi.ExecutableList@14dd2c34 collectionUpdates=org.hibernate.engine.spi.ExecutableList@4481149f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@7670f5db unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:226 - Obtaining JDBC connection
+2016-12-01 15:36:09 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/interop_dev]
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:232 - Obtained JDBC connection
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:160 - begin
+2016-12-01 15:36:09 DEBUG JdbcTransaction:69 - initial autocommit status: true
+2016-12-01 15:36:09 DEBUG JdbcTransaction:71 - disabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:488 - Exposing Hibernate transaction as JDBC transaction [com.mysql.jdbc.JDBC4Connection@c885ae5]
+2016-12-01 15:36:09 DEBUG RequestLogServiceImpl:35 - get vendor dao : vendor - adms, user - adms7
+2016-12-01 15:36:09 DEBUG SQL:109 - SELECT vendor_test_seq_steps.out_url FROM vendor, users, vendor_test_sequences, vendor_test_seq_steps, test_sequence, test_seq_step WHERE LOWER(vendor.name) = LOWER(?) AND LOWER(users.name) = LOWER(?) AND vendor_test_sequences.vendor_id = vendor.vendor_id AND vendor_test_sequences.user_id = users.id AND test_sequence.test_sequence_id = vendor_test_sequences.test_sequence_id AND test_seq_step.test_sequence_id = test_sequence.test_sequence_id AND test_sequence.type = 'standalone' AND test_sequence.name = ? AND vendor_test_seq_steps.test_seq_step_id = test_seq_step.test_seq_step_id AND vendor_test_seq_steps.vendor_test_sequences_id = vendor_test_sequences.vendor_test_sequences_id
+2016-12-01 15:36:09 DEBUG Loader:2034 - bindNamedParameters() CIM_DER (createDERGroupDispatch) -> operation_name [3]
+2016-12-01 15:36:09 DEBUG Loader:2034 - bindNamedParameters() adms -> vendor [1]
+2016-12-01 15:36:09 DEBUG Loader:2034 - bindNamedParameters() adms7 -> user [2]
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:755 - Initiating transaction commit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:551 - Committing Hibernate transaction on Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@3e12772b updates=org.hibernate.engine.spi.ExecutableList@2e4dc7e3 deletions=org.hibernate.engine.spi.ExecutableList@747e1fd4 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45bd30c collectionCreations=org.hibernate.engine.spi.ExecutableList@287cbb10 collectionRemovals=org.hibernate.engine.spi.ExecutableList@14dd2c34 collectionUpdates=org.hibernate.engine.spi.ExecutableList@4481149f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@7670f5db unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+2016-12-01 15:36:09 DEBUG AbstractTransactionImpl:175 - committing
+2016-12-01 15:36:09 DEBUG JdbcTransaction:113 - committed JDBC Connection
+2016-12-01 15:36:09 DEBUG JdbcTransaction:126 - re-enabling autocommit
+2016-12-01 15:36:09 DEBUG HibernateTransactionManager:633 - Closing Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@3e12772b updates=org.hibernate.engine.spi.ExecutableList@2e4dc7e3 deletions=org.hibernate.engine.spi.ExecutableList@747e1fd4 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45bd30c collectionCreations=org.hibernate.engine.spi.ExecutableList@287cbb10 collectionRemovals=org.hibernate.engine.spi.ExecutableList@14dd2c34 collectionUpdates=org.hibernate.engine.spi.ExecutableList@4481149f collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@7670f5db unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] after transaction
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:246 - Releasing JDBC connection
+2016-12-01 15:36:09 DEBUG LogicalConnectionImpl:264 - Released JDBC connection
+2016-12-01 15:36:42 INFO  AnnotationConfigApplicationContext:513 - Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@d4f2dff: startup date [Thu Dec 01 15:36:42 EST 2016]; root of context hierarchy
+2016-12-01 15:36:42 INFO  DriverManagerDataSource:133 - Loaded JDBC driver: com.mysql.jdbc.Driver
+2016-12-01 15:36:42 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2016-12-01 15:36:42 INFO  Version:54 - HHH000412: Hibernate Core {4.3.6.Final}
+2016-12-01 15:36:42 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-12-01 15:36:42 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2016-12-01 15:36:43 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-12-01 15:36:43 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-12-01 15:36:43 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2016-12-01 15:36:43 INFO  HibernateTransactionManager:339 - Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@c5a9737] of Hibernate SessionFactory for HibernateTransactionManager
