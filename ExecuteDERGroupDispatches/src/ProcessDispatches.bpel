@@ -14,8 +14,10 @@
     <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroupDispatches.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" location="ExecuteDERGroupDispatchesIn.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesOut" location="ExecuteDERGroupDispatchesOut.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesLog" location="ExecuteDERGroupDispatchesLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <partnerLinks>
         <partnerLink name="ServiceOutPartnlerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesOut" partnerLinkType="tns:DERGroupDispatches_PortLinkType" partnerRole="DERGroupDispatches_PortRole"/>
+        <partnerLink name="LoggerOutPartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesLog" partnerLinkType="tns:DERGroupDispatches_PortLinkType" partnerRole="DERGroupDispatches_PortRole"/>
         <partnerLink name="ServiceInPartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" partnerLinkType="tns:DERGroupDispatches_PortLinkType" myRole="DERGroupDispatches_PortRole"/>
     </partnerLinks>
     <variables>
@@ -28,8 +30,15 @@
                 <variable name="ServiceIn" messageType="tns:CreateDERGroupDispatchesRequestMessage"/>
             </variables>
                 <sequence>
-                    <receive name="ServiceIn" createInstance="yes" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceIn"/>
+                    <receive name="ServiceIn" createInstance="yes" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceIn">
+                    </receive>
                     <scope name="Scope2">
+                        <sxt:trace>
+                            <sxt:log level="info" location="onStart">
+                                        <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Message received, headers :', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.http.headers')))</from>
+
+                            </sxt:log>
+                        </sxt:trace>
                         <variables>
                             <variable name="GetVendorFaultOut" messageType="tns:ResponseMessage"/>
                         </variables>
@@ -37,6 +46,11 @@
                             <catch faultName="sxeh:com.sixthc.bpel.spring.service.VendorLookupException" faultVariable="GetVendorFaultVar" faultMessageType="sxeh:faultMessage">
                                 <sequence name="Sequence2">
                                     <assign name="Assign3">
+                                        <sxt:trace>
+                                            <sxt:log level="info" location="onStart">
+                                            <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL failed, fault :', $GetVendorFaultVar.fault))</from>
+                                            </sxt:log>
+                                        </sxt:trace>
                                         <copy>
                                             <from>'6002'</from>
                                             <to>$GetVendorFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
@@ -60,10 +74,18 @@
                         </faultHandlers>
                         <sequence name="Sequence3">
                             <assign name="Assign1">
+                                <sxt:trace>
+                                    <sxt:log level="info" location="onStart">
+                                        <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL - User :', $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID, ', Org :', $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:Organization))</from>
+                                    </sxt:log>
+                                    <sxt:log level="info" location="onComplete">
+                                        <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL Complete - URL : ', $RemoteURL))</from>
+                                    </sxt:log>
+                                </sxt:trace>
                                 <copy>
-                                        <from>util:getURLByVendor($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:Organization, $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID, 'CIM_DER (createDERGroupDispatch)')</from>
-                                            <to variable="RemoteURL"/>
-                                    </copy>
+                                    <from>util:getURLByVendor($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:Organization, $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID, 'CIM_DER (createDERGroupDispatch)')</from>
+                                    <to variable="RemoteURL"/>
+                                </copy>
                             </assign>
                         </sequence>
                     </scope>
@@ -77,6 +99,11 @@
                             <catch faultName="sxeh:systemFault" faultVariable="InvokeRemoteFault" faultMessageType="sxeh:faultMessage">
                                 <sequence name="Sequence5">
                                     <assign name="Assign5">
+                                        <sxt:trace>
+                                            <sxt:log level="severe" location="onStart">
+                                            <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Exec remote failed, fault :', $InvokeRemoteFault.fault, ', Remote URL :', $RemoteURL))</from>
+                                            </sxt:log>
+                                        </sxt:trace>
                                         <copy>
                                             <from>'6003'</from>
                                             <to>$RemoteFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
@@ -100,6 +127,7 @@
                         </faultHandlers>
                         <sequence name="Sequence4">
                             <assign name="Assign2">
+
                                 <copy>
                                     <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</from>
                                     <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</to>
@@ -117,7 +145,16 @@
                                     <to variable="RemoteServiceIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
                                 </copy>
                             </assign>
-                            <invoke name="RemoteService" partnerLink="ServiceOutPartnlerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" inputVariable="RemoteServiceIn" outputVariable="RemoteServiceOut"/>
+                            <invoke name="Invoke1" partnerLink="ServiceOutPartnlerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" inputVariable="RemoteServiceIn" outputVariable="RemoteServiceOut">
+                                <sxt:trace>
+                                    <sxt:log level="info" location="onStart">
+                                        <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Invoke Remote Server - URL :', $RemoteURL, ', HTTP Headers :', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.http.headers')))</from>
+                                    </sxt:log>
+                                     <sxt:log level="info" location="onComplete">
+                                     <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, 'Invoke Remote Server Complete')</from>
+                                    </sxt:log>
+                                </sxt:trace>                              
+                            </invoke>
                             <assign name="Assign6">
                                 <copy>
                                     <from>$RemoteServiceOut.ResponseMessage/ns0:Header</from>
@@ -132,10 +169,56 @@
                                     <to>$ServiceOut.ResponseMessage/ns0:Payload</to>
                                 </copy>
                             </assign>
+                            <reply name="Reply1" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceOut"/>
+                        </sequence>
+                    </scope>
+                    <scope name="Scope4">
+                        <variables>
+                            <variable name="LoggerOut" messageType="tns:ResponseMessage"/>
+                            <variable name="LoggerIn" messageType="tns:CreateDERGroupDispatchesRequestMessage"/>
+                        </variables>
+                        <faultHandlers>
+                            <catch faultVariable="InvokeLogFault" faultName="sxeh:systemFault" faultMessageType="sxeh:faultMessage">
+                                <exit name="Exit2">
+                                    <sxt:trace>
+                                    <sxt:log level="info" location="onStart">
+                                        <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Call to Log server failed. check esb var ${dispatches_log_server} fault : ', $InvokeLogFault.fault))</from>
+                                    </sxt:log>
+                                    </sxt:trace>
+                                </exit>
+                            </catch>
+                        </faultHandlers>
+                        <sequence name="Sequence6">
+                            <assign name="Assign7">
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</from>
+                                    <to>$LoggerIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</to>
+                                </copy>
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</from>
+                                    <to>$LoggerIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</to>
+                                </copy>
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Payload</from>
+                                    <to>$LoggerIn.CreateDERGroupDispatchesRequestMessage/ns0:Payload</to>
+                                </copy>
+                            </assign>
+                            <invoke name="Invoke2" partnerLink="LoggerOutPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" inputVariable="LoggerIn" outputVariable="LoggerOut">
+                                <sxt:trace>
+                                    <sxt:log level="info" location="onStart">
+                                <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, 'Calling Log server')</from>
+
+                                    </sxt:log>
+                                    <sxt:log level="info" location="onComplete">
+                                <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, 'Call to Log server complete')</from>
+
+                                    </sxt:log>
+                                </sxt:trace>
+                            </invoke>
+                            <exit name="Exit1"/>
                         </sequence>
                     </scope>
                 </sequence>
         </scope>
-        <reply name="Reply1" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceOut"/>
     </sequence>
 </process>
