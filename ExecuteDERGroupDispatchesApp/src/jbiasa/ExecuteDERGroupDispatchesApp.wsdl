@@ -11,6 +11,7 @@
              targetNamespace="ExecuteDERGroupDispatchesApp"
              xmlns:tns="ExecuteDERGroupDispatchesApp" xmlns:ns="http://www.epri.com/ExecuteDERGroupDispatches" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
     <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="../jbiServiceUnits/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl"/>
+    <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:DERGroupDispatches_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -44,7 +45,7 @@
     </binding>
     <service name="ExecuteDERGroupDispatchesAppService1">
         <port name="casaPort1" binding="tns:casaBinding1">
-            <soap:address location="${dispatches_endpoint}"/>
+            <soap:address location="${dispatches_server}"/>
         </port>
     </service>
     <service name="ExecuteDERGroupDispatchesAppService2">

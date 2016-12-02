@@ -1,54 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" xmlns:ns2="http://www.epri.com/ExecuteDERGroupDispatches" xmlns:ns3="ExecuteDERGroupDispatchesApp" xmlns:ns4="http://enterprise.netbeans.org/bpel/DerGroupDispatches/derGroupDispatches" xmlns:xlink="http://www.w3.org/2000/xlink">
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/ExecuteDERGroupDispatches" xmlns:ns2="ExecuteDERGroupDispatchesApp" xmlns:ns3="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatches/ProcessDispatches" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
-        <endpoint endpoint-name="getVendorPort" interface-name="ns1:getVendorPortType" name="endpoint1" service-name="ns1:getVendorService"/>
-        <endpoint endpoint-name="DERGroupDispatches_Port" interface-name="ns2:DERGroupDispatches_Port" name="endpoint2" service-name="ns2:ExecuteDERGroupDispatches"/>
-        <endpoint endpoint-name="casaPort1" interface-name="ns2:DERGroupDispatches_Port" name="endpoint3" service-name="ns3:ExecuteDERGroupDispatchesAppService1"/>
-        <endpoint endpoint-name="casaPort2" interface-name="ns2:DERGroupDispatches_Port" name="endpoint4" service-name="ns3:ExecuteDERGroupDispatchesAppService2"/>
-        <endpoint display-name="Service" endpoint-name="DERGroupDispatches_PortRole_myRole" file-path="DERGroupDispatches.bpel" interface-name="ns2:DERGroupDispatches_Port" name="endpoint5" process-name="derGroupDispatches" service-name="ns4:Service"/>
-        <endpoint display-name="GetVendor" endpoint-name="getVendorPortTypeRole_partnerRole" file-path="DERGroupDispatches.bpel" interface-name="ns1:getVendorPortType" name="endpoint6" process-name="derGroupDispatches" service-name="ns4:GetVendor"/>
-        <endpoint display-name="Remote" endpoint-name="DERGroupDispatches_PortRole_partnerRole" file-path="DERGroupDispatches.bpel" interface-name="ns2:DERGroupDispatches_Port" name="endpoint7" process-name="derGroupDispatches" service-name="ns4:Remote"/>
-        <endpoint display-name="RemoteLog" endpoint-name="DERGroupDispatches_PortRole_partnerRole" file-path="DERGroupDispatches.bpel" interface-name="ns2:DERGroupDispatches_Port" name="endpoint8" process-name="derGroupDispatches" service-name="ns4:RemoteLog"/>
+        <endpoint endpoint-name="DERGroupDispatches_Port" interface-name="ns1:DERGroupDispatches_Port" name="endpoint1" service-name="ns1:ExecuteDERGroupDispatches"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns1:DERGroupDispatches_Port" name="endpoint2" service-name="ns2:ExecuteDERGroupDispatchesAppService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns1:DERGroupDispatches_Port" name="endpoint3" service-name="ns2:ExecuteDERGroupDispatchesAppService2"/>
+        <endpoint display-name="ServiceInPartnerLink" endpoint-name="DERGroupDispatches_PortRole_myRole" file-path="ProcessDispatches.bpel" interface-name="ns1:DERGroupDispatches_Port" name="endpoint4" process-name="ProcessDispatches" service-name="ns3:ServiceInPartnerLink"/>
+        <endpoint display-name="ServiceOutPartnlerLink" endpoint-name="DERGroupDispatches_PortRole_partnerRole" file-path="ProcessDispatches.bpel" interface-name="ns1:DERGroupDispatches_Port" name="endpoint5" process-name="ProcessDispatches" service-name="ns3:ServiceOutPartnlerLink"/>
+        <endpoint display-name="LoggerOutPartnerLink" endpoint-name="DERGroupDispatches_PortRole_partnerRole" file-path="ProcessDispatches.bpel" interface-name="ns1:DERGroupDispatches_Port" name="endpoint6" process-name="ProcessDispatches" service-name="ns3:LoggerOutPartnerLink"/>
     </endpoints>
     <service-units>
-        <service-engine-service-unit artifacts-zip="ExecuteDERGroupDispatches.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ExecuteDERGroupDispatchesApp-ExecuteDERGroupDispatches" unit-name="ExecuteDERGroupDispatches" unknown="false" x="102" y="97">
-            <provides endpoint="endpoint5"/>
+        <service-engine-service-unit artifacts-zip="ExecuteDERGroupDispatches.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="ExecuteDERGroupDispatchesApp-ExecuteDERGroupDispatches" unit-name="ExecuteDERGroupDispatches" unknown="false" x="121" y="173">
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
             <consumes endpoint="endpoint6"/>
-            <consumes endpoint="endpoint7"/>
-            <consumes endpoint="endpoint8"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="ExecuteDERGroupDispatchesApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="67" y="139">
-                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatches']/port[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint2"/>
-                    <provides endpoint="endpoint2"/>
-                </port>
                 <port x="67" y="37">
-                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
+                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatches']/port[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
                 </port>
-                <port bindingType="soap" x="67" y="311">
+                <port bindingType="soap" x="67" y="389">
                     <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port bindingType="soap" x="67" y="312">
+                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
-                </port>
-                <port bindingType="soap" x="67" y="472">
-                    <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint4"/>
-                    <provides endpoint="endpoint4"/>
                 </port>
             </ports>
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint6" provider="endpoint1" state="unchanged"/>
-        <connection consumer="endpoint2" provider="endpoint5" state="unchanged"/>
-        <connection consumer="endpoint7" provider="endpoint3" state="new"/>
-        <connection consumer="endpoint8" provider="endpoint4" state="new"/>
-        <connection consumer="endpoint7" provider="endpoint5" state="deleted"/>
-        <connection consumer="endpoint8" provider="endpoint5" state="deleted"/>
+        <connection consumer="endpoint1" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint6" provider="endpoint3" state="new"/>
+        <connection consumer="endpoint5" provider="endpoint4" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/ExecuteDERGroupDispatches/ExecuteDERGroupDispatches.wsdl#xpointer(/definitions/portType[@name='DERGroupDispatches_Port'])" xlink:type="simple"/>
