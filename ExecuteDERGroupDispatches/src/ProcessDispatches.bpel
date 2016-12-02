@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="ProcessDispatches"
+    targetNamespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatches/ProcessDispatches"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatches/ProcessDispatches"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:util="java://com.sixthc.bpel.spring.Utility"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/DERGroupDispatchesMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty"> 
+    <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroupDispatches.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" location="ExecuteDERGroupDispatchesIn.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesOut" location="ExecuteDERGroupDispatchesOut.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="ServiceOutPartnlerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesOut" partnerLinkType="tns:DERGroupDispatches_PortLinkType" partnerRole="DERGroupDispatches_PortRole"/>
+        <partnerLink name="ServiceInPartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" partnerLinkType="tns:DERGroupDispatches_PortLinkType" myRole="DERGroupDispatches_PortRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="ServiceOut" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" messageType="tns:ResponseMessage"/>
+        <variable name="RemoteURL" type="xs:string"/>
+    </variables>
+    <sequence name="Sequence1">
+        <scope name="Scope1" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches">
+            <variables>
+                <variable name="ServiceIn" messageType="tns:CreateDERGroupDispatchesRequestMessage"/>
+            </variables>
+                <sequence>
+                    <receive name="ServiceIn" createInstance="yes" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceIn"/>
+                    <scope name="Scope2">
+                        <variables>
+                            <variable name="GetVendorFaultOut" messageType="tns:ResponseMessage"/>
+                        </variables>
+                        <faultHandlers>
+                            <catch faultName="sxeh:com.sixthc.bpel.spring.service.VendorLookupException" faultVariable="GetVendorFaultVar" faultMessageType="sxeh:faultMessage">
+                                <sequence name="Sequence2">
+                                    <assign name="Assign3">
+                                        <copy>
+                                            <from>'6002'</from>
+                                            <to>$GetVendorFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                                        </copy>
+                                        <copy>
+                                            <from>'FATAL'</from>
+                                            <to>$GetVendorFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                                        </copy>
+                                        <copy>
+                                            <from>'Get Destination URL Lookup Failed'</from>
+                                            <to>$GetVendorFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                                        </copy>
+                                        <copy>
+                                            <from>concat('Operation : CIM_DER (createDERGroupDispatch)', ', User :', $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID, ', Org :', $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:Organization)</from>
+                                            <to>$GetVendorFaultOut.ResponseMessage/ns0:Reply/ns1:Error/ns1:details</to>
+                                        </copy>
+                                    </assign>
+                                    <reply name="GetVendorFaultReply" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="GetVendorFaultOut"/>
+                                </sequence>
+                            </catch>
+                        </faultHandlers>
+                        <sequence name="Sequence3">
+                            <assign name="Assign1">
+                                <copy>
+                                        <from>util:getURLByVendor($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:Organization, $ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:User/ns1:UserID, 'CIM_DER (createDERGroupDispatch)')</from>
+                                            <to variable="RemoteURL"/>
+                                    </copy>
+                            </assign>
+                        </sequence>
+                    </scope>
+                    <scope name="Scope3">
+                        <variables>
+                            <variable name="RemoteFault" messageType="tns:ResponseMessage"/>
+                            <variable name="RemoteServiceOut" messageType="tns:ResponseMessage"/>
+                            <variable name="RemoteServiceIn" messageType="tns:CreateDERGroupDispatchesRequestMessage"/>
+                        </variables>
+                        <faultHandlers>
+                            <catch faultName="sxeh:systemFault" faultVariable="InvokeRemoteFault" faultMessageType="sxeh:faultMessage">
+                                <sequence name="Sequence5">
+                                    <assign name="Assign5">
+                                        <copy>
+                                            <from>'6003'</from>
+                                            <to>$RemoteFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                                        </copy>
+                                        <copy>
+                                            <from>'FATAL'</from>
+                                            <to>$RemoteFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                                        </copy>
+                                        <copy>
+                                            <from>'Unable to invoke remote server'</from>
+                                            <to>$RemoteFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                                        </copy>
+                                        <copy>
+                                            <from variable="InvokeRemoteFault" part="fault"/>
+                                            <to>$RemoteFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:details</to>
+                                        </copy>
+                                    </assign>
+                                    <reply name="RemoteFail" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="RemoteFault"/>
+                                </sequence>
+                            </catch>
+                        </faultHandlers>
+                        <sequence name="Sequence4">
+                            <assign name="Assign2">
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</from>
+                                    <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</to>
+                                </copy>
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</from>
+                                    <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</to>
+                                </copy>
+                                <copy>
+                                    <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Payload</from>
+                                    <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Payload</to>
+                                </copy>
+                                <copy>
+                                    <from variable="RemoteURL"/>
+                                    <to variable="RemoteServiceIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+                                </copy>
+                            </assign>
+                            <invoke name="RemoteService" partnerLink="ServiceOutPartnlerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" inputVariable="RemoteServiceIn" outputVariable="RemoteServiceOut"/>
+                            <assign name="Assign6">
+                                <copy>
+                                    <from>$RemoteServiceOut.ResponseMessage/ns0:Header</from>
+                                    <to>$ServiceOut.ResponseMessage/ns0:Header</to>
+                                </copy>
+                                <copy>
+                                    <from>$RemoteServiceOut.ResponseMessage/ns0:Reply</from>
+                                    <to>$ServiceOut.ResponseMessage/ns0:Reply</to>
+                                </copy>
+                                <copy>
+                                    <from>$RemoteServiceOut.ResponseMessage/ns0:Payload</from>
+                                    <to>$ServiceOut.ResponseMessage/ns0:Payload</to>
+                                </copy>
+                            </assign>
+                        </sequence>
+                    </scope>
+                </sequence>
+        </scope>
+        <reply name="Reply1" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="ServiceOut"/>
+    </sequence>
+</process>
