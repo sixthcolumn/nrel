@@ -45,7 +45,7 @@ In a BPEL process, a partner link represents the interaction between the BPEL pr
 A partner link type characterizes the conversational relationship between two services. The partner link type can have one or two roles.-->
     <plnk:role name="getVendorPortTypeRole" portType="tns:getVendorPortType"/>
   </plnk:partnerLinkType>
-</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getVendorOperation" bindingOperationName="getVendorOperation" type="Request-Response" outputName="output1" inputName="input1" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor">
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:endpoint>http://52.87.186.171:9080/getVendorService/getVendorURL</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getVendorOperation" bindingOperationName="getVendorOperation" type="Request-Response" outputName="output1" inputName="input1" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/getVendorService/getVendorURL</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor">
    <soapenv:Header/>
    <soapenv:Body>
       <get:getVendorOperation>
@@ -57,7 +57,7 @@ A partner link type characterizes the conversational relationship between two se
    <soapenv:Header/>
    <soapenv:Body>
       <get:getVendorOperation>
-         <vendorName>sixc</vendorName>
+         <vendorName>adms</vendorName>
          <opName>CIM_DER (createDERGroup)</opName>
       </get:getVendorOperation>
    </soapenv:Body>

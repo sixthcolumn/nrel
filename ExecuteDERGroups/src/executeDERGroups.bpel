@@ -65,7 +65,12 @@
                 <invoke name="Invoke1" partnerLink="VendorLink" operation="getVendorOperation" xmlns:tns="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" portType="tns:getVendorPortType" inputVariable="vendorIn" outputVariable="vendorOut">
                     <sxt:trace>
                         <sxt:log level="info" location="onComplete">
-                            <from>concat('*****', $vendorOut.url)</from>
+                            <from>concat('*****1', $vendorOut.url)</from>
+                        </sxt:log>
+                    </sxt:trace>
+                    <sxt:trace>
+                        <sxt:log level="info" location="onComplete">
+                            <from>concat('*****2', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.address.url'))</from>
                         </sxt:log>
                     </sxt:trace>
                 </invoke>

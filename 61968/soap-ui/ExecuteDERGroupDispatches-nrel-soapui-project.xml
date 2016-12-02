@@ -1172,7 +1172,7 @@ xmlns:der1="http://www.epri.com/2013/DERGroupDispatches#">
                 <mes:ReplyAddress>http://epri.com/CIM</mes:ReplyAddress>                
                 <mes:AckRequired>false</mes:AckRequired>                
                 <mes:User>
-                    <mes:UserID>epriTest</mes:UserID>
+                    <mes:UserID>adms1</mes:UserID>
                     <mes:Organization>ADMS</mes:Organization>
                 </mes:User>                
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                

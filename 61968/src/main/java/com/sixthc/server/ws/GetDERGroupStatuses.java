@@ -12,6 +12,8 @@ import ch.iec.tc57._2011.schema.message.HeaderType;
 import ch.iec.tc57._2011.schema.message.ReplyType;
 
 import com.epri.dercommon.ActivePower;
+import com.epri.dercommon.ReactivePower;
+
 import com.epri.dergroupstatuses.DERGroupStatus;
 import com.epri.dergroupstatuses.DERGroupStatuses;
 import com.epri.dergroupstatuses.EndDeviceGroup;
@@ -44,6 +46,7 @@ public class GetDERGroupStatuses implements GetDERGroupStatusesPort {
 		
 		HeaderType header = getDERGroupStatusesRequestMessage.getHeader();
 		response.setHeader(header);
+		header.setVerb("reply");
 		
 		status.setMRID("1234");
 		status.setName("der1");
@@ -70,20 +73,38 @@ public class GetDERGroupStatuses implements GetDERGroupStatusesPort {
 		ap.setUnit("W");
 		group.setPresentActivePower(ap);
 		
-		ActivePower app = new ActivePower();
-		app.setMultiplier("k");
-		app.setValue((float) 10.5);
-		app.setUnit("VA");
-		group.setPresentActivePower(app);
+		ActivePower maxAp = new ActivePower();
+		maxAp.setMultiplier("k");
+		maxAp.setValue((float) 10.5);
+		maxAp.setUnit("W");
+		group.setPresentActivePower(maxAp);
+		group.setMaxActivePower(maxAp);
 
 				
-		ActivePower rp = new ActivePower();
+		ActivePower minAp = new ActivePower();
+		minAp.setMultiplier("k");
+		minAp.setValue((float) 11.0);
+		minAp.setUnit("W");
+		group.setMinActivePower(minAp);
+		
+		ReactivePower rp = new ReactivePower();
 		rp.setMultiplier("k");
-		rp.setValue((float) 11.0);
+		rp.setValue(0);
 		rp.setUnit("VAr");
-		group.setPresentActivePower(rp);
+		group.setPresentReactivePower(rp);
 		
+		ReactivePower minRp = new ReactivePower();
+		minRp.setMultiplier("k");
+		minRp.setValue(-6);
+		minRp.setUnit("VAr");
+		group.setMinReactivePower(minRp);
 		
+		ReactivePower maxRp = new ReactivePower();
+		maxRp.setMultiplier("k");
+		maxRp.setValue(6);
+		maxRp.setUnit("VAr");
+		group.setMaxReactivePower(maxRp);
+				
 		reply.setResult("OK");
 
 		return response;

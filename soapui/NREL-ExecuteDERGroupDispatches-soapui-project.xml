@@ -1034,7 +1034,7 @@
       <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
     </xs:restriction>
   </xs:simpleType>
-</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.epri.com/ExecuteDERGroupDispatches</con:endpoint><con:endpoint>http://localhost:8080/epriConnect/executeDERGroupDispatches</con:endpoint><con:endpoint>http://localhost:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:endpoint>http://52.87.186.171:8081/epriConnect/executeDERGroupDispatches</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" name="CreateDERGroupDispatches" bindingOperationName="CreateDERGroupDispatches" type="Request-Response" outputName="CreateDERGroupDispatchesResponse" inputName="CreateDERGroupDispatchesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.epri.com/ExecuteDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:der="http://www.epri.com/DERGroupDispatchesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der1="http://www.epri.com/DERGroupDispatches">
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.epri.com/ExecuteDERGroupDispatches</con:endpoint><con:endpoint>http://localhost:8080/epriConnect/executeDERGroupDispatches</con:endpoint><con:endpoint>http://localhost:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:endpoint>http://52.87.186.171:8072/epriConnect/executeDERGroupDispatches</con:endpoint><con:endpoint>http://52.87.186.171:8080/epriConnect/executeDERGroupDispatches</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" name="CreateDERGroupDispatches" bindingOperationName="CreateDERGroupDispatches" type="Request-Response" outputName="CreateDERGroupDispatchesResponse" inputName="CreateDERGroupDispatchesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.epri.com/ExecuteDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:der="http://www.epri.com/DERGroupDispatchesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der1="http://www.epri.com/DERGroupDispatches">
    <soapenv:Header/>
    <soapenv:Body>
       <der:CreateDERGroupDispatches>
@@ -1193,7 +1193,7 @@
          </der:Payload>
       </der:CreateDERGroupDispatches>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches"/></con:call></con:operation></con:interface><con:testSuite name="DERGroupDispatches_Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateDERGroupDispatches TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="CreateDERGroupDispatches"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="CreateDERGroupDispatches"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://52.87.186.171:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:der="http://www.epri.com/DERGroupDispatchesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der1="http://www.epri.com/DERGroupDispatches">
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches"/></con:call></con:operation></con:interface><con:testSuite name="DERGroupDispatches_Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateDERGroupDispatches TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="CreateDERGroupDispatches"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="CreateDERGroupDispatches"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:der="http://www.epri.com/DERGroupDispatchesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der1="http://www.epri.com/DERGroupDispatches">
    <soapenv:Header/>
    <soapenv:Body>
       <der:CreateDERGroupDispatches>
@@ -1212,8 +1212,8 @@
                 <mes:ReplyAddress>http://epri.com/CIM</mes:ReplyAddress>                
                 <mes:AckRequired>false</mes:AckRequired>                
                 <mes:User>
-                    <mes:UserID>epriTest</mes:UserID>
-                    <mes:Organization>ADMS</mes:Organization>
+                    <mes:UserID>adms1</mes:UserID>
+                    <mes:Organization>adms</mes:Organization>
                 </mes:User>                
                 <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                
               <!--  <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>     -->           
@@ -1255,7 +1255,7 @@
          </der:Payload>
       </der:CreateDERGroupDispatches>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="CreateDERGroupDispatches2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="CreateDERGroupDispatches2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://52.87.186.171:8081/epriConnect/executeDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der="http://www.epri.com/DERGroupDispatches">
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="CreateDERGroupDispatches2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="CreateDERGroupDispatches2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://52.87.186.171:8072/epriConnect/executeDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der="http://www.epri.com/DERGroupDispatches">
     <soapenv:Header />
     <soapenv:Body>
         <CreateDERGroupDispatches xmlns="http://www.epri.com/DERGroupDispatchesMessage">
@@ -1295,4 +1295,163 @@
   </Payload>
         </CreateDERGroupDispatches>
     </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://www.epri.com/DERGroupDispatches/CreateDERGroupDispatches" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Test Request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>DERGroupDispatches_Binding</con:interface><con:operation>CreateDERGroupDispatches</con:operation><con:request name="Test Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.epri.com/ExecuteDERGroupDispatches</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:der="http://www.epri.com/DERGroupDispatchesMessage" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message" xmlns:der1="http://www.epri.com/DERGroupDispatches">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <der:CreateDERGroupDispatches>
+         <der:Header>
+            <mes:Verb>?</mes:Verb>
+            <mes:Noun>?</mes:Noun>
+            <!--Optional:-->
+            <mes:Revision>?</mes:Revision>
+            <!--Optional:-->
+            <mes:ReplayDetection>
+               <mes:Nonce>?</mes:Nonce>
+               <mes:Created>?</mes:Created>
+            </mes:ReplayDetection>
+            <!--Optional:-->
+            <mes:Context>?</mes:Context>
+            <!--Optional:-->
+            <mes:Timestamp>?</mes:Timestamp>
+            <!--Optional:-->
+            <mes:Source>?</mes:Source>
+            <!--Optional:-->
+            <mes:AsyncReplyFlag>?</mes:AsyncReplyFlag>
+            <!--Optional:-->
+            <mes:ReplyAddress>?</mes:ReplyAddress>
+            <!--Optional:-->
+            <mes:AckRequired>?</mes:AckRequired>
+            <!--Optional:-->
+            <mes:User>
+               <mes:UserID>?</mes:UserID>
+               <!--Optional:-->
+               <mes:Organization>?</mes:Organization>
+            </mes:User>
+            <!--Optional:-->
+            <mes:MessageID>?</mes:MessageID>
+            <!--Optional:-->
+            <mes:CorrelationID>?</mes:CorrelationID>
+            <!--Optional:-->
+            <mes:Comment>?</mes:Comment>
+            <!--Zero or more repetitions:-->
+            <mes:Property>
+               <mes:Name>?</mes:Name>
+               <!--Optional:-->
+               <mes:Value>?</mes:Value>
+            </mes:Property>
+            <!--You may enter ANY elements at this point-->
+         </der:Header>
+         <!--Optional:-->
+         <der:Request>
+            <!--Optional:-->
+            <mes:StartTime>?</mes:StartTime>
+            <!--Optional:-->
+            <mes:EndTime>?</mes:EndTime>
+            <!--Zero or more repetitions:-->
+            <mes:Option>
+               <mes:name>?</mes:name>
+               <!--Optional:-->
+               <mes:value>?</mes:value>
+            </mes:Option>
+            <!--Zero or more repetitions:-->
+            <mes:ID idType="?" idAuthority="?" kind="?" objectType="?">?</mes:ID>
+            <!--You may enter ANY elements at this point-->
+         </der:Request>
+         <!--Optional:-->
+         <der:Payload>
+            <der1:DERGroupDispatches>
+               <!--1 or more repetitions:-->
+               <der1:DERGroupDispatch>
+                  <der1:DERGroup>
+                     <der1:name>?</der1:name>
+                     <!--Optional:-->
+                     <der1:mRID>?</der1:mRID>
+                     <!--Zero or more repetitions:-->
+                     <der1:Names>
+                        <der1:name>?</der1:name>
+                        <!--Optional:-->
+                        <der1:NameType>
+                           <!--Optional:-->
+                           <der1:description>?</der1:description>
+                           <der1:name>?</der1:name>
+                           <!--Optional:-->
+                           <der1:NameTypeAuthority>
+                              <!--Optional:-->
+                              <der1:description>?</der1:description>
+                              <der1:name>?</der1:name>
+                           </der1:NameTypeAuthority>
+                        </der1:NameType>
+                     </der1:Names>
+                  </der1:DERGroup>
+                  <der1:RequestedCapability>
+                     <der1:capabilityType>?</der1:capabilityType>
+                     <der1:value>?</der1:value>
+                     <der1:capabilityUnits>?</der1:capabilityUnits>
+                     <der1:capabilityMultiplier>?</der1:capabilityMultiplier>
+                  </der1:RequestedCapability>
+                  <!--Optional:-->
+                  <der1:extensionsList>
+                     <!--1 or more repetitions:-->
+                     <der1:extensionsItem>
+                        <der1:extName>?</der1:extName>
+                        <der1:extValue>?</der1:extValue>
+                        <!--Optional:-->
+                        <der1:extType>?</der1:extType>
+                     </der1:extensionsItem>
+                  </der1:extensionsList>
+                  <!--Zero or more repetitions:-->
+                  <der1:Names>
+                     <der1:name>?</der1:name>
+                     <!--Optional:-->
+                     <der1:NameType>
+                        <!--Optional:-->
+                        <der1:description>?</der1:description>
+                        <der1:name>?</der1:name>
+                        <!--Optional:-->
+                        <der1:NameTypeAuthority>
+                           <!--Optional:-->
+                           <der1:description>?</der1:description>
+                           <der1:name>?</der1:name>
+                        </der1:NameTypeAuthority>
+                     </der1:NameType>
+                  </der1:Names>
+                  <!--Optional:-->
+                  <der1:mRID>?</der1:mRID>
+                  <!--Optional:-->
+                  <der1:otherCapability>
+                     <der1:otherCapabilityType>?</der1:otherCapabilityType>
+                     <!--Optional:-->
+                     <der1:otherCapabilitySubType>?</der1:otherCapabilitySubType>
+                     <!--Optional:-->
+                     <der1:otherCapabilityValue>?</der1:otherCapabilityValue>
+                     <!--Optional:-->
+                     <der1:otherCapabilityUnits>?</der1:otherCapabilityUnits>
+                  </der1:otherCapability>
+               </der1:DERGroupDispatch>
+            </der1:DERGroupDispatches>
+            <!--Optional:-->
+            <der:OperationSet>
+               <!--Optional:-->
+               <mes:enforceMsgSequence>?</mes:enforceMsgSequence>
+               <!--Optional:-->
+               <mes:enforceTransactionalIntegrity>?</mes:enforceTransactionalIntegrity>
+               <!--Zero or more repetitions:-->
+               <mes:Operation>
+                  <mes:operationId>?</mes:operationId>
+                  <!--Optional:-->
+                  <mes:noun>?</mes:noun>
+                  <!--Optional:-->
+                  <mes:verb>?</mes:verb>
+                  <!--Optional:-->
+                  <mes:elementOperation>false</mes:elementOperation>
+                  <!--You may enter ANY elements at this point-->
+               </mes:Operation>
+            </der:OperationSet>
+            <!--Optional:-->
+            <der:Compressed>?</der:Compressed>
+            <!--Optional:-->
+            <der:Format>?</der:Format>
+         </der:Payload>
+      </der:CreateDERGroupDispatches>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

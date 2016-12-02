@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="1" hostname="benjamins-Mac-mini.local" name="org.netbeans.modules.compapp.catd.ConfiguredTest" skipped="0" tests="1" time="2.479" timestamp="2016-08-16T15:10:05">
+<testsuite errors="0" failures="1" hostname="benjamins-Mac-mini-3.local" name="org.netbeans.modules.compapp.catd.ConfiguredTest" skipped="0" tests="1" time="1.203" timestamp="2016-11-27T20:20:40">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
@@ -16,7 +16,7 @@
     <property name="user.dir" value="/usr/local/git/nrel/GetVendorURLApp" />
     <property name="com.apple.mrj.application.apple.menu.about.name" value="OpenESB Studio" />
     <property name="libs.javaee-api-7.0.src" value="" />
-    <property name="java.vm.version" value="24.45-b08" />
+    <property name="java.vm.version" value="25.102-b14" />
     <property name="libs.DataBindingME.classpath" value="/Users/BenGoodwin/Library/Application Support/OpenESB_Studio/3.1.0-SNAPSHOT/modules/ext/netbeans_databindingme.jar" />
     <property name="libs.j2me_common_ant.src" value="" />
     <property name="libs.MySQLDriver.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/mysql-connector-java-5.1.23-bin.jar" />
@@ -28,7 +28,7 @@
     <property name="libs.javaee-web-api-6.0.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/javaee-web-api-6.0.jar" />
     <property name="libs.DataBindingME-PIM.maven-pom" value="" />
     <property name="libs.Java-EE-GlassFish-v3-Prelude.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
-    <property name="jdk.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home" />
+    <property name="jdk.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home" />
     <property name="libs.javac-api.src" value="" />
     <property name="xml.module.install.dir" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules" />
     <property name="libs.jpa2-persistence.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/hibernate4/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
@@ -64,7 +64,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/usr/local/git/nrel/GetVendorURLApp/test/results/TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junitvmwatcher7448361828493966894.properties propsfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junit7135306900043966909.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/usr/local/git/nrel/GetVendorURLApp/test/results/TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junitvmwatcher7728429120369662959.properties propsfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junit7604651988598963743.properties" />
     <property name="build.classes.dir" value="build/jar" />
     <property name="enterprise.module.install.dir" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules" />
     <property name="libs.javaee-endorsed-api-7.0.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
@@ -80,10 +80,10 @@
     <property name="build.compiler.emacs" value="true" />
     <property name="libs.javaee-web-api-6.0.src" value="" />
     <property name="libs.jsp-compilation-syscp.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/servlet3.1-jsp2.3-api.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/glassfish-jspparser-4.0.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/jstl-impl.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/jsf-2_2/javax.faces.jar" />
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed" />
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/endorsed" />
     <property name="libs.Comet-GlassFish-v3.maven-pom" value="" />
     <property name="netbeans.dynamic.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/core.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/org-openide-filesystems.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_ja.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_pt_BR.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_ru.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/core_zh_CN.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_ja.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_pt_BR.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_ru.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/locale/org-openide-filesystems_zh_CN.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../soa/core/locale/core_soa.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/org-netbeans-upgrader.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/core_nb.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/core_nb_ja.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/core_nb_pt_BR.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/core_nb_ru.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/core_nb_zh_CN.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/org-netbeans-upgrader_ja.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/org-netbeans-upgrader_pt_BR.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/org-netbeans-upgrader_ru.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb/core/locale/org-netbeans-upgrader_zh_CN.jar" />
-    <property name="java.vm.specification.version" value="1.7" />
+    <property name="java.vm.specification.version" value="1.8" />
     <property name="libs.hibernate4-support.src" value="" />
     <property name="libs.primefaces.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/primefaces/primefaces-5.0.jar" />
     <property name="libs.javaee-api-6.0.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/javaee-api-6.0.jar" />
@@ -112,7 +112,7 @@
     <property name="libs.junit_4.src" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/docs/junit-4.10-sources.jar" />
     <property name="libs.testng.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/testng-6.8.1-dist.jar" />
     <property name="libs.absolutelayout.maven-pom" value="" />
-    <property name="ant.java.version" value="1.7" />
+    <property name="ant.java.version" value="1.8" />
     <property name="java.library.path" value="/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:." />
     <property name="libs.metro.maven-pom" value="" />
     <property name="libs.Encoder-HL7.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/hl7.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/hl7encoder-xsdextension.jar" />
@@ -146,7 +146,7 @@
     <property name="gopherProxySet" value="false" />
     <property name="libs.DataBindingME-SVG.classpath" value="/Users/BenGoodwin/Library/Application Support/OpenESB_Studio/3.1.0-SNAPSHOT/modules/ext/netbeans_databindingme_svg.jar" />
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
-    <property name="java.class.version" value="51.0" />
+    <property name="java.class.version" value="52.0" />
     <property name="reference.GetVendorURL.dist_se" value="../GetVendorURL/build/SEDeployment.jar" />
     <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/db/lib/derby.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/db/lib/derbyclient.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/db/lib/derbynet.jar" />
     <property name="libs.hibernate4-persistencemodelgen.maven-pom" value="" />
@@ -168,7 +168,7 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
     <property name="libs.jpa20-persistence.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="nbplatform.default.harness.dir" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/harness" />
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre" />
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre" />
     <property name="libs.jsp-compilation.src" value="" />
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/javaee6-endorsed/javax.annotation.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/javaee6-endorsed/jaxb-api-osgi.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/javaee6-endorsed/webservices-api-osgi.jar" />
     <property name="libs.javaee-api-6.0.src" value="" />
@@ -223,7 +223,7 @@
     <property name="java.vendor.url" value="http://java.oracle.com/" />
     <property name="libs.jsp-compiler.src" value="" />
     <property name="libs.Encoder-COCO.src" value="" />
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib" />
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib" />
     <property name="libs.jsf20.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/jsf-2_2/javax.faces.jar" />
     <property name="src.build.dir" value="src/jbiServiceUnits" />
     <property name="libs.DataBindingME-SVG.src" value="/Users/BenGoodwin/Library/Application Support/OpenESB_Studio/3.1.0-SNAPSHOT/sources/netbeans_databindingme_svg-src.zip" />
@@ -252,7 +252,7 @@
     <property name="ide.module.install.dir" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
     <property name="libs.javac-api.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/nb-javac-api.jar" />
-    <property name="java.version" value="1.7.0_45" />
+    <property name="java.version" value="1.8.0_102" />
     <property name="libs.MySQLDriver.javadoc" value="" />
     <property name="org.openide.version" value="deprecated" />
     <property name="source.encoding" value="UTF-8" />
@@ -279,10 +279,10 @@
     <property name="build.generated.dir" value="build/generated" />
     <property name="libs.proguard.src" value="" />
     <property name="line.separator" value="&#xa;" />
-    <property name="java.specification.version" value="1.7" />
+    <property name="java.specification.version" value="1.8" />
     <property name="libs.jaxws21.maven-pom" value="" />
     <property name="java.vm.info" value="mixed mode" />
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes" />
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/classes" />
     <property name="src.dir" value="src/jbiasa" />
     <property name="libs.Encoder-Framework.maven-pom" value="" />
     <property name="libs.jpa2-persistence.src" value="" />
@@ -301,15 +301,15 @@
     <property name="inDebug" value="${inDebug}" />
     <property name="org.netbeans.modules.compapp.catd.context" value="" />
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob" />
-    <property name="default.javac.source" value="1.7" />
+    <property name="default.javac.source" value="1.8" />
     <property name="sun.jnu.encoding" value="UTF-8" />
     <property name="libs.MySQLDriver.src" value="" />
     <property name="jbi.service-assembly.id" value="GetVendorURLApp" />
     <property name="libs.Encoder-COCO.javadoc" value="" />
-    <property name="java.runtime.version" value="1.7.0_45-b18" />
+    <property name="java.runtime.version" value="1.8.0_102-b14" />
     <property name="jna.platform.library.path" value="/usr/lib:/usr/lib" />
     <property name="jbi.service-assembly.description" value="Represents the Service Assembly of GetVendorURLApp" />
-    <property name="default.javac.target" value="1.7" />
+    <property name="default.javac.target" value="1.8" />
     <property name="libs.junit_4.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/ext/junit-4.10.jar" />
     <property name="user.timezone" value="" />
     <property name="java.module.install.dir" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules" />
@@ -318,7 +318,7 @@
     <property name="netbeans.dirs" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../soa:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../extide:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../apisupport:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../enterprise:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../ergonomics:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../harness:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../ide:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../java:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../nb:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../profiler:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../webcommon:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/bin/../websvccommon:" />
     <property name="libs.jsf20.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
     <property name="libs.jstl.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
-    <property name="java.ext.dirs" value="/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
+    <property name="java.ext.dirs" value="/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java" />
     <property name="libs.metro.src" value="" />
     <property name="libs.absolutelayout.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/AbsoluteLayout.jar" />
     <property name="libs.metro.classpath" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/jaxb/activation.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-api.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra-api.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-extra.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-rt.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/modules/ext/metro/webservices-tools.jar" />
@@ -370,8 +370,8 @@
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="org.netbeans.modules.compapp.catd.ConfiguredTest" name="TestCase1" time="2.448">
-    <failure message="[Aug 16, 2016 11:10:07 AM] The response is not identical to the expected output." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: [Aug 16, 2016 11:10:07 AM] The response is not identical to the expected output.
+  <testcase classname="org.netbeans.modules.compapp.catd.ConfiguredTest" name="TestCase1" time="1.182">
+    <failure message="[Nov 27, 2016 3:20:41 PM] The response is not identical to the expected output." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: [Nov 27, 2016 3:20:41 PM] The response is not identical to the expected output.
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2354)
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.checkExpectedOutput(ConfiguredTest.java:2224)
 	at org.netbeans.modules.compapp.catd.ConfiguredTest.testConcurrentSOAPRequest(ConfiguredTest.java:867)
@@ -392,28 +392,28 @@ java.awt.graphicsenv=sun.awt.CGraphicsEnvironment
 java.awt.headless=${java.awt.headless}
 java.awt.printerjob=sun.lwawt.macosx.CPrinterJob
 java.class.path=/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/org-netbeans-modules-compapp-manager-jbi.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/org-netbeans-modules-compapp-projects-jbi.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/jbi-admin-common.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/soa/modules/ext/catd.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/junit-3.8.2.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/jaxws22/api/saaj-api.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/jaxws22/saaj-impl.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/java/modules/ext/jaxws22/FastInfoset.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-lib.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-deprecated-pre65formatting.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-util.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-lib2.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-indent.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-plain.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-plain-lib.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-settings.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-editor-settings-storage.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-lexer.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-xml-core.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-xml-lexer.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-xml-text.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-xml-xdm.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-xml-xam.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/org-netbeans-modules-csl-api.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/ide/modules/ext/jaxb/activation.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/lib/org-openide-modules.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/lib/org-openide-util.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/lib/org-openide-util-lookup.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-awt.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-options.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-text.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-loaders.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-nodes.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-netbeans-modules-editor-mimelookup.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-netbeans-modules-editor-mimelookup-impl.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/core/org-openide-filesystems.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-netbeans-modules-keyring.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/platform/modules/org-openide-dialogs.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-launcher.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-junit.jar:/usr/local/OpenESB-SE-3.0.5/OE-Studio/netbeans/extide/ant/lib/ant-junit4.jar
-java.class.version=51.0
-java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/endorsed
-java.ext.dirs=/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
-java.home=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
+java.class.version=52.0
+java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/endorsed
+java.ext.dirs=/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre
 java.io.tmpdir=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/
 java.library.path=/Users/BenGoodwin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
 java.runtime.name=Java(TM) SE Runtime Environment
-java.runtime.version=1.7.0_45-b18
+java.runtime.version=1.8.0_102-b14
 java.specification.name=Java Platform API Specification
 java.specification.vendor=Oracle Corporation
-java.specification.version=1.7
+java.specification.version=1.8
 java.vendor=Oracle Corporation
 java.vendor.url=http://java.oracle.com/
 java.vendor.url.bug=http://bugreport.sun.com/bugreport/
-java.version=1.7.0_45
+java.version=1.8.0_102
 java.vm.info=mixed mode
 java.vm.name=Java HotSpot(TM) 64-Bit Server VM
 java.vm.specification.name=Java Virtual Machine Specification
 java.vm.specification.vendor=Oracle Corporation
-java.vm.specification.version=1.7
+java.vm.specification.version=1.8
 java.vm.vendor=Oracle Corporation
-java.vm.version=24.45-b08
+java.vm.version=25.102-b14
 line.separator=
 
 org.netbeans.modules.compapp.catd.context=
@@ -423,12 +423,12 @@ os.version=10.11.6
 path.separator=:
 socksNonProxyHosts=local|*.local|169.254/16|*.169.254/16
 sun.arch.data.model=64
-sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/classes
-sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre/lib
+sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/classes
+sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home/jre/lib
 sun.cpu.endian=little
 sun.cpu.isalist=
 sun.io.unicode.encoding=UnicodeBig
-sun.java.command=org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/usr/local/git/nrel/GetVendorURLApp/test/results/TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junitvmwatcher7448361828493966894.properties propsfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junit7135306900043966909.properties
+sun.java.command=org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner org.netbeans.modules.compapp.catd.ConfiguredTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/usr/local/git/nrel/GetVendorURLApp/test/results/TEST-org.netbeans.modules.compapp.catd.ConfiguredTest.xml crashfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junitvmwatcher7728429120369662959.properties propsfile=/var/folders/xm/gdf4xfjj69g6g9j_f6lg32jh0000gn/T/junit7604651988598963743.properties
 sun.java.launcher=SUN_STANDARD
 sun.jnu.encoding=UTF-8
 sun.management.compiler=HotSpot 64-Bit Tiered Compilers
@@ -440,8 +440,8 @@ user.language=en
 user.name=BenGoodwin
 user.timezone=America/New_York
 Test TestCase1\Concurrent.properties
-  * Difference (Delete): SOAP-ENV:Fault
-  * Difference (Add): m:getVendorOperationResponse
+  * Difference (Delete): #text
+  * Difference (Add): #text
  Failed. (Destination: http://localhost:${HttpDefaultPort}/getVendorService/getVendorURL)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

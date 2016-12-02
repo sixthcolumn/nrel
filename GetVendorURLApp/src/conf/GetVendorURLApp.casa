@@ -13,7 +13,7 @@
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-database-binding.jar" component-name="sun-database-binding" description="Represents this Service Unit" name="GetVendorURLApp-sun-database-binding" unit-name="sun-database-binding">
             <ports>
-                <port x="0" y="-1">
+                <port x="68" y="109">
                     <link xlink:href="../jbiasa/GetVendorURL/jdbcVendor.wsdl#xpointer(/definitions/service[@name='service']/port[@name='port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
@@ -22,7 +22,7 @@
         </binding-component-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="GetVendorURLApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="0" y="-1">
+                <port x="68" y="37">
                     <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint2"/>
                     <provides endpoint="endpoint2"/>
@@ -31,8 +31,8 @@
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint4" provider="endpoint1" state="unchanged"/>
         <connection consumer="endpoint2" provider="endpoint3" state="unchanged"/>
+        <connection consumer="endpoint4" provider="endpoint1" state="unchanged"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/GetVendorURL/getVendor.wsdl#xpointer(/definitions/portType[@name='getVendorPortType'])" xlink:type="simple"/>

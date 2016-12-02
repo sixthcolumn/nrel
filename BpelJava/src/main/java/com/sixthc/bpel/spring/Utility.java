@@ -16,30 +16,36 @@ public class Utility {
 		context = new AnnotationConfigApplicationContext(AppConfig.class);
 		service = (RequestLogService) context.getBean("requestLogService");
 	}
-	
+
 	public static String log(String messageID, String message) {
 		RequestLog entry = new RequestLog(messageID, message);
 		service.saveRequestLog(entry);
 		return messageID + ":" + message;
 	}
-	
-	public static String getURLByVendor(String vendor, String user, String operationName) {
-		try {
-			return service.getURLByVendor(vendor, user, operationName);
-		} catch (VendorLookupException e) {
-			throw new RuntimeException(e.getMessage());		
-		}
+
+	public static String getURLByVendor(String vendor, String user,
+			String operationName) throws VendorLookupException {
+		return service.getURLByVendor(vendor, user, operationName);
+
 	}
-	
+
 	public static void main(String args[]) {
 		String logResponse;
 		logResponse = log("12222", "testing part 2");
 		System.out.println("log response : " + logResponse);
-		
+
 		logResponse = log("12222", "testing part 3");
 		System.out.println("log response : " + logResponse);
-		
-		String vendorURL = getURLByVendor("adms", "adms1", "CIM_DER (createDERGroupDispatch)");
-		System.out.println("vendor url : " + vendorURL);
+
+		String vendorURL;
+		try {
+			vendorURL = getURLByVendor("adms", "adms7",
+					"CIM_DER (createDERGroupDispatch)");
+			System.out.println("vendor url : " + vendorURL);
+		} catch (VendorLookupException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }
