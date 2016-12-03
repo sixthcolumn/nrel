@@ -1,54 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://j2ee.netbeans.org/wsdl/GetVendorURL/src/getVendor" xmlns:ns2="http://www.epri.com/GetDERGroupStatuses" xmlns:ns3="GetDERGroupStatusesApp" xmlns:ns4="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/getDERGroupStatuses" xmlns:xlink="http://www.w3.org/2000/xlink">
+<casa xmlns="http://java.sun.com/xml/ns/casa" xmlns:ns1="http://www.epri.com/GetDERGroupStatuses" xmlns:ns2="GetDERGroupStatusesApp" xmlns:ns3="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/ProcessStatuses" xmlns:xlink="http://www.w3.org/2000/xlink">
     <endpoints>
-        <endpoint endpoint-name="getVendorPort" interface-name="ns1:getVendorPortType" name="endpoint1" service-name="ns1:getVendorService"/>
-        <endpoint endpoint-name="GetDERGroupStatuses_Port" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint2" service-name="ns2:GetDERGroupStatuses"/>
-        <endpoint endpoint-name="client_server" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint3" service-name="ns3:GetDERGroupStatusesAppService1"/>
-        <endpoint endpoint-name="log_server" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint4" service-name="ns3:GetDERGroupStatusesAppService2"/>
-        <endpoint display-name="ServiceLink" endpoint-name="GetDERGroupStatuses_PortRole_myRole" file-path="getDERGroupStatuses.bpel" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint5" process-name="getDERGroupStatuses" service-name="ns4:ServiceLink"/>
-        <endpoint display-name="GetVendorLink" endpoint-name="getVendorPortTypeRole_partnerRole" file-path="getDERGroupStatuses.bpel" interface-name="ns1:getVendorPortType" name="endpoint6" process-name="getDERGroupStatuses" service-name="ns4:GetVendorLink"/>
-        <endpoint display-name="RemoteLink" endpoint-name="GetDERGroupStatuses_PortRole_partnerRole" file-path="getDERGroupStatuses.bpel" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint7" process-name="getDERGroupStatuses" service-name="ns4:RemoteLink"/>
-        <endpoint display-name="RemoteLogLink" endpoint-name="GetDERGroupStatuses_PortRole_partnerRole" file-path="getDERGroupStatuses.bpel" interface-name="ns2:GetDERGroupStatuses_Port" name="endpoint8" process-name="getDERGroupStatuses" service-name="ns4:RemoteLogLink"/>
+        <endpoint endpoint-name="GetDERGroupStatuses_Port" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint1" service-name="ns1:GetDERGroupStatuses"/>
+        <endpoint endpoint-name="casaPort1" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint2" service-name="ns2:GetDERGroupStatusesAppService1"/>
+        <endpoint endpoint-name="casaPort2" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint3" service-name="ns2:GetDERGroupStatusesAppService2"/>
+        <endpoint display-name="ServicePartnerLink" endpoint-name="GetDERGroupStatuses_PortRole_myRole" file-path="ProcessStatuses.bpel" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint4" process-name="ProcessStatuses" service-name="ns3:ServicePartnerLink"/>
+        <endpoint display-name="RemotePartnerLink" endpoint-name="GetDERGroupStatuses_PortRole_partnerRole" file-path="ProcessStatuses.bpel" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint5" process-name="ProcessStatuses" service-name="ns3:RemotePartnerLink"/>
+        <endpoint display-name="LogPartnerLink" endpoint-name="GetDERGroupStatuses_PortRole_partnerRole" file-path="ProcessStatuses.bpel" interface-name="ns1:GetDERGroupStatuses_Port" name="endpoint6" process-name="ProcessStatuses" service-name="ns3:LogPartnerLink"/>
     </endpoints>
     <service-units>
         <service-engine-service-unit artifacts-zip="GetDERGroupStatuses.jar" component-name="sun-bpel-engine" defined="true" description="Represents this Service Unit" internal="true" name="GetDERGroupStatusesApp-GetDERGroupStatuses" unit-name="GetDERGroupStatuses" unknown="false" x="123" y="97">
-            <provides endpoint="endpoint5"/>
+            <provides endpoint="endpoint4"/>
+            <consumes endpoint="endpoint5"/>
             <consumes endpoint="endpoint6"/>
-            <consumes endpoint="endpoint7"/>
-            <consumes endpoint="endpoint8"/>
         </service-engine-service-unit>
         <binding-component-service-unit artifacts-zip="sun-http-binding.jar" component-name="sun-http-binding" description="Represents this Service Unit" name="GetDERGroupStatusesApp-sun-http-binding" unit-name="sun-http-binding">
             <ports>
-                <port x="67" y="156">
-                    <link xlink:href="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatuses']/port[@name='GetDERGroupStatuses_Port'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint2"/>
-                    <provides endpoint="endpoint2"/>
-                </port>
                 <port x="67" y="37">
-                    <link xlink:href="../jbiasa/GetDERGroupStatuses/getVendor.wsdl#xpointer(/definitions/service[@name='getVendorService']/port[@name='getVendorPort'])" xlink:type="simple"/>
+                    <link xlink:href="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatuses']/port[@name='GetDERGroupStatuses_Port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
                 </port>
-                <port bindingType="soap" x="67" y="293">
-                    <link xlink:href="../jbiasa/GetDERGroupStatusesApp.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatusesAppService1']/port[@name='client_server'])" xlink:type="simple"/>
+                <port bindingType="soap" x="67" y="239">
+                    <link xlink:href="../jbiasa/GetDERGroupStatusesApp.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatusesAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>
+                    <consumes endpoint="endpoint2"/>
+                    <provides endpoint="endpoint2"/>
+                </port>
+                <port bindingType="soap" x="67" y="371">
+                    <link xlink:href="../jbiasa/GetDERGroupStatusesApp.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatusesAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
-                </port>
-                <port bindingType="soap" x="67" y="422">
-                    <link xlink:href="../jbiasa/GetDERGroupStatusesApp.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatusesAppService2']/port[@name='log_server'])" xlink:type="simple"/>
-                    <consumes endpoint="endpoint4"/>
-                    <provides endpoint="endpoint4"/>
                 </port>
             </ports>
         </binding-component-service-unit>
     </service-units>
     <connections>
-        <connection consumer="endpoint6" provider="endpoint1" state="unchanged"/>
-        <connection consumer="endpoint2" provider="endpoint5" state="unchanged"/>
-        <connection consumer="endpoint7" provider="endpoint3" state="new"/>
-        <connection consumer="endpoint8" provider="endpoint4" state="new"/>
-        <connection consumer="endpoint7" provider="endpoint5" state="deleted"/>
-        <connection consumer="endpoint8" provider="endpoint5" state="deleted"/>
+        <connection consumer="endpoint1" provider="endpoint4" state="unchanged"/>
+        <connection consumer="endpoint5" provider="endpoint2" state="new"/>
+        <connection consumer="endpoint6" provider="endpoint3" state="new"/>
+        <connection consumer="endpoint6" provider="endpoint4" state="deleted"/>
+        <connection consumer="endpoint5" provider="endpoint4" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl#xpointer(/definitions/portType[@name='GetDERGroupStatuses_Port'])" xlink:type="simple"/>

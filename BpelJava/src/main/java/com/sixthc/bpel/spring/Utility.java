@@ -39,8 +39,11 @@ public class Utility {
 
 		String vendorURL;
 		try {
-			vendorURL = getURLByVendor("adms", "adms7",
+			vendorURL = getURLByVendor("adms", "adms1",
 					"CIM_DER (createDERGroupDispatch)");
+			System.out.println("vendor url : " + vendorURL);
+			vendorURL = getURLByVendor("adms", "adms1",
+					"CIM_DER (getDERGroupStatuses)");
 			System.out.println("vendor url : " + vendorURL);
 		} catch (VendorLookupException e) {
 			// TODO Auto-generated catch block

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<process
+    name="ProcessStatuses"
+    targetNamespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/ProcessStatuses"
+    xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatuses/ProcessStatuses"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:util="java://com.sixthc.bpel.spring.Utility"
+    xmlns="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+    xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
+    xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
+    xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/GetDERGroupStatusesMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty">
+    <import namespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesService" location="GetDERGroupStatusesService.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://www.epri.com/GetDERGroupStatuses" location="file:/usr/local/git/nrel/61968/wsdl/GetDERGroupStatuses.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesRemote" location="GetDERGroupStatusesRemote.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <import namespace="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesLog" location="GetDERGroupStatusesLog.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+    <partnerLinks>
+        <partnerLink name="RemotePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesRemote" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" partnerRole="GetDERGroupStatuses_PortRole"/>
+        <partnerLink name="LogPartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesLog" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" partnerRole="GetDERGroupStatuses_PortRole"/>
+        <partnerLink name="ServicePartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/GetDERGroupStatusesService" partnerLinkType="tns:GetDERGroupStatuses_PortLinkType" myRole="GetDERGroupStatuses_PortRole"/>
+    </partnerLinks>
+    <variables>
+        <variable name="RemoteURL" type="xs:string"/>
+    </variables>
+    <scope name="Scope1">
+        <variables>
+            <variable name="RemoteOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+            <variable name="ServiceIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+        </variables>
+        <sequence>
+            <receive name="Receive1" createInstance="yes" partnerLink="ServicePartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="ServiceIn"/>
+            <scope name="Scope2">
+                <sxt:trace>
+                    <sxt:log level="info" location="onStart">
+                        <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Message received, headers :', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.http.headers')))</from>
+                    </sxt:log>
+                </sxt:trace>
+                <variables>
+                    <variable name="GetVendorFaultOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+                </variables>
+                <faultHandlers>
+                    <catch faultName="sxeh:com.sixthc.bpel.spring.service.VendorLookupException" faultVariable="GetVendorURLFault" faultMessageType="sxeh:faultMessage">
+                        <sequence name="Sequence2">
+                            <sxt:trace>
+                                <sxt:log level="info" location="onStart">
+                                    <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL failed, fault :', $GetVendorURLFault.fault))</from>
+                                </sxt:log>
+                            </sxt:trace>
+                            <assign name="Assign2">
+                                <copy>
+                                    <from>'6002'</from>
+                                    <to>$GetVendorFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                                </copy>
+                                <copy>
+                                    <from>'FATAL'</from>
+                                    <to>$GetVendorFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                                </copy>
+                                <copy>
+                                    <from>concat('Operation : CIM_DER (getDERGroupStatuses)', ', User :', $ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:UserID, ' Org :', $ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:Organization)</from>
+                                    <to>$GetVendorFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:details</to>
+                                </copy>
+                                <copy>
+                                    <from>'Get Destination URL Lookup Failed'</from>
+                                    <to>$GetVendorFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                                </copy>
+                            </assign>
+                            <reply name="Reply2" partnerLink="ServicePartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="GetVendorFaultOut"/>
+                            <exit name="Exit1"/>
+                        </sequence>
+                    </catch>
+                </faultHandlers>
+                <sequence name="Sequence1">
+                    <assign name="Assign1">
+                        <sxt:trace>
+                            <sxt:log level="info" location="onStart">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL - User :', $ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:UserID, ', Org :', $ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:Organization))</from>
+                            </sxt:log>
+                            <sxt:log level="info" location="onComplete">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Get Vendor URL Complete - URL : ', $RemoteURL))</from>
+                            </sxt:log>
+                        </sxt:trace>
+                        <copy>
+                            <from>util:getURLByVendor($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:Organization, $ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:User/ns1:UserID, 'CIM_DER (getDERGroupStatuses)')</from>
+                            <to variable="RemoteURL"/>
+                        </copy>
+                    </assign>
+                </sequence>
+            </scope>
+            <scope name="Scope3">
+                <variables>
+                    <variable name="RemoteFaultOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+                    <variable name="ServiceOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+                    <variable name="RemoteOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+                    <variable name="RemoteIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+                </variables>
+                <faultHandlers>
+                    <catch faultName="sxeh:systemFault" faultVariable="RemoteInvokeFault" faultMessageType="sxeh:faultMessage">
+                        <sequence name="Sequence4">
+                            <sxt:trace>
+                                <sxt:log level="info" location="onStart">
+                                    <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Exec remote failed, fault :', $RemoteInvokeFault.fault, ', Remote URL :', $RemoteURL))</from>
+                                </sxt:log>
+                            </sxt:trace>
+                            <assign name="Assign5">
+                                <copy>
+                                    <from>'6003'</from>
+                                    <to>$RemoteFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                                </copy>
+                                <copy>
+                                    <from>'FATAL'</from>
+                                    <to>$RemoteFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                                </copy>
+                                <copy>
+                                    <from>'Unable to invoke remote server'</from>
+                                    <to>$RemoteFaultOut.GetDERGroupStatusesResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                                </copy>
+                            </assign>
+                            <reply name="Reply4" partnerLink="ServicePartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="RemoteFaultOut"/>
+                            <exit name="Exit2"/>
+                        </sequence>
+                    </catch>
+                </faultHandlers>
+                <sequence name="Sequence3">
+                    <assign name="Assign3">
+                        <copy>
+                            <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
+                            <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
+                        </copy>
+                        <copy>
+                            <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
+                            <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
+                        </copy>
+                        <copy>
+                            <from variable="RemoteURL"/>
+                            <to variable="RemoteIn" sxnmp:nmProperty="org.glassfish.openesb.outbound.address.url"/>
+                        </copy>
+                    </assign>
+                    <invoke name="Invoke1" partnerLink="RemotePartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" inputVariable="RemoteIn" outputVariable="RemoteOut">
+                        <sxt:trace>
+                            <sxt:log level="info" location="onStart">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Invoke Remote Server - URL :', $RemoteURL, ', HTTP Headers :', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.http.headers')))</from>
+                            </sxt:log>
+                            <sxt:log level="info" location="onComplete">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, 'Invoke Remote Server Complete')</from>
+                            </sxt:log>
+                        </sxt:trace>
+                    </invoke>
+                    <assign name="Assign4">
+                        <copy>
+                            <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Header</from>
+                            <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Header</to>
+                        </copy>
+                        <copy>
+                            <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Reply</from>
+                            <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Reply</to>
+                        </copy>
+                        <copy>
+                            <from>$RemoteOut.GetDERGroupStatusesResponseMessage/ns0:Payload</from>
+                            <to>$ServiceOut.GetDERGroupStatusesResponseMessage/ns0:Payload</to>
+                        </copy>
+                    </assign>
+                    <reply name="Reply3" partnerLink="ServicePartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" variable="ServiceOut"/>
+                </sequence>
+            </scope>
+            <scope name="Scope4">
+                <variables>
+                    <variable name="LogOut" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesResponseMessage"/>
+                    <variable name="LogIn" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" messageType="tns:GetDERGroupStatusesRequestMessage"/>
+                </variables>
+                <faultHandlers>
+                    <catch faultName="sxeh:systemFault" faultVariable="LogFault" faultMessageType="sxeh:faultMessage">
+                        <sxt:trace>
+                            <sxt:log level="info" location="onStart">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, concat('Call to Log server failed. check esb var ${dispatches_log_server} fault : ', $LogFault.fault))</from>
+                            </sxt:log>
+                        </sxt:trace>
+                        <exit name="Exit4"/>
+                    </catch>
+                </faultHandlers>
+                <sequence name="Sequence5">
+                    <assign name="Assign6">
+                        <copy>
+                            <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
+                            <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
+                        </copy>
+                        <copy>
+                            <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
+                            <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
+                        </copy>
+                    </assign>
+                    <invoke name="Invoke2" partnerLink="LogPartnerLink" operation="GetDERGroupStatuses" xmlns:tns="http://www.epri.com/GetDERGroupStatuses" portType="tns:GetDERGroupStatuses_Port" inputVariable="LogIn" outputVariable="LogOut">
+                        <sxt:trace>
+                            <sxt:log level="info" location="onStart">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, 'Calling Log server')</from>
+                            </sxt:log>
+                            <sxt:log level="info" location="onComplete">
+                                <from>util:log($ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header/ns1:MessageID, 'Call to Log server complete')</from>
+                            </sxt:log>
+                        </sxt:trace>
+                    </invoke>
+                    <exit name="Exit3"/>
+                </sequence>
+            </scope>
+        </sequence>
+    </scope>
+</process>

@@ -11,6 +11,7 @@
              targetNamespace="GetDERGroupStatusesApp"
              xmlns:tns="GetDERGroupStatusesApp" xmlns:ns="http://www.epri.com/GetDERGroupStatuses" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
     <import namespace="http://www.epri.com/GetDERGroupStatuses" location="../jbiServiceUnits/GetDERGroupStatuses/GetDERGroupStatuses.wsdl"/>
+    <import namespace="http://www.epri.com/GetDERGroupStatuses" location="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl"/>
     <portType name="dummyCasaPortType"/>
     <binding name="casaBinding1" type="ns:GetDERGroupStatuses_Port">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
@@ -43,12 +44,12 @@
         </operation>
     </binding>
     <service name="GetDERGroupStatusesAppService1">
-        <port name="client_server" binding="tns:casaBinding1">
+        <port name="casaPort1" binding="tns:casaBinding1">
             <soap:address location="${statuses_endpoint}"/>
         </port>
     </service>
     <service name="GetDERGroupStatusesAppService2">
-        <port name="log_server" binding="tns:casaBinding2">
+        <port name="casaPort2" binding="tns:casaBinding2">
             <soap:address location="${statuses_log_server}"/>
         </port>
     </service>

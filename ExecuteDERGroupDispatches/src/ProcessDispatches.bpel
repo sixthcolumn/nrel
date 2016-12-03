@@ -36,7 +36,6 @@
                     <sxt:trace>
                         <sxt:log level="info" location="onStart">
                             <from>util:log($ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header/ns1:MessageID, concat('Message received, headers :', sxnmp:getVariableNMProperty('ServiceIn', 'org.glassfish.openesb.inbound.http.headers')))</from>
-
                         </sxt:log>
                     </sxt:trace>
                     <variables>
@@ -69,6 +68,7 @@
                                     </copy>
                                 </assign>
                                 <reply name="GetVendorFaultReply" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="GetVendorFaultOut"/>
+                                <exit name="Exit3"/>
                             </sequence>
                         </catch>
                     </faultHandlers>
@@ -122,6 +122,7 @@
                                     </copy>
                                 </assign>
                                 <reply name="RemoteFail" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="RemoteFault"/>
+                                <exit name="Exit4"/>
                             </sequence>
                         </catch>
                     </faultHandlers>
