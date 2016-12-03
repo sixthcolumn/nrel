@@ -52,7 +52,7 @@
 	</wsdl:binding>
 	<wsdl:service name="GetDERGroupStatuses">
 		<wsdl:port name="GetDERGroupStatuses_Port" binding="tns:GetDERGroupStatuses_Binding">
-			<soap:address location="${statuses_server}"/>
+			<soap:address location="${status_esb_server}"/>
 		</wsdl:port>
 	</wsdl:service>
         <xs:documentation>

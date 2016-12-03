@@ -45,12 +45,12 @@
     </binding>
     <service name="ExecuteDERGroupDispatchesAppService1">
         <port name="casaPort1" binding="tns:casaBinding1">
-            <soap:address location="${dispatches_server}"/>
+            <soap:address location="${dispatch_log_server}"/>
         </port>
     </service>
     <service name="ExecuteDERGroupDispatchesAppService2">
         <port name="casaPort2" binding="tns:casaBinding2">
-            <soap:address location="${dispatches_log_server}"/>
+            <soap:address location="${dispatch_remote_server}"/>
         </port>
     </service>
 </definitions>

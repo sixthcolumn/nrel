@@ -38,7 +38,7 @@
 	</wsdl:binding>
 	<wsdl:service name="ExecuteDERGroupDispatches">
 		<wsdl:port name="DERGroupDispatches_Port" binding="tns:DERGroupDispatches_Binding">
-			<soap:address location="${dispatches_server}"/>
+			<soap:address location="${dispatch_esb_server}"/>
 		</wsdl:port>
 	</wsdl:service>
 	<xs:annotation>
