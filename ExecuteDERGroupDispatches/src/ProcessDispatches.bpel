@@ -10,7 +10,7 @@
     xmlns:sxt="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Trace" 
     xmlns:sxed="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Editor2"
     xmlns:sxat="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/Attachment"
-    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/DERGroupDispatchesMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty"> 
+    xmlns:sxeh="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/ErrorHandling" xmlns:ns0="http://www.epri.com/DERGroupDispatchesMessage" xmlns:ns1="http://www.iec.ch/TC57/2011/schema/message" xmlns:sxnmp="http://www.sun.com/wsbpel/2.0/process/executable/SUNExtension/NMProperty" xmlns:ns2="http://docs.oasis-open.org/wsbpel/2.0/process/executable"> 
     <import namespace="http://www.epri.com/ExecuteDERGroupDispatches" location="file:/usr/local/git/nrel/61968/wsdl/ExecuteDERGroupDispatches.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" location="ExecuteDERGroupDispatchesIn.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
     <import namespace="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesOut" location="ExecuteDERGroupDispatchesOut.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
@@ -21,9 +21,36 @@
         <partnerLink name="ServiceInPartnerLink" xmlns:tns="http://enterprise.netbeans.org/bpel/ExecuteDERGroupDispatchesIn" partnerLinkType="tns:DERGroupDispatches_PortLinkType" myRole="DERGroupDispatches_PortRole"/>
     </partnerLinks>
     <variables>
+        <variable name="InvokeESBFault" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" messageType="tns:ResponseMessage"/>
         <variable name="ServiceOut" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" messageType="tns:ResponseMessage"/>
         <variable name="RemoteURL" type="xs:string"/>
     </variables>
+    <faultHandlers>
+        <catch faultName="ns2:invalidVariables" faultVariable="ESBFault" faultMessageType="sxeh:faultMessage">
+            <sequence name="Sequence7">
+                <assign name="Assign8">
+                    <copy>
+                        <from>'6000'</from>
+                        <to>$InvokeESBFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:code</to>
+                    </copy>
+                    <copy>
+                        <from>'FATAL'</from>
+                        <to>$InvokeESBFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:level</to>
+                    </copy>
+                    <copy>
+                        <from>'Invoke ESB (outer most exception handler invoked)'</from>
+                        <to>$InvokeESBFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:reason</to>
+                    </copy>
+                    <copy>
+                        <from variable="ESBFault" part="fault"/>
+                        <to>$InvokeESBFault.ResponseMessage/ns0:Reply/ns1:Error/ns1:details</to>
+                    </copy>
+                </assign>
+                <reply name="Reply2" partnerLink="ServiceInPartnerLink" operation="CreateDERGroupDispatches" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches" portType="tns:DERGroupDispatches_Port" variable="InvokeESBFault"/>
+                <exit name="Exit5"/>
+            </sequence>
+        </catch>
+    </faultHandlers>
     <sequence name="Sequence1">
         <scope name="Scope1" xmlns:tns="http://www.epri.com/ExecuteDERGroupDispatches">
             <variables>

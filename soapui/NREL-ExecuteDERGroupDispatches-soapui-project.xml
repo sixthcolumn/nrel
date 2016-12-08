@@ -1199,7 +1199,7 @@
       <der:CreateDERGroupDispatches>
          <der:Header>
             <mes:Verb>Create</mes:Verb>
-                <mes:Noun>Workorder</mes:Noun>
+                <mes:Nouns>Workorder</mes:Nouns>
                 <mes:Revision>0.1</mes:Revision>            
                 <mes:ReplayDetection>
                     <mes:Nonce>1234</mes:Nonce>
@@ -1215,7 +1215,7 @@
                     <mes:UserID>adms1</mes:UserID>
                     <mes:Organization>adms</mes:Organization>
                 </mes:User>                
-                <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7b</mes:MessageID>                
+                <mes:MessageID>5056eab4-120c-11e5-9493-1697f925ec7x</mes:MessageID>                
               <!--  <mes:CorrelationID>5056f018-120c-11e5-9493-1697f925ec7b</mes:CorrelationID>     -->           
                 <mes:Comment>epri persistence test</mes:Comment>                
                 <mes:Property>

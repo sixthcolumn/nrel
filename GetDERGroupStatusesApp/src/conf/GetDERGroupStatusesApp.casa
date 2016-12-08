@@ -20,6 +20,7 @@
                     <link xlink:href="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatuses']/port[@name='GetDERGroupStatuses_Port'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint1"/>
                     <provides endpoint="endpoint1"/>
+                    <WsitCallback xmlns="http://www.sun.com/jbi/wsit/callbackproject" CallbackProject=""/>
                 </port>
                 <port bindingType="soap" x="67" y="239">
                     <link xlink:href="../jbiasa/GetDERGroupStatusesApp.wsdl#xpointer(/definitions/service[@name='GetDERGroupStatusesAppService1']/port[@name='casaPort1'])" xlink:type="simple"/>

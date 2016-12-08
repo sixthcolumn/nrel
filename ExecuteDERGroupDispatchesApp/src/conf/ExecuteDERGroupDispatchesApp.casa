@@ -30,6 +30,7 @@
                     <link xlink:href="../jbiasa/ExecuteDERGroupDispatchesApp.wsdl#xpointer(/definitions/service[@name='ExecuteDERGroupDispatchesAppService2']/port[@name='casaPort2'])" xlink:type="simple"/>
                     <consumes endpoint="endpoint3"/>
                     <provides endpoint="endpoint3"/>
+                    <WsitCallback xmlns="http://www.sun.com/jbi/wsit/callbackproject" CallbackProject=""/>
                 </port>
             </ports>
         </binding-component-service-unit>
