@@ -1460,4 +1460,39 @@ Names.name class. The status will return "what can you give me" in terms of powe
          </get:Request>
       </get:GetDERGroupStatusesRequestMessage>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Milan Statuses"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetDERGroupStatuses_Binding</con:interface><con:operation>GetDERGroupStatuses</con:operation><con:request name="Milan Statuses"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/epriConnect/getDERGroupStatuses</con:endpoint><con:request><![CDATA[<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+   <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <CreateDERGroupDispatches xmlns="http://www.epri.com/DERGroupDispatchesMessage" xmlns:der="http://www.epri.com/DERGroupDispatches" xmlns:mes="http://www.iec.ch/TC57/2011/schema/message">
+         <Header>
+            <mes:Verb>create</mes:Verb>
+            <mes:Noun>DERGroupDispatches</mes:Noun>
+            <mes:Timestamp>2016-12-08T09:19:05.4496633-07:00</mes:Timestamp>
+            <mes:User>
+               <mes:UserID>ADMS2</mes:UserID>
+               <mes:Organization>ADMS</mes:Organization>
+            </mes:User>
+            <mes:MessageID>DERGroupDispatches_12/8/2016 9:19:05 AM</mes:MessageID>
+            <mes:Property>
+               <mes:Name>Destination</mes:Name>
+               <mes:Value>DERMS</mes:Value>
+            </mes:Property>
+         </Header>
+         <Payload>
+            <der:DERGroupDispatches>
+               <der:DERGroupDispatch>
+                  <der:DERGroup>
+                     <der:name>DER Group A</der:name>
+                     <der:mRID>fdcbba4d-9750-4823-b838-7fb087bd2ca3</der:mRID>
+                  </der:DERGroup>
+                  <der:RequestedCapability>
+                     <der:capabilityType>ReactivePower</der:capabilityType>
+                     <der:value>0.1</der:value>
+                     <der:capabilityUnits>W</der:capabilityUnits>
+                     <der:capabilityMultiplier>k</der:capabilityMultiplier>
+                  </der:RequestedCapability>
+               </der:DERGroupDispatch>
+            </der:DERGroupDispatches>
+         </Payload>
+      </CreateDERGroupDispatches>
+   </s:Body>
+</s:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -160,7 +160,7 @@
                                 <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</from>
                                 <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</to>
                             </copy>
-                            <copy>
+                            <copy ignoreMissingFromData="yes">
                                 <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</from>
                                 <to>$RemoteServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</to>
                             </copy>
@@ -222,7 +222,7 @@
                                 <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</from>
                                 <to>$LoggerIn.CreateDERGroupDispatchesRequestMessage/ns0:Header</to>
                             </copy>
-                            <copy>
+                            <copy ignoreMissingFromData="yes">
                                 <from>$ServiceIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</from>
                                 <to>$LoggerIn.CreateDERGroupDispatchesRequestMessage/ns0:Request</to>
                             </copy>

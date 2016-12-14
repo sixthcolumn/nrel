@@ -1,0 +1,968 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:request="http://www.multispeak.org/V5.0/ws/request"
+	xmlns:response="http://www.multispeak.org/V5.0/ws/response"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:tns="http://www.multispeak.org/V5.0/wsdl/WO_Server" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:ns8="http://docs.oasis-open.org/wsrf/bf-2" xmlns:ns9="http://www.w3.org/2005/08/addressing"
+	targetNamespace="http://www.multispeak.org/V5.0/wsdl/WO_Server">
+	<wsdl:types>
+		<s:schema>
+			<s:import namespace="http://www.multispeak.org/V5.0/ws/request"
+				schemaLocation="xsd/MultiSpeakWebServicesRequestMsgHeader.xsd" />
+			<s:import namespace="http://www.multispeak.org/V5.0/ws/response"
+				schemaLocation="xsd/MultiSpeakWebServicesResponseMsgHeader.xsd" />
+		</s:schema>
+		<s:schema elementFormDefault="qualified"
+			targetNamespace="http://www.multispeak.org/V5.0/wsdl/WO_Server">
+			<s:include schemaLocation="xsd/WO_Server.xsd" />
+		</s:schema>
+	</wsdl:types>
+	<wsdl:message name="MultiSpeakResponseMsgHeader">
+		<wsdl:part name="MultiSpeakResponseMsgHeader" element="response:MultiSpeakResponseMsgHeader" />
+	</wsdl:message>
+	<wsdl:message name="MultiSpeakRequestMsgHeader">
+		<wsdl:part name="MultiSpeakRequestMsgHeader" element="request:MultiSpeakRequestMsgHeader" />
+	</wsdl:message>
+	<wsdl:message name="DeleteClearanceInstanceSoapIn">
+		<wsdl:part name="parameters" element="tns:DeleteClearanceInstance" />
+	</wsdl:message>
+	<wsdl:message name="DeleteClearanceInstanceSoapOut">
+		<wsdl:part name="parameters" element="tns:DeleteClearanceInstanceResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetActiveWorkItemSummariesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetActiveWorkItemSummaries" />
+	</wsdl:message>
+	<wsdl:message name="GetActiveWorkItemSummariesSoapOut">
+		<wsdl:part name="parameters" element="tns:GetActiveWorkItemSummariesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetAttachmentsByObjectRefsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetAttachmentsByObjectRefs" />
+	</wsdl:message>
+	<wsdl:message name="GetAttachmentsByObjectRefsSoapOut">
+		<wsdl:part name="parameters" element="tns:GetAttachmentsByObjectRefsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetClearanceTagsByTaggedDeviceIDsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetClearanceTagsByTaggedDeviceIDs" />
+	</wsdl:message>
+	<wsdl:message name="GetClearanceTagsByTaggedDeviceIDsSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetClearanceTagsByTaggedDeviceIDsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetDomainMembersSoapIn">
+		<wsdl:part name="parameters" element="tns:GetDomainMembers" />
+	</wsdl:message>
+	<wsdl:message name="GetDomainMembersSoapOut">
+		<wsdl:part name="parameters" element="tns:GetDomainMembersResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetDomainNamesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetDomainNames" />
+	</wsdl:message>
+	<wsdl:message name="GetDomainNamesSoapOut">
+		<wsdl:part name="parameters" element="tns:GetDomainNamesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetMethodsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetMethods" />
+	</wsdl:message>
+	<wsdl:message name="GetMethodsSoapOut">
+		<wsdl:part name="parameters" element="tns:GetMethodsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetSupportedWorkTypesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetSupportedWorkTypes" />
+	</wsdl:message>
+	<wsdl:message name="GetSupportedWorkTypesSoapOut">
+		<wsdl:part name="parameters" element="tns:GetSupportedWorkTypesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkHistoriesByWorkItemRefsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkHistoriesByWorkItemRefs" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkHistoriesByWorkItemRefsSoapOut">
+		<wsdl:part name="parameters" element="tns:GetWorkHistoriesByWorkItemRefsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByBoundsAndWorkStatusCategorySoapIn">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByBoundsAndWorkStatusCategory" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByBoundsAndWorkStatusCategorySoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByBoundsAndWorkStatusCategoryResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByResourceIDsAndWorkStatusCategorySoapIn">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByResourceIDsAndWorkStatusCategory" />
+	</wsdl:message>
+	<wsdl:message
+		name="GetWorkItemRefsByResourceIDsAndWorkStatusCategorySoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByResourceIDsAndWorkStatusCategoryResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="GetWorkItemRefsByScheduleDateAndWorkStatusCategorySoapIn">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByScheduleDateAndWorkStatusCategory" />
+	</wsdl:message>
+	<wsdl:message
+		name="GetWorkItemRefsByScheduleDateAndWorkStatusCategorySoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByScheduleDateAndWorkStatusCategoryResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByWorkStatusCodesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkItemRefsByWorkStatusCodes" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByWorkStatusCodesSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByWorkStatusCodesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByWorkTypesAndWorkStatusCategorySoapIn">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByWorkTypesAndWorkStatusCategory" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemRefsByWorkTypesAndWorkStatusCategorySoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemRefsByWorkTypesAndWorkStatusCategoryResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemsByWorkItemRefsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkItemsByWorkItemRefs" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemsByWorkItemRefsSoapOut">
+		<wsdl:part name="parameters" element="tns:GetWorkItemsByWorkItemRefsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemSummariesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkItemSummaries" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemSummariesSoapOut">
+		<wsdl:part name="parameters" element="tns:GetWorkItemSummariesResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemSummariesByWorkItemRefsSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkItemSummariesByWorkItemRefs" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkItemSummariesByWorkItemRefsSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:GetWorkItemSummariesByWorkItemRefsResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkRequestStatusesSoapIn">
+		<wsdl:part name="parameters" element="tns:GetWorkRequestStatuses" />
+	</wsdl:message>
+	<wsdl:message name="GetWorkRequestStatusesSoapOut">
+		<wsdl:part name="parameters" element="tns:GetWorkRequestStatusesResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateClearanceInstanceRequestSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateClearanceInstanceRequest" />
+	</wsdl:message>
+	<wsdl:message name="InitiateClearanceInstanceRequestSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:InitiateClearanceInstanceRequestResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateClearanceTagRequestByTaggedDeviceIDsSoapIn">
+		<wsdl:part name="parameters"
+			element="tns:InitiateClearanceTagRequestByTaggedDeviceIDs" />
+	</wsdl:message>
+	<wsdl:message name="InitiateClearanceTagRequestByTaggedDeviceIDsSoapOut">
+		<wsdl:part name="parameters"
+			element="tns:InitiateClearanceTagRequestByTaggedDeviceIDsResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkAssignmentChangesSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkAssignmentChanges" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkAssignmentChangesSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkAssignmentChangesResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkItemsDeletionSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkItemsDeletion" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkItemsDeletionSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkItemsDeletionResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkRequestSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkRequest" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkRequestSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkRequestResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkScheduleChangesSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkScheduleChanges" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkScheduleChangesSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkScheduleChangesResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkScheduleDeletionSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkScheduleDeletion" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkScheduleDeletionSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkScheduleDeletionResponse" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkUnassignmentSoapIn">
+		<wsdl:part name="parameters" element="tns:InitiateWorkUnassignment" />
+	</wsdl:message>
+	<wsdl:message name="InitiateWorkUnassignmentSoapOut">
+		<wsdl:part name="parameters" element="tns:InitiateWorkUnassignmentResponse" />
+	</wsdl:message>
+	<wsdl:message name="LinkAttachmentsToObjectsSoapIn">
+		<wsdl:part name="parameters" element="tns:LinkAttachmentsToObjects" />
+	</wsdl:message>
+	<wsdl:message name="LinkAttachmentsToObjectsSoapOut">
+		<wsdl:part name="parameters" element="tns:LinkAttachmentsToObjectsResponse" />
+	</wsdl:message>
+	<wsdl:message name="PingURLSoapIn">
+		<wsdl:part name="parameters" element="tns:PingURL" />
+	</wsdl:message>
+	<wsdl:message name="PingURLSoapOut">
+		<wsdl:part name="parameters" element="tns:PingURLResponse" />
+	</wsdl:message>
+	<wsdl:message name="UnlinkAttachmentsFromObjectsSoapIn">
+		<wsdl:part name="parameters" element="tns:UnlinkAttachmentsFromObjects" />
+	</wsdl:message>
+	<wsdl:message name="UnlinkAttachmentsFromObjectsSoapOut">
+		<wsdl:part name="parameters" element="tns:UnlinkAttachmentsFromObjectsResponse" />
+	</wsdl:message>
+	<wsdl:portType name="WO_ServerSoap">
+		<wsdl:operation name="DeleteClearanceInstance">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The Sender
+				(typically the Work Performer) notifies the Receiver (typically the
+				Work Owner) that field worker(s) have surrendered (or released)
+				clearanceInstance(s). The switching order system may release the
+				hold created by the clearanceInstances, provided no other clearance
+				instances are outstanding on the associated clearance certificate.
+				This message SHALL be sent to the URL specified in the responseURL
+				parameter of the previous CreateClearanceInstance message and shall
+				reference the transactionID sent in that CreateClearanceInstance
+				method call.Receiver returns information about failed transactions
+				using the result element of the response message header.
+			</wsdl:documentation>
+			<wsdl:input message="tns:DeleteClearanceInstanceSoapIn" />
+			<wsdl:output message="tns:DeleteClearanceInstanceSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetActiveWorkItemSummaries">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get summary information on workItems that the system of
+				record considered to be active. What is to be considered to be
+				"Active" shall be defined by the system of record for the workItem
+				summaries. It is anticipated that many workItemSummary objects will
+				be returned.</wsdl:documentation>
+			<wsdl:input message="tns:GetActiveWorkItemSummariesSoapIn" />
+			<wsdl:output message="tns:GetActiveWorkItemSummariesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetAttachmentsByObjectRefs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requests an array
+				of attachments associated with specific objects, given their
+				objectRefs.</wsdl:documentation>
+			<wsdl:input message="tns:GetAttachmentsByObjectRefsSoapIn" />
+			<wsdl:output message="tns:GetAttachmentsByObjectRefsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetClearanceTagsByTaggedDeviceIDs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester requests
+				active clerarance tags associated with specified tagged
+				devices.Responder returns information about failed transactions
+				using the result element of the response message header.
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetClearanceTagsByTaggedDeviceIDsSoapIn" />
+			<wsdl:output message="tns:GetClearanceTagsByTaggedDeviceIDsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetDomainMembers">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The client requests
+				from the server the members of a specific domain of information,
+				identified by the domainName parameter, which are supported by the
+				server. This method is used, along with the GetDomainNames method to
+				enable systems to exchange information about application-specific or
+				installation-specific lists of information, such as the lists of
+				counties for this installation or the list of serviceStatusCodes
+				used by the server.Responder returns information about failed
+				transactions using the result element of the response message
+				header.</wsdl:documentation>
+			<wsdl:input message="tns:GetDomainMembersSoapIn" />
+			<wsdl:output message="tns:GetDomainMembersSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetDomainNames">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The client requests
+				from the server a list of names of domains supported by the server.
+				This method is used, along with the GetDomainMembers method to
+				enable systems to exchange information about application-specific or
+				installation-specific lists of information, such as the lists of
+				counties for this installation or the list of serviceStatusCodes
+				used by the server. It is recommended that domain names be returned
+				in the form of the name of a named object (noun) in the MultiSpeak
+				schema dotted with the field name of interest. For instance, if the
+				system of record is returningworkFlowStatus identifiers that would
+				be used on designs, it is suggested that the domain name be called
+				design.workflowStatus, using the same spelling and capitalization
+				used in the MultiSpeak schema.Responder returns information about
+				failed transactions using the result element of the response message
+				header.</wsdl:documentation>
+			<wsdl:input message="tns:GetDomainNamesSoapIn" />
+			<wsdl:output message="tns:GetDomainNamesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetMethods">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester requests
+				a list of methods supported by Responder.Responder returns
+				information about failed transactions using the result element of
+				the response message header.</wsdl:documentation>
+			<wsdl:input message="tns:GetMethodsSoapIn" />
+			<wsdl:output message="tns:GetMethodsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetSupportedWorkTypes">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requests a list of
+				workTypes that can be supported by the Responder.
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetSupportedWorkTypesSoapIn" />
+			<wsdl:output message="tns:GetSupportedWorkTypesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkHistoriesByWorkItemRefs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get work progress history about workItems from the system of
+				record.  
+</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkHistoriesByWorkItemRefsSoapIn" />
+			<wsdl:output message="tns:GetWorkHistoriesByWorkItemRefsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByBoundsAndWorkStatusCategory">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get pointers to workItems that are within a specified
+				geographic bounding box with the lower left corner at the geographic
+				coordinate (XMin, YMin) and the upper right corner at the geographic
+				coordinate (XMax, YMax). and are of specified workStatusCategories.
+				The system of record for a type of work owns the mappings between
+				workStatusCodes and workStatusCategories. The message header for
+				this message SHALL provide coordinate system information and the X
+				and Y coordinates provided as part of the boundingBox calling
+				parameter SHALL be expressed in that coordinate system.Responder
+				returns information about failed transactions using the result
+				element of the response message header.</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkItemRefsByBoundsAndWorkStatusCategorySoapIn" />
+			<wsdl:output
+				message="tns:GetWorkItemRefsByBoundsAndWorkStatusCategorySoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByResourceIDsAndWorkStatusCategory">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get pointers to workItems that are of assigned to specified
+				resources and are of the specified workStatusCategories. The system
+				of record for a type of work owns the mappings between
+				workStatusCodes and workStatusCategories.Responder returns
+				information about failed transactions using the result element of
+				the response message header.</wsdl:documentation>
+			<wsdl:input
+				message="tns:GetWorkItemRefsByResourceIDsAndWorkStatusCategorySoapIn" />
+			<wsdl:output
+				message="tns:GetWorkItemRefsByResourceIDsAndWorkStatusCategorySoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByScheduleDateAndWorkStatusCategory">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get pointers to workItems that are of scheduled for a
+				specified date and are of specified workStatusCategories. The system
+				of record for a type of work owns the mappings between
+				workStatusCodes and workStatusCategories.Responder returns
+				information about failed transactions using the result element of
+				the response message header.</wsdl:documentation>
+			<wsdl:input
+				message="tns:GetWorkItemRefsByScheduleDateAndWorkStatusCategorySoapIn" />
+			<wsdl:output
+				message="tns:GetWorkItemRefsByScheduleDateAndWorkStatusCategorySoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByWorkStatusCodes">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get pointers to workItems that are of specified
+				workStatusCode.Responder returns information about failed
+				transactions using the result element of the response message
+				header.</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkItemRefsByWorkStatusCodesSoapIn" />
+			<wsdl:output message="tns:GetWorkItemRefsByWorkStatusCodesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByWorkTypesAndWorkStatusCategory">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get pointers to workItems that are of specified types and
+				workStatusCategories. The system of record for a type of work owns
+				the mappings between workStatusCodes and
+				workStatusCategories.Responder returns information about failed
+				transactions using the result element of the response message
+				header.</wsdl:documentation>
+			<wsdl:input
+				message="tns:GetWorkItemRefsByWorkTypesAndWorkStatusCategorySoapIn" />
+			<wsdl:output
+				message="tns:GetWorkItemRefsByWorkTypesAndWorkStatusCategorySoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemsByWorkItemRefs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get workItems from the system of record.
+			</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkItemsByWorkItemRefsSoapIn" />
+			<wsdl:output message="tns:GetWorkItemsByWorkItemRefsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemSummaries">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get summary information on workItems from the system of
+				record. It is anticipated that all workItemSummary objects will be
+				returned.  
+</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkItemSummariesSoapIn" />
+			<wsdl:output message="tns:GetWorkItemSummariesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemSummariesByWorkItemRefs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method may be
+				used to get summary information on workItems from the system of
+				record, chosen by workItemRefs.</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkItemSummariesByWorkItemRefsSoapIn" />
+			<wsdl:output message="tns:GetWorkItemSummariesByWorkItemRefsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkRequestStatuses">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is a
+				means for the Work Requester to obtain the status of a prior work
+				request.
+				Responder returns information about failed transactions using the result
+				element of the response message header.</wsdl:documentation>
+			<wsdl:input message="tns:GetWorkRequestStatusesSoapIn" />
+			<wsdl:output message="tns:GetWorkRequestStatusesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateClearanceInstanceRequest">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The Sender
+				(typically the Work Performer) notifies the Receiver (typically the
+				Work Owner) that field worker(s) have requested that new
+				clearanceInstance(s) be added to an existing clearanceCertificate so
+				that they can safely perform work. The Work Owner, in association
+				with the switching order system SHALL issue the requested
+				clearanceInstance using a subsequent CreateClearanceInstance method
+				call to the URL specified in the responseURL parameter of this
+				message and shall reference the transactionID sent in this method
+				call.</wsdl:documentation>
+			<wsdl:input message="tns:InitiateClearanceInstanceRequestSoapIn" />
+			<wsdl:output message="tns:InitiateClearanceInstanceRequestSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateClearanceTagRequestByTaggedDeviceIDs">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester requests
+				active clerarance tags associated with specified tagged devices to
+				be returned asynchronously as part of a ClearanceTagNotification
+				method call to the URL specified in the responseURL and linked with
+				this Initiate request using the transactionID provided in this
+				method call.</wsdl:documentation>
+			<wsdl:input message="tns:InitiateClearanceTagRequestByTaggedDeviceIDsSoapIn" />
+			<wsdl:output
+				message="tns:InitiateClearanceTagRequestByTaggedDeviceIDsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkAssignmentChanges">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">In this message,
+				the Sender indicates that work assignments have been changed. This
+				method SHALL not be used for unassigning work, that SHALL be done
+				with a InitiateWorkUnassignment. Resources remain assigned until
+				explictly unassigned. An empty workAssignmentChange implies no
+				change in the assignment.</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkAssignmentChangesSoapIn" />
+			<wsdl:output message="tns:InitiateWorkAssignmentChangesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkItemsDeletion">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">In this message, a
+				request is made to delete (cancel) work items. Confirmation of that
+				deletion is subsequently returned in an
+				WorkItemsDeletedNotification.</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkItemsDeletionSoapIn" />
+			<wsdl:output message="tns:InitiateWorkItemsDeletionSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkRequest">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is used
+				to submit work requests to the Work Owner for management.
+			</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkRequestSoapIn" />
+			<wsdl:output message="tns:InitiateWorkRequestSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkScheduleChanges">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method is used
+				for indicating that the schedule should be changed on work items.
+				This method SHALL not be used to unschedule a workItem, that SHALL
+				be done with a InitiateWorkScheduleDeletion message.
+			</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkScheduleChangesSoapIn" />
+			<wsdl:output message="tns:InitiateWorkScheduleChangesSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkScheduleDeletion">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sender notifies
+				Receiver that work items should be unscheduled, that is to say, all
+				scheduling information for these workItems shall be deleted.
+				Confirmation of that deletion is subsequently returned in an
+				WorkScheduleDeletionNotification.</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkScheduleDeletionSoapIn" />
+			<wsdl:output message="tns:InitiateWorkScheduleDeletionSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkUnassignment">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">In this message,
+				the sender indicates that work items have been unassigned. If the
+				primary resource is unassigned, all resources must be unassigned. To
+				unassign the primary resource without unassigning all additional
+				resources, first change the primary resource using
+				InitiateWorkAssignmentChanges. Confirmation of the unassignment is
+				subsequently returned in an WorkUnassignmentNotification.
+			</wsdl:documentation>
+			<wsdl:input message="tns:InitiateWorkUnassignmentSoapIn" />
+			<wsdl:output message="tns:InitiateWorkUnassignmentSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="LinkAttachmentsToObjects">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Sender requests
+				that receiver link the provided attachments to objects specified by
+				their objectRefs.Receiver returns information about failed
+				transactions using the result element of the response message
+				header.</wsdl:documentation>
+			<wsdl:input message="tns:LinkAttachmentsToObjectsSoapIn" />
+			<wsdl:output message="tns:LinkAttachmentsToObjectsSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="PingURL">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Requester pings URL
+				of Responder to determine its readiness to respond.Receiver returns
+				information about failed transactions using the result element of
+				the response message header.</wsdl:documentation>
+			<wsdl:input message="tns:PingURLSoapIn" />
+			<wsdl:output message="tns:PingURLSoapOut" />
+		</wsdl:operation>
+		<wsdl:operation name="UnlinkAttachmentsFromObjects">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Publisher notifies
+				subscriber that attachments, specified by attachmentID, which is the
+				objectID of the attachment to be unlinked from the referenced
+				object. It is up to the receiver of this method to determine,
+				according to its business rules, whether the attachment should be
+				deleted or retained after it is unlinked.Receiver returns
+				information about failed transactions using the result element of
+				the response message header.</wsdl:documentation>
+			<wsdl:input message="tns:UnlinkAttachmentsFromObjectsSoapIn" />
+			<wsdl:output message="tns:UnlinkAttachmentsFromObjectsSoapOut" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="WO_ServerSoap" type="tns:WO_ServerSoap">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="DeleteClearanceInstance">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/DeleteClearanceInstance"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetActiveWorkItemSummaries">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetActiveWorkItemSummaries"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetAttachmentsByObjectRefs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetAttachmentsByObjectRefs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetClearanceTagsByTaggedDeviceIDs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetClearanceTagsByTaggedDeviceIDs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetDomainMembers">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetDomainMembers"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetDomainNames">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetDomainNames"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetMethods">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetMethods"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetSupportedWorkTypes">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetSupportedWorkTypes"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkHistoriesByWorkItemRefs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkHistoriesByWorkItemRefs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByBoundsAndWorkStatusCategory">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemRefsByBoundsAndWorkStatusCategory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByResourceIDsAndWorkStatusCategory">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemRefsByResourceIDsAndWorkStatusCategory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByScheduleDateAndWorkStatusCategory">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemRefsByScheduleDateAndWorkStatusCategory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByWorkStatusCodes">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemRefsByWorkStatusCodes"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemRefsByWorkTypesAndWorkStatusCategory">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemRefsByWorkTypesAndWorkStatusCategory"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemsByWorkItemRefs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemsByWorkItemRefs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemSummaries">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemSummaries"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkItemSummariesByWorkItemRefs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkItemSummariesByWorkItemRefs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetWorkRequestStatuses">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/GetWorkRequestStatuses"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateClearanceInstanceRequest">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateClearanceInstanceRequest"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateClearanceTagRequestByTaggedDeviceIDs">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateClearanceTagRequestByTaggedDeviceIDs"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkAssignmentChanges">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkAssignmentChanges"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkItemsDeletion">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkItemsDeletion"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkRequest">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkRequest"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkScheduleChanges">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkScheduleChanges"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkScheduleDeletion">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkScheduleDeletion"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="InitiateWorkUnassignment">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/InitiateWorkUnassignment"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LinkAttachmentsToObjects">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/LinkAttachmentsToObjects"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PingURL">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/PingURL"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UnlinkAttachmentsFromObjects">
+			<soap:operation
+				soapAction="http://www.multispeak.org/Version_5.0_Release/UnlinkAttachmentsFromObjects"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakRequestMsgHeader"
+					part="MultiSpeakRequestMsgHeader" use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				<soap:header message="tns:MultiSpeakResponseMsgHeader"
+					part="MultiSpeakResponseMsgHeader" use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="WO_Server">
+		<wsdl:port name="WO_ServerSoap" binding="tns:WO_ServerSoap">
+			<soap:address location="http://www.msp5.0.example.org" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

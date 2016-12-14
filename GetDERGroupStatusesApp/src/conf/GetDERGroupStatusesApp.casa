@@ -39,8 +39,8 @@
         <connection consumer="endpoint1" provider="endpoint4" state="unchanged"/>
         <connection consumer="endpoint5" provider="endpoint2" state="new"/>
         <connection consumer="endpoint6" provider="endpoint3" state="new"/>
-        <connection consumer="endpoint6" provider="endpoint4" state="deleted"/>
         <connection consumer="endpoint5" provider="endpoint4" state="deleted"/>
+        <connection consumer="endpoint6" provider="endpoint4" state="deleted"/>
     </connections>
     <porttypes>
         <link xlink:href="../jbiasa/GetDERGroupStatuses/GetDERGroupStatuses.wsdl#xpointer(/definitions/portType[@name='GetDERGroupStatuses_Port'])" xlink:type="simple"/>

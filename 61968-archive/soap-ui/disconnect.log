@@ -1,0 +1,8 @@
+2587 [localhost-startStop-1] DEBUG com.sixthc.hbm.Crew  - setId : null
+3065 [localhost-startStop-1] DEBUG org.springframework.transaction.annotation.AnnotationTransactionAttributeSource  - Adding transactional method 'find' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+87611 [http-bio-8080-exec-1] ERROR com.sixthc.dao.impl.EpriLogDaoImpl  - findbyName for WMS CIM ExecuteDERGroupDispatches failed
+87625 [http-bio-8080-exec-1] DEBUG com.sixthc.dao.Sequence  - calling get message id sequence
+87650 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - retrieved sequence message_id => 0
+129982 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id log = 1942
+145752 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingInInterceptor  - DBLog id fault = 1942
+145804 [http-bio-8080-exec-1] DEBUG com.sixthc.interceptor.LoggingOutInterceptor  - onClose

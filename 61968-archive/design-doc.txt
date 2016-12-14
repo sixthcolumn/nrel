@@ -1,0 +1,4 @@
+These are notes that should be added to a design doc eventually
+
+1. message ID's must be unique across messages. Otherwise a fault is generated. message_log.messageID
+2. the services now generates its own message ID, and swaps the incoming message ID into the correlation ID when replying

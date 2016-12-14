@@ -154,7 +154,7 @@
                             <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
                             <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
                         </copy>
-                        <copy>
+                        <copy ignoreMissingFromData="yes">
                             <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
                             <to>$RemoteIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
                         </copy>
@@ -211,7 +211,7 @@
                             <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Header</from>
                             <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Header</to>
                         </copy>
-                        <copy>
+                        <copy ignoreMissingFromData="yes">
                             <from>$ServiceIn.GetDERGroupStatusesRequestMessage/ns0:Request</from>
                             <to>$LogIn.GetDERGroupStatusesRequestMessage/ns0:Request</to>
                         </copy>
